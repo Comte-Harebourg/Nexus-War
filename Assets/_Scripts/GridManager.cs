@@ -6,14 +6,14 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
     [SerializeField] private int _width, _height;
-    [SerializeField] private Tile _tilePrefab;
+    [SerializeField] private Tile _grassTile, _waterTile;
     [SerializeField] private Transform _cam;
 
     private Dictionary<Vector2, Tile> _tiles;
 
     void Start()
     {
-        GenerateGrid();
+        GenerateGrid(); ///Lance la fonction à l'initialisation
     }
 
     void GenerateGrid()
@@ -25,12 +25,11 @@ public class GridManager : MonoBehaviour
         for (int x=0;x<_width;x++)
         {
             for (int y = 0; y < _height; y++)
-            {
-                var spawnedTile = Instantiate(_tilePrefab, new Vector3(x, y), Quaternion.identity);
+            {///C'est ici qu'on génère la map si on veut faire de la génération procédurale
+                var randomTile = UnityEngine.Random.Range(0, 5) == 0 ? _waterTile : _grassTile;
+                var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile[{x}:{y}]";
-                var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
-                spawnedTile.Init(isOffset);
-
+                spawnedTile.Init(x,y);
                 _tiles[new Vector2(x, y)] = spawnedTile;
             }
         }
@@ -39,7 +38,7 @@ public class GridManager : MonoBehaviour
     public Tile GetTileAtPosition(Vector2 pos)
     {
         /// <summary>
-        /// GetTileAtPosition((x,y)) récupère la case à la postion (x,y)
+        /// GetTileAtPosition((x,y)) récupère la tuile de calsse Tile à la postion (x,y)
         /// <summary>
         if (_tiles.TryGetValue(pos,out var tile))
         {

@@ -150,7 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
   _width: 16
   _height: 9
-  _tilePrefab: {fileID: 9135681320584962907, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
+  _grassTile: {fileID: 8083753304533116210, guid: 79993d842c00b714d9fd5babc924380c, type: 3}
+  _waterTile: {fileID: 493148849498669904, guid: ca3fc13cfa2111c4584bc034023afa58, type: 3}
   _cam: {fileID: 519420032}
 --- !u!4 &400165310
 Transform:
