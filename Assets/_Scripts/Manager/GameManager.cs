@@ -28,14 +28,14 @@ public class GameManager : MonoBehaviour
                 GridManager.Instance.GenerateGrid();
                 break;
             case GameState.SpawnPlayer:
-                ///UnitManager.Instance.SpawnHeroes();
+                UnitManager.Instance.SpawnPlayer();
                 break;
-            case GameState.SpawnEnemie:
-                ///UnitManager.Instance.SpawnEnemies();
+            case GameState.SpawnEnemy:
+                UnitManager.Instance.SpawnEnemy();
                 break;
             case GameState.PlayerTurn:
                 break;
-            case GameState.EnemieTurn:
+            case GameState.EnemyTurn:
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -48,7 +48,7 @@ public enum GameState ///Initialisation des différentes phases
 {
     GenerateGrid = 0,
     SpawnPlayer = 1,
-    SpawnEnemie = 2,
+    SpawnEnemy = 2,
     PlayerTurn = 3,
-    EnemieTurn = 4
+    EnemyTurn = 4
 }

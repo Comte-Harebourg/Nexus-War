@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
@@ -36,6 +37,17 @@ public class GridManager : MonoBehaviour
         _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -10);
         GameManager.Instance.ChangeState(GameState.SpawnPlayer);
     }
+
+    public Tile GetPlayerSpawn()
+    {
+        return _tiles.Where(tile => tile.Key.x < _width / 2 && tile.Value.Walkable).OrderBy(tile => UnityEngine.Random.value).First().Value;
+    }
+
+    public Tile GetEnemySpawn()
+    {
+        return _tiles.Where(tile => tile.Key.x > _width / 2 && tile.Value.Walkable).OrderBy(tile => UnityEngine.Random.value).First().Value;
+    }
+
     public Tile GetTileAtPosition(Vector2 pos)
     {
         /// <summary>
