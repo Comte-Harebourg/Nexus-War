@@ -15,29 +15,16 @@ public abstract class Tile : MonoBehaviour
     public bool Roadable => _isRoadable && OccupiedUnit == null;
 
 
-    public virtual void Init(int x,int y)
+    public virtual void Init(int x, int y)
     {
-
+        /// <summary>
+        /// Init(int x, int y) initialise une case à la position (x,y)
+        /// <summary>
     }
 
     private void OnMouseDown()
     {
-        if (GameManager.Instance.GameState != GameState.PlayerTurn) return;
-        if (OccupiedUnit != null)
-        {
-            if (OccupiedUnit.Faction == Faction.Player) UnitManager.Instance.SetSelectedUnit((BasePlayer)OccupiedUnit);
-            else if(UnitManager.Instance.SelectedUnit != null)
-            {
-                    var enemy = (BaseEnemy)OccupiedUnit; ///attaque de la cible
-                    Destroy(enemy.gameObject);
-                    UnitManager.Instance.SetSelectedUnit(null);
-            }  
-        else if (UnitManager.Instance.SelectedUnit != null)
-        {
-                SetUnit(UnitManager.Instance.SelectedUnit);
-                UnitManager.Instance.SetSelectedUnit(null);
-        }
-        }
+        ///if (OccupiedUnit.Faction==) Logique des clics à faire
     }
 
     void OnMouseEnter()
@@ -52,11 +39,11 @@ public abstract class Tile : MonoBehaviour
         MenuManager.Instance.ShowTileInfo(null);
     }
 
-    public void SetUnit(BaseUnit unit)
+    public void SetUnit(BaseUnit Unit)
     {
-        if (unit.OccupiedTile != null) unit.OccupiedTile = null;
-        unit.transform.position = transform.position;
-        OccupiedUnit = unit;
-        unit.OccupiedTile = this;
+        if (Unit.OccupiedTile != null) Unit.OccupiedTile = null;
+        Unit.transform.position = transform.position;
+        OccupiedUnit = Unit;
+        Unit.OccupiedTile = this;
     }
 }

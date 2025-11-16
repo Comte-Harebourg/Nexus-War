@@ -58,15 +58,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Color.b
-      value: 0.47058827
+      value: 0.7176471
       objectReference: {fileID: 0}
     - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Color.g
-      value: 0.3019608
+      value: 0.47058827
       objectReference: {fileID: 0}
     - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Color.r
-      value: 0.19215688
+      value: 0.21960786
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3040b100bfb547d448d641611e4ccfc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterTile
-  TileName: Mer
+  TileName: "Rivi\xE8re"
   _renderer: {fileID: 5131866458835072710}
   _highlight: {fileID: 2281134191465650174}
   _isWalkable: 0

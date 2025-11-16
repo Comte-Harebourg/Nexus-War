@@ -10,6 +10,7 @@ public class ScriptableUnit : ScriptableObject
 
 public enum Faction
 {
-    Player=0,
-    Enemy=1
+    Aberrion=0,
+    Oromound=1,
+    Seranna=2
 }

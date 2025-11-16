@@ -52,6 +52,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
+      propertyPath: m_Color.b
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
+      propertyPath: m_Color.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
+      propertyPath: m_Color.r
+      value: 0.54509807
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89,7 +105,6 @@ MonoBehaviour:
   _isRoadable: 1
   OccupiedUnit: {fileID: 0}
   _baseColor: {r: 0.54901963, g: 0.69803923, b: 0.2627451, a: 1}
-  _offsetColor: {r: 0.45098042, g: 0.59607846, b: 0.21960786, a: 1}
 --- !u!212 &4900642872301724235 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}

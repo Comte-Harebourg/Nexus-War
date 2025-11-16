@@ -4,7 +4,7 @@ using TMPro;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
-    [SerializeField] private GameObject _selectedUnitObject,_tileObject,_tileUnitObject;
+    [SerializeField] private GameObject _tileObject,_tileUnitObject;
 
     private void Awake()
     {
@@ -26,16 +26,5 @@ public class MenuManager : MonoBehaviour
             _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Tile.OccupiedUnit.UnitName;
             _tileUnitObject.SetActive(true);
         }
-    }
-
-    public void ShowSelectedUnit(BasePlayer Unit)
-    {
-        if (Unit == null)
-        {
-            _selectedUnitObject.SetActive(false);
-            return;
-        }
-        _selectedUnitObject.GetComponentInChildren<TMP_Text>().text = Unit.UnitName;
-        _selectedUnitObject.SetActive(true);
     }
 }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameState GameState;
     public static event Action<GameState> OnGameStateChanged; ///S'active si la phase change
+    public Faction PlayerFaction; ///Faction du joueur
 
     void Awake()
     {
@@ -27,15 +28,14 @@ public class GameManager : MonoBehaviour
             case GameState.GenerateGrid: ///Génération de la grille
                 GridManager.Instance.GenerateGrid();
                 break;
-            case GameState.SpawnPlayer:
-                UnitManager.Instance.SpawnPlayer();
-                break;
-            case GameState.SpawnEnemy:
-                UnitManager.Instance.SpawnEnemy();
+            case GameState.Spawn:
+                UnitManager.Instance.Spawn();
                 break;
             case GameState.PlayerTurn:
                 break;
-            case GameState.EnemyTurn:
+            case GameState.Enemy1Turn:
+                break;
+            case GameState.Enemy2Turn:
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -47,8 +47,8 @@ public class GameManager : MonoBehaviour
 public enum GameState ///Initialisation des différentes phases
 {
     GenerateGrid = 0,
-    SpawnPlayer = 1,
-    SpawnEnemy = 2,
-    PlayerTurn = 3,
-    EnemyTurn = 4
+    Spawn = 1,
+    PlayerTurn = 2,
+    Enemy1Turn = 3,
+    Enemy2Turn = 4
 }

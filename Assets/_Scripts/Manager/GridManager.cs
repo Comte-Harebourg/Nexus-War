@@ -35,15 +35,15 @@ public class GridManager : MonoBehaviour
             }
         }
         _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -10);
-        GameManager.Instance.ChangeState(GameState.SpawnPlayer);
+        GameManager.Instance.ChangeState(GameState.Spawn);
     }
 
-    public Tile GetPlayerSpawn()
+    public Tile GetPlayerSpawn() ///à supprimer
     {
         return _tiles.Where(tile => tile.Key.x < _width / 2 && tile.Value.Walkable).OrderBy(tile => UnityEngine.Random.value).First().Value;
     }
 
-    public Tile GetEnemySpawn()
+    public Tile GetEnemySpawn() ///à supprimer
     {
         return _tiles.Where(tile => tile.Key.x > _width / 2 && tile.Value.Walkable).OrderBy(tile => UnityEngine.Random.value).First().Value;
     }
