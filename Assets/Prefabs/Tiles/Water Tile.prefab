@@ -98,8 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3040b100bfb547d448d641611e4ccfc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterTile
+  TileName: Mer
   _renderer: {fileID: 5131866458835072710}
   _highlight: {fileID: 2281134191465650174}
+  _isWalkable: 0
+  _isRoadable: 0
+  OccupiedUnit: {fileID: 0}
 --- !u!212 &5131866458835072710 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}

@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4f184f3c98ac741b8144ceac18392e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrassTile
+  TileName: Plaine
   _renderer: {fileID: 4900642872301724235}
   _highlight: {fileID: 2058899941216863091}
   _isWalkable: 1

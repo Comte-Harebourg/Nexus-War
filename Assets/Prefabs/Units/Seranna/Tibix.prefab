@@ -103,4 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb25798569dcb04aa1d27e603e448df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tibix
+  UnitName: Tibix
   OccupiedTile: {fileID: 0}
+  Faction: 0

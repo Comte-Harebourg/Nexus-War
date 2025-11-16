@@ -6,6 +6,7 @@ public class UnitManager : MonoBehaviour
 {
     public static UnitManager Instance;
     private List<ScriptableUnit> _units;
+    public BasePlayer SelectedUnit;
 
     private void Awake()
     {
@@ -47,5 +48,11 @@ public class UnitManager : MonoBehaviour
             SpawnTile.SetUnit(SpawnedEnemy);
         }
         GameManager.Instance.ChangeState(GameState.PlayerTurn);
+    }
+
+    public void SetSelectedUnit(BasePlayer Unit)
+    {
+        SelectedUnit = Unit;
+        MenuManager.Instance.ShowSelectedUnit(Unit);
     }
 }

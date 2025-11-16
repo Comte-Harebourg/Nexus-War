@@ -103,4 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44d429bfa0b0a94180cbf644ffb5988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Serge
+  UnitName: Serge
   OccupiedTile: {fileID: 0}
+  Faction: 0
