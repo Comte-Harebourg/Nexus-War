@@ -105,7 +105,7 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
             if (tileLookup.TryGetValue(savedUnit.Position, out Tile tile))
                 tile.SetUnit(unitInstance);
         }
-        Debug.Log("Niveau chargé.");
+        Debug.Log($"Level {level.LevelIndex} chargé correctement.");
     }
 }
 

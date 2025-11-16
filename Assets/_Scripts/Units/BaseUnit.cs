@@ -7,3 +7,10 @@ public class BaseUnit : MonoBehaviour
     public Tile OccupiedTile;
     public Faction Faction;
 }
+
+public enum Faction
+{
+    Aberrion = 0,
+    Oromound = 1,
+    Seranna = 2
+}

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class GridManager : MonoBehaviour //A servi pour la génération procédurale des maps, maintenant quasiment inutile
+public class GridManager : MonoBehaviour //Gère la grille
 {
     public static GridManager Instance;
     [SerializeField] private Tile _grassTile,_waterTile,_roadTile,_mountainTile,_holeTile,_forestTile;
