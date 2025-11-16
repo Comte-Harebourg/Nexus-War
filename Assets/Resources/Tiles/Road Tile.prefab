@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8736081120163244957
+--- !u!1001 &5230548986303419175
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2229495501026463076, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Name
-      value: Hole Tile
+      value: RoadTile
       objectReference: {fileID: 0}
     - target: {fileID: 7727638895224015450, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,15 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Color.b
-      value: 0.31764707
+      value: 0.54509807
       objectReference: {fileID: 0}
     - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Color.g
-      value: 0.3647059
+      value: 0.6745098
       objectReference: {fileID: 0}
     - target: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Color.r
-      value: 0.45882356
+      value: 0.68235296
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70,40 +70,41 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2229495501026463076, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2665973626999679912}
+      addedObject: {fileID: 6266222079352862342}
   m_SourcePrefab: {fileID: 100100000, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
---- !u!212 &511156035982677851 stripped
+--- !u!212 &3944469780018098145 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9091420517844974790, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
-  m_PrefabInstance: {fileID: 8736081120163244957}
+  m_PrefabInstance: {fileID: 5230548986303419175}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6883690011433023075 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2790838576790445566, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
-  m_PrefabInstance: {fileID: 8736081120163244957}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7479363143178659577 stripped
+--- !u!1 &6225776576880352835 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2229495501026463076, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
-  m_PrefabInstance: {fileID: 8736081120163244957}
+  m_PrefabInstance: {fileID: 5230548986303419175}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-2665973626999679912
+--- !u!114 &6266222079352862342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7479363143178659577}
+  m_GameObject: {fileID: 6225776576880352835}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51b60716b0f3a4349959f57d7b6a482b, type: 3}
+  m_Script: {fileID: 11500000, guid: fb5ccc05adefb05498ce3646460b302c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HoleTile
-  TileName: Trou
-  _renderer: {fileID: 511156035982677851}
-  _highlight: {fileID: 6883690011433023075}
+  m_EditorClassIdentifier: Assembly-CSharp::RoadTile
+  TileName: Route
+  TileID: 005
+  _renderer: {fileID: 3944469780018098145}
+  _highlight: {fileID: 7939186921675689689}
   _isWalkable: 1
   _isRoadable: 1
-  cover: 1
-  cost: 1.5
+  cover: -1
+  cost: 0.5
   OccupiedUnit: {fileID: 0}
+--- !u!1 &7939186921675689689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2790838576790445566, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
+  m_PrefabInstance: {fileID: 5230548986303419175}
+  m_PrefabAsset: {fileID: 0}

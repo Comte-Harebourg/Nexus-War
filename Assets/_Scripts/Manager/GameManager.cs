@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        GridManager.Instance.GenerateGrid(16,9);
-        UnitManager.Instance.Spawn(0); ///La faction est définie sur Aberrion pour l'instant
+        GameManager.Instance.PlayerFaction = 0; //Faction du joueur fixé sur Aberrion, il faudra trouver un moyen de choisir ça plus tard
+        TileMapManager.Instance.LoadMap(); //Lance la map sélectionné dans le TileMapManager, si on met un int ça chargera toujours cette map
         ChangeState((GameState)PlayerFaction);
     }
 
@@ -28,10 +28,16 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.AberrionTurn:
+                //Joue animation début tour Aberrion, se termine si clic gauche
+                //Passe à Oromound si fin du tour
                 break;
             case GameState.OromoundTurn:
+                //Joue animation début tour Oromound, se termine si clic gauche
+                //Passe à Seranna si fin du tour
                 break;
             case GameState.SerannaTurn:
+                //Joue animation début tour Seranna, se termine si clic gauche
+                //Passe à Aberrion si fin du tour
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);

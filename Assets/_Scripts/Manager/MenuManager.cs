@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class MenuManager : MonoBehaviour
+public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
     public static MenuManager Instance;
     [SerializeField] private GameObject _tileObject,_tileUnitObject;

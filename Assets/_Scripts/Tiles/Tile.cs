@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Tile : MonoBehaviour
 {
     public string TileName;
+    public string TileID;
     [SerializeField] protected SpriteRenderer _renderer;
     [SerializeField] private GameObject _highlight;
     [SerializeField] private bool _isWalkable;
