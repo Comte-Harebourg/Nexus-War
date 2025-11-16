@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba4d697f279b9248a6f665b46d58b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
-  _selectedUnitObject: {fileID: 0}
   _tileObject: {fileID: 739201254}
   _tileUnitObject: {fileID: 420313380}
 --- !u!1 &194171488
@@ -434,10 +433,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e522d4e3a7fcbc418f1a94220461338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
-  _width: 16
-  _height: 9
   _grassTile: {fileID: 8083753304533116210, guid: 79993d842c00b714d9fd5babc924380c, type: 3}
   _waterTile: {fileID: 493148849498669904, guid: ca3fc13cfa2111c4584bc034023afa58, type: 3}
+  _roadTile: {fileID: 6266222079352862342, guid: ac567f069cf84d848b4d689208313272, type: 3}
+  _mountainTile: {fileID: 6685636699164768052, guid: 76a2a420484143f48947c7111bdad54c, type: 3}
+  _holeTile: {fileID: -2665973626999679912, guid: be229c26ce54f894b91d405e1d2867d0, type: 3}
+  _forestTile: {fileID: 7427315150211038253, guid: 082af7f2871c2d54480b72e7c892fcbe, type: 3}
   _cam: {fileID: 519420032}
 --- !u!4 &400165310
 Transform:
@@ -696,7 +697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de897902d8aaf44ca990126e5fe96fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  GameState: 0
+  GameState: 1
+  PlayerFaction: 0
 --- !u!4 &654048364
 Transform:
   m_ObjectHideFlags: 0

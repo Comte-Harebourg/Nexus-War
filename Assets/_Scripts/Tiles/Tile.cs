@@ -9,6 +9,8 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject _highlight;
     [SerializeField] private bool _isWalkable;
     [SerializeField] private bool _isRoadable;
+    [SerializeField] private int cover;
+    [SerializeField] private float cost;
 
     public BaseUnit OccupiedUnit;
     public bool Walkable => _isWalkable && OccupiedUnit == null;

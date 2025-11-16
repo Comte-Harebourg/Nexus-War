@@ -103,6 +103,8 @@ MonoBehaviour:
   _highlight: {fileID: 2281134191465650174}
   _isWalkable: 0
   _isRoadable: 0
+  cover: 0
+  cost: 1
   OccupiedUnit: {fileID: 0}
 --- !u!212 &5131866458835072710 stripped
 SpriteRenderer:

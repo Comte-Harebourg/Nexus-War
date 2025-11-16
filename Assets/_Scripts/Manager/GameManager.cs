@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameState GameState;
     public static event Action<GameState> OnGameStateChanged; ///S'active si la phase change
-    public Faction PlayerFaction; ///Faction du joueur
+    public int PlayerFaction; ///Faction du joueur
 
     void Awake()
     {
@@ -17,7 +17,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        ChangeState(GameState.GenerateGrid);
+        GridManager.Instance.GenerateGrid(16,9);
+        UnitManager.Instance.Spawn(0); ///La faction est définie sur Aberrion pour l'instant
+        ChangeState((GameState)PlayerFaction);
     }
 
     public void ChangeState(GameState newState)
@@ -25,17 +27,11 @@ public class GameManager : MonoBehaviour
         GameState = newState;
         switch (newState)
         {
-            case GameState.GenerateGrid: ///Génération de la grille
-                GridManager.Instance.GenerateGrid();
+            case GameState.AberrionTurn:
                 break;
-            case GameState.Spawn:
-                UnitManager.Instance.Spawn();
+            case GameState.OromoundTurn:
                 break;
-            case GameState.PlayerTurn:
-                break;
-            case GameState.Enemy1Turn:
-                break;
-            case GameState.Enemy2Turn:
+            case GameState.SerannaTurn:
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -46,9 +42,7 @@ public class GameManager : MonoBehaviour
 
 public enum GameState ///Initialisation des différentes phases
 {
-    GenerateGrid = 0,
-    Spawn = 1,
-    PlayerTurn = 2,
-    Enemy1Turn = 3,
-    Enemy2Turn = 4
+    AberrionTurn = 0,
+    OromoundTurn = 1,
+    SerannaTurn = 2
 }

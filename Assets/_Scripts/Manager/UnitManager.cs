@@ -24,9 +24,9 @@ public class UnitManager : MonoBehaviour
         return (Unit)_units[1].UnitPrefab; ///Sélection de Tibi comme unité donc à refaire lorsqu'il y aura d'autre unités
     }
 
-    public void Spawn() ///Fonction à refaire intégralement lorsqu'on saura faire des maps préfaites
+    public void Spawn(int IntFaction) ///Fonction à refaire intégralement lorsqu'on saura faire des maps préfaites
     {
-        GameManager.Instance.PlayerFaction = Faction.Aberrion;
+        GameManager.Instance.PlayerFaction = IntFaction;
         var PlayerCount = 1; ///Nombre de Serge à faire spawn
         for (int i = 0; i < PlayerCount; i++)
         { 
@@ -41,6 +41,5 @@ public class UnitManager : MonoBehaviour
             var SpawnTile = GridManager.Instance.GetEnemySpawn();
             SpawnTile.SetUnit(SpawnedEnemy);
         }
-        GameManager.Instance.ChangeState(GameState.PlayerTurn);
     }
 }
