@@ -117,6 +117,7 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
                 tile.SetUnit(unitInstance);
         }
         GridManager.Instance.Dimension = GetLevelDimensions(level);
+        CameraController.Instance.SetCameraBounds(level);
         print($"Les dimensions du level sont ({GridManager.Instance.Dimension.x}:{GridManager.Instance.Dimension.y})");
         Debug.Log($"Level {level.LevelIndex} chargé correctement.");
     }

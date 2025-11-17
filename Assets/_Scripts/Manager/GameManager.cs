@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameState GameState;
-    public static event Action<GameState> OnGameStateChanged; ///S'active si la phase change
-    public int PlayerFaction; ///Faction du joueur
+    public static event Action<GameState> OnGameStateChanged; //S'active si la phase change
+    public int PlayerFaction; //Faction du joueur
 
     void Awake()
     {
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        GameManager.Instance.PlayerFaction = 0; //Faction du joueur fixé sur Aberrion, il faudra trouver un moyen de choisir ça plus tard
+        PlayerFaction = 0; //Faction du joueur fixé sur Aberrion, il faudra trouver un moyen de choisir ça plus tard
         TileMapManager.Instance.LoadMap(); //Lance la map sélectionné dans le TileMapManager, si on met un int ça chargera toujours cette map
         ChangeState((GameState)PlayerFaction);
     }
