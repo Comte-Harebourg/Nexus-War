@@ -13,10 +13,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-    }
-
-    void Start()
-    {
         PlayerFaction = 0; //Faction du joueur fixé sur Aberrion, il faudra trouver un moyen de choisir ça plus tard
         TileMapManager.Instance.LoadMap(); //Lance la map sélectionné dans le TileMapManager, si on met un int ça chargera toujours cette map
         ChangeState((GameState)PlayerFaction);

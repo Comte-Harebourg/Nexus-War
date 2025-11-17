@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
         moveSpeed = baseMoveSpeed * zoom / 10f;
     } 
 
-    void Start()
+    void Awake()
     {
         Instance = this;
         cam = Camera.main;

@@ -6,6 +6,9 @@ public class BaseUnit : MonoBehaviour
     public string UnitName;
     public Tile OccupiedTile;
     public Faction Faction;
+    public int speed;
+    public bool Infantry;
+    public bool Vehicle;
 }
 
 public enum Faction

@@ -81,30 +81,37 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
         _unitMap.ClearAllTiles();
     }
 
-    public void LoadMap(int? index = null) //Charge la map dont l'index correspond au paramètre ou à l'index du manager dans Unity
+    public void LoadMap(int? index = null)
     {
         int levelIndex = index ?? _levelIndex;
         var level = Resources.Load<ScriptableLevel>($"Levels/Level_{_levelIndex}");
         if (level == null)
         {
-            Debug.LogError($"Level { _levelIndex } introuvable.");
+            Debug.LogError($"Level {_levelIndex} introuvable.");
             return;
         }
-        ClearMap();
-        Dictionary<Vector3Int, Tile> tileLookup = new Dictionary<Vector3Int, Tile>();
-        foreach (var savedTile in level.GroundTiles)
+        ClearMap();// On supprime les anciennes tuiles et unités
+        Dictionary<Vector2Int, Tile> tileLookup = new Dictionary<Vector2Int, Tile>();// Dictionnaire pour retrouver les tuiles par position de grille
+        foreach (var savedTile in level.GroundTiles)//Instanciation des tuiles
         {
             Tile prefab = _tileDatabase.GetTile(savedTile.TileID);
             if (prefab == null)
             {
                 Debug.LogError($"Tile '{savedTile.TileID}' introuvable dans la base.");
                 continue;
-            }
-            var tileInstance = Instantiate(prefab, _groundMap.transform);
-            tileInstance.transform.position = _groundMap.GetCellCenterWorld(savedTile.Position);
-            tileLookup[savedTile.Position] = tileInstance;
+            } 
+            var tileInstance = Instantiate(prefab, _groundMap.transform);// Instanciation
+            Vector2Int Pos = new Vector2Int(savedTile.Position.x, savedTile.Position.y);// Affectation de la position de grille unique
+            tileInstance.Position = Pos;
+            GridManager.Instance.RegisterTile(tileInstance);// Enregistrement dans GridManager
+            tileInstance.transform.position = _groundMap.GetCellCenterWorld(new Vector3Int(Pos.x, Pos.y, 0));// Position dans le monde pour Unity
+            tileLookup[Pos] = tileInstance;// Ajout au dictionnaire local
+        } 
+        foreach (var tileInstance in tileLookup.Values)//Calcul des voisins pour toutes les tuiles
+        {
+            tileInstance.FindNeighbors();
         }
-        foreach (var savedUnit in level.UnitTiles)
+        foreach (var savedUnit in level.UnitTiles)//Instanciation des unités
         {
             BaseUnit prefab = _unitDatabase.GetUnit(savedUnit.UnitID);
             if (prefab == null)
@@ -113,14 +120,17 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
                 continue;
             }
             var unitInstance = Instantiate(prefab, _unitMap.transform);
-            if (tileLookup.TryGetValue(savedUnit.Position, out Tile tile))
+            Vector2Int unitGridPos = new Vector2Int(savedUnit.Position.x, savedUnit.Position.y);
+            if (tileLookup.TryGetValue(unitGridPos, out Tile tile))// Placer l'unité sur la tuile correspondante
                 tile.SetUnit(unitInstance);
+            unitInstance.transform.position = _unitMap.GetCellCenterWorld(new Vector3Int(unitGridPos.x, unitGridPos.y, 0));// Position dans le monde
         }
-        GridManager.Instance.Dimension = GetLevelDimensions(level);
+        GridManager.Instance.Dimension = GetLevelDimensions(level);// Mettre à jour les dimensions de la grille et la caméra
         CameraController.Instance.SetCameraBounds(level);
-        print($"Les dimensions du level sont ({GridManager.Instance.Dimension.x}:{GridManager.Instance.Dimension.y})");
-        Debug.Log($"Level {level.LevelIndex} chargé correctement.");
+
+        Debug.Log($"Level {level.LevelIndex} chargé correctement. Dimensions : ({GridManager.Instance.Dimension.x}, {GridManager.Instance.Dimension.y})");
     }
+
 }
 
 #if UNITY_EDITOR //Se compile seulement dans l'éditeur

@@ -12,4 +12,18 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     {
         Instance = this;
     }
+
+    public void SelectUnit(BaseUnit Unit)
+    {
+        SelectedUnit = Unit;
+        Debug.Log($"Unité {Unit.name} sélectionnée");
+        SelectedUnit.OccupiedTile.ShowRange();
+    }
+
+    public void UnSelectUnit()
+    {
+        SelectedUnit.OccupiedTile.HideRange();
+        Debug.Log($"Unité {SelectedUnit.name} désélectionnée");
+        SelectedUnit = null;
+    }
 }

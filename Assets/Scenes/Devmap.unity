@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TileMapManager
   _groundMap: {fileID: 554298287}
   _unitMap: {fileID: 559232827}
-  _levelIndex: 1
+  _levelIndex: 2
   _tileDatabase: {fileID: 11400000, guid: 58d5b2f1081bf454ebcf218342848d78, type: 2}
   _unitDatabase: {fileID: 11400000, guid: 0232b86d3e428df4baba697e9bb54ade, type: 2}
 --- !u!1 &194171488
@@ -530,13 +530,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e522d4e3a7fcbc418f1a94220461338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
-  _grassTile: {fileID: 8083753304533116210, guid: 79993d842c00b714d9fd5babc924380c, type: 3}
-  _waterTile: {fileID: 493148849498669904, guid: ca3fc13cfa2111c4584bc034023afa58, type: 3}
-  _roadTile: {fileID: 6266222079352862342, guid: ac567f069cf84d848b4d689208313272, type: 3}
-  _mountainTile: {fileID: 6685636699164768052, guid: 76a2a420484143f48947c7111bdad54c, type: 3}
-  _holeTile: {fileID: -2665973626999679912, guid: be229c26ce54f894b91d405e1d2867d0, type: 3}
-  _forestTile: {fileID: 7427315150211038253, guid: 082af7f2871c2d54480b72e7c892fcbe, type: 3}
-  _cam: {fileID: 519420032}
+  _grassTile: {fileID: 0}
+  _waterTile: {fileID: 0}
+  _roadTile: {fileID: 0}
+  _mountainTile: {fileID: 0}
+  _holeTile: {fileID: 0}
+  _forestTile: {fileID: 0}
+  _cam: {fileID: 0}
   Dimension: {x: 0, y: 0}
 --- !u!4 &400165310
 Transform:

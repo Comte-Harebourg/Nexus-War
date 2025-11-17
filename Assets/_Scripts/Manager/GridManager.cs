@@ -10,7 +10,7 @@ public class GridManager : MonoBehaviour //Gère la grille
     public static GridManager Instance;
     [SerializeField] private Tile _grassTile,_waterTile,_roadTile,_mountainTile,_holeTile,_forestTile;
     [SerializeField] private Transform _cam;
-    private Dictionary<Vector2, Tile> _tiles;
+    private Dictionary<Vector2Int, Tile> _tiles = new Dictionary<Vector2Int, Tile>();
     public Vector2Int Dimension;
 
     void Awake()
@@ -18,15 +18,16 @@ public class GridManager : MonoBehaviour //Gère la grille
         Instance = this;
     }
 
-    public Tile GetTileAtPosition(Vector2 pos)
+    public void RegisterTile(Tile tile)
     {
-        /// <summary>
-        /// GetTileAtPosition((x,y)) récupère la tuile de calsse Tile à la postion (x,y)
-        /// <summary>
-        if (_tiles.TryGetValue(pos,out var tile))
-        {
-            return tile;
-        }
-        return null;
+        if (_tiles.ContainsKey(tile.Position))
+            Debug.LogWarning($"Une tuile existe déjà à {tile.Position}");
+        _tiles[tile.Position] = tile;
+    }
+
+    public Tile GetTileAtPosition(Vector2Int Pos)
+    {
+        _tiles.TryGetValue(Pos, out var tile);
+        return tile;
     }
 }

@@ -11,6 +11,17 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         Instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (UnitManager.Instance.SelectedUnit != null)
+            {
+                UnitManager.Instance.UnSelectUnit();
+            }
+        }
+    }
+
     public void ShowTileInfo(Tile Tile)
     {
         if (Tile == null)
