@@ -18,6 +18,17 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
         Instance = this;
     }
 
+    public Vector2Int GetLevelDimensions(ScriptableLevel level)
+    {
+        int minX = level.GroundTiles.Min(t => t.Position.x);
+        int maxX = level.GroundTiles.Max(t => t.Position.x);
+        int minY = level.GroundTiles.Min(t => t.Position.y);
+        int maxY = level.GroundTiles.Max(t => t.Position.y);
+        int width = (maxX - minX) + 1;
+        int height = (maxY - minY) + 1;
+        return new Vector2Int(width, height);
+    }
+
     public void SaveMap(int? index = null)
     {
         int levelIndex = index ?? _levelIndex;
@@ -105,6 +116,8 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
             if (tileLookup.TryGetValue(savedUnit.Position, out Tile tile))
                 tile.SetUnit(unitInstance);
         }
+        GridManager.Instance.Dimension = GetLevelDimensions(level);
+        print($"Les dimensions du level sont ({GridManager.Instance.Dimension.x}:{GridManager.Instance.Dimension.y})");
         Debug.Log($"Level {level.LevelIndex} chargé correctement.");
     }
 }

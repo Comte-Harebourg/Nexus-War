@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class GridManager : MonoBehaviour //Gère la grille
 {
@@ -10,6 +11,7 @@ public class GridManager : MonoBehaviour //Gère la grille
     [SerializeField] private Tile _grassTile,_waterTile,_roadTile,_mountainTile,_holeTile,_forestTile;
     [SerializeField] private Transform _cam;
     private Dictionary<Vector2, Tile> _tiles;
+    public Vector2Int Dimension;
 
     void Awake()
     {
