@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2229495501026463076, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Name
-      value: G
+      value: Grass Tile
       objectReference: {fileID: 0}
     - target: {fileID: 7727638895224015450, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrassTile
   TileName: Plaine
-  TileID: 001
+  TileID: 010
   _renderer: {fileID: 4900642872301724235}
   _highlight: {fileID: 2058899941216863091}
   _isWalkable: 1

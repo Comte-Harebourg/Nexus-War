@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2229495501026463076, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Name
-      value: WaterTile
+      value: Water Tile
       objectReference: {fileID: 0}
     - target: {fileID: 7727638895224015450, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterTile
   TileName: "Rivi\xE8re"
-  TileID: 002
+  TileID: 020
   _renderer: {fileID: 5131866458835072710}
   _highlight: {fileID: 2281134191465650174}
   _isWalkable: 0

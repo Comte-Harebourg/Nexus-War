@@ -17,10 +17,12 @@ public class CameraController : MonoBehaviour
     public float maxZoom = 15f;
     private Camera cam;
     private Vector3 dragOrigin;
+    private float baseMoveSpeed = 20f;
 
      private void UpdateMoveSpeed()
     {
-        //MoveSpeed * zoom / 10
+        zoom = Camera.main.orthographicSize;
+        moveSpeed = baseMoveSpeed * zoom / 10f;
     } 
 
     void Start()
@@ -28,6 +30,7 @@ public class CameraController : MonoBehaviour
         Instance = this;
         cam = Camera.main;
         zoom = Camera.main.orthographicSize;
+        baseMoveSpeed = moveSpeed;
         UpdateMoveSpeed();
     }
 

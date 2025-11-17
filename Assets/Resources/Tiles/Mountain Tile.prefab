@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2229495501026463076, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_Name
-      value: MountainTile
+      value: Mountain Tile
       objectReference: {fileID: 0}
     - target: {fileID: 7727638895224015450, guid: 9948d446c7addb54c80809e816d6df78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MountainTile
   TileName: Montagne
-  TileID: 004
+  TileID: 040
   _renderer: {fileID: 3032860264552993420}
   _highlight: {fileID: 8252521391283368884}
   _isWalkable: 1
