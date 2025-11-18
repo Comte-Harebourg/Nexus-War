@@ -4,11 +4,13 @@ using TMPro;
 public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
     public static MenuManager Instance;
-    [SerializeField] private GameObject _tileObject,_tileUnitObject;
+    [SerializeField] private GameObject _tileObject,_tileUnitObject,_background;
 
     private void Awake()
     {
         Instance = this;
+        _background.SetActive(true);
+
     }
 
     private void Update()

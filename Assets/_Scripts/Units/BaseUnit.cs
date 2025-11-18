@@ -9,6 +9,9 @@ public class BaseUnit : MonoBehaviour
     public int speed;
     public bool Infantry;
     public bool Vehicle;
+    public int minAttackRange;
+    public int maxAttackRange;
+    public bool showDanger=false;
 }
 
 public enum Faction

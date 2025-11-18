@@ -27,6 +27,9 @@ public class GridManager : MonoBehaviour //Gère la grille
 
     public Tile GetTileAtPosition(Vector2Int Pos)
     {
+        /// <summary>
+        /// GetTileAtPosition(Vector2Int Pos) Renvoie la Tile à la position Pos qui est un Vector2Int
+        /// <summary>
         _tiles.TryGetValue(Pos, out var tile);
         return tile;
     }

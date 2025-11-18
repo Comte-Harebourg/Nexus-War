@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        PlayerFaction = 0; //Faction du joueur fixé sur Aberrion, il faudra trouver un moyen de choisir ça plus tard
         TileMapManager.Instance.LoadMap(); //Lance la map sélectionné dans le TileMapManager, si on met un int ça chargera toujours cette map
         ChangeState((GameState)PlayerFaction);
     }
@@ -24,14 +23,26 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.AberrionTurn:
+                //Remet toutes les unités en actif
+                //Consomme les rations des unités
+                //Modifie les ressources de la faction
+                //Check la production d'unité
                 //Joue animation début tour Aberrion, se termine si clic gauche
-                //Passe à Oromound si fin du tour
+                //Passe à Oromound si fin du tour ou si plus d'unités actives
                 break;
             case GameState.OromoundTurn:
+                //Remet toutes les unités en actif
+                //Consomme les rations des unités
+                //Modifie les ressources de la faction
+                //Check la production d'unité
                 //Joue animation début tour Oromound, se termine si clic gauche
                 //Passe à Seranna si fin du tour
                 break;
             case GameState.SerannaTurn:
+                //Remet toutes les unités en actif
+                //Consomme les rations des unités
+                //Modifie les ressources de la faction
+                //Check la production d'unité
                 //Joue animation début tour Seranna, se termine si clic gauche
                 //Passe à Aberrion si fin du tour
                 break;

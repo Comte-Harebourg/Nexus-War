@@ -110,3 +110,5 @@ MonoBehaviour:
   speed: 4
   Infantry: 1
   Vehicle: 0
+  minAttackRange: 1
+  maxAttackRange: 2
