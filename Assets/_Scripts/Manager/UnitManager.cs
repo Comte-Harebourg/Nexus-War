@@ -7,6 +7,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     public static UnitManager Instance;
     private List<BaseUnit> _units;
     public BaseUnit SelectedUnit;
+    public List<BaseUnit> DangerUnits = new List<BaseUnit>();
 
     private void Awake()
     {
@@ -25,5 +26,14 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         SelectedUnit.OccupiedTile.HideRange();
         Debug.Log($"Unité {SelectedUnit.name} désélectionnée");
         SelectedUnit = null;
+    }
+
+    public void UpdateDanger()
+    {
+        foreach (BaseUnit Unit in DangerUnits)
+        {
+            Unit.OccupiedTile.HideDanger();
+            Unit.OccupiedTile.ShowDanger();
+        }
     }
 }

@@ -431,7 +431,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!224 &252085033
 RectTransform:
@@ -1191,6 +1191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitManager
   SelectedUnit: {fileID: 0}
+  DangerUnits: []
 --- !u!4 &861272489
 Transform:
   m_ObjectHideFlags: 0

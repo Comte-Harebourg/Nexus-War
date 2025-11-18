@@ -22,6 +22,10 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
                 UnitManager.Instance.UnSelectUnit();
             }
         }
+        if (Input.mousePosition.x < 150)
+        {
+
+        }
     }
 
     public void ShowTileInfo(Tile Tile)

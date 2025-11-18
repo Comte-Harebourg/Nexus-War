@@ -41,24 +41,23 @@ public abstract class Tile : MonoBehaviour
             {
                 if (UnitManager.Instance.SelectedUnit == null)
                 {
-                    if (OccupiedUnit.showDanger)
+                    if (UnitManager.Instance.DangerUnits.Contains(OccupiedUnit))
                     {
                         HideDanger();
-                        OccupiedUnit.showDanger = false;
+                        UnitManager.Instance.DangerUnits.Remove(OccupiedUnit);
+                        UnitManager.Instance.UpdateDanger();
                     }
                     else
                     {
-                        OccupiedUnit.showDanger = true;
                         ShowDanger();
+                        UnitManager.Instance.DangerUnits.Add(OccupiedUnit);
                     }
                 }
                 else
                 {
-                    if (false)//Si la case est rouge
+                    if (UnitManager.Instance.SelectedUnit.OccupiedTile.RedTiles.Contains(this))
                     {
-                        //Déplace lunité sélectionnée à portée d'attaque
-                        //Attaque l'unité ciblée avec l'unité sélectionnée
-                        //Déselectionne l'unité sélectionnée
+                        //Montre l'UI des actions (Géré par un autre script) avec l'unité de ciblée
                     }
                     else
                     {
@@ -88,7 +87,7 @@ public abstract class Tile : MonoBehaviour
             if (UnitManager.Instance.SelectedUnit != null)
             {
                 //Si la case ciblée est à portée de déplacement
-                //Montre l'UI des actions (Géré par MenuManager)
+                //Montre l'UI des actions à la case ciblée (Géré par MenuManager)
                 //Sinon
                 //Déselectionne l'unité sélectionnée
             }
@@ -253,6 +252,7 @@ public abstract class Tile : MonoBehaviour
                     Vector2Int targetPos = Tile.Position + new Vector2Int(dx, dy);
                     Tile targetTile = GridManager.Instance.GetTileAtPosition(targetPos);
                     if (targetTile == null) continue;
+                    if (origin.OrangeTiles.Contains(targetTile)) continue;
                     if (targetTile.OccupiedUnit == null)
                     {
                         targetTile._darkOrange.SetActive(true);
