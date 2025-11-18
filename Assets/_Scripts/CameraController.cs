@@ -7,7 +7,6 @@ public class CameraController : MonoBehaviour
     [Header("Move Settings")]
     public float moveSpeed = 20f;
     public float dragSpeed = 1f;
-    public float edgeSize = 20f; // pixels du bord écran
     public Vector2 minBounds = new Vector2(-50, -50);
     public Vector2 maxBounds = new Vector2(50, 50);
     private float zoom;
@@ -38,7 +37,7 @@ public class CameraController : MonoBehaviour
     {
         HandleKeyboardMove();
         HandleMouseDrag();
-        HandleEdgeMove();
+        HandleMouseMove();
         HandleZoom();
         ClampPosition();
     }
@@ -67,18 +66,43 @@ public class CameraController : MonoBehaviour
     }
 
     //Déplacement aux bords de l’écran
-    void HandleEdgeMove()
+    [Header("Mouse Movement Settings")]
+    public float insideScreenThreshold = 20f; // seuil à l'intérieur du bord de l'écran pour que la souris affecte la caméra (avant nommé EdgeSize)
+    public float outsideScreenThreshold = 10f; // seuil à l'extérieur du bord de l'écran pour que la souris affecte la caméra. Lorsqu'elle vaut -1, on autorise le mouvement de la caméra quand la souris est dehors
+    void HandleMouseMove()
     {
         Vector3 pos = transform.position;
-        if (Input.mousePosition.x < edgeSize)
+        Vector3 mousePos = Input.mousePosition;
+        bool allowMovement = false;
+
+        if (outsideScreenThreshold == -1)
+        {
+        // Lorsque outsideScreenThreshold vaut -1, on autorise le mouvement de la caméra quand la souris est dehors
+            allowMovement = true;
+        }
+            else
+        {
+            // On autorise le mouvement si la souris est dans l'écran ou dans le seuil extérieur
+            allowMovement =
+                mousePos.x >= -outsideScreenThreshold &&
+                mousePos.x <= Screen.width + outsideScreenThreshold &&
+                mousePos.y >= -outsideScreenThreshold &&
+                mousePos.y <= Screen.height + outsideScreenThreshold;
+        }
+
+        if (allowMovement)
+        {
+        if (mousePos.x < insideScreenThreshold)
             pos.x -= moveSpeed * Time.deltaTime;
-        else if (Input.mousePosition.x > Screen.width - edgeSize)
+        else if (mousePos.x > Screen.width - insideScreenThreshold)
             pos.x += moveSpeed * Time.deltaTime;
-        if (Input.mousePosition.y < edgeSize)
+
+        if (mousePos.y < insideScreenThreshold)
             pos.y -= moveSpeed * Time.deltaTime;
-        else if (Input.mousePosition.y > Screen.height - edgeSize)
+        else if (mousePos.y > Screen.height - insideScreenThreshold)
             pos.y += moveSpeed * Time.deltaTime;
         transform.position = pos;
+        }
     }
 
     //Zoom caméra
