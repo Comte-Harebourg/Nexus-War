@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette classe donc j'ai utilisé ChatGPT, il faudra probablement la revoir plus tard
+public class TileMapManager : MonoBehaviour
 {
     public static TileMapManager Instance;
     [SerializeField] private Tilemap _groundMap;
@@ -29,18 +29,9 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
         return new Vector2Int(width, height);
     }
 
-    public static class ScriptableObjectUtility
-    {
-        public static void SaveLevelFile(ScriptableLevel level)
-        {
-            AssetDatabase.CreateAsset(level, $"Assets/Resources/Levels/{level.name}.asset");
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-        }
-    }
-
     public void SaveMap(int? index = null)
     {
+#if UNITY_EDITOR
         int levelIndex = index ?? _levelIndex;
         var level = ScriptableObject.CreateInstance<ScriptableLevel>();
         level.LevelIndex = levelIndex;
@@ -49,6 +40,9 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
         level.UnitTiles = GetUnits(_unitMap).ToList();
         ScriptableObjectUtility.SaveLevelFile(level);
         Debug.Log($"Level {level.LevelIndex} sauvegardé correctement.");
+#else
+        Debug.LogError("SaveMap() ne peut être appelé qu’en Éditeur.");
+#endif
     }
 
     private IEnumerable<SavedTile> GetTiles(Tilemap map)
@@ -141,3 +135,14 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
     }
 
 }
+#if UNITY_EDITOR
+public static class ScriptableObjectUtility
+{
+    public static void SaveLevelFile(ScriptableLevel level)
+    {
+        AssetDatabase.CreateAsset(level, $"Assets/Resources/Levels/{level.name}.asset");
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
+}
+#endif
