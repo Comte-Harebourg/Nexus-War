@@ -5,12 +5,12 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
     public static MenuManager Instance;
     [SerializeField] private GameObject _tileObject,_tileUnitObject,_background;
+    public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
 
     private void Awake()
     {
         Instance = this;
         _background.SetActive(true);
-
     }
 
     private void Update()
@@ -21,10 +21,10 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             {
                 UnitManager.Instance.UnSelectUnit();
             }
-        }
-        if (Input.mousePosition.x < 150)
-        {
-
+            else
+            {
+                //Montre l'inventaire de _tileUnit
+            }
         }
     }
 

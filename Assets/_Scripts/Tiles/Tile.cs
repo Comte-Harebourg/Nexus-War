@@ -90,10 +90,14 @@ public abstract class Tile : MonoBehaviour
         {
             if (UnitManager.Instance.SelectedUnit != null)
             {
-                //Si la case ciblée est à portée de déplacement
-                //Montre l'UI des actions à la case ciblée (Géré par MenuManager)
-                //Sinon
-                //Déselectionne l'unité sélectionnée
+                if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))
+                {
+                    //Montre l'UI des actions à la case ciblée (Géré par MenuManager)
+                }
+                else
+                {
+                    UnitManager.Instance.UnSelectUnit();
+                }
             }
             else
             {
@@ -115,7 +119,7 @@ public abstract class Tile : MonoBehaviour
         MenuManager.Instance.ShowTileInfo(null);
     }
 
-    public void SetUnit(BaseUnit Unit)//Rajouter évolution ShowDanger
+    public void SetUnit(BaseUnit Unit)//Fonction pour la génération de l'unité à ne pas utiliser pour les déplacements
     {
         if (Unit.OccupiedTile != null) Unit.OccupiedTile = null;
         Unit.transform.position = transform.position;

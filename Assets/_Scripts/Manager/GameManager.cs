@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.AberrionTurn:
+                MenuManager.Instance.OromoundInfo.SetActive(false);
+                MenuManager.Instance.SerannaInfo.SetActive(false);
+                MenuManager.Instance.AberrionInfo.SetActive(true);
                 //Remet toutes les unités en actif
                 //Consomme les rations des unités
                 //Modifie les ressources de la faction
@@ -31,6 +34,9 @@ public class GameManager : MonoBehaviour
                 //Passe à Oromound si fin du tour ou si plus d'unités actives
                 break;
             case GameState.OromoundTurn:
+                MenuManager.Instance.AberrionInfo.SetActive(false);
+                MenuManager.Instance.SerannaInfo.SetActive(false);
+                MenuManager.Instance.OromoundInfo.SetActive(true);
                 //Remet toutes les unités en actif
                 //Consomme les rations des unités
                 //Modifie les ressources de la faction
@@ -39,6 +45,9 @@ public class GameManager : MonoBehaviour
                 //Passe à Seranna si fin du tour
                 break;
             case GameState.SerannaTurn:
+                MenuManager.Instance.AberrionInfo.SetActive(false);
+                MenuManager.Instance.OromoundInfo.SetActive(false);
+                MenuManager.Instance.SerannaInfo.SetActive(true);
                 //Remet toutes les unités en actif
                 //Consomme les rations des unités
                 //Modifie les ressources de la faction
