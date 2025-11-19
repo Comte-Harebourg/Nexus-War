@@ -14,6 +14,8 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject _darkRed;
     [SerializeField] private GameObject _orange;
     [SerializeField] private GameObject _darkOrange;
+    [SerializeField] private GameObject _green;
+    [SerializeField] private GameObject _darkGreen;
     [SerializeField] private bool _isWalkable;
     [SerializeField] private bool _isRoadable;
     [SerializeField] private int cover;
@@ -25,6 +27,8 @@ public abstract class Tile : MonoBehaviour
     private List<Tile> DarkRedTiles = new List<Tile>();
     private List<Tile> OrangeTiles = new List<Tile>();
     private List<Tile> DarkOrangeTiles = new List<Tile>();
+    private List<Tile> GreenTiles = new List<Tile>();
+    private List<Tile> DarkGreenTiles = new List<Tile>();
     private List<Tile> Neighbors = new List<Tile>();
     public Vector2Int Position { get; set; }
 

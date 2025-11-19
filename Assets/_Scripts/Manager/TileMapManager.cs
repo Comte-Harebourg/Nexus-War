@@ -29,6 +29,16 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
         return new Vector2Int(width, height);
     }
 
+    public static class ScriptableObjectUtility
+    {
+        public static void SaveLevelFile(ScriptableLevel level)
+        {
+            AssetDatabase.CreateAsset(level, $"Assets/Resources/Levels/{level.name}.asset");
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
+    }
+
     public void SaveMap(int? index = null)
     {
         int levelIndex = index ?? _levelIndex;
@@ -131,17 +141,3 @@ public class TileMapManager : MonoBehaviour //J'arrivais pas à faire cette class
     }
 
 }
-
-#if UNITY_EDITOR //Se compile seulement dans l'éditeur
-
-public static class ScriptableObjectUtility
-{
-    public static void SaveLevelFile(ScriptableLevel level)
-    {
-        AssetDatabase.CreateAsset(level, $"Assets/Resources/Levels/{level.name}.asset");
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-    }
-}
-
-#endif
