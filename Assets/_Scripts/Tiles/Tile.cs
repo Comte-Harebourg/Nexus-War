@@ -39,6 +39,7 @@ public abstract class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GridManager.Instance.MenueDisplay) return;
         if (OccupiedUnit != null)
         {
             if (OccupiedUnit.Faction != (Faction)GameManager.Instance.PlayerFaction)
@@ -59,9 +60,14 @@ public abstract class Tile : MonoBehaviour
                 }
                 else
                 {
-                    if (UnitManager.Instance.SelectedUnit.OccupiedTile.RedTiles.Contains(this))
+                    if (UnitManager.Instance.SelectedUnit.OccupiedTile.RedTiles.Contains(this))//Action UI si cible un ennemi
                     {
-                        //Montre l'UI des actions (Géré par un autre script) avec l'unité de ciblée
+                        UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
+                        GridManager.Instance.MenueDisplay = true;
+                        _red.SetActive(true);
+                        RedTiles.Clear();
+                        RedTiles.Add(this);
+                        MenuManager.Instance.ShowActionUI(this);
                     }
                     else
                     {
@@ -73,11 +79,14 @@ public abstract class Tile : MonoBehaviour
             {
                 if (UnitManager.Instance.SelectedUnit == null)
                 {
-                    UnitManager.Instance.SelectUnit(OccupiedUnit);
+                    if (OccupiedUnit.isActive == true) UnitManager.Instance.SelectUnit(OccupiedUnit);
                 }
-                else if (UnitManager.Instance.SelectedUnit == OccupiedUnit)
+                else if (UnitManager.Instance.SelectedUnit == OccupiedUnit)//Action UI si cible soi-même
                 {
-                    //Montre l'UI des actions (Géré par un autre script)     
+                    HideRange();
+                    GridManager.Instance.MenueDisplay = true;
+                    ShowAttackRange(UnitManager.Instance.SelectedUnit);
+                    MenuManager.Instance.ShowActionUI(this);
                 }
                 //Exceptions à faire pour certains cas comme les médecins et les structures
                 else
@@ -90,9 +99,12 @@ public abstract class Tile : MonoBehaviour
         {
             if (UnitManager.Instance.SelectedUnit != null)
             {
-                if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))
+                if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))//ActionUI si cible une case vide
                 {
-                    //Montre l'UI des actions à la case ciblée (Géré par MenuManager)
+                    UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
+                    GridManager.Instance.MenueDisplay = true;
+                    ShowAttackRange(UnitManager.Instance.SelectedUnit);
+                    MenuManager.Instance.ShowActionUI(this);
                 }
                 else
                 {
@@ -101,6 +113,7 @@ public abstract class Tile : MonoBehaviour
             }
             else
             {
+                //MenueDisplay = true;
                 //Montre l'UI du sous-menu (Géré par MenuManager)
             }
         }
@@ -108,6 +121,7 @@ public abstract class Tile : MonoBehaviour
 
     void OnMouseEnter()
     {
+        if (GridManager.Instance.MenueDisplay) return;
         Debug.Log($"{TileName} at {Position} neighbors: {Neighbors.Count}"); //Debug
         _highlight.SetActive(true);
         MenuManager.Instance.ShowTileInfo(this);
@@ -116,6 +130,7 @@ public abstract class Tile : MonoBehaviour
     void OnMouseExit()
     {
         _highlight.SetActive(false);
+        if (GridManager.Instance.MenueDisplay) return;
         MenuManager.Instance.ShowTileInfo(null);
     }
 
@@ -127,47 +142,55 @@ public abstract class Tile : MonoBehaviour
         Unit.OccupiedTile = this;
     }
 
-    public void ShowRange()
+    public void ShowRange(BaseUnit Unit)
     {
         _blue.SetActive(true);
         BlueTiles.Add(this);
-        SearchMovementRange(this, OccupiedUnit.speed, Neighbors, OccupiedUnit.Infantry, OccupiedUnit.Vehicle);
-        SearchAttackRange(this, OccupiedUnit.minAttackRange, OccupiedUnit.maxAttackRange);
+        SearchMovementRange(this, Neighbors, Unit, Unit.speed);
+        SearchAttackRange(this, Unit);
     }
 
-    public void SearchMovementRange(Tile origin, float Speed, List<Tile> List, bool Infantry, bool Vehicle)
+    public void ShowAttackRange(BaseUnit Unit)
+    {
+        _blue.SetActive(true);
+        BlueTiles.Add(this);
+        SearchMovementRange(this, Neighbors, Unit, 0);
+        SearchAttackRange(this, Unit);
+    }
+
+    public void SearchMovementRange(Tile origin, List<Tile> List, BaseUnit Unit, float Speed)
     {
         if (Speed < 0) return;
         foreach (Tile Tile in List)
         {
-            if (Tile != origin && Speed - Tile.cost >= 0 && ((Infantry && Tile._isWalkable) || (Vehicle && Tile._isRoadable)))
+            if (Tile != origin && Speed - Tile.cost >= 0 && ((Unit.Infantry && Tile._isWalkable) || (Unit.Vehicle && Tile._isRoadable)))
             {
                 if (Tile.OccupiedUnit == null)
                 {
                     Tile._blue.SetActive(true);
                     origin.BlueTiles.Add(Tile);
-                    SearchMovementRange(origin, Speed - Tile.cost, Tile.Neighbors, Infantry, Vehicle);
+                    SearchMovementRange(origin, Tile.Neighbors, Unit, Speed - Tile.cost);
                 }
                 else if (Tile.OccupiedUnit.Faction == (Faction)GameManager.Instance.PlayerFaction)
                 {
                     Tile._darkBlue.SetActive(true);
                     origin.DarkBlueTiles.Add(Tile);
-                    SearchMovementRange(origin, Speed - Tile.cost, Tile.Neighbors, Infantry, Vehicle);
+                    SearchMovementRange(origin, Tile.Neighbors, Unit, Speed - Tile.cost);
                 }
             }
         }
     }
 
-    public void SearchAttackRange(Tile origin, int minAttackRange, int maxAttackRange)
+    public void SearchAttackRange(Tile origin, BaseUnit Unit)
     {
         foreach (Tile Tile in origin.BlueTiles)
         {
-            for (int dx = -maxAttackRange; dx <= maxAttackRange; dx++)
+            for (int dx = -Unit.maxAttackRange; dx <= Unit.maxAttackRange; dx++)
             {
-                for (int dy = -maxAttackRange; dy <= maxAttackRange; dy++)
+                for (int dy = -Unit.maxAttackRange; dy <= Unit.maxAttackRange; dy++)
                 {
                     int dist = Mathf.Abs(dx) + Mathf.Abs(dy);
-                    if (dist < minAttackRange || dist > maxAttackRange) continue;
+                    if (dist < Unit.minAttackRange || dist > Unit.maxAttackRange) continue;
                     Vector2Int targetPos = Tile.Position + new Vector2Int(dx, dy);
                     Tile targetTile = GridManager.Instance.GetTileAtPosition(targetPos);
                     if (targetTile == null) continue;

@@ -11,6 +11,7 @@ public class BaseUnit : MonoBehaviour
     public bool Vehicle;
     public int minAttackRange;
     public int maxAttackRange;
+    public bool isActive = true;
 }
 
 public enum Faction

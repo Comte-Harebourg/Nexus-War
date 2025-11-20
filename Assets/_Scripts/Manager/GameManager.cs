@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public GameState GameState;
     public static event Action<GameState> OnGameStateChanged; //S'active si la phase change
     public int PlayerFaction; //Faction du joueur
+    public GameObject UnitMap;
+    public List<BaseUnit> AberrionUnits = new List<BaseUnit>();
+    public List<BaseUnit> OromoundUnits = new List<BaseUnit>();
+    public List<BaseUnit> SerannaUnits = new List<BaseUnit>();
 
     void Awake()
     {
@@ -31,7 +35,7 @@ public class GameManager : MonoBehaviour
                 //Modifie les ressources de la faction
                 //Check la production d'unité
                 //Joue animation début tour Aberrion, se termine si clic gauche
-                //Passe à Oromound si fin du tour ou si plus d'unités actives
+                //Passe à Oromound si fin du tour
                 break;
             case GameState.OromoundTurn:
                 MenuManager.Instance.AberrionInfo.SetActive(false);
@@ -58,11 +62,45 @@ public class GameManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
-        OnGameStateChanged?.Invoke(newState); ///Active le changement de phase
+        OnGameStateChanged?.Invoke(newState); //Active le changement de phase
+    }
+
+    public void UpdateUnits()
+    {
+        AberrionUnits.Clear();
+        OromoundUnits.Clear();
+        SerannaUnits.Clear();
+        foreach (Transform child in UnitMap.transform)
+        {
+            BaseUnit unit = child.GetComponent<BaseUnit>();
+            if (unit != null)
+            {
+                unit.isActive = true;
+                if (unit.Faction == (Faction) 0)
+                {
+                    AberrionUnits.Add(unit);
+                    Debug.Log(unit.name + " ajouté à la liste d'Aberrion.");
+                }
+                else if (unit.Faction == (Faction)1)
+                {
+                    OromoundUnits.Add(unit);
+                    Debug.Log(unit.name + " ajouté à la liste d'Oromound.");
+                }
+                else if (unit.Faction == (Faction)2)
+                {
+                    SerannaUnits.Add(unit);
+                    Debug.Log(unit.name + " ajouté à la liste de Seranna.");
+                }
+                else
+                {
+                    Debug.Log(unit.name + " n'a pas de faction.");
+                }
+            }
+        }
     }
 }
 
-public enum GameState ///Initialisation des différentes phases
+public enum GameState //Initialisation des différentes phases
 {
     AberrionTurn = 0,
     OromoundTurn = 1,

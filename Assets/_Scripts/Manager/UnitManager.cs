@@ -18,7 +18,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     {
         SelectedUnit = Unit;
         Debug.Log($"Unité {Unit.name} sélectionnée");
-        SelectedUnit.OccupiedTile.ShowRange();
+        SelectedUnit.OccupiedTile.ShowRange(SelectedUnit);
     }
 
     public void UnSelectUnit()

@@ -12,6 +12,7 @@ public class GridManager : MonoBehaviour //Gère la grille
     [SerializeField] private Transform _cam;
     private Dictionary<Vector2Int, Tile> _tiles = new Dictionary<Vector2Int, Tile>();
     public Vector2Int Dimension;
+    public bool MenueDisplay = false;
 
     void Awake()
     {

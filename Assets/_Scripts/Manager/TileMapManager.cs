@@ -131,6 +131,7 @@ public class TileMapManager : MonoBehaviour
         }
         GridManager.Instance.Dimension = GetLevelDimensions(level);// Mettre à jour les dimensions de la grille et la caméra
         CameraController.Instance.SetCameraBounds(level);
+        GameManager.Instance.UpdateUnits();
         Debug.Log($"Level {level.LevelIndex} a été chargé correctement. Les dimensions sont : ({GridManager.Instance.Dimension.x}, {GridManager.Instance.Dimension.y})");
     }
 

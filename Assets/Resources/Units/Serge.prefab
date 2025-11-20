@@ -112,3 +112,4 @@ MonoBehaviour:
   Vehicle: 0
   minAttackRange: 1
   maxAttackRange: 2
+  isActive: 1
