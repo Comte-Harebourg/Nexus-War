@@ -34,4 +34,12 @@ public class GridManager : MonoBehaviour //Gère la grille
         _tiles.TryGetValue(Pos, out var tile);
         return tile;
     }
+
+    public Tile GetTileUnderMouse()
+    {
+        int gx = Mathf.RoundToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - 0.5f);
+        int gy = Mathf.RoundToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).y - 0.5f);
+        Vector2Int gridPos = new Vector2Int(gx, gy);
+        return GetTileAtPosition(gridPos);
+    }
 }

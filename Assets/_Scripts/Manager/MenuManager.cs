@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     [SerializeField] private GameObject _tileObject,_tileUnitObject,_background;
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
     public GameObject ActionMenue;
+    public Tile HighlightedTile;
 
     private void Awake()
     {
@@ -27,6 +28,15 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
                 {
                     UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
                     UnitManager.Instance.SelectedUnit.OccupiedTile.ShowRange(UnitManager.Instance.SelectedUnit);
+                }
+                if (HighlightedTile != null)
+                {
+                    HighlightedTile.Highlight.SetActive(false);
+                    HighlightedTile = null;
+                }
+                if (GridManager.Instance.GetTileUnderMouse() != null)
+                {
+                    GridManager.Instance.GetTileUnderMouse().Highlight.SetActive(true);
                 }
             }
             else if (UnitManager.Instance.SelectedUnit != null)

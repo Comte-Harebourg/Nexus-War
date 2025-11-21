@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public abstract class Tile : MonoBehaviour
 {
     public string TileName;
     public string TileID;
     [SerializeField] protected SpriteRenderer _renderer;
-    [SerializeField] private GameObject _highlight;
+    public GameObject Highlight;
     [SerializeField] private GameObject _blue;
     [SerializeField] private GameObject _darkBlue;
     [SerializeField] private GameObject _red;
@@ -16,10 +17,10 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject _darkOrange;
     [SerializeField] private GameObject _green;
     [SerializeField] private GameObject _darkGreen;
-    [SerializeField] private bool _isWalkable;
-    [SerializeField] private bool _isRoadable;
+    public bool Walkable;
+    public bool Roadable;
     [SerializeField] private int cover;
-    [SerializeField] private float cost;
+    public float cost;
     public BaseUnit OccupiedUnit;
     private List<Tile> BlueTiles = new List<Tile>();
     private List<Tile> DarkBlueTiles = new List<Tile>();
@@ -29,8 +30,12 @@ public abstract class Tile : MonoBehaviour
     private List<Tile> DarkOrangeTiles = new List<Tile>();
     private List<Tile> GreenTiles = new List<Tile>();
     private List<Tile> DarkGreenTiles = new List<Tile>();
-    private List<Tile> Neighbors = new List<Tile>();
+    public List<Tile> Neighbors = new List<Tile>();
     public Vector2Int Position { get; set; }
+    public float g_cost = 0;//Pour le pathfinding
+    public float h_cost = 0;//Pour le pathfinding
+    public float f_cost = 0;//Pour le pathfinding
+    public Tile PrecedentTile = null;//Pour le pathfinding
 
     public virtual void Init(int x, int y) //Vide mais indispensable au chargement de la map
     {
@@ -101,6 +106,7 @@ public abstract class Tile : MonoBehaviour
             {
                 if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))//ActionUI si cible une case vide
                 {
+                    MenuManager.Instance.HighlightedTile = this;
                     UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
                     GridManager.Instance.MenueDisplay = true;
                     ShowAttackRange(UnitManager.Instance.SelectedUnit);
@@ -122,15 +128,22 @@ public abstract class Tile : MonoBehaviour
     void OnMouseEnter()
     {
         if (GridManager.Instance.MenueDisplay) return;
-        Debug.Log($"{TileName} at {Position} neighbors: {Neighbors.Count}"); //Debug
-        _highlight.SetActive(true);
+        Highlight.SetActive(true);
         MenuManager.Instance.ShowTileInfo(this);
+        if (UnitManager.Instance.SelectedUnit != null)
+        {
+            if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))
+            {
+                PathfindingManager.Instance.ShowPath(UnitManager.Instance.SelectedUnit.OccupiedTile, this, UnitManager.Instance.SelectedUnit);
+            }
+        }
+        Debug.Log($"{TileName} at {Position} neighbors: {Neighbors.Count}");
     }
 
     void OnMouseExit()
     {
-        _highlight.SetActive(false);
         if (GridManager.Instance.MenueDisplay) return;
+        Highlight.SetActive(false);
         MenuManager.Instance.ShowTileInfo(null);
     }
 
@@ -163,7 +176,7 @@ public abstract class Tile : MonoBehaviour
         if (Speed < 0) return;
         foreach (Tile Tile in List)
         {
-            if (Tile != origin && Speed - Tile.cost >= 0 && ((Unit.Infantry && Tile._isWalkable) || (Unit.Vehicle && Tile._isRoadable)))
+            if (Tile != origin && Speed - Tile.cost >= 0 && ((Unit.Infantry && Tile.Walkable) || (Unit.Vehicle && Tile.Roadable)))
             {
                 if (Tile.OccupiedUnit == null)
                 {
@@ -252,7 +265,7 @@ public abstract class Tile : MonoBehaviour
         if (Speed < 0) return;
         foreach (Tile Tile in List)
         {
-            if (Tile != origin && Speed - Tile.cost >= 0 && ((Infantry && Tile._isWalkable) || (Vehicle && Tile._isRoadable)))
+            if (Tile != origin && Speed - Tile.cost >= 0 && ((Infantry && Tile.Walkable) || (Vehicle && Tile.Roadable)))
             {
                 if (Tile.OccupiedUnit == null)
                 {
