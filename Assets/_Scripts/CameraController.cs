@@ -106,16 +106,46 @@ public class CameraController : MonoBehaviour
     }
 
     //Zoom caméra
+    [Header("Zoom Settings")]
+    public bool zoomToMouse = true;
+
     void HandleZoom()
     {
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0f)
+        // On accepte le scroll sur les axes X ou Y (important pour Shift+Scroll sur Mac/Linux qui renvoie un scroll horizontal)
+        Vector2 scrollDelta = Input.mouseScrollDelta;
+        float scroll = scrollDelta.y != 0 ? scrollDelta.y : scrollDelta.x;
+
+        if (scroll == 0f)
+            return;
+        // Lorsqu'on appuie sur shift, la caméra ne se centre plus sur la souris mais sur le centre de l'écran (appuyer sur shift ignore zoomToMouse)
+        bool effectiveZoomToMouse = zoomToMouse && !Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift);
+
+        // La position de la souris AVANT le zoom
+        Vector3 preZoomWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        // on applique le zoom
+        cam.orthographicSize -= scroll * zoomSpeed;
+        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
+
+        // On zoome normalement si shift est appuié ou si zoomToMouse est désactivé
+        if (!effectiveZoomToMouse)
         {
-            cam.orthographicSize -= scroll * zoomSpeed;
-            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
             UpdateMoveSpeed();
+            return;
         }
+
+        // La position de la souris APRES le zoom
+        Vector3 postZoomWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        // On calcule le décalage de la position d'avant et après le zoom pour garder la souris au meme endroit
+        Vector3 offset = preZoomWorldPos - postZoomWorldPos;
+
+        // On ajoute le décalage à la position de la caméra
+        transform.position += offset;
+
+        UpdateMoveSpeed();
     }
+
 
     //Empêcher la caméra de sortir de la map
     void ClampPosition()
