@@ -1359,6 +1359,7 @@ MonoBehaviour:
   maxZoom: 15
   insideScreenThreshold: 20
   outsideScreenThreshold: 10
+  zoomToMouse: 1
 --- !u!1 &554298284
 GameObject:
   m_ObjectHideFlags: 0

@@ -132,7 +132,7 @@ public abstract class Tile : MonoBehaviour
         MenuManager.Instance.ShowTileInfo(this);
         if (UnitManager.Instance.SelectedUnit != null)
         {
-            if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))
+            if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this) && UnitManager.Instance.SelectedUnit.OccupiedTile != this)
             {
                 PathfindingManager.Instance.ShowPath(UnitManager.Instance.SelectedUnit.OccupiedTile, this, UnitManager.Instance.SelectedUnit);
             }
