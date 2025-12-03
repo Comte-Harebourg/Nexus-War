@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)) //Click logic
         {
             if (GridManager.Instance.MenueDisplay == true)
             {
@@ -41,6 +41,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             }
             else if (UnitManager.Instance.SelectedUnit != null)
             {
+                PathfindingManager.Instance.ClearArrow();
                 UnitManager.Instance.UnSelectUnit();
             }
             else

@@ -74,7 +74,7 @@ public class PathfindingManager : MonoBehaviour
         return false;
     }
 
-    private void ClearArrow()
+    public void ClearArrow()
     {
         foreach (var tile in PathTiles)
         {
@@ -132,9 +132,9 @@ public class PathfindingManager : MonoBehaviour
     {
         if ((IsUp(from) && IsUp(to)) || (IsDown(from) && IsDown(to))) return r.straightVertical;
         if ((IsLeft(from) && IsLeft(to)) || (IsRight(from) && IsRight(to))) return r.straightHorizontal;
-        if (IsUp(from) && IsRight(to) || IsLeft(from) && IsDown(to)) return r.turnUpRight;
-        if (IsUp(from) && IsLeft(to) || IsRight(from) && IsDown(to)) return r.turnUpLeft;
-        if (IsDown(from) && IsRight(to) || IsLeft(from) && IsUp(to)) return r.turnDownRight;
-        return r.turnDownLeft;
+        if (IsUp(from) && IsRight(to) || IsLeft(from) && IsDown(to)) return r.turnDownRight;
+        if (IsUp(from) && IsLeft(to) || IsRight(from) && IsDown(to)) return r.turnDownLeft;
+        if (IsDown(from) && IsRight(to) || IsLeft(from) && IsUp(to)) return r.turnUpRight;
+        return r.turnUpLeft;
     }
 }

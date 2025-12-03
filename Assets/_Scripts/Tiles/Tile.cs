@@ -22,7 +22,7 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private int cover;
     public float cost;
     public BaseUnit OccupiedUnit;
-    private List<Tile> BlueTiles = new List<Tile>();
+    public List<Tile> BlueTiles = new List<Tile>();
     private List<Tile> DarkBlueTiles = new List<Tile>();
     private List<Tile> RedTiles = new List<Tile>();
     private List<Tile> DarkRedTiles = new List<Tile>();

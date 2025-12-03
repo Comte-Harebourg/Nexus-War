@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 8383993722435628425}
   - component: {fileID: 4660566915228231968}
   - component: {fileID: 7427315150211038253}
-  - component: {fileID: 8036779531422172636}
+  - component: {fileID: 3923192328788524174}
   m_Layer: 0
   m_Name: Forest Tile
   m_TagString: Untagged
@@ -628,12 +628,13 @@ MonoBehaviour:
   cover: 2
   cost: 2
   OccupiedUnit: {fileID: 0}
+  BlueTiles: []
   Neighbors: []
   g_cost: 0
   h_cost: 0
   f_cost: 0
   PrecedentTile: {fileID: 0}
---- !u!114 &8036779531422172636
+--- !u!114 &3923192328788524174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -646,20 +647,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArrowTileRenderer
   arrowRenderer: {fileID: 789914770779768282}
-  startUp: {fileID: 6493367518041301487, guid: 8ccec4630b261c842a9cba35a228ac40, type: 3}
-  startDown: {fileID: 5991796719214565333, guid: 57b48f78e27e963439886ea72365608a, type: 3}
-  startLeft: {fileID: -6658700367447381516, guid: 7ac6a9d2941ff83419bf868f209b4dfb, type: 3}
-  startRight: {fileID: 7164399077172710298, guid: 18125e76d91b60444ab2f35f4556f728, type: 3}
-  endUp: {fileID: 6062773456096595470, guid: 25af5f9c8b3352a458a0c4e276a8918c, type: 3}
-  endDown: {fileID: -2349165380400627389, guid: 62cf2f28fd5d8bf49bef88fa0f032334, type: 3}
-  endLeft: {fileID: -2048294989912752613, guid: a2032aad1f8523e4ca486a3b8d1015df, type: 3}
-  endRight: {fileID: -5742256360145291784, guid: 9bb4a633fd85bb44f8b21e84e7e0eca6, type: 3}
-  straightVertical: {fileID: -3942435416009374284, guid: 333713abd9c2b5f418296ae20b56b740, type: 3}
-  straightHorizontal: {fileID: 3599903875900129592, guid: 69a88729172659b458388b3d2376c69f, type: 3}
-  turnUpRight: {fileID: 9155208740341829322, guid: b386c3404f716ed479733fffd51143d2, type: 3}
-  turnUpLeft: {fileID: -7725718618719503330, guid: 94e87f1c4d1c82b429ae731d5676d33e, type: 3}
-  turnDownRight: {fileID: -2372654036860108926, guid: 8e94f4cd58853c346be413b04302a5b1, type: 3}
-  turnDownLeft: {fileID: -7983855019425729346, guid: 27a2eebb3c0c63d41a99c56cb113d1cf, type: 3}
+  startUp: {fileID: 21300000, guid: 8ccec4630b261c842a9cba35a228ac40, type: 3}
+  startDown: {fileID: 21300000, guid: 57b48f78e27e963439886ea72365608a, type: 3}
+  startLeft: {fileID: 21300000, guid: 7ac6a9d2941ff83419bf868f209b4dfb, type: 3}
+  startRight: {fileID: 21300000, guid: 18125e76d91b60444ab2f35f4556f728, type: 3}
+  endUp: {fileID: 21300000, guid: 25af5f9c8b3352a458a0c4e276a8918c, type: 3}
+  endDown: {fileID: 21300000, guid: 62cf2f28fd5d8bf49bef88fa0f032334, type: 3}
+  endLeft: {fileID: 21300000, guid: a2032aad1f8523e4ca486a3b8d1015df, type: 3}
+  endRight: {fileID: 21300000, guid: 9bb4a633fd85bb44f8b21e84e7e0eca6, type: 3}
+  straightVertical: {fileID: 21300000, guid: 333713abd9c2b5f418296ae20b56b740, type: 3}
+  straightHorizontal: {fileID: 21300000, guid: 69a88729172659b458388b3d2376c69f, type: 3}
+  turnUpRight: {fileID: 21300000, guid: b386c3404f716ed479733fffd51143d2, type: 3}
+  turnUpLeft: {fileID: 21300000, guid: 94e87f1c4d1c82b429ae731d5676d33e, type: 3}
+  turnDownRight: {fileID: 21300000, guid: 8e94f4cd58853c346be413b04302a5b1, type: 3}
+  turnDownLeft: {fileID: 21300000, guid: 27a2eebb3c0c63d41a99c56cb113d1cf, type: 3}
 --- !u!1 &1925784902863637511
 GameObject:
   m_ObjectHideFlags: 0
