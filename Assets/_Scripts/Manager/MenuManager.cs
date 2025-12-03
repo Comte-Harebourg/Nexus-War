@@ -24,19 +24,21 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             {
                 GridManager.Instance.MenueDisplay = false;
                 ActionMenue.SetActive(false);
+                if (HighlightedTile != null)
+                {
+                    HighlightedTile.HideRange();
+                    HighlightedTile.Highlight.SetActive(false);
+                    HighlightedTile = null;
+                }
                 if (UnitManager.Instance.SelectedUnit != null)
                 {
                     UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
                     UnitManager.Instance.SelectedUnit.OccupiedTile.ShowRange(UnitManager.Instance.SelectedUnit);
                 }
-                if (HighlightedTile != null)
-                {
-                    HighlightedTile.Highlight.SetActive(false);
-                    HighlightedTile = null;
-                }
                 if (GridManager.Instance.GetTileUnderMouse() != null)
                 {
                     GridManager.Instance.GetTileUnderMouse().Highlight.SetActive(true);
+                    GridManager.Instance.GetTileUnderMouse().OnMouseEnter();
                 }
             }
             else if (UnitManager.Instance.SelectedUnit != null)
@@ -72,5 +74,23 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     {
         ActionMenue.transform.position = new Vector3(2f + Tile.Position.x, 0.5f + Tile.Position.y, 0);
         ActionMenue.SetActive(true);
+    }
+
+    public void Attack()
+    {
+        Debug.Log(HighlightedTile.Position);
+        GridManager.Instance.MenueDisplay = false;
+    }
+
+    public void Wait()
+    {
+        Debug.Log("ça marche");
+        GridManager.Instance.MenueDisplay = false;
+    }
+
+    public void Cancel()
+    {
+        Debug.Log("tu es beau et intelligent");
+        GridManager.Instance.MenueDisplay = false;
     }
 }

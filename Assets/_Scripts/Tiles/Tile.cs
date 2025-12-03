@@ -125,16 +125,20 @@ public abstract class Tile : MonoBehaviour
         }
     }
 
-    void OnMouseEnter()
+    public void OnMouseEnter()
     {
         if (GridManager.Instance.MenueDisplay) return;
         Highlight.SetActive(true);
         MenuManager.Instance.ShowTileInfo(this);
         if (UnitManager.Instance.SelectedUnit != null)
         {
-            if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this) && UnitManager.Instance.SelectedUnit.OccupiedTile != this)
+            if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))
             {
-                PathfindingManager.Instance.ShowPath(UnitManager.Instance.SelectedUnit.OccupiedTile, this, UnitManager.Instance.SelectedUnit);
+                if (UnitManager.Instance.SelectedUnit.OccupiedTile != this)
+                {
+                    PathfindingManager.Instance.ShowPath(UnitManager.Instance.SelectedUnit.OccupiedTile, this, UnitManager.Instance.SelectedUnit);
+                }
+                else PathfindingManager.Instance.ClearArrow();
             }
         }
         Debug.Log($"{TileName} at {Position} neighbors: {Neighbors.Count}");
@@ -207,7 +211,7 @@ public abstract class Tile : MonoBehaviour
                     Vector2Int targetPos = Tile.Position + new Vector2Int(dx, dy);
                     Tile targetTile = GridManager.Instance.GetTileAtPosition(targetPos);
                     if (targetTile == null) continue;
-                    if (targetTile.OccupiedUnit == null)
+                    if (targetTile.OccupiedUnit == null || Unit.OccupiedTile == targetTile)
                     {
                         if (!origin.DarkRedTiles.Contains(targetTile))
                         {
