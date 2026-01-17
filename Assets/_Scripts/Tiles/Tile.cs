@@ -1,110 +1,104 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public abstract class Tile : MonoBehaviour
 {
+    [Header("Infos sur la Tuile")]
     public string TileName;
     public string TileID;
     [SerializeField] protected SpriteRenderer _renderer;
     public GameObject Highlight;
-    [SerializeField] private GameObject _blue;
-    [SerializeField] private GameObject _darkBlue;
-    [SerializeField] private GameObject _red;
-    [SerializeField] private GameObject _darkRed;
-    [SerializeField] private GameObject _orange;
-    [SerializeField] private GameObject _darkOrange;
-    [SerializeField] private GameObject _green;
-    [SerializeField] private GameObject _darkGreen;
+
+    [Header("Overlays Visuels")]
+    [SerializeField] private GameObject _blue;       // Portée de deplacement (Vide)
+    [SerializeField] private GameObject _darkBlue;   // Portee de deplacement (Allie present)
+    [SerializeField] private GameObject _red;        // Portee d'attaque (Ennemis)
+    [SerializeField] private GameObject _darkRed;    // Portee d'attaque (Vide/Allie)
+    [SerializeField] private GameObject _orange;     // Portee de deplacement des ennemis
+    [SerializeField] private GameObject _darkOrange; // Portee d'attaque des ennemis
+
+    [Header("Stats et Statuts")]
     public bool Walkable;
     public bool Roadable;
     [SerializeField] private int cover;
     public float cost;
     public BaseUnit OccupiedUnit;
+
+    [Header("Listes pour le nettoyage")]
     public List<Tile> BlueTiles = new List<Tile>();
     private List<Tile> DarkBlueTiles = new List<Tile>();
-    private List<Tile> RedTiles = new List<Tile>();
+    public List<Tile> RedTiles = new List<Tile>();
     private List<Tile> DarkRedTiles = new List<Tile>();
-    private List<Tile> OrangeTiles = new List<Tile>();
+    public List<Tile> OrangeTiles = new List<Tile>();
     private List<Tile> DarkOrangeTiles = new List<Tile>();
     private List<Tile> GreenTiles = new List<Tile>();
     private List<Tile> DarkGreenTiles = new List<Tile>();
+
+    [Header("Pathfinding et Grille")]
     public List<Tile> Neighbors = new List<Tile>();
     public Vector2Int Position { get; set; }
-    public float g_cost = 0;//Pour le pathfinding
-    public float h_cost = 0;//Pour le pathfinding
-    public float f_cost = 0;//Pour le pathfinding
-    public Tile PrecedentTile = null;//Pour le pathfinding
+    [HideInInspector] public Tile ParentTile = null;
 
-    public virtual void Init(int x, int y) //Vide mais indispensable au chargement de la map
-    {
-        
-    }
+    public virtual void Init(int x, int y) { }
+
+    #region Logique d'interaction
 
     private void OnMouseDown()
     {
         if (GridManager.Instance.MenueDisplay) return;
+
         if (OccupiedUnit != null)
         {
+            // TUILE OCCUPEE PAR UN ENNEMI
             if (OccupiedUnit.Faction != (Faction)GameManager.Instance.PlayerFaction)
             {
                 if (UnitManager.Instance.SelectedUnit == null)
                 {
-                    if (UnitManager.Instance.DangerUnits.Contains(OccupiedUnit))
-                    {
-                        HideDanger();
-                        UnitManager.Instance.DangerUnits.Remove(OccupiedUnit);
-                        UnitManager.Instance.UpdateDanger();
-                    }
-                    else
-                    {
-                        ShowDanger();
-                        UnitManager.Instance.DangerUnits.Add(OccupiedUnit);
-                    }
+                    HandleDangerToggle();
+                }
+                else if (UnitManager.Instance.SelectedUnit.OccupiedTile.RedTiles.Contains(this))
+                {
+                    // SELECTION D'UN ENNEMI POUR UNE ACTION
+                    UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
+                    GridManager.Instance.MenueDisplay = true;
+                    _red.SetActive(true);
+                    RedTiles.Clear();
+                    RedTiles.Add(this);
+                    MenuManager.Instance.ShowActionUI(this);
                 }
                 else
                 {
-                    if (UnitManager.Instance.SelectedUnit.OccupiedTile.RedTiles.Contains(this))//Action UI si cible un ennemi
-                    {
-                        UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
-                        GridManager.Instance.MenueDisplay = true;
-                        _red.SetActive(true);
-                        RedTiles.Clear();
-                        RedTiles.Add(this);
-                        MenuManager.Instance.ShowActionUI(this);
-                    }
-                    else
-                    {
-                        UnitManager.Instance.UnSelectUnit();
-                    }
+                    UnitManager.Instance.UnSelectUnit();
                 }
             }
+            // TUILE OCCUPEE PAR UN ALLIE
             else
             {
                 if (UnitManager.Instance.SelectedUnit == null)
                 {
-                    if (OccupiedUnit.isActive == true) UnitManager.Instance.SelectUnit(OccupiedUnit);
+                    if (OccupiedUnit.isActive) UnitManager.Instance.SelectUnit(OccupiedUnit);
                 }
-                else if (UnitManager.Instance.SelectedUnit == OccupiedUnit)//Action UI si cible soi-même
+                else if (UnitManager.Instance.SelectedUnit == OccupiedUnit)
                 {
+                    // Clic sur soi-meme: on montre le menu d'action a l'endroit actuel
                     HideRange();
                     GridManager.Instance.MenueDisplay = true;
                     ShowAttackRange(UnitManager.Instance.SelectedUnit);
                     MenuManager.Instance.ShowActionUI(this);
                 }
-                //Exceptions à faire pour certains cas comme les médecins et les structures
                 else
                 {
                     UnitManager.Instance.UnSelectUnit();
                 }
             }
         }
-        else
+        else // TUILE VIDE
         {
             if (UnitManager.Instance.SelectedUnit != null)
             {
-                if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))//ActionUI si cible une case vide
+                if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))
                 {
                     MenuManager.Instance.HighlightedTile = this;
                     UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
@@ -117,11 +111,21 @@ public abstract class Tile : MonoBehaviour
                     UnitManager.Instance.UnSelectUnit();
                 }
             }
-            else
-            {
-                //MenueDisplay = true;
-                //Montre l'UI du sous-menu (Géré par MenuManager)
-            }
+        }
+    }
+
+    private void HandleDangerToggle()
+    {
+        if (UnitManager.Instance.DangerUnits.Contains(OccupiedUnit))
+        {
+            HideDanger();
+            UnitManager.Instance.DangerUnits.Remove(OccupiedUnit);
+            UnitManager.Instance.UpdateDanger();
+        }
+        else
+        {
+            ShowDanger();
+            UnitManager.Instance.DangerUnits.Add(OccupiedUnit);
         }
     }
 
@@ -130,204 +134,197 @@ public abstract class Tile : MonoBehaviour
         if (GridManager.Instance.MenueDisplay) return;
         Highlight.SetActive(true);
         MenuManager.Instance.ShowTileInfo(this);
+
         if (UnitManager.Instance.SelectedUnit != null)
         {
-            if (UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles.Contains(this))
+            var selectedTile = UnitManager.Instance.SelectedUnit.OccupiedTile;
+            // Dans Tile.OnMouseEnter()
+            if (selectedTile.BlueTiles.Contains(this))
             {
-                if (UnitManager.Instance.SelectedUnit.OccupiedTile != this)
+                if (selectedTile != this)
                 {
-                    PathfindingManager.Instance.ShowPath(UnitManager.Instance.SelectedUnit.OccupiedTile, this, UnitManager.Instance.SelectedUnit);
+                    // Plus besoin de passer Unit anymore, le chemin est déja dans les Tuiles
+                    ArrowManager.Instance.ShowPath(selectedTile, this);
                 }
-                else PathfindingManager.Instance.ClearArrow();
+                else ArrowManager.Instance.ClearArrow();
             }
         }
-        Debug.Log($"{TileName} at {Position} neighbors: {Neighbors.Count}");
     }
 
-    void OnMouseExit()
+    private void OnMouseExit()
     {
         if (GridManager.Instance.MenueDisplay) return;
         Highlight.SetActive(false);
         MenuManager.Instance.ShowTileInfo(null);
     }
 
-    public void SetUnit(BaseUnit Unit)//Fonction pour la génération de l'unité à ne pas utiliser pour les déplacements
+    #endregion
+
+    // Une seule fonction pour tout les types de recherches différents (porte de deplacement, d'attaque, de danger)
+    #region Recherche Unifiée
+
+    public void ShowRange(BaseUnit unit) => PerformGenericSearch(unit, unit.speed, false);
+    public void ShowAttackRange(BaseUnit unit) => PerformGenericSearch(unit, 0, false);
+    public void ShowDanger() => PerformGenericSearch(OccupiedUnit, OccupiedUnit.speed, true);
+
+    private void PerformGenericSearch(BaseUnit unit, float speed, bool isDanger)
+{
+        this.ParentTile = null; // On supprime le parent de la tuile de départ
+        SetOverlayState(isDanger ? _orange : _blue, true);
+        
+        // Tuile de depart
+        SetOverlayState(isDanger ? _orange : _blue, true);
+        (isDanger ? OrangeTiles : BlueTiles).Add(this);
+
+        // 1. Recherche des tuiles accessibles
+        Dictionary<Tile, float> visited = new Dictionary<Tile, float>();
+        CalculateMovement(this, speed, unit, isDanger, visited);
+
+        // 2. Recherche de l'attaque (calculée à partir de toutes les tuiles accessibles)
+        CalculateAttack(unit, isDanger, isDanger ? OrangeTiles : BlueTiles);
+    }
+
+    private void CalculateMovement(Tile current, float remainingSpeed, BaseUnit unit, bool isDanger, Dictionary<Tile, float> visited)
     {
-        if (Unit.OccupiedTile != null) Unit.OccupiedTile = null;
+        visited[current] = remainingSpeed;
+
+        foreach (Tile neighbor in current.Neighbors)
+        {
+            float nextSpeed = remainingSpeed - neighbor.cost;
+            if (nextSpeed < 0) continue;
+
+            // Contraintes de mouvement des Unités
+            bool canEnter = (unit.Infantry && neighbor.Walkable) || (unit.Vehicle && neighbor.Roadable);
+            if (!canEnter) continue;
+
+            // Contraintes de faciton (Blocage si un ennemi est sur la tuile)
+            bool hasEnemy = neighbor.OccupiedUnit != null && neighbor.OccupiedUnit.Faction != unit.Faction;
+            if (hasEnemy) continue;
+
+            // Optimisation: Recursion seulement si ce chemin est moins couteux qu'un déja trouve
+            if (!visited.ContainsKey(neighbor) || visited[neighbor] < nextSpeed)
+            {
+                // ON ENREGISTRE LE CHEMIN
+                neighbor.ParentTile = current;
+
+                bool isAlly = neighbor.OccupiedUnit != null && neighbor.OccupiedUnit.Faction == unit.Faction;
+                ApplyMovementVisuals(neighbor, isAlly, isDanger);
+                CalculateMovement(neighbor, nextSpeed, unit, isDanger, visited);
+            }
+        }
+    }
+
+    private void ApplyMovementVisuals(Tile target, bool isAlly, bool isDanger)
+    {
+        if (isDanger)
+        {
+            if (!OrangeTiles.Contains(target))
+            {
+                target._orange.SetActive(true);
+                OrangeTiles.Add(target);
+            }
+        }
+        else
+        {
+            if (isAlly)
+            {
+                if (!DarkBlueTiles.Contains(target)) { target._darkBlue.SetActive(true); DarkBlueTiles.Add(target); }
+            }
+            else
+            {
+                if (!BlueTiles.Contains(target)) { target._blue.SetActive(true); BlueTiles.Add(target); }
+            }
+        }
+    }
+
+    private void CalculateAttack(BaseUnit unit, bool isDanger, List<Tile> moveRange)
+    {
+        foreach (Tile moveTile in moveRange)
+        {
+            for (int dx = -unit.maxAttackRange; dx <= unit.maxAttackRange; dx++)
+            {
+                for (int dy = -unit.maxAttackRange; dy <= unit.maxAttackRange; dy++)
+                {
+                    int dist = Mathf.Abs(dx) + Mathf.Abs(dy);
+                    if (dist < unit.minAttackRange || dist > unit.maxAttackRange) continue;
+
+                    Tile target = GridManager.Instance.GetTileAtPosition(moveTile.Position + new Vector2Int(dx, dy));
+                    if (target == null) continue;
+
+                    ApplyAttackVisuals(target, unit, isDanger);
+                }
+            }
+        }
+    }
+
+    private void ApplyAttackVisuals(Tile target, BaseUnit unit, bool isDanger)
+    {
+        if (isDanger)
+        {
+            // Le danger n'est affiché que sur les tuiles qui ne sont PAS marquées pour le mouvement
+            if (!OrangeTiles.Contains(target) && !DarkOrangeTiles.Contains(target))
+            {
+                target._darkOrange.SetActive(true);
+                DarkOrangeTiles.Add(target);
+            }
+        }
+        else
+        {
+            bool isEnemy = target.OccupiedUnit != null && target.OccupiedUnit.Faction != unit.Faction;
+            if (isEnemy)
+            {
+                if (!RedTiles.Contains(target)) { target._red.SetActive(true); RedTiles.Add(target); }
+            }
+            else if (target.OccupiedUnit != unit) // Ne surligne pas sa propre case comme portée d'attaque
+            {
+                if (!DarkRedTiles.Contains(target)) { target._darkRed.SetActive(true); DarkRedTiles.Add(target); }
+            }
+        }
+    }
+
+    #endregion
+
+    #region Helper Methods
+
+    public void SetUnit(BaseUnit Unit)
+    {
+        if (Unit.OccupiedTile != null) Unit.OccupiedTile.OccupiedUnit = null;
         Unit.transform.position = transform.position;
         OccupiedUnit = Unit;
         Unit.OccupiedTile = this;
     }
 
-    public void ShowRange(BaseUnit Unit)
-    {
-        _blue.SetActive(true);
-        BlueTiles.Add(this);
-        SearchMovementRange(this, Neighbors, Unit, Unit.speed);
-        SearchAttackRange(this, Unit);
-    }
-
-    public void ShowAttackRange(BaseUnit Unit)
-    {
-        _blue.SetActive(true);
-        BlueTiles.Add(this);
-        SearchMovementRange(this, Neighbors, Unit, 0);
-        SearchAttackRange(this, Unit);
-    }
-
-    public void SearchMovementRange(Tile origin, List<Tile> List, BaseUnit Unit, float Speed)
-    {
-        if (Speed < 0) return;
-        foreach (Tile Tile in List)
-        {
-            if (Tile != origin && Speed - Tile.cost >= 0 && ((Unit.Infantry && Tile.Walkable) || (Unit.Vehicle && Tile.Roadable)))
-            {
-                if (Tile.OccupiedUnit == null)
-                {
-                    Tile._blue.SetActive(true);
-                    origin.BlueTiles.Add(Tile);
-                    SearchMovementRange(origin, Tile.Neighbors, Unit, Speed - Tile.cost);
-                }
-                else if (Tile.OccupiedUnit.Faction == (Faction)GameManager.Instance.PlayerFaction)
-                {
-                    Tile._darkBlue.SetActive(true);
-                    origin.DarkBlueTiles.Add(Tile);
-                    SearchMovementRange(origin, Tile.Neighbors, Unit, Speed - Tile.cost);
-                }
-            }
-        }
-    }
-
-    public void SearchAttackRange(Tile origin, BaseUnit Unit)
-    {
-        foreach (Tile Tile in origin.BlueTiles)
-        {
-            for (int dx = -Unit.maxAttackRange; dx <= Unit.maxAttackRange; dx++)
-            {
-                for (int dy = -Unit.maxAttackRange; dy <= Unit.maxAttackRange; dy++)
-                {
-                    int dist = Mathf.Abs(dx) + Mathf.Abs(dy);
-                    if (dist < Unit.minAttackRange || dist > Unit.maxAttackRange) continue;
-                    Vector2Int targetPos = Tile.Position + new Vector2Int(dx, dy);
-                    Tile targetTile = GridManager.Instance.GetTileAtPosition(targetPos);
-                    if (targetTile == null) continue;
-                    if (targetTile.OccupiedUnit == null || Unit.OccupiedTile == targetTile)
-                    {
-                        if (!origin.DarkRedTiles.Contains(targetTile))
-                        {
-                            targetTile._darkRed.SetActive(true);
-                            origin.DarkRedTiles.Add(targetTile);
-                        }
-                    }
-                    else if (targetTile.OccupiedUnit.Faction != (Faction)GameManager.Instance.PlayerFaction)
-                    {
-                        if (!origin.RedTiles.Contains(targetTile))
-                        {
-                            targetTile._red.SetActive(true);
-                            origin.RedTiles.Add(targetTile);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     public void HideRange()
     {
-        foreach (Tile Tile in BlueTiles)
-        {
-            Tile._blue.SetActive(false);
-        }
-        BlueTiles.Clear();
-        foreach (Tile Tile in DarkBlueTiles)
-        {
-            Tile._darkBlue.SetActive(false);
-        }
-        DarkBlueTiles.Clear();
-        foreach (Tile Tile in RedTiles)
-        {
-            Tile._red.SetActive(false);
-        }
-        RedTiles.Clear();
-        foreach (Tile Tile in DarkRedTiles)
-        {
-            Tile._darkRed.SetActive(false);
-        }
-        DarkRedTiles.Clear();
+        ClearList(BlueTiles, "_blue");
+        ClearList(DarkBlueTiles, "_darkBlue");
+        ClearList(RedTiles, "_red");
+        ClearList(DarkRedTiles, "_darkRed");
     }
 
-    public void ShowDanger()//Similaire à ShowRange mais pour les ennemis
+    public void HideDanger()
     {
-        _orange.SetActive(true);
-        OrangeTiles.Add(this);
-        SearchDangerMovementRange(this, OccupiedUnit.speed, Neighbors, OccupiedUnit.Infantry, OccupiedUnit.Vehicle);
-        SearchDangerAttackRange(this, OccupiedUnit.minAttackRange, OccupiedUnit.maxAttackRange);
+        ClearList(OrangeTiles, "_orange");
+        ClearList(DarkOrangeTiles, "_darkOrange");
     }
 
-    public void SearchDangerMovementRange(Tile origin, float Speed, List<Tile> List, bool Infantry, bool Vehicle)//Similaire à SearchMovementRange mais pour les ennemis
+    private void ClearList(List<Tile> list, string fieldName)
     {
-        if (Speed < 0) return;
-        foreach (Tile Tile in List)
+        foreach (Tile t in list)
         {
-            if (Tile != origin && Speed - Tile.cost >= 0 && ((Infantry && Tile.Walkable) || (Vehicle && Tile.Roadable)))
-            {
-                if (Tile.OccupiedUnit == null)
-                {
-                    Tile._orange.SetActive(true);
-                    origin.OrangeTiles.Add(Tile);
-                    SearchDangerMovementRange(origin, Speed - Tile.cost, Tile.Neighbors, Infantry, Vehicle);
-                }
-                else if (Tile.OccupiedUnit.Faction == origin.OccupiedUnit.Faction)
-                {
-                    Tile._orange.SetActive(true);
-                    origin.OrangeTiles.Add(Tile);
-                    SearchDangerMovementRange(origin, Speed - Tile.cost, Tile.Neighbors, Infantry, Vehicle);
-                }
-            }
+            if (fieldName == "_blue") t._blue.SetActive(false);
+            else if (fieldName == "_darkBlue") t._darkBlue.SetActive(false);
+            else if (fieldName == "_red") t._red.SetActive(false);
+            else if (fieldName == "_darkRed") t._darkRed.SetActive(false);
+            else if (fieldName == "_orange") t._orange.SetActive(false);
+            else if (fieldName == "_darkOrange") t._darkOrange.SetActive(false);
         }
+        list.Clear();
     }
 
-    public void SearchDangerAttackRange(Tile origin, int minAttackRange, int maxAttackRange)//Similaire à SearchAttackRange mais pour les ennemis
+    private void SetOverlayState(GameObject overlay, bool state)
     {
-        foreach (Tile Tile in origin.OrangeTiles)
-        {
-            for (int dx = -maxAttackRange; dx <= maxAttackRange; dx++)
-            {
-                for (int dy = -maxAttackRange; dy <= maxAttackRange; dy++)
-                {
-                    int dist = Mathf.Abs(dx) + Mathf.Abs(dy);
-                    if (dist < minAttackRange || dist > maxAttackRange) continue;
-                    Vector2Int targetPos = Tile.Position + new Vector2Int(dx, dy);
-                    Tile targetTile = GridManager.Instance.GetTileAtPosition(targetPos);
-                    if (targetTile == null) continue;
-                    if (origin.OrangeTiles.Contains(targetTile)) continue;
-                    if (targetTile.OccupiedUnit == null)
-                    {
-                        targetTile._darkOrange.SetActive(true);
-                        origin.DarkOrangeTiles.Add(targetTile);
-                    }
-                    else if (targetTile.OccupiedUnit.Faction != origin.OccupiedUnit.Faction)
-                    {
-                        targetTile._darkOrange.SetActive(true);
-                        origin.DarkOrangeTiles.Add(targetTile);
-                    }
-                }
-            }
-        }
-    }
-
-    public void HideDanger()//Similaire à ShowRange mais pour les ennemis
-    {
-        foreach (Tile Tile in OrangeTiles)
-        {
-            Tile._orange.SetActive(false);
-        }
-        OrangeTiles.Clear();
-        foreach (Tile Tile in DarkOrangeTiles)
-        {
-            Tile._darkOrange.SetActive(false);
-        }
-        DarkOrangeTiles.Clear();
+        if (overlay != null) overlay.SetActive(state);
     }
 
     public void FindNeighbors()
@@ -337,8 +334,8 @@ public abstract class Tile : MonoBehaviour
         foreach (var dir in directions)
         {
             Tile neighbor = GridManager.Instance.GetTileAtPosition(Position + dir);
-            if (neighbor != null)
-                Neighbors.Add(neighbor);
+            if (neighbor != null) Neighbors.Add(neighbor);
         }
     }
+    #endregion
 }

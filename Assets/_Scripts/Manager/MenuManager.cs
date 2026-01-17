@@ -43,7 +43,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             }
             else if (UnitManager.Instance.SelectedUnit != null)
             {
-                PathfindingManager.Instance.ClearArrow();
+                ArrowManager.Instance.ClearArrow();
                 UnitManager.Instance.UnSelectUnit();
             }
             else
