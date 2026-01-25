@@ -9,6 +9,8 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
     public GameObject ActionMenue;
     public Tile HighlightedTile;
+    private Tile MoveTile;
+    private Tile AttackTile;
 
     private void Awake()
     {
@@ -22,24 +24,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         {
             if (GridManager.Instance.MenueDisplay == true)
             {
-                GridManager.Instance.MenueDisplay = false;
-                ActionMenue.SetActive(false);
-                if (HighlightedTile != null)
-                {
-                    HighlightedTile.HideRange();
-                    HighlightedTile.Highlight.SetActive(false);
-                    HighlightedTile = null;
-                }
-                if (UnitManager.Instance.SelectedUnit != null)
-                {
-                    UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
-                    UnitManager.Instance.SelectedUnit.OccupiedTile.ShowRange(UnitManager.Instance.SelectedUnit);
-                }
-                if (GridManager.Instance.GetTileUnderMouse() != null)
-                {
-                    GridManager.Instance.GetTileUnderMouse().Highlight.SetActive(true);
-                    GridManager.Instance.GetTileUnderMouse().OnMouseEnter();
-                }
+                Cancel();
             }
             else if (UnitManager.Instance.SelectedUnit != null)
             {
@@ -68,29 +53,78 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Tile.OccupiedUnit.UnitName;
             _tileUnitObject.SetActive(true);
         }
+        else
+        {
+            _tileUnitObject.SetActive(false);
+        }
     }
 
-    public void ShowActionUI(Tile Tile)
+    public void ShowActionUI(Tile MTile, Tile ATile)
     {
-        ActionMenue.transform.position = new Vector3(2f + Tile.Position.x, 0.5f + Tile.Position.y, 0);
+        ActionMenue.transform.position = new Vector3(2f + ATile.Position.x, 0.5f + ATile.Position.y, 0);
+        MoveTile = MTile;
+        AttackTile = ATile;
         ActionMenue.SetActive(true);
     }
 
     public void Attack()
     {
-        Debug.Log(HighlightedTile.Position);
-        GridManager.Instance.MenueDisplay = false;
+        if (MoveTile != AttackTile)
+        {
+            MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
+            UnitManager.Instance.Fight(UnitManager.Instance.SelectedUnit, AttackTile.OccupiedUnit);
+            AttackTile.Highlight.SetActive(false);
+        }
+        else
+        {
+
+        }
+        //Animation déplacement
+        //Animation attaque
+        //Épuisement unité
+        Cancel();
+        ArrowManager.Instance.ClearArrow();
+        UnitManager.Instance.UnSelectUnit();
     }
 
     public void Wait()
     {
-        Debug.Log("ça marche");
-        GridManager.Instance.MenueDisplay = false;
+        MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
+        if (MoveTile != AttackTile) AttackTile.Highlight.SetActive(false);
+        //Animation déplacement
+        //Épuisement unité
+        Cancel();
+        ArrowManager.Instance.ClearArrow();
+        UnitManager.Instance.UnSelectUnit();
     }
 
     public void Cancel()
     {
-        Debug.Log("tu es beau et intelligent");
         GridManager.Instance.MenueDisplay = false;
+        ActionMenue.SetActive(false);
+        if (HighlightedTile != null)
+        {
+            HighlightedTile.HideRange();
+            HighlightedTile.Highlight.SetActive(false);
+            HighlightedTile = null;
+        }
+        if (UnitManager.Instance.SelectedUnit != null)
+        {
+            UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
+            UnitManager.Instance.SelectedUnit.OccupiedTile.ShowRange(UnitManager.Instance.SelectedUnit);
+        }
+        if (GridManager.Instance.GetTileUnderMouse() != null)
+        {
+            GridManager.Instance.GetTileUnderMouse().Highlight.SetActive(true);
+            GridManager.Instance.GetTileUnderMouse().OnMouseEnter();
+        }
+        MoveTile = null;
+        AttackTile = null;
+        ShowTileInfo(GridManager.Instance.GetTileUnderMouse());
+    }
+
+    public void EndTurn()
+    {
+        GameManager.Instance.NextTurn();
     }
 }

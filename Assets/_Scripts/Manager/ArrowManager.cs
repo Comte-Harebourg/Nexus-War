@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowManager : MonoBehaviour
 {
     public static ArrowManager Instance;
-    private List<Tile> PathTiles = new List<Tile>();
+    public List<Tile> PathTiles = new List<Tile>();
 
     // Helpers pour le direction des flèches
     private bool IsUp(Vector2Int v) => v == Vector2Int.up;

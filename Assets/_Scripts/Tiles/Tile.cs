@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class Tile : MonoBehaviour
@@ -66,7 +67,15 @@ public abstract class Tile : MonoBehaviour
                     _red.SetActive(true);
                     RedTiles.Clear();
                     RedTiles.Add(this);
-                    MenuManager.Instance.ShowActionUI(this);
+                    if (ArrowManager.Instance.PathTiles.Count() != 0)
+                    {
+                        MenuManager.Instance.ShowActionUI(ArrowManager.Instance.PathTiles.Last(), this);
+                    }
+                    else
+                    {
+                        MenuManager.Instance.ShowActionUI(UnitManager.Instance.SelectedUnit.OccupiedTile, this);
+                    }
+                    
                 }
                 else
                 {
@@ -86,10 +95,11 @@ public abstract class Tile : MonoBehaviour
                     HideRange();
                     GridManager.Instance.MenueDisplay = true;
                     ShowAttackRange(UnitManager.Instance.SelectedUnit);
-                    MenuManager.Instance.ShowActionUI(this);
+                    MenuManager.Instance.ShowActionUI(this,this);
                 }
                 else
                 {
+                    ArrowManager.Instance.ClearArrow();
                     UnitManager.Instance.UnSelectUnit();
                 }
             }
@@ -104,10 +114,11 @@ public abstract class Tile : MonoBehaviour
                     UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
                     GridManager.Instance.MenueDisplay = true;
                     ShowAttackRange(UnitManager.Instance.SelectedUnit);
-                    MenuManager.Instance.ShowActionUI(this);
+                    MenuManager.Instance.ShowActionUI(this,this);
                 }
                 else
                 {
+                    ArrowManager.Instance.ClearArrow();
                     UnitManager.Instance.UnSelectUnit();
                 }
             }

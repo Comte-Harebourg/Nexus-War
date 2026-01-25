@@ -36,4 +36,9 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             Unit.OccupiedTile.ShowDanger();
         }
     }
+
+    public void Fight(BaseUnit Attacker, BaseUnit Defenser)
+    {
+        Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
+    }
 }

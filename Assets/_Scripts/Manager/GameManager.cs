@@ -98,6 +98,11 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void NextTurn()
+    {
+        ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length));
+    }
 }
 
 public enum GameState //Initialisation des différentes phases
