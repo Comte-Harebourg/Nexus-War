@@ -18,23 +18,37 @@ public class ArrowManager : MonoBehaviour
     public void ShowPath(Tile start, Tile end)
     {
         ClearArrow();
-        PathTiles.Clear();
-
-        // On retourne sur nos pas en utilisant ParentTile définie pendant la recherche du mouvement
-        Tile current = end;
-
-        // Check de securite: On verifie que la tuile de fin fait bien partie du chemin atteignable
-        while (current != null)
+        float cost = UnitManager.Instance.SelectedUnit.speed + start.cost - end.cost;
+        foreach (Tile Tile in PathTiles)
         {
-            PathTiles.Add(current);
-            if (current == start) break;
-            current = current.ParentTile;
+            cost -= Tile.cost;
         }
-
-        // On n'affiche que si on a bien atteint le départ
-        if (PathTiles.Contains(start))
+        Debug.Log(cost);
+        if (cost >= 0 && PathTiles.Count != 0 && !PathTiles.Contains(end))
         {
+            Debug.Log("Case accesible -> Chemin du joueur");
+            PathTiles.Add(end);
+        }
+        else
+        {
+            Debug.Log("Case inaccesible -> Chemin optimal");
+            PathTiles.Clear();
+            Tile current = end; // On retourne sur nos pas en utilisant ParentTile définie pendant la recherche du mouvement
+            while (current != null) // Check de securite: On verifie que la tuile de fin fait bien partie du chemin atteignable
+            {
+                PathTiles.Add(current);
+                if (current == start) break;
+                current = current.ParentTile;
+            }
             PathTiles.Reverse();
+        }
+        if (PathTiles.Contains(start)) // On n'affiche que si on a bien atteint le départ
+        {
+            ClearArrow();
+            foreach(Tile Tile in PathTiles)
+            {
+                Debug.Log(Tile.Position);
+            }
             RenderArrowSprites();
         }
     }
@@ -46,7 +60,6 @@ public class ArrowManager : MonoBehaviour
             var renderer = tile.GetComponent<ArrowTileRenderer>();
             if (renderer != null) renderer.Clear();
         }
-        PathTiles.Clear();
     }
 
     private void RenderArrowSprites()

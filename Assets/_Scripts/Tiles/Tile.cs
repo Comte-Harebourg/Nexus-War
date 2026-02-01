@@ -150,14 +150,14 @@ public abstract class Tile : MonoBehaviour
         {
             var selectedTile = UnitManager.Instance.SelectedUnit.OccupiedTile;
             // Dans Tile.OnMouseEnter()
-            if (selectedTile.BlueTiles.Contains(this))
+            if (selectedTile.BlueTiles.Contains(this) && selectedTile != this)
             {
-                if (selectedTile != this)
-                {
-                    // Plus besoin de passer Unit anymore, le chemin est déja dans les Tuiles
-                    ArrowManager.Instance.ShowPath(selectedTile, this);
-                }
-                else ArrowManager.Instance.ClearArrow();
+                ArrowManager.Instance.ShowPath(selectedTile, this);
+            }
+            else
+            {
+                ArrowManager.Instance.ClearArrow();
+                ArrowManager.Instance.PathTiles.Clear();
             }
         }
     }
@@ -180,7 +180,7 @@ public abstract class Tile : MonoBehaviour
 
     private void PerformGenericSearch(BaseUnit unit, float speed, bool isDanger)
 {
-        this.ParentTile = null; // On supprime le parent de la tuile de départ
+        ParentTile = null; // On supprime le parent de la tuile de départ
         SetOverlayState(isDanger ? _orange : _blue, true);
         
         // Tuile de depart
