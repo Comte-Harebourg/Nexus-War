@@ -48,9 +48,12 @@ public abstract class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GridManager.Instance.MenueDisplay) return;
-
-        if (OccupiedUnit != null)
+        if (MenuManager.Instance.AttackDisplay && _red.activeSelf) //Sélection d'une cible pour l'attaque
+        {
+            MenuManager.Instance.TryAttack(this);
+        }
+        else if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay) return;
+        else if (OccupiedUnit != null)
         {
             // TUILE OCCUPEE PAR UN ENNEMI
             if (OccupiedUnit.Faction != (Faction)GameManager.Instance.PlayerFaction)
@@ -63,11 +66,11 @@ public abstract class Tile : MonoBehaviour
                 {
                     // SELECTION D'UN ENNEMI POUR UNE ACTION
                     UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
-                    GridManager.Instance.MenueDisplay = true;
+                    MenuManager.Instance.MenueDisplay = true;
                     _red.SetActive(true);
                     RedTiles.Clear();
                     RedTiles.Add(this);
-                    if (ArrowManager.Instance.PathTiles.Count() != 0)
+                    if (ArrowManager.Instance.PathTiles.Count != 0)
                     {
                         MenuManager.Instance.ShowActionUI(ArrowManager.Instance.PathTiles.Last(), this);
                     }
@@ -93,7 +96,7 @@ public abstract class Tile : MonoBehaviour
                 {
                     // Clic sur soi-meme: on montre le menu d'action a l'endroit actuel
                     HideRange();
-                    GridManager.Instance.MenueDisplay = true;
+                    MenuManager.Instance.MenueDisplay = true;
                     ShowAttackRange(UnitManager.Instance.SelectedUnit);
                     MenuManager.Instance.ShowActionUI(this,this);
                 }
@@ -112,7 +115,7 @@ public abstract class Tile : MonoBehaviour
                 {
                     MenuManager.Instance.HighlightedTile = this;
                     UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
-                    GridManager.Instance.MenueDisplay = true;
+                    MenuManager.Instance.MenueDisplay = true;
                     ShowAttackRange(UnitManager.Instance.SelectedUnit);
                     MenuManager.Instance.ShowActionUI(this,this);
                 }
@@ -142,7 +145,7 @@ public abstract class Tile : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        if (GridManager.Instance.MenueDisplay) return;
+        if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay) return;
         Highlight.SetActive(true);
         MenuManager.Instance.ShowTileInfo(this);
 
@@ -154,6 +157,10 @@ public abstract class Tile : MonoBehaviour
             {
                 ArrowManager.Instance.ShowPath(selectedTile, this);
             }
+            else if (selectedTile.RedTiles.Contains(this))
+            {
+                //À développer
+            }
             else
             {
                 ArrowManager.Instance.ClearArrow();
@@ -164,7 +171,7 @@ public abstract class Tile : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (GridManager.Instance.MenueDisplay) return;
+        if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay) return;
         Highlight.SetActive(false);
         MenuManager.Instance.ShowTileInfo(null);
     }

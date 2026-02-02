@@ -9,8 +9,10 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
     public GameObject ActionMenue;
     public Tile HighlightedTile;
-    private Tile MoveTile;
-    private Tile AttackTile;
+    private Tile MoveTile; //Case où l'unité se déplace pour attaquer
+    private Tile AttackTile; //Case de la cible de l'attaque
+    public bool MenueDisplay = false;
+    public bool AttackDisplay = false;
 
     private void Awake()
     {
@@ -22,10 +24,13 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     {
         if (Input.GetMouseButtonDown(1)) //Click logic
         {
-            if (GridManager.Instance.MenueDisplay == true)
+            if (AttackDisplay == true)
             {
-                Cancel();
+                AttackDisplay = false;
+                MenueDisplay = true;
+                ActionMenue.SetActive(true);
             }
+            else if (MenueDisplay == true) Cancel();
             else if (UnitManager.Instance.SelectedUnit != null)
             {
                 ArrowManager.Instance.ClearArrow();
@@ -74,17 +79,38 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
             UnitManager.Instance.Fight(UnitManager.Instance.SelectedUnit, AttackTile.OccupiedUnit);
             AttackTile.Highlight.SetActive(false);
+            MoveTile.Highlight.SetActive(false);
+            //Animation déplacement
+            //Animation attaque
+            //Épuisement unité
+            Cancel();
+            ArrowManager.Instance.ClearArrow();
+            UnitManager.Instance.UnSelectUnit();
+            AttackTile = null;
+            MoveTile = null;
         }
-        else
+        else if (AttackTile.RedTiles.Count != 0)
         {
-
+            AttackDisplay = true;
+            ActionMenue.SetActive(false);
+            MenueDisplay = false;
         }
+    }
+
+    public void TryAttack(Tile Tile)
+    {
+        AttackDisplay = false;
+        MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
+        UnitManager.Instance.Fight(UnitManager.Instance.SelectedUnit, Tile.OccupiedUnit);
+        AttackTile.Highlight.SetActive(false);
         //Animation déplacement
         //Animation attaque
         //Épuisement unité
         Cancel();
         ArrowManager.Instance.ClearArrow();
         UnitManager.Instance.UnSelectUnit();
+        AttackTile = null;
+        MoveTile = null;
     }
 
     public void Wait()
@@ -100,7 +126,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 
     public void Cancel()
     {
-        GridManager.Instance.MenueDisplay = false;
+        MenueDisplay = false;
         ActionMenue.SetActive(false);
         if (HighlightedTile != null)
         {
@@ -116,6 +142,8 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         if (GridManager.Instance.GetTileUnderMouse() != null)
         {
             GridManager.Instance.GetTileUnderMouse().Highlight.SetActive(true);
+            ArrowManager.Instance.ClearArrow(); //Pour éviter des des bugs visuels
+            ArrowManager.Instance.PathTiles.Clear(); //Pour éviter des des bugs de Pathfinding
             GridManager.Instance.GetTileUnderMouse().OnMouseEnter();
         }
         MoveTile = null;

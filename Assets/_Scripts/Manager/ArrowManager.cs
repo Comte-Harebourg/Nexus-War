@@ -23,8 +23,7 @@ public class ArrowManager : MonoBehaviour
         {
             cost -= Tile.cost;
         }
-        Debug.Log(cost);
-        if (cost >= 0 && PathTiles.Count != 0 && !PathTiles.Contains(end))
+        if (cost >= 0 && PathTiles.Count != 0 && !PathTiles.Contains(end) && PathTiles.Count == Math.Abs(end.Position.x - start.Position.x) + Math.Abs(end.Position.y - start.Position.y))//On vérifie si on peut suivre le tracé du joueur
         {
             Debug.Log("Case accesible -> Chemin du joueur");
             PathTiles.Add(end);
@@ -45,10 +44,6 @@ public class ArrowManager : MonoBehaviour
         if (PathTiles.Contains(start)) // On n'affiche que si on a bien atteint le départ
         {
             ClearArrow();
-            foreach(Tile Tile in PathTiles)
-            {
-                Debug.Log(Tile.Position);
-            }
             RenderArrowSprites();
         }
     }
