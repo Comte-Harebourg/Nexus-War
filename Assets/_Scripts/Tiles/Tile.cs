@@ -152,14 +152,13 @@ public abstract class Tile : MonoBehaviour
         if (UnitManager.Instance.SelectedUnit != null)
         {
             var selectedTile = UnitManager.Instance.SelectedUnit.OccupiedTile;
-            // Dans Tile.OnMouseEnter()
             if (selectedTile.BlueTiles.Contains(this) && selectedTile != this)
             {
                 ArrowManager.Instance.ShowPath(selectedTile, this);
             }
             else if (selectedTile.RedTiles.Contains(this))
             {
-                //À développer
+                ArrowManager.Instance.ShowPath(selectedTile, SearchNearestTile(this, UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles, UnitManager.Instance.SelectedUnit.minAttackRange, UnitManager.Instance.SelectedUnit.maxAttackRange));
             }
             else
             {
@@ -354,6 +353,27 @@ public abstract class Tile : MonoBehaviour
             Tile neighbor = GridManager.Instance.GetTileAtPosition(Position + dir);
             if (neighbor != null) Neighbors.Add(neighbor);
         }
+    }
+
+    public Tile SearchNearestTile(Tile Start, List<Tile> Liste, int MinRange, int MaxRange)
+    //Cherche la case la plus proche de Start dans la liste Liste à une portée maximale de MaxRange et une portée minimale de MinRange sinon renvoit null
+    {
+        Debug.Log("Pizza");
+        Tile End = null;
+        if (Liste.Count() != 0)
+        {
+            foreach (Tile Tile in Liste)
+            {
+                if (Mathf.Abs(Tile.Position.x-Start.Position.x) + Mathf.Abs(Tile.Position.y - Start.Position.y)<=MaxRange && Mathf.Abs(Tile.Position.x - Start.Position.x) + Mathf.Abs(Tile.Position.y - Start.Position.y) >= MinRange)
+                //On vérifie que la distance entre Tile et Start est comprise entre MinRnage et MaxRange
+                {
+                    End = Tile;
+                    MaxRange = Mathf.Abs(Tile.Position.x - Start.Position.x) + Mathf.Abs(Tile.Position.y - Start.Position.y);
+                    //MaxRange devient la distance entre Start et Tile
+                }
+            }
+        }
+        return (End);
     }
     #endregion
 }
