@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: d3000d502078f984880981debee112bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6060076895878949950
+    second: Oro_Support_0
+  - first:
+      213: -5747441055766079830
+    second: Oro_Support_1
+  - first:
+      213: -4788672889949832873
+    second: Oro_Support_2
+  - first:
+      213: -5338657438525357039
+    second: Oro_Support_3
+  - first:
+      213: 1560667945166590206
+    second: Oro_Support_4
+  - first:
+      213: 6869995645738105193
+    second: Oro_Support_5
+  - first:
+      213: -5131832703365420376
+    second: Oro_Support_6
+  - first:
+      213: 1721552466764487920
+    second: Oro_Support_7
+  - first:
+      213: -7553888599677805435
+    second: Oro_Support_8
+  - first:
+      213: 4171729487143688547
+    second: Oro_Support_9
+  - first:
+      213: 164485099666659960
+    second: Oro_Support_10
+  - first:
+      213: -1568997329463057684
+    second: Oro_Support_11
+  - first:
+      213: -1551590313439121672
+    second: Oro_Support_12
+  - first:
+      213: -2026107845567595674
+    second: Oro_Support_13
+  - first:
+      213: -6865379863042244247
+    second: Oro_Support_14
+  - first:
+      213: 5040545854154509748
+    second: Oro_Support_15
+  - first:
+      213: 5860750986624965785
+    second: Oro_Support_16
+  - first:
+      213: -6693854997197403214
+    second: Oro_Support_17
+  - first:
+      213: -7954129889052681355
+    second: Oro_Support_18
+  - first:
+      213: -1486327454028330862
+    second: Oro_Support_19
+  - first:
+      213: -3572020717647241466
+    second: Oro_Support_20
+  - first:
+      213: -1371058290580794938
+    second: Oro_Support_21
+  - first:
+      213: 5362979667334692265
+    second: Oro_Support_22
+  - first:
+      213: 6375979423769716949
+    second: Oro_Support_23
+  - first:
+      213: -6540909736825704451
+    second: Oro_Support_24
+  - first:
+      213: -649164930315284554
+    second: Oro_Support_25
+  - first:
+      213: -6113734614621050346
+    second: Oro_Support_26
+  - first:
+      213: -7892408350077917450
+    second: Oro_Support_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Oro_Support_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 251
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3caa6244d7b91450800000000000000
+      internalID: 6060076895878949950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 251
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6119f9fccfc30b0800000000000000
+      internalID: -5747441055766079830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 251
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7593ff8c0673b8db0800000000000000
+      internalID: -4788672889949832873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 251
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1140337585749e5b0800000000000000
+      internalID: -5338657438525357039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 251
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef05ef33a3b98a510800000000000000
+      internalID: 1560667945166590206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 251
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96933b814a0275f50800000000000000
+      internalID: 6869995645738105193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 188
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aaeb2d885118c8b0800000000000000
+      internalID: -5131832703365420376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_7
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 188
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fcd1bbe8de24e710800000000000000
+      internalID: 1721552466764487920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 188
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58cd45f37523b2790800000000000000
+      internalID: -7553888599677805435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_9
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 188
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 369d834add5f4e930800000000000000
+      internalID: 4171729487143688547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_10
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 188
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ad970a35e584200800000000000000
+      internalID: 164485099666659960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_11
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 188
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce261d3ed3dc93ae0800000000000000
+      internalID: -1568997329463057684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 125
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fe2682a4d4a77ae0800000000000000
+      internalID: -1551590313439121672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_13
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 125
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66bbf4436a1d1e3e0800000000000000
+      internalID: -2026107845567595674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_14
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 125
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9614f3f836549b0a0800000000000000
+      internalID: -6865379863042244247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_15
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 125
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd82f69fbd93f540800000000000000
+      internalID: 5040545854154509748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_16
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 125
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c1dc288f1955150800000000000000
+      internalID: 5860750986624965785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_17
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 125
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb431a7856aa13a0800000000000000
+      internalID: -6693854997197403214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 62
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b92b932014d9190800000000000000
+      internalID: -7954129889052681355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_19
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 62
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2980bb23e018f5be0800000000000000
+      internalID: -1486327454028330862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_20
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 62
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60fdc4a2512ad6ec0800000000000000
+      internalID: -3572020717647241466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_21
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 62
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1d397bfb509fce0800000000000000
+      internalID: -1371058290580794938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_22
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 62
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad7029d7912d6a40800000000000000
+      internalID: 5362979667334692265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_23
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 62
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d86ef821870c7850800000000000000
+      internalID: 6375979423769716949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff2c94ef350a35a0800000000000000
+      internalID: -6540909736825704451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_25
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf8aef6fe3bdf6f0800000000000000
+      internalID: -649164930315284554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_26
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 0
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61aa08c82c6a72ba0800000000000000
+      internalID: -6113734614621050346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Support_27
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6674fdb68887290800000000000000
+      internalID: -7892408350077917450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Oro_Support_0: 6060076895878949950
+      Oro_Support_1: -5747441055766079830
+      Oro_Support_10: 164485099666659960
+      Oro_Support_11: -1568997329463057684
+      Oro_Support_12: -1551590313439121672
+      Oro_Support_13: -2026107845567595674
+      Oro_Support_14: -6865379863042244247
+      Oro_Support_15: 5040545854154509748
+      Oro_Support_16: 5860750986624965785
+      Oro_Support_17: -6693854997197403214
+      Oro_Support_18: -7954129889052681355
+      Oro_Support_19: -1486327454028330862
+      Oro_Support_2: -4788672889949832873
+      Oro_Support_20: -3572020717647241466
+      Oro_Support_21: -1371058290580794938
+      Oro_Support_22: 5362979667334692265
+      Oro_Support_23: 6375979423769716949
+      Oro_Support_24: -6540909736825704451
+      Oro_Support_25: -649164930315284554
+      Oro_Support_26: -6113734614621050346
+      Oro_Support_27: -7892408350077917450
+      Oro_Support_3: -5338657438525357039
+      Oro_Support_4: 1560667945166590206
+      Oro_Support_5: 6869995645738105193
+      Oro_Support_6: -5131832703365420376
+      Oro_Support_7: 1721552466764487920
+      Oro_Support_8: -7553888599677805435
+      Oro_Support_9: 4171729487143688547
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

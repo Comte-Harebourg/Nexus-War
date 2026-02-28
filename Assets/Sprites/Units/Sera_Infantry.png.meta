@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 27937b7ebdb1d3d4e85d9a4261bfc36a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6860172094304828591
+    second: Sera_Infantry_0
+  - first:
+      213: -3609827373898689557
+    second: Sera_Infantry_1
+  - first:
+      213: -7480560912855542805
+    second: Sera_Infantry_2
+  - first:
+      213: 4467985555294932098
+    second: Sera_Infantry_3
+  - first:
+      213: -43261555001212552
+    second: Sera_Infantry_4
+  - first:
+      213: 2585976185870385899
+    second: Sera_Infantry_5
+  - first:
+      213: -2774633529548470113
+    second: Sera_Infantry_6
+  - first:
+      213: 4198293328160129615
+    second: Sera_Infantry_7
+  - first:
+      213: 5180775851875582189
+    second: Sera_Infantry_8
+  - first:
+      213: 7284672619833400326
+    second: Sera_Infantry_9
+  - first:
+      213: 545845412528512771
+    second: Sera_Infantry_10
+  - first:
+      213: -6004539262048818267
+    second: Sera_Infantry_11
+  - first:
+      213: -2668432763902177717
+    second: Sera_Infantry_12
+  - first:
+      213: -5488818709381292154
+    second: Sera_Infantry_13
+  - first:
+      213: -5968146889292889901
+    second: Sera_Infantry_14
+  - first:
+      213: 2639583855774429730
+    second: Sera_Infantry_15
+  - first:
+      213: -5653263150785223932
+    second: Sera_Infantry_16
+  - first:
+      213: -7123202569344649115
+    second: Sera_Infantry_17
+  - first:
+      213: -3584246194261230100
+    second: Sera_Infantry_18
+  - first:
+      213: -1850100723714585383
+    second: Sera_Infantry_19
+  - first:
+      213: -8853813557661399308
+    second: Sera_Infantry_20
+  - first:
+      213: 243768729397788132
+    second: Sera_Infantry_21
+  - first:
+      213: -764196035216238270
+    second: Sera_Infantry_22
+  - first:
+      213: -7145740262940487711
+    second: Sera_Infantry_23
+  - first:
+      213: 3773641405437077609
+    second: Sera_Infantry_24
+  - first:
+      213: -5277697011476226477
+    second: Sera_Infantry_25
+  - first:
+      213: -2166827505599887858
+    second: Sera_Infantry_26
+  - first:
+      213: -5213620075271953168
+    second: Sera_Infantry_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sera_Infantry_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 251
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac361b4c2a343f50800000000000000
+      internalID: 6860172094304828591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 251
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3994e012157edc0800000000000000
+      internalID: -3609827373898689557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 251
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3d294cb75bf2890800000000000000
+      internalID: -7480560912855542805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 251
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c4eeca039710e30800000000000000
+      internalID: 4467985555294932098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 251
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871c8bd48dd466ff0800000000000000
+      internalID: -43261555001212552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 251
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be28c64d3ab33e320800000000000000
+      internalID: 2585976185870385899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 188
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98006961858e79d0800000000000000
+      internalID: -2774633529548470113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_7
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 188
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4280e7d985534a30800000000000000
+      internalID: 4198293328160129615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 188
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de047f73030d5e740800000000000000
+      internalID: 5180775851875582189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_9
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 188
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60c1f22e62b581560800000000000000
+      internalID: 7284672619833400326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_10
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 188
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30fd90cb28b339700800000000000000
+      internalID: 545845412528512771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_11
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 188
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aba1b5ca579baca0800000000000000
+      internalID: -6004539262048818267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 125
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ec8980a82d7fad0800000000000000
+      internalID: -2668432763902177717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 125
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f5fcef67cc3d3b0800000000000000
+      internalID: -5488818709381292154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_14
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 125
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d048585602ec2da0800000000000000
+      internalID: -5968146889292889901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_15
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 125
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2227a4e188fa1a420800000000000000
+      internalID: 2639583855774429730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_16
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 125
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40324abdd139b81b0800000000000000
+      internalID: -5653263150785223932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_17
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 125
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568ff07e00d452d90800000000000000
+      internalID: -7123202569344649115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 62
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced73839313324ec0800000000000000
+      internalID: -3584246194261230100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_19
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 62
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc8c4ca13f1356e0800000000000000
+      internalID: -1850100723714585383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_20
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 62
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f60e049a7fe02580800000000000000
+      internalID: -8853813557661399308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_21
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 62
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed7a1b2e5a026300800000000000000
+      internalID: 243768729397788132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_22
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 62
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2499c2e31c70565f0800000000000000
+      internalID: -764196035216238270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_23
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 62
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1efc932371b35dc90800000000000000
+      internalID: -7145740262940487711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96868c85ddaae5430800000000000000
+      internalID: 3773641405437077609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_25
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e91dec78ad1c6b0800000000000000
+      internalID: -5277697011476226477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_26
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e064c2f2dd1ede1e0800000000000000
+      internalID: -2166827505599887858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Infantry_27
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4e19b1a2085a7b0800000000000000
+      internalID: -5213620075271953168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sera_Infantry_0: 6860172094304828591
+      Sera_Infantry_1: -3609827373898689557
+      Sera_Infantry_10: 545845412528512771
+      Sera_Infantry_11: -6004539262048818267
+      Sera_Infantry_12: -2668432763902177717
+      Sera_Infantry_13: -5488818709381292154
+      Sera_Infantry_14: -5968146889292889901
+      Sera_Infantry_15: 2639583855774429730
+      Sera_Infantry_16: -5653263150785223932
+      Sera_Infantry_17: -7123202569344649115
+      Sera_Infantry_18: -3584246194261230100
+      Sera_Infantry_19: -1850100723714585383
+      Sera_Infantry_2: -7480560912855542805
+      Sera_Infantry_20: -8853813557661399308
+      Sera_Infantry_21: 243768729397788132
+      Sera_Infantry_22: -764196035216238270
+      Sera_Infantry_23: -7145740262940487711
+      Sera_Infantry_24: 3773641405437077609
+      Sera_Infantry_25: -5277697011476226477
+      Sera_Infantry_26: -2166827505599887858
+      Sera_Infantry_27: -5213620075271953168
+      Sera_Infantry_3: 4467985555294932098
+      Sera_Infantry_4: -43261555001212552
+      Sera_Infantry_5: 2585976185870385899
+      Sera_Infantry_6: -2774633529548470113
+      Sera_Infantry_7: 4198293328160129615
+      Sera_Infantry_8: 5180775851875582189
+      Sera_Infantry_9: 7284672619833400326
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

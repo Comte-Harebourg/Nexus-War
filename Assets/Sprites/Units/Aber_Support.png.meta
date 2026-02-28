@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 885851ed43ff457418e57f471beb654d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4940270517599452748
+    second: Aber_Support_0
+  - first:
+      213: -6389056474737503914
+    second: Aber_Support_1
+  - first:
+      213: 534854187261746482
+    second: Aber_Support_2
+  - first:
+      213: 6851897313344393305
+    second: Aber_Support_3
+  - first:
+      213: -770482001347873450
+    second: Aber_Support_4
+  - first:
+      213: 8124807355671340321
+    second: Aber_Support_5
+  - first:
+      213: 4718431207553641155
+    second: Aber_Support_6
+  - first:
+      213: -8732612827887910050
+    second: Aber_Support_7
+  - first:
+      213: 7142498298290232814
+    second: Aber_Support_8
+  - first:
+      213: 5005625858145624729
+    second: Aber_Support_9
+  - first:
+      213: -5168968294829409598
+    second: Aber_Support_10
+  - first:
+      213: -6669742813095669834
+    second: Aber_Support_11
+  - first:
+      213: 4005561350905281826
+    second: Aber_Support_12
+  - first:
+      213: -1040299414898454339
+    second: Aber_Support_13
+  - first:
+      213: -539145207059293823
+    second: Aber_Support_14
+  - first:
+      213: -7533770570961284937
+    second: Aber_Support_15
+  - first:
+      213: -583400037723423734
+    second: Aber_Support_16
+  - first:
+      213: 7958810582261701019
+    second: Aber_Support_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Aber_Support_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 62
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b146209322a07bb0800000000000000
+      internalID: -4940270517599452748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 62
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6519c55acf28557a0800000000000000
+      internalID: -6389056474737503914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 251
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ddd5eac0f2c6700800000000000000
+      internalID: 534854187261746482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 188
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9509857bd44d61f50800000000000000
+      internalID: 6851897313344393305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_4
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 251
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 655f3d3b3b2be45f0800000000000000
+      internalID: -770482001347873450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_5
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 188
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 125654f2e3d11c070800000000000000
+      internalID: 8124807355671340321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_6
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 251
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca2a571f2c3b7140800000000000000
+      internalID: 4718431207553641155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_7
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 188
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53c8b086e68fc680800000000000000
+      internalID: -8732612827887910050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_8
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 251
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeddb661c504f1360800000000000000
+      internalID: 7142498298290232814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_9
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 188
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992a741723e877540800000000000000
+      internalID: 5005625858145624729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_10
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 56
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cabf63e8b22448b0800000000000000
+      internalID: -5168968294829409598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_11
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 125
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bfc732df305073a0800000000000000
+      internalID: -6669742813095669834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_12
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 53
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22d3eb683dc969730800000000000000
+      internalID: 4005561350905281826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_13
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 125
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db05ee2a13d1091f0800000000000000
+      internalID: -1040299414898454339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_14
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 62
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18950ea6a429488f0800000000000000
+      internalID: -539145207059293823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_15
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 125
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b09f82d49ba27790800000000000000
+      internalID: -7533770570961284937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_16
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 62
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0cbb85b1c857e7f0800000000000000
+      internalID: -583400037723423734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Support_17
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 125
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9914569e00637e60800000000000000
+      internalID: 7958810582261701019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Aber_Support_0: -4940270517599452748
+      Aber_Support_1: -6389056474737503914
+      Aber_Support_10: -5168968294829409598
+      Aber_Support_11: -6669742813095669834
+      Aber_Support_12: 4005561350905281826
+      Aber_Support_13: -1040299414898454339
+      Aber_Support_14: -539145207059293823
+      Aber_Support_15: -7533770570961284937
+      Aber_Support_16: -583400037723423734
+      Aber_Support_17: 7958810582261701019
+      Aber_Support_2: 534854187261746482
+      Aber_Support_3: 6851897313344393305
+      Aber_Support_4: -770482001347873450
+      Aber_Support_5: 8124807355671340321
+      Aber_Support_6: 4718431207553641155
+      Aber_Support_7: -8732612827887910050
+      Aber_Support_8: 7142498298290232814
+      Aber_Support_9: 5005625858145624729
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

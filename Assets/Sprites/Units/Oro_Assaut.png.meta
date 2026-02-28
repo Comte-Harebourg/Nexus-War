@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 7c1872e5cbb419d449545e08a947ba54
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2432948585319660577
+    second: Oro_Assaut_0
+  - first:
+      213: 7365628807452452986
+    second: Oro_Assaut_1
+  - first:
+      213: -4431509560557850880
+    second: Oro_Assaut_2
+  - first:
+      213: -348477555547175164
+    second: Oro_Assaut_3
+  - first:
+      213: -5275120502798278168
+    second: Oro_Assaut_4
+  - first:
+      213: 2453585177919914704
+    second: Oro_Assaut_5
+  - first:
+      213: 1435454953632520349
+    second: Oro_Assaut_6
+  - first:
+      213: -1021216180695881815
+    second: Oro_Assaut_7
+  - first:
+      213: 6563741337826982057
+    second: Oro_Assaut_8
+  - first:
+      213: -5634155620694200690
+    second: Oro_Assaut_9
+  - first:
+      213: -4949466830360565031
+    second: Oro_Assaut_10
+  - first:
+      213: 692789105941663577
+    second: Oro_Assaut_11
+  - first:
+      213: -5484141990410754063
+    second: Oro_Assaut_12
+  - first:
+      213: -5366944442060871430
+    second: Oro_Assaut_13
+  - first:
+      213: -8736961088045714451
+    second: Oro_Assaut_14
+  - first:
+      213: 6713915865245441675
+    second: Oro_Assaut_15
+  - first:
+      213: -6833270517524434104
+    second: Oro_Assaut_16
+  - first:
+      213: -5406368766996624646
+    second: Oro_Assaut_17
+  - first:
+      213: -7900590440699340169
+    second: Oro_Assaut_18
+  - first:
+      213: 5706943573581994267
+    second: Oro_Assaut_19
+  - first:
+      213: 6251124137180147811
+    second: Oro_Assaut_20
+  - first:
+      213: -3378090317023604325
+    second: Oro_Assaut_21
+  - first:
+      213: 2018344520261356796
+    second: Oro_Assaut_22
+  - first:
+      213: 3166828309478099684
+    second: Oro_Assaut_23
+  - first:
+      213: 4020678467299169523
+    second: Oro_Assaut_24
+  - first:
+      213: -4564528311579823772
+    second: Oro_Assaut_25
+  - first:
+      213: -5722287348106494947
+    second: Oro_Assaut_26
+  - first:
+      213: -8619349795293949223
+    second: Oro_Assaut_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Oro_Assaut_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 251
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12c74c819d193c120800000000000000
+      internalID: 2432948585319660577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 251
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7866972068f73660800000000000000
+      internalID: 7365628807452452986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 251
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fa338a88d1082c0800000000000000
+      internalID: -4431509560557850880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 251
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4070a617285f92bf0800000000000000
+      internalID: -348477555547175164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_4
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 251
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1245bf9d10bc6b0800000000000000
+      internalID: -5275120502798278168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_5
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 251
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d2841c38b2ec0220800000000000000
+      internalID: 2453585177919914704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_6
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 188
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d98575acca2cbe310800000000000000
+      internalID: 1435454953632520349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 188
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7adb65b49e3d1f0800000000000000
+      internalID: -1021216180695881815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_8
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 188
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a879b678f7171b50800000000000000
+      internalID: 6563741337826982057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_9
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 188
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e604360557fc1b0800000000000000
+      internalID: -5634155620694200690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_10
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 188
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9daa7c42426ff4bb0800000000000000
+      internalID: -4949466830360565031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_11
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 188
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95fc9e375084d9900800000000000000
+      internalID: 692789105941663577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 125
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f763cb7ae964e3b0800000000000000
+      internalID: -5484141990410754063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_13
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 125
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af864b91778c485b0800000000000000
+      internalID: -5366944442060871430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_14
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 125
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3ff9a4e2410c680800000000000000
+      internalID: -8736961088045714451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_15
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 125
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e50d758ee9c2d50800000000000000
+      internalID: 6713915865245441675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_16
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 125
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8437ec42ba85b21a0800000000000000
+      internalID: -6833270517524434104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_17
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 125
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa46662048b8f4b0800000000000000
+      internalID: -5406368766996624646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 62
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77ad4427ad67b5290800000000000000
+      internalID: -7900590440699340169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_19
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 62
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b199d8881f2233f40800000000000000
+      internalID: 5706943573581994267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_20
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 62
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3603e7b684470c650800000000000000
+      internalID: 6251124137180147811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_21
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 62
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b911f9a21cc9e11d0800000000000000
+      internalID: -3378090317023604325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_22
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 62
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfcc884c5a9920c10800000000000000
+      internalID: 2018344520261356796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_23
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 62
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eac713a195d2fb20800000000000000
+      internalID: 3166828309478099684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_24
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4dd6773c15cc730800000000000000
+      internalID: 4020678467299169523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_25
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 461321d3fa987a0c0800000000000000
+      internalID: -4564528311579823772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_26
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c766199f95690b0800000000000000
+      internalID: -5722287348106494947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Assaut_27
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 0
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d21ba8470be16880800000000000000
+      internalID: -8619349795293949223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Oro_Assaut_0: 2432948585319660577
+      Oro_Assaut_1: 7365628807452452986
+      Oro_Assaut_10: -4949466830360565031
+      Oro_Assaut_11: 692789105941663577
+      Oro_Assaut_12: -5484141990410754063
+      Oro_Assaut_13: -5366944442060871430
+      Oro_Assaut_14: -8736961088045714451
+      Oro_Assaut_15: 6713915865245441675
+      Oro_Assaut_16: -6833270517524434104
+      Oro_Assaut_17: -5406368766996624646
+      Oro_Assaut_18: -7900590440699340169
+      Oro_Assaut_19: 5706943573581994267
+      Oro_Assaut_2: -4431509560557850880
+      Oro_Assaut_20: 6251124137180147811
+      Oro_Assaut_21: -3378090317023604325
+      Oro_Assaut_22: 2018344520261356796
+      Oro_Assaut_23: 3166828309478099684
+      Oro_Assaut_24: 4020678467299169523
+      Oro_Assaut_25: -4564528311579823772
+      Oro_Assaut_26: -5722287348106494947
+      Oro_Assaut_27: -8619349795293949223
+      Oro_Assaut_3: -348477555547175164
+      Oro_Assaut_4: -5275120502798278168
+      Oro_Assaut_5: 2453585177919914704
+      Oro_Assaut_6: 1435454953632520349
+      Oro_Assaut_7: -1021216180695881815
+      Oro_Assaut_8: 6563741337826982057
+      Oro_Assaut_9: -5634155620694200690
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

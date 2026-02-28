@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 90d6c675f2f599c49a9b108202dacec2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 65831537459658941
+    second: Oro_Infantry_0
+  - first:
+      213: -7075002318296925644
+    second: Oro_Infantry_1
+  - first:
+      213: -252508737464846221
+    second: Oro_Infantry_2
+  - first:
+      213: -5496594114930959308
+    second: Oro_Infantry_3
+  - first:
+      213: 6423598476299639436
+    second: Oro_Infantry_4
+  - first:
+      213: -6798274540059306110
+    second: Oro_Infantry_5
+  - first:
+      213: 6835841680884481577
+    second: Oro_Infantry_6
+  - first:
+      213: 645717102525785166
+    second: Oro_Infantry_7
+  - first:
+      213: -7850884511625082711
+    second: Oro_Infantry_8
+  - first:
+      213: 4877611755831329952
+    second: Oro_Infantry_9
+  - first:
+      213: 3922910452242200480
+    second: Oro_Infantry_10
+  - first:
+      213: 8719746258266271597
+    second: Oro_Infantry_11
+  - first:
+      213: 8583027381406884381
+    second: Oro_Infantry_12
+  - first:
+      213: 4100874382602723905
+    second: Oro_Infantry_13
+  - first:
+      213: -7470903064688247952
+    second: Oro_Infantry_14
+  - first:
+      213: 7557043296967698196
+    second: Oro_Infantry_15
+  - first:
+      213: 636316328129259414
+    second: Oro_Infantry_16
+  - first:
+      213: 3094666636841416474
+    second: Oro_Infantry_17
+  - first:
+      213: 2596466052105497823
+    second: Oro_Infantry_18
+  - first:
+      213: 8853505571841781908
+    second: Oro_Infantry_19
+  - first:
+      213: 788398838147313480
+    second: Oro_Infantry_20
+  - first:
+      213: -5431176764686826417
+    second: Oro_Infantry_21
+  - first:
+      213: -3060785491069426197
+    second: Oro_Infantry_22
+  - first:
+      213: 3260718896033523717
+    second: Oro_Infantry_23
+  - first:
+      213: 3035291208552513457
+    second: Oro_Infantry_24
+  - first:
+      213: -4400880267976350699
+    second: Oro_Infantry_25
+  - first:
+      213: -267949562887619971
+    second: Oro_Infantry_26
+  - first:
+      213: 7097526644136457055
+    second: Oro_Infantry_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Oro_Infantry_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 251
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db00d4d3f61e9e000800000000000000
+      internalID: 65831537459658941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 251
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ab8d060ea80dd90800000000000000
+      internalID: -7075002318296925644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 251
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378b9b024a8ee7cf0800000000000000
+      internalID: -252508737464846221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 251
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43c990156cc28b3b0800000000000000
+      internalID: -5496594114930959308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 251
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8a949fc7c4352950800000000000000
+      internalID: 6423598476299639436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_5
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 251
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 287de2a135da7a1a0800000000000000
+      internalID: -6798274540059306110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 188
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ebde97ac9cdde50800000000000000
+      internalID: 6835841680884481577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_7
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 188
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44a179984c06f800800000000000000
+      internalID: 645717102525785166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_8
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 188
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a888f7e12e0c0390800000000000000
+      internalID: -7850884511625082711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_9
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 188
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4889a9c02c0b340800000000000000
+      internalID: 4877611755831329952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_10
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 188
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a73097954af07630800000000000000
+      internalID: 3922910452242200480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_11
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 188
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6fa08fc503c20970800000000000000
+      internalID: 8719746258266271597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 125
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d126536bde90d1770800000000000000
+      internalID: 8583027381406884381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 125
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142e88b068b39e830800000000000000
+      internalID: 4100874382602723905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_14
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 125
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b31e5ce35025890800000000000000
+      internalID: -7470903064688247952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_15
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 125
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417a104f6d200e860800000000000000
+      internalID: 7557043296967698196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_16
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 125
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 697ecee3456a4d800800000000000000
+      internalID: 636316328129259414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_17
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 125
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a177f23f8e672fa20800000000000000
+      internalID: 3094666636841416474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 62
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdceb132e10880420800000000000000
+      internalID: 2596466052105497823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_19
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 62
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4903292e868fdda70800000000000000
+      internalID: 8853505571841781908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_20
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 62
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84fe911f094f0fa00800000000000000
+      internalID: 788398838147313480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_21
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 62
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f448c74128590a4b0800000000000000
+      internalID: -5431176764686826417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_22
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 62
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be5232700d7e585d0800000000000000
+      internalID: -3060785491069426197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_23
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 62
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5086b765f86604d20800000000000000
+      internalID: 3260718896033523717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_24
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf73a3c5458f1a20800000000000000
+      internalID: 3035291208552513457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_25
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 0
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5146e3096beece2c0800000000000000
+      internalID: -4400880267976350699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_26
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7abc5eca4d084cf0800000000000000
+      internalID: -267949562887619971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Infantry_27
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53bf97e0ea7f7260800000000000000
+      internalID: 7097526644136457055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Oro_Infantry_0: 65831537459658941
+      Oro_Infantry_1: -7075002318296925644
+      Oro_Infantry_10: 3922910452242200480
+      Oro_Infantry_11: 8719746258266271597
+      Oro_Infantry_12: 8583027381406884381
+      Oro_Infantry_13: 4100874382602723905
+      Oro_Infantry_14: -7470903064688247952
+      Oro_Infantry_15: 7557043296967698196
+      Oro_Infantry_16: 636316328129259414
+      Oro_Infantry_17: 3094666636841416474
+      Oro_Infantry_18: 2596466052105497823
+      Oro_Infantry_19: 8853505571841781908
+      Oro_Infantry_2: -252508737464846221
+      Oro_Infantry_20: 788398838147313480
+      Oro_Infantry_21: -5431176764686826417
+      Oro_Infantry_22: -3060785491069426197
+      Oro_Infantry_23: 3260718896033523717
+      Oro_Infantry_24: 3035291208552513457
+      Oro_Infantry_25: -4400880267976350699
+      Oro_Infantry_26: -267949562887619971
+      Oro_Infantry_27: 7097526644136457055
+      Oro_Infantry_3: -5496594114930959308
+      Oro_Infantry_4: 6423598476299639436
+      Oro_Infantry_5: -6798274540059306110
+      Oro_Infantry_6: 6835841680884481577
+      Oro_Infantry_7: 645717102525785166
+      Oro_Infantry_8: -7850884511625082711
+      Oro_Infantry_9: 4877611755831329952
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

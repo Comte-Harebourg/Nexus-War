@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: c9580c5e12c0d344b953aa16a3ce833d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6824865342324949892
+    second: Aber_Assaut_0
+  - first:
+      213: -6146910414610109650
+    second: Aber_Assaut_1
+  - first:
+      213: -9080014392563408182
+    second: Aber_Assaut_2
+  - first:
+      213: 6041768639951146731
+    second: Aber_Assaut_3
+  - first:
+      213: -3093483163833477578
+    second: Aber_Assaut_4
+  - first:
+      213: -1148820578563946191
+    second: Aber_Assaut_5
+  - first:
+      213: -3313213720355199683
+    second: Aber_Assaut_6
+  - first:
+      213: -543199067611132038
+    second: Aber_Assaut_7
+  - first:
+      213: 720690723279707618
+    second: Aber_Assaut_8
+  - first:
+      213: -9087444500718676340
+    second: Aber_Assaut_9
+  - first:
+      213: 1292250375696237455
+    second: Aber_Assaut_10
+  - first:
+      213: 8925933906582359200
+    second: Aber_Assaut_11
+  - first:
+      213: -1806401896177948257
+    second: Aber_Assaut_12
+  - first:
+      213: -1444093953536597944
+    second: Aber_Assaut_13
+  - first:
+      213: 7420085429782219814
+    second: Aber_Assaut_14
+  - first:
+      213: 6855747960980135398
+    second: Aber_Assaut_15
+  - first:
+      213: -2952393820238007002
+    second: Aber_Assaut_16
+  - first:
+      213: -1109874170037593142
+    second: Aber_Assaut_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Aber_Assaut_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 44
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48347218edac6be50800000000000000
+      internalID: 6824865342324949892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 0
+        width: 44
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2be30fab89c1baa0800000000000000
+      internalID: -6146910414610109650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 251
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac2e2d7940f4df180800000000000000
+      internalID: -9080014392563408182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_3
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 188
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee026f319ca8d350800000000000000
+      internalID: 6041768639951146731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_4
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 251
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636dd05d37db115d0800000000000000
+      internalID: -3093483163833477578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_5
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 188
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139890045c19e00f0800000000000000
+      internalID: -1148820578563946191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_6
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 251
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35274deca91502d0800000000000000
+      internalID: -3313213720355199683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_7
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 188
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f07b4735b2678f0800000000000000
+      internalID: -543199067611132038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_8
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 251
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed910af468600a00800000000000000
+      internalID: 720690723279707618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_9
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 188
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c86169abf59e2e180800000000000000
+      internalID: -9087444500718676340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_10
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 39
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f834d3cbedefee110800000000000000
+      internalID: 1292250375696237455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_11
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 125
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0acc47ea8994fdb70800000000000000
+      internalID: 8925933906582359200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_12
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 36
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99a8b0db0f5ee6e0800000000000000
+      internalID: -1806401896177948257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_13
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 125
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840692d433c85fbe0800000000000000
+      internalID: -1444093953536597944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_14
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 62
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62c8835926079f660800000000000000
+      internalID: 7420085429782219814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_15
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 125
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed54db7272842f50800000000000000
+      internalID: 6855747960980135398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_16
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 62
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625b7a3867df607d0800000000000000
+      internalID: -2952393820238007002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Assaut_17
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 125
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acb178d925fe890f0800000000000000
+      internalID: -1109874170037593142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Aber_Assaut_0: 6824865342324949892
+      Aber_Assaut_1: -6146910414610109650
+      Aber_Assaut_10: 1292250375696237455
+      Aber_Assaut_11: 8925933906582359200
+      Aber_Assaut_12: -1806401896177948257
+      Aber_Assaut_13: -1444093953536597944
+      Aber_Assaut_14: 7420085429782219814
+      Aber_Assaut_15: 6855747960980135398
+      Aber_Assaut_16: -2952393820238007002
+      Aber_Assaut_17: -1109874170037593142
+      Aber_Assaut_2: -9080014392563408182
+      Aber_Assaut_3: 6041768639951146731
+      Aber_Assaut_4: -3093483163833477578
+      Aber_Assaut_5: -1148820578563946191
+      Aber_Assaut_6: -3313213720355199683
+      Aber_Assaut_7: -543199067611132038
+      Aber_Assaut_8: 720690723279707618
+      Aber_Assaut_9: -9087444500718676340
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
