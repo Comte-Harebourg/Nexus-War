@@ -201,32 +201,57 @@ public abstract class Tile : MonoBehaviour
         CalculateAttack(unit, isDanger, isDanger ? OrangeTiles : BlueTiles);
     }
 
-    private void CalculateMovement(Tile current, float remainingSpeed, BaseUnit unit, bool isDanger, Dictionary<Tile, float> visited)
+    private void CalculateMovement(Tile startTile, float maxSpeed, BaseUnit unit, bool isDanger, Dictionary<Tile, float> dist)
     {
-        visited[current] = remainingSpeed;
+        List<Tile> S = new List<Tile>();
+        
+        dist[startTile] = 0;
+        // La convention de parent[départ] = départ a été remplacée par null (déjà fait dans PerformGenericSearch)
+        // pour empêcher d'éventuelles boucles infinies de chemin avec un theStart.ParentTile = theStart.
+        S.Add(startTile);
 
-        foreach (Tile neighbor in current.Neighbors)
+        while (S.Count > 0)
         {
-            float nextSpeed = remainingSpeed - neighbor.cost;
-            if (nextSpeed < 0) continue;
-
-            // Contraintes de mouvement des Unités
-            bool canEnter = (unit.Infantry && neighbor.Walkable) || (unit.Vehicle && neighbor.Roadable);
-            if (!canEnter) continue;
-
-            // Contraintes de faciton (Blocage si un ennemi est sur la tuile)
-            bool hasEnemy = neighbor.OccupiedUnit != null && neighbor.OccupiedUnit.Faction != unit.Faction;
-            if (hasEnemy) continue;
-
-            // Optimisation: Recursion seulement si ce chemin est moins couteux qu'un déja trouve
-            if (!visited.ContainsKey(neighbor) || visited[neighbor] < nextSpeed)
+            // Trouver et retirer de S l'élément u dont la valeur dist[u] est minimale
+            Tile u = S[0];
+            for (int i = 1; i < S.Count; i++)
             {
-                // ON ENREGISTRE LE CHEMIN
-                neighbor.ParentTile = current;
+                if (dist[S[i]] < dist[u])
+                {
+                    u = S[i];
+                }
+            }
+            S.Remove(u);
 
-                bool isAlly = neighbor.OccupiedUnit != null && neighbor.OccupiedUnit.Faction == unit.Faction;
-                ApplyMovementVisuals(neighbor, isAlly, isDanger);
-                CalculateMovement(neighbor, nextSpeed, unit, isDanger, visited);
+            foreach (Tile v in u.Neighbors)
+            {
+                // Contraintes de mouvement des Unités
+                bool canEnter = (unit.Infantry && v.Walkable) || (unit.Vehicle && v.Roadable);
+                if (!canEnter) continue;
+
+                // Contraintes de faction (Blocage si un ennemi est sur la tuile)
+                bool hasEnemy = v.OccupiedUnit != null && v.OccupiedUnit.Faction != unit.Faction;
+                if (hasEnemy) continue;
+
+                float alt = dist[u] + v.cost;
+
+                // La portée de mouvement ne doit pas être dépassée
+                if (alt <= maxSpeed)
+                {
+                    if (!dist.ContainsKey(v) || alt < dist[v])
+                    {
+                        dist[v] = alt;
+                        v.ParentTile = u;
+
+                        bool isAlly = v.OccupiedUnit != null && v.OccupiedUnit.Faction == unit.Faction;
+                        ApplyMovementVisuals(v, isAlly, isDanger);
+
+                        if (!S.Contains(v)) // Si v n'est pas dans S
+                        {
+                            S.Add(v);
+                        }
+                    }
+                }
             }
         }
     }
