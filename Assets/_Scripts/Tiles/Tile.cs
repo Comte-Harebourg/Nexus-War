@@ -21,10 +21,7 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject _darkOrange; // Portee d'attaque des ennemis
 
     [Header("Stats et Statuts")]
-    public bool Walkable;
-    public bool Roadable;
     [SerializeField] private int cover;
-    public float cost;
     public BaseUnit OccupiedUnit;
 
     [Header("Listes pour le nettoyage")]
@@ -226,14 +223,14 @@ public abstract class Tile : MonoBehaviour
             foreach (Tile v in u.Neighbors)
             {
                 // Contraintes de mouvement des Unités
-                bool canEnter = (unit.Infantry && v.Walkable) || (unit.Vehicle && v.Roadable);
-                if (!canEnter) continue;
+                float movementCost = unit.GetCost(v.GetType());
+                if (float.IsInfinity(movementCost)) continue;
 
                 // Contraintes de faction (Blocage si un ennemi est sur la tuile)
                 bool hasEnemy = v.OccupiedUnit != null && v.OccupiedUnit.Faction != unit.Faction;
                 if (hasEnemy) continue;
 
-                float alt = dist[u] + v.cost;
+                float alt = dist[u] + movementCost;
 
                 // La portée de mouvement ne doit pas être dépassée
                 if (alt <= maxSpeed)
