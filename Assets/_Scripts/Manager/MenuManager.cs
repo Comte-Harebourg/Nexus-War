@@ -76,6 +76,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     {
         if (MoveTile != AttackTile)
         {
+            UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false); //Debug affichage curseur sur case de l'unité
             MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
             UnitManager.Instance.Fight(UnitManager.Instance.SelectedUnit, AttackTile.OccupiedUnit);
             AttackTile.Highlight.SetActive(false);
@@ -115,6 +116,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 
     public void Wait()
     {
+        UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false); //Debug affichage curseur sur case de l'unité
         MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
         if (MoveTile != AttackTile) AttackTile.Highlight.SetActive(false);
         //Animation déplacement
@@ -126,6 +128,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 
     public void Cancel()
     {
+        UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false); //Debug affichage curseur sur case de l'unité
         MenueDisplay = false;
         ActionMenue.SetActive(false);
         if (HighlightedTile != null)
