@@ -109,11 +109,18 @@ MonoBehaviour:
   OccupiedTile: {fileID: 0}
   Faction: 0
   speed: 4
-  Infantry: 1
-  Vehicle: 0
   minAttackRange: 1
   maxAttackRange: 2
   isActive: 1
+  Health: 1200
+  MaxHealth: 1200
+  Armor: 0
+  MaxArmor: 0
+  Morale: 1200
+  MaxMorale: 1200
+  damage: 50
+  precision: 0.8
+  penetration: 0.01
 --- !u!95 &1679579847709438481
 Animator:
   serializedVersion: 7

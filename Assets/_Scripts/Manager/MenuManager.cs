@@ -1,11 +1,14 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
     public static MenuManager Instance;
     [SerializeField] private GameObject _tileObject,_tileUnitObject,_background;
+    [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
+    [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber;
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
     public GameObject ActionMenue;
     public Tile HighlightedTile;
@@ -56,6 +59,12 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         if (Tile.OccupiedUnit)
         {
             _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Tile.OccupiedUnit.UnitName;
+            _healthBar.fillAmount = Tile.OccupiedUnit.Health / Tile.OccupiedUnit.MaxHealth;
+            _armorBar.fillAmount = Tile.OccupiedUnit.Armor / Tile.OccupiedUnit.MaxArmor;
+            _moraleBar.fillAmount = Tile.OccupiedUnit.Morale / Tile.OccupiedUnit.MaxMorale;
+            _healthNumber.text = Tile.OccupiedUnit.Health.ToString()+"/"+ Tile.OccupiedUnit.MaxHealth.ToString();
+            _armorNumber.text = Tile.OccupiedUnit.Armor.ToString() + "/" + Tile.OccupiedUnit.MaxArmor.ToString();
+            _moraleNumber.text = Tile.OccupiedUnit.Morale.ToString() + "/" + Tile.OccupiedUnit.MaxMorale.ToString();
             _tileUnitObject.SetActive(true);
         }
         else
