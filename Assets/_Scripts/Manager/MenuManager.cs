@@ -2,13 +2,14 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Linq;
 
 public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
     public static MenuManager Instance;
-    [SerializeField] private GameObject _tileObject,_tileUnitObject,_background;
+    [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu,_endTurnMenu;
     [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
-    [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber;
+    [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound;
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
     public GameObject ActionMenue;
     public Tile HighlightedTile;
@@ -78,6 +79,16 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         ActionMenue.transform.position = new Vector3(2f + ATile.Position.x, 0.5f + ATile.Position.y, 0);
         MoveTile = MTile;
         AttackTile = ATile;
+        _cancelMenu.SetActive(true); //Cette partie regarde les menus cohérents à activer
+        if (UnitManager.Instance.SelectedUnit != null)
+        {
+            _waitMenu.SetActive(true);
+            if (ATile.RedTiles.Count() != 0)
+            {
+                _attackMenu.SetActive(true);
+            }
+        }
+        else _endTurnMenu.SetActive(true);
         ActionMenue.SetActive(true);
     }
 
@@ -137,9 +148,12 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 
     public void Cancel()
     {
-        UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false); //Debug affichage curseur sur case de l'unité
         MenueDisplay = false;
         ActionMenue.SetActive(false);
+        _cancelMenu.SetActive(false);
+        _attackMenu.SetActive(false);
+        _waitMenu.SetActive(false);
+        _endTurnMenu.SetActive(false);
         if (HighlightedTile != null)
         {
             HighlightedTile.HideRange();
@@ -148,6 +162,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         }
         if (UnitManager.Instance.SelectedUnit != null)
         {
+            UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false); //Debug affichage curseur sur case de l'unité
             UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
             UnitManager.Instance.SelectedUnit.OccupiedTile.ShowRange(UnitManager.Instance.SelectedUnit);
         }
@@ -166,5 +181,13 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     public void EndTurn()
     {
         GameManager.Instance.NextTurn();
+        Cancel();
+    }
+
+    public void UpdateTurn(int Turn) //Mise à jour affichage nombre tour pour chaque faction
+    {
+        _turnNumberAberrion.text = "Tour: " + Turn.ToString();
+        _turnNumberSeranna.text = "Tour: " + Turn.ToString();
+        _turnNumberOromound.text = "Tour: " + Turn.ToString();
     }
 }

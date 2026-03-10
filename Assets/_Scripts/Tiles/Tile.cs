@@ -122,6 +122,12 @@ public abstract class Tile : MonoBehaviour
                     UnitManager.Instance.UnSelectUnit();
                 }
             }
+            else //Montre le menu pour passer son tour
+            {
+                MenuManager.Instance.HighlightedTile = this;
+                MenuManager.Instance.MenueDisplay = true;
+                MenuManager.Instance.ShowActionUI(this, this);
+            }
         }
     }
 

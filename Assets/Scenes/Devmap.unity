@@ -316,12 +316,19 @@ MonoBehaviour:
   _tileObject: {fileID: 739201254}
   _tileUnitObject: {fileID: 420313380}
   _background: {fileID: 1692685906}
+  _attackMenu: {fileID: 140663948}
+  _waitMenu: {fileID: 1152111292}
+  _cancelMenu: {fileID: 762679688}
+  _endTurnMenu: {fileID: 1776857463}
   _healthBar: {fileID: 46525145}
   _armorBar: {fileID: 841888553}
   _moraleBar: {fileID: 321450527}
   _healthNumber: {fileID: 1726062995}
   _armorNumber: {fileID: 590937871}
   _moraleNumber: {fileID: 1341906820}
+  _turnNumberAberrion: {fileID: 735293368}
+  _turnNumberSeranna: {fileID: 1344913483}
+  _turnNumberOromound: {fileID: 1328574984}
   AberrionInfo: {fileID: 1816709427}
   SerannaInfo: {fileID: 450954154}
   OromoundInfo: {fileID: 1857723330}
@@ -393,7 +400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &140663949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2672,7 +2679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &762679689
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2691,7 +2698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 87.5, y: -75}
+  m_AnchoredPosition: {x: 87.5, y: -15}
   m_SizeDelta: {x: 175, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &824269174
@@ -3790,7 +3797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1152111293
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3809,7 +3816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 87.5, y: -45}
+  m_AnchoredPosition: {x: 87.5, y: -15}
   m_SizeDelta: {x: 175, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1198893378
@@ -5258,7 +5265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1776857464
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5277,7 +5284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 87.5, y: -105}
+  m_AnchoredPosition: {x: 87.5, y: -15}
   m_SizeDelta: {x: 175, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1816709427

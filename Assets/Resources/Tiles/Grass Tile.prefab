@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 8139923784944887522}
   - component: {fileID: 8083753304533116210}
   - component: {fileID: 3117982014600117424}
+  - component: {fileID: 6854177734630528268}
   m_Layer: 0
   m_Name: Grass Tile
   m_TagString: Untagged
@@ -200,14 +201,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5843337852436419799
-Transform:
+--- !u!224 &5843337852436419799
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2655259180834968553}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -225,6 +225,11 @@ Transform:
   - {fileID: 1069108021097096019}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &4900642872301724235
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -351,19 +356,13 @@ MonoBehaviour:
   _darkRed: {fileID: 4954793161026650522}
   _orange: {fileID: 4985887217841986326}
   _darkOrange: {fileID: 8905733040493863091}
-  _green: {fileID: 333045952753005162}
-  _darkGreen: {fileID: 202723885000845971}
-  Walkable: 1
-  Roadable: 1
   cover: 0
-  cost: 1
   OccupiedUnit: {fileID: 0}
   BlueTiles: []
+  RedTiles: []
+  OrangeTiles: []
   Neighbors: []
-  g_cost: 0
-  h_cost: 0
-  f_cost: 0
-  PrecedentTile: {fileID: 0}
+  ParentTile: {fileID: 0}
 --- !u!114 &3117982014600117424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +390,14 @@ MonoBehaviour:
   turnUpLeft: {fileID: 21300000, guid: 94e87f1c4d1c82b429ae731d5676d33e, type: 3}
   turnDownRight: {fileID: 21300000, guid: 8e94f4cd58853c346be413b04302a5b1, type: 3}
   turnDownLeft: {fileID: 21300000, guid: 27a2eebb3c0c63d41a99c56cb113d1cf, type: 3}
+--- !u!222 &6854177734630528268
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655259180834968553}
+  m_CullTransparentMesh: 1
 --- !u!1 &3304674572287833642
 GameObject:
   m_ObjectHideFlags: 0

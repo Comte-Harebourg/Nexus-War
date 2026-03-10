@@ -17,6 +17,7 @@ public class Serge : BaseUnit
         damage = 20;
         precision = 0.8f;
         penetration = 0.01f;
+        MaxMember = 2;
 
         TileCosts[typeof(ForestTile)] = 2f;
         TileCosts[typeof(GrassTile)] = 1f;

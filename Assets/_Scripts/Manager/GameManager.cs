@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public List<BaseUnit> AberrionUnits = new List<BaseUnit>();
     public List<BaseUnit> OromoundUnits = new List<BaseUnit>();
     public List<BaseUnit> SerannaUnits = new List<BaseUnit>();
+    private int Turn = 0;
 
     void Awake()
     {
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
     public void ChangeState(GameState newState)
     {
         GameState = newState;
+        Turn += 1;
+        MenuManager.Instance.UpdateTurn(Turn);
         switch (newState)
         {
             case GameState.AberrionTurn:
@@ -76,7 +79,7 @@ public class GameManager : MonoBehaviour
             if (unit != null)
             {
                 unit.isActive = true;
-                if (unit.Faction == (Faction) 0)
+                if (unit.Faction == (Faction)0)
                 {
                     AberrionUnits.Add(unit);
                     Debug.Log(unit.name + " ajouté à la liste d'Aberrion.");
@@ -101,7 +104,8 @@ public class GameManager : MonoBehaviour
 
     public void NextTurn()
     {
-        ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length));
+        ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length)); //Passe au prochain enum du tour
+        PlayerFaction = (int)GameState; //Change la faction du joueur car par d'IA, à suppprimer plus tard
     }
 }
 

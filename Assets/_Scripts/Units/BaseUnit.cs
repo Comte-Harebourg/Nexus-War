@@ -23,6 +23,8 @@ public class BaseUnit : MonoBehaviour
     public float damage;
     public float precision;
     public float penetration;
+    public float Member;
+    public float MaxMember;
 
     public Dictionary<Type, float> TileCosts = new Dictionary<Type, float>();
 
@@ -32,6 +34,7 @@ public class BaseUnit : MonoBehaviour
         Health = MaxHealth;
         Armor = MaxArmor;
         Morale = MaxMorale;
+        Member = MaxMember;
     }
 
     protected virtual void InitializeStats()
