@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionnées
@@ -40,5 +41,34 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     public void Fight(BaseUnit Attacker, BaseUnit Defenser)
     {
         Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
+    }
+
+    public void LookTo(BaseUnit Unit, Tile Tile)
+    {
+        float x0 = Unit.OccupiedTile.transform.position.x;
+        float y0 = Unit.OccupiedTile.transform.position.y;
+        float x = Tile.transform.position.x;
+        float y = Tile.transform.position.y;
+        if (y <= y0 && math.abs(x - x0) <= math.abs(y - y0))
+        {
+            Unit.Animator.Play("Down");
+        }
+        else if (y > y0 && math.abs(x - x0) < math.abs(y - y0))
+        {
+            Unit.Animator.Play("Up");
+        }
+        else if (x < x0)
+        {
+            Unit.Animator.Play("Left");
+        }
+        else
+        {
+            Unit.Animator.Play("Right");
+        }
+    }
+
+    public void LookReset(BaseUnit Unit)
+    {
+        Unit.Animator.Play("Down");
     }
 }

@@ -38,6 +38,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             else if (UnitManager.Instance.SelectedUnit != null)
             {
                 ArrowManager.Instance.ClearArrow();
+                UnitManager.Instance.LookReset(UnitManager.Instance.SelectedUnit);
                 UnitManager.Instance.UnSelectUnit();
             }
             else

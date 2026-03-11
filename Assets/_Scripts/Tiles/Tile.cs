@@ -155,6 +155,7 @@ public abstract class Tile : MonoBehaviour
         if (UnitManager.Instance.SelectedUnit != null)
         {
             var selectedTile = UnitManager.Instance.SelectedUnit.OccupiedTile;
+            UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, this);
             if (selectedTile.BlueTiles.Contains(this) && selectedTile != this)
             {
                 ArrowManager.Instance.ShowPath(selectedTile, this);
