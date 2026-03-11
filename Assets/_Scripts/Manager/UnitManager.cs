@@ -51,19 +51,19 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         float y = Tile.transform.position.y;
         if (y <= y0 && math.abs(x - x0) <= math.abs(y - y0))
         {
-            Unit.Animator.Play("Down");
+            Unit.Animator.Play("SelectDown");
         }
         else if (y > y0 && math.abs(x - x0) < math.abs(y - y0))
         {
-            Unit.Animator.Play("Up");
+            Unit.Animator.Play("SelectUp");
         }
         else if (x < x0)
         {
-            Unit.Animator.Play("Left");
+            Unit.Animator.Play("SelectLeft");
         }
         else
         {
-            Unit.Animator.Play("Right");
+            Unit.Animator.Play("SelectRight");
         }
     }
 

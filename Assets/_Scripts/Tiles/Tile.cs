@@ -88,6 +88,7 @@ public abstract class Tile : MonoBehaviour
                 if (UnitManager.Instance.SelectedUnit == null)
                 {
                     if (OccupiedUnit.isActive) UnitManager.Instance.SelectUnit(OccupiedUnit);
+                    UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, this);
                 }
                 else if (UnitManager.Instance.SelectedUnit == OccupiedUnit)
                 {
