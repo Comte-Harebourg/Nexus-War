@@ -87,8 +87,11 @@ public abstract class Tile : MonoBehaviour
             {
                 if (UnitManager.Instance.SelectedUnit == null)
                 {
-                    if (OccupiedUnit.isActive) UnitManager.Instance.SelectUnit(OccupiedUnit);
-                    UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, this);
+                    if (OccupiedUnit.isActive)
+                    {
+                    UnitManager.Instance.SelectUnit(OccupiedUnit);
+                    UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, this, false);
+                    }
                 }
                 else if (UnitManager.Instance.SelectedUnit == OccupiedUnit)
                 {
@@ -156,7 +159,7 @@ public abstract class Tile : MonoBehaviour
         if (UnitManager.Instance.SelectedUnit != null)
         {
             var selectedTile = UnitManager.Instance.SelectedUnit.OccupiedTile;
-            UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, this);
+            UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, this, false);
             if (selectedTile.BlueTiles.Contains(this) && selectedTile != this)
             {
                 ArrowManager.Instance.ShowPath(selectedTile, this);
@@ -388,7 +391,6 @@ public abstract class Tile : MonoBehaviour
     public Tile SearchNearestTile(Tile Start, List<Tile> Liste, int MinRange, int MaxRange)
     //Cherche la case la plus proche de Start dans la liste Liste à une portée maximale de MaxRange et une portée minimale de MinRange sinon renvoit null
     {
-        Debug.Log("Pizza");
         Tile End = null;
         if (Liste.Count() != 0)
         {

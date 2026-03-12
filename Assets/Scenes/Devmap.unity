@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de897902d8aaf44ca990126e5fe96fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  GameState: 1
+  GameState: 2
   PlayerFaction: 2
   UnitMap: {fileID: 559232824}
   AberrionUnits: []

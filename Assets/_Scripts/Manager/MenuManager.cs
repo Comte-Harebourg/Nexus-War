@@ -38,7 +38,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             else if (UnitManager.Instance.SelectedUnit != null)
             {
                 ArrowManager.Instance.ClearArrow();
-                UnitManager.Instance.LookReset(UnitManager.Instance.SelectedUnit);
+                UnitManager.Instance.SelectedUnit.Animator.Play("Down");
                 UnitManager.Instance.UnSelectUnit();
             }
             else
@@ -78,6 +78,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     public void ShowActionUI(Tile MTile, Tile ATile)
     {
         ActionMenue.transform.position = new Vector3(2f + ATile.Position.x, 0.5f + ATile.Position.y, 0);
+        if (UnitManager.Instance.SelectedUnit != null) UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, MTile, true);
         MoveTile = MTile;
         AttackTile = ATile;
         _cancelMenu.SetActive(true); //Cette partie regarde les menus cohérents à activer
@@ -104,7 +105,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             MoveTile.Highlight.SetActive(false);
             //Animation déplacement
             //Animation attaque
-            //Épuisement unité
+            UnitManager.Instance.Exhaustion(UnitManager.Instance.SelectedUnit); //Épuisement unité
             Cancel();
             ArrowManager.Instance.ClearArrow();
             UnitManager.Instance.UnSelectUnit();
@@ -127,7 +128,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         AttackTile.Highlight.SetActive(false);
         //Animation déplacement
         //Animation attaque
-        //Épuisement unité
+        UnitManager.Instance.Exhaustion(UnitManager.Instance.SelectedUnit); //Épuisement unité
         Cancel();
         ArrowManager.Instance.ClearArrow();
         UnitManager.Instance.UnSelectUnit();
@@ -141,7 +142,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
         if (MoveTile != AttackTile) AttackTile.Highlight.SetActive(false);
         //Animation déplacement
-        //Épuisement unité
+        UnitManager.Instance.Exhaustion(UnitManager.Instance.SelectedUnit); //Épuisement unité
         Cancel();
         ArrowManager.Instance.ClearArrow();
         UnitManager.Instance.UnSelectUnit();
@@ -165,7 +166,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         {
             UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false); //Debug affichage curseur sur case de l'unité
             UnitManager.Instance.SelectedUnit.OccupiedTile.HideRange();
-            UnitManager.Instance.SelectedUnit.OccupiedTile.ShowRange(UnitManager.Instance.SelectedUnit);
+            UnitManager.Instance.SelectedUnit.OccupiedTile.ShowRange(UnitManager.Instance.SelectedUnit); //Je crois que c'est pour refresh les couleurs des tuiles mais je suis pas sur
         }
         if (GridManager.Instance.GetTileUnderMouse() != null)
         {

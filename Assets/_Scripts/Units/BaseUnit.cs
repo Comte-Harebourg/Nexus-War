@@ -13,6 +13,7 @@ public class BaseUnit : MonoBehaviour
     public int maxAttackRange;
     public bool isActive = true;
     public Animator Animator;
+    public SpriteRenderer Sprite;
 
     [Header("Stats")]
     public float Health;
@@ -37,6 +38,7 @@ public class BaseUnit : MonoBehaviour
         Morale = MaxMorale;
         Member = MaxMember;
         Animator = GetComponent<Animator>();
+        Sprite = GetComponent<SpriteRenderer>();
     }
 
     protected virtual void InitializeStats()

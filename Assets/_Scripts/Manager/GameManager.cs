@@ -19,7 +19,11 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         TileMapManager.Instance.LoadMap(); //Lance la map sélectionné dans le TileMapManager, si on met un int ça chargera toujours cette map
-        ChangeState((GameState)PlayerFaction);
+    }
+
+    private void Start()
+    {
+        ChangeState((GameState)PlayerFaction); //Ne pas mettre dans Awake sous peine de bug
     }
 
     public void ChangeState(GameState newState)
@@ -27,6 +31,7 @@ public class GameManager : MonoBehaviour
         GameState = newState;
         Turn += 1;
         MenuManager.Instance.UpdateTurn(Turn);
+        SetAllActive();
         switch (newState)
         {
             case GameState.AberrionTurn:
@@ -78,7 +83,6 @@ public class GameManager : MonoBehaviour
             BaseUnit unit = child.GetComponent<BaseUnit>();
             if (unit != null)
             {
-                unit.isActive = true;
                 if (unit.Faction == (Faction)0)
                 {
                     AberrionUnits.Add(unit);
@@ -106,6 +110,22 @@ public class GameManager : MonoBehaviour
     {
         ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length)); //Passe au prochain enum du tour
         PlayerFaction = (int)GameState; //Change la faction du joueur car par d'IA, à suppprimer plus tard
+    }
+
+    public void SetAllActive()
+    {
+        foreach(BaseUnit Unit in AberrionUnits)
+        {
+            UnitManager.Instance.SetActive(Unit);
+        }
+        foreach (BaseUnit Unit in OromoundUnits)
+        {
+            UnitManager.Instance.SetActive(Unit);
+        }
+        foreach (BaseUnit Unit in SerannaUnits)
+        {
+            UnitManager.Instance.SetActive(Unit);
+        }
     }
 }
 

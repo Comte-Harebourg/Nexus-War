@@ -26,6 +26,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     {
         SelectedUnit.OccupiedTile.HideRange();
         Debug.Log($"Unité {SelectedUnit.name} désélectionnée");
+        SelectedUnit.Animator.Play("Down");
         SelectedUnit = null;
     }
 
@@ -43,32 +44,44 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
     }
 
-    public void LookTo(BaseUnit Unit, Tile Tile)
+    public void LookTo(BaseUnit Unit, Tile Tile, bool IsMoving) //Anime Unit pour regarder vers Tile et IsMoving s'il doit bougé et non etre figé
     {
         float x0 = Unit.OccupiedTile.transform.position.x;
         float y0 = Unit.OccupiedTile.transform.position.y;
         float x = Tile.transform.position.x;
         float y = Tile.transform.position.y;
-        if (y <= y0 && math.abs(x - x0) <= math.abs(y - y0))
+        if (!Unit.isActive) Unit.Animator.Play("Down"); //Si l'unité est épuisée on reset son animation
+        else if (y <= y0 && math.abs(x - x0) <= math.abs(y - y0))
         {
-            Unit.Animator.Play("SelectDown");
+            if (IsMoving) Unit.Animator.Play("Down");
+            else Unit.Animator.Play("SelectDown");
         }
         else if (y > y0 && math.abs(x - x0) < math.abs(y - y0))
         {
-            Unit.Animator.Play("SelectUp");
+            if (IsMoving) Unit.Animator.Play("Up");
+            else Unit.Animator.Play("SelectUp");
         }
         else if (x < x0)
         {
-            Unit.Animator.Play("SelectLeft");
+            if (IsMoving) Unit.Animator.Play("Left");
+            else Unit.Animator.Play("SelectLeft");
         }
         else
         {
-            Unit.Animator.Play("SelectRight");
+            if (IsMoving) Unit.Animator.Play("Right");
+            else Unit.Animator.Play("SelectRight");
         }
     }
 
-    public void LookReset(BaseUnit Unit)
+    public void SetActive(BaseUnit Unit)
     {
-        Unit.Animator.Play("Down");
+        Unit.isActive = true;
+        Unit.Sprite.color = new Color32(255, 255, 255, 255);
+    }
+
+    public void Exhaustion(BaseUnit Unit)
+    {
+        Unit.isActive = false;
+        Unit.Sprite.color = new Color32(128, 128, 128, 255);
     }
 }
