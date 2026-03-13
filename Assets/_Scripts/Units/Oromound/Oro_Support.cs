@@ -1,22 +1,22 @@
 using UnityEngine;
 
-public class Serge : BaseUnit
+public class Oro_Support : BaseUnit
 {
     protected override void InitializeStats()
     {
-        UnitID = "001";
-        UnitName = "Serge";
-        Faction = Faction.Aberrion;
-        speed = 4;
+        UnitID = "011";
+        UnitName = "Support d'Oromound";
+        Faction = Faction.Oromound;
+        speed = 3;
         minAttackRange = 1;
         maxAttackRange = 2;
-        MaxHealth = 100;
-        MaxArmor = 100;
-        MaxMorale = 100;
-        damage = 20;
-        precision = 0.8f;
+        MaxHealth = 800;
+        MaxArmor = 0;
+        MaxMorale = 800;
+        damage = 90;
+        precision = 0.6f;
         penetration = 0.01f;
-        MaxMember = 2;
+        MaxMember = 8;
 
         TileCosts[typeof(ForestTile)] = 2f;
         TileCosts[typeof(GrassTile)] = 1f;

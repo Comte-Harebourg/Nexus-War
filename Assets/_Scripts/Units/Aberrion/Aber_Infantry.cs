@@ -1,22 +1,22 @@
 using UnityEngine;
 
-public class Serge : BaseUnit
+public class Aber_Infantry : BaseUnit
 {
     protected override void InitializeStats()
     {
-        UnitID = "001";
-        UnitName = "Serge";
+        UnitID = "004";
+        UnitName = "Infanterie d'Aberrion";
         Faction = Faction.Aberrion;
         speed = 4;
         minAttackRange = 1;
         maxAttackRange = 2;
-        MaxHealth = 100;
-        MaxArmor = 100;
-        MaxMorale = 100;
-        damage = 20;
+        MaxHealth = 1200;
+        MaxArmor = 0;
+        MaxMorale = 1200;
+        damage = 50;
         precision = 0.8f;
         penetration = 0.01f;
-        MaxMember = 2;
+        MaxMember = 12;
 
         TileCosts[typeof(ForestTile)] = 2f;
         TileCosts[typeof(GrassTile)] = 1f;

@@ -4,13 +4,12 @@ public class Tibix : BaseUnit
 {
     protected override void InitializeStats()
     {
-        UnitID = "001";
+        UnitID = "003";
         UnitName = "Tibix";
         Faction = Faction.Seranna;
         speed = 4;
         minAttackRange = 1;
         maxAttackRange = 2;
-
         MaxHealth = 100;
         MaxArmor = 100;
         MaxMorale = 100;

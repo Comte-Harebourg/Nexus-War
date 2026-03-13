@@ -61,9 +61,12 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         if (Tile.OccupiedUnit)
         {
             _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Tile.OccupiedUnit.UnitName;
-            _healthBar.fillAmount = Tile.OccupiedUnit.Health / Tile.OccupiedUnit.MaxHealth;
-            _armorBar.fillAmount = Tile.OccupiedUnit.Armor / Tile.OccupiedUnit.MaxArmor;
-            _moraleBar.fillAmount = Tile.OccupiedUnit.Morale / Tile.OccupiedUnit.MaxMorale;
+            if (Tile.OccupiedUnit.MaxHealth != 0) _healthBar.fillAmount = Tile.OccupiedUnit.Health / Tile.OccupiedUnit.MaxHealth; //Bug si égale à 0
+            else _healthBar.fillAmount = 0;
+            if (Tile.OccupiedUnit.MaxArmor != 0) _armorBar.fillAmount = Tile.OccupiedUnit.Armor / Tile.OccupiedUnit.MaxArmor;
+            else _armorBar.fillAmount = 0;
+            if (Tile.OccupiedUnit.MaxMorale != 0) _moraleBar.fillAmount = Tile.OccupiedUnit.Morale / Tile.OccupiedUnit.MaxMorale;
+            else _moraleBar.fillAmount = 0;
             _healthNumber.text = Tile.OccupiedUnit.Health.ToString()+"/"+ Tile.OccupiedUnit.MaxHealth.ToString();
             _armorNumber.text = Tile.OccupiedUnit.Armor.ToString() + "/" + Tile.OccupiedUnit.MaxArmor.ToString();
             _moraleNumber.text = Tile.OccupiedUnit.Morale.ToString() + "/" + Tile.OccupiedUnit.MaxMorale.ToString();

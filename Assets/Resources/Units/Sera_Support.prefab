@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5521716602946872249}
   - component: {fileID: 2181593368708256717}
-  - component: {fileID: 9137462341948630621}
   - component: {fileID: 7566281286842775904}
+  - component: {fileID: 1061401621092752111}
   m_Layer: 0
-  m_Name: Tibix
+  m_Name: Sera_Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,18 +81,40 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: -8159613335948027853, guid: e66b152d169dd2b4d80ead9e589353eb, type: 3}
+  m_Sprite: {fileID: -374690306306519860, guid: 41d295d5b9ec38d40a514192b1767041, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.3, y: 0.61}
+  m_Size: {x: 0.46, y: 0.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9137462341948630621
+--- !u!95 &7566281286842775904
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983567912324871500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 101344170773508902, guid: 41d295d5b9ec38d40a514192b1767041, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1061401621092752111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,13 +123,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1983567912324871500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb25798569dcb04aa1d27e603e448df, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e6ac998f38675d4887ae4c34d5dab5f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tibix
-  UnitID: 003
-  UnitName: Tibix
+  m_EditorClassIdentifier: Assembly-CSharp::Sera_Support
+  UnitID: 012
+  UnitName: Support de Seranna
   OccupiedTile: {fileID: 0}
-  Faction: 2
+  Faction: 0
   speed: 0
   minAttackRange: 0
   maxAttackRange: 0
@@ -125,25 +147,3 @@ MonoBehaviour:
   penetration: 0
   Member: 0
   MaxMember: 0
---- !u!95 &7566281286842775904
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983567912324871500}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: -1805756634288417989, guid: e66b152d169dd2b4d80ead9e589353eb, type: 3}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

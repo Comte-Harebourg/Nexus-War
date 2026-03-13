@@ -380,10 +380,10 @@ MonoBehaviour:
   - Position: {x: -7, y: 0, z: 0}
     UnitID: 002
   - Position: {x: 3, y: 1, z: 0}
-    UnitID: 002
+    UnitID: 003
   - Position: {x: 3, y: -2, z: 0}
     UnitID: 002
   - Position: {x: -9, y: -1, z: 0}
-    UnitID: 001
+    UnitID: 003
   - Position: {x: -6, y: 1, z: 0}
     UnitID: 001

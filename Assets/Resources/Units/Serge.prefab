@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 1827122842436865041, guid: 158c24f1e5e294a4e8e4f14a1ae36a1c, type: 3}
+  m_Sprite: {fileID: -2494524493384981638, guid: ad5bf8ebe09678149b4d251192c961d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,19 +108,23 @@ MonoBehaviour:
   UnitName: Serge
   OccupiedTile: {fileID: 0}
   Faction: 0
-  speed: 4
-  minAttackRange: 1
-  maxAttackRange: 2
+  speed: 0
+  minAttackRange: 0
+  maxAttackRange: 0
   isActive: 1
-  Health: 1200
-  MaxHealth: 1200
+  Animator: {fileID: 0}
+  Sprite: {fileID: 0}
+  Health: 0
+  MaxHealth: 0
   Armor: 0
   MaxArmor: 0
-  Morale: 1200
-  MaxMorale: 1200
-  damage: 50
-  precision: 0.8
-  penetration: 0.01
+  Morale: 0
+  MaxMorale: 0
+  damage: 0
+  precision: 0
+  penetration: 0
+  Member: 0
+  MaxMember: 0
 --- !u!95 &1679579847709438481
 Animator:
   serializedVersion: 7
@@ -131,7 +135,7 @@ Animator:
   m_GameObject: {fileID: 8192267946662819286}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 261651434226203018, guid: 158c24f1e5e294a4e8e4f14a1ae36a1c, type: 3}
+  m_Controller: {fileID: 5878547410644506150, guid: ad5bf8ebe09678149b4d251192c961d2, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

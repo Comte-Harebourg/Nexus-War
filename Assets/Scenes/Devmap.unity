@@ -382,7 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TileMapManager
   _groundMap: {fileID: 554298287}
   _unitMap: {fileID: 559232827}
-  _levelIndex: 3
+  _levelIndex: 4
   _tileDatabase: {fileID: 11400000, guid: 58d5b2f1081bf454ebcf218342848d78, type: 2}
   _unitDatabase: {fileID: 11400000, guid: 0232b86d3e428df4baba697e9bb54ade, type: 2}
 --- !u!1 &140663948
@@ -836,7 +836,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1000
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0

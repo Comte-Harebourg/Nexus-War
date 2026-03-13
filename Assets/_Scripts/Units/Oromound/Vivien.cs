@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Serge : BaseUnit
+public class Vivien : BaseUnit
 {
     protected override void InitializeStats()
     {
-        UnitID = "001";
-        UnitName = "Serge";
-        Faction = Faction.Aberrion;
+        UnitID = "002";
+        UnitName = "Vivien";
+        Faction = Faction.Oromound;
         speed = 4;
         minAttackRange = 1;
         maxAttackRange = 2;

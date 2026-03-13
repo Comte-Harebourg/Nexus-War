@@ -39,9 +39,19 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         }
     }
 
+    public void ResetDanger()
+    {
+        foreach (BaseUnit Unit in DangerUnits)
+        {
+            Unit.OccupiedTile.HideDanger();
+        }
+        DangerUnits.Clear();
+    }
+
     public void Fight(BaseUnit Attacker, BaseUnit Defenser)
     {
         Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
+        Kill(Defenser); //Tue le défenseur
     }
 
     public void LookTo(BaseUnit Unit, Tile Tile, bool IsMoving) //Anime Unit pour regarder vers Tile et IsMoving s'il doit bougé et non etre figé
@@ -83,5 +93,15 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     {
         Unit.isActive = false;
         Unit.Sprite.color = new Color32(128, 128, 128, 255);
+    }
+
+    public void Kill(BaseUnit Unit) //Tue l'unité sélectionnée
+    {
+        Unit.OccupiedTile.HideDanger();
+        //Joue animation mort
+        if (Unit.Faction == (Faction)0) GameManager.Instance.AberrionUnits.Remove(Unit);
+        else if (Unit.Faction == (Faction)1) GameManager.Instance.OromoundUnits.Remove(Unit);
+        else if (Unit.Faction == (Faction)2) GameManager.Instance.SerannaUnits.Remove(Unit);
+        Destroy(Unit.gameObject);
     }
 }
