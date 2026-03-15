@@ -26,7 +26,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     {
         SelectedUnit.OccupiedTile.HideRange();
         Debug.Log($"Unité {SelectedUnit.name} désélectionnée");
-        SelectedUnit.Animator.Play("Down");
+        LookTo(SelectedUnit, SelectedUnit.OccupiedTile, true);
         SelectedUnit = null;
     }
 
@@ -101,26 +101,27 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         float y0 = Unit.OccupiedTile.transform.position.y;
         float x = Tile.transform.position.x;
         float y = Tile.transform.position.y;
-        if (!Unit.isActive) Unit.Animator.Play("Down"); //Si l'unité est épuisée on reset son animation
+        float Timing = (Time.time % Unit.Animator.GetCurrentAnimatorStateInfo(0).length) / Unit.Animator.GetCurrentAnimatorStateInfo(0).length; //Permet de synchroniser les animations
+        if (!Unit.isActive) Unit.Animator.Play("Down", 0, Timing); //Si l'unité est épuisée on reset son animation
         else if (y <= y0 && math.abs(x - x0) <= math.abs(y - y0))
         {
-            if (IsMoving) Unit.Animator.Play("Down");
-            else Unit.Animator.Play("SelectDown");
+            if (IsMoving) Unit.Animator.Play("Down", 0, Timing);
+            else Unit.Animator.Play("SelectDown", 0, Timing);
         }
         else if (y > y0 && math.abs(x - x0) < math.abs(y - y0))
         {
-            if (IsMoving) Unit.Animator.Play("Up");
-            else Unit.Animator.Play("SelectUp");
+            if (IsMoving) Unit.Animator.Play("Up", 0, Timing);
+            else Unit.Animator.Play("SelectUp", 0, Timing);
         }
         else if (x < x0)
         {
-            if (IsMoving) Unit.Animator.Play("Left");
-            else Unit.Animator.Play("SelectLeft");
+            if (IsMoving) Unit.Animator.Play("Left", 0, Timing);
+            else Unit.Animator.Play("SelectLeft", 0, Timing);
         }
         else
         {
-            if (IsMoving) Unit.Animator.Play("Right");
-            else Unit.Animator.Play("SelectRight");
+            if (IsMoving) Unit.Animator.Play("Right", 0, Timing);
+            else Unit.Animator.Play("SelectRight", 0, Timing);
         }
     }
 

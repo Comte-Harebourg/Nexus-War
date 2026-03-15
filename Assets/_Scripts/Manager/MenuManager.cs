@@ -61,15 +61,15 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         if (Tile.OccupiedUnit)
         {
             _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Tile.OccupiedUnit.UnitName;
-            if (Tile.OccupiedUnit.MaxHealth != 0) _healthBar.fillAmount = (float)Tile.OccupiedUnit.Health / (float)Tile.OccupiedUnit.MaxHealth; //Bug si égale à 0
+            if (Tile.OccupiedUnit.MaxHealth != 0) _healthBar.fillAmount = (float)(Tile.OccupiedUnit.Health + Tile.OccupiedUnit.MaxHealth * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxHealth * Tile.OccupiedUnit.MaxMemberCount);
             else _healthBar.fillAmount = 0;
-            if (Tile.OccupiedUnit.MaxArmor != 0) _armorBar.fillAmount = (float)Tile.OccupiedUnit.Armor / (float)Tile.OccupiedUnit.MaxArmor;
+            if (Tile.OccupiedUnit.MaxArmor != 0) _armorBar.fillAmount = (float)(Tile.OccupiedUnit.Armor + Tile.OccupiedUnit.MaxArmor * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxArmor * Tile.OccupiedUnit.MaxMemberCount);
             else _armorBar.fillAmount = 0;
-            if (Tile.OccupiedUnit.MaxMorale != 0) _moraleBar.fillAmount = (float)Tile.OccupiedUnit.Morale / (float)Tile.OccupiedUnit.MaxMorale;
+            if (Tile.OccupiedUnit.MaxMorale != 0) _moraleBar.fillAmount = (float)(Tile.OccupiedUnit.Morale + Tile.OccupiedUnit.MaxMorale * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxMorale * Tile.OccupiedUnit.MaxMemberCount);
             else _moraleBar.fillAmount = 0;
-            _healthNumber.text = Tile.OccupiedUnit.Health.ToString()+"/"+ Tile.OccupiedUnit.MaxHealth.ToString();
-            _armorNumber.text = Tile.OccupiedUnit.Armor.ToString() + "/" + Tile.OccupiedUnit.MaxArmor.ToString();
-            _moraleNumber.text = Tile.OccupiedUnit.Morale.ToString() + "/" + Tile.OccupiedUnit.MaxMorale.ToString();
+            _healthNumber.text = (Tile.OccupiedUnit.Health + Tile.OccupiedUnit.MaxHealth * (Tile.OccupiedUnit.MemberCount - 1)).ToString()+"/"+ (Tile.OccupiedUnit.MaxHealth * Tile.OccupiedUnit.MaxMemberCount).ToString();
+            _armorNumber.text = (Tile.OccupiedUnit.Armor + Tile.OccupiedUnit.MaxArmor * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxArmor * Tile.OccupiedUnit.MaxMemberCount).ToString();
+            _moraleNumber.text = (Tile.OccupiedUnit.Morale + Tile.OccupiedUnit.MaxMorale * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxMorale * Tile.OccupiedUnit.MaxMemberCount).ToString();
             _tileUnitObject.SetActive(true);
         }
         else

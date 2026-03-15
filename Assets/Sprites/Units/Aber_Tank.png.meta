@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 0fab8f849b87cbe4bbca9d2dd8589186
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4316284230677476265
+    second: Aber_Tank_0
+  - first:
+      213: -1341530646189144240
+    second: Aber_Tank_1
+  - first:
+      213: -485978138178230271
+    second: Aber_Tank_2
+  - first:
+      213: -2912586965202875250
+    second: Aber_Tank_3
+  - first:
+      213: 1980998757926418257
+    second: Aber_Tank_4
+  - first:
+      213: 3216574458387147359
+    second: Aber_Tank_5
+  - first:
+      213: -5573019419181958621
+    second: Aber_Tank_6
+  - first:
+      213: -4282895842321481358
+    second: Aber_Tank_7
+  - first:
+      213: 8997867459335826341
+    second: Aber_Tank_8
+  - first:
+      213: -2616341351014660817
+    second: Aber_Tank_9
+  - first:
+      213: -6948163769411910099
+    second: Aber_Tank_10
+  - first:
+      213: -2092473963683771943
+    second: Aber_Tank_11
+  - first:
+      213: -3347132002597135994
+    second: Aber_Tank_12
+  - first:
+      213: -2940999195095422564
+    second: Aber_Tank_13
+  - first:
+      213: 7976793302500194075
+    second: Aber_Tank_14
+  - first:
+      213: 607399319204260912
+    second: Aber_Tank_15
+  - first:
+      213: 7363050214179449029
+    second: Aber_Tank_16
+  - first:
+      213: -9061621062742930327
+    second: Aber_Tank_17
+  - first:
+      213: 1626391085786364316
+    second: Aber_Tank_18
+  - first:
+      213: 5837936700348849771
+    second: Aber_Tank_19
+  - first:
+      213: 3027479014064106938
+    second: Aber_Tank_20
+  - first:
+      213: -3200539635646889126
+    second: Aber_Tank_21
+  - first:
+      213: 4239374833342873844
+    second: Aber_Tank_22
+  - first:
+      213: -1922142259559914599
+    second: Aber_Tank_23
+  - first:
+      213: 801570596810020146
+    second: Aber_Tank_24
+  - first:
+      213: 4201260592625029743
+    second: Aber_Tank_25
+  - first:
+      213: -6256268566043444106
+    second: Aber_Tank_26
+  - first:
+      213: 185580657182628513
+    second: Aber_Tank_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Aber_Tank_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 447
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3b62f93a586eb30800000000000000
+      internalID: 4316284230677476265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 447
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 057889a2cfce16de0800000000000000
+      internalID: -1341530646189144240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 447
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108e74945757149f0800000000000000
+      internalID: -485978138178230271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 447
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c46a136996497d0800000000000000
+      internalID: -2912586965202875250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_4
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 447
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 157b1b2efdbed7b10800000000000000
+      internalID: 1980998757926418257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_5
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 447
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5aa2c18d6193ac20800000000000000
+      internalID: 3216574458387147359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 383
+        width: 65
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32a3e498d58a8a2b0800000000000000
+      internalID: -5573019419181958621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 383
+        width: 66
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2714e645ce81094c0800000000000000
+      internalID: -4282895842321481358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_8
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 383
+        width: 66
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ab22c118c8dedc70800000000000000
+      internalID: 8997867459335826341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_9
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 383
+        width: 66
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f250b993763e0bbd0800000000000000
+      internalID: -2616341351014660817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_10
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 383
+        width: 66
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26c6fa5dd9239f90800000000000000
+      internalID: -6948163769411910099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_11
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 383
+        width: 65
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d900e4340a06f2e0800000000000000
+      internalID: -2092473963683771943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 319
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6891bd07d299c81d0800000000000000
+      internalID: -3347132002597135994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_13
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 319
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c99a0ab60d87f27d0800000000000000
+      internalID: -2940999195095422564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_14
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 319
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b173d3aee3343be60800000000000000
+      internalID: 7976793302500194075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_15
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 319
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cebf1767aed6800800000000000000
+      internalID: 607399319204260912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_16
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 319
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8a78f982fce2660800000000000000
+      internalID: 7363050214179449029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_17
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 319
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c820a67a7ae3280800000000000000
+      internalID: -9061621062742930327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 65
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c997826531a129610800000000000000
+      internalID: 1626391085786364316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_19
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 255
+        width: 66
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6e528d8f74840150800000000000000
+      internalID: 5837936700348849771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_20
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 255
+        width: 66
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abdad3e7f14c30a20800000000000000
+      internalID: 3027479014064106938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_21
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 255
+        width: 66
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5385b798266593d0800000000000000
+      internalID: -3200539635646889126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_22
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 255
+        width: 66
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f0022323f845da30800000000000000
+      internalID: 4239374833342873844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_23
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 255
+        width: 65
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9932a238ccd2355e0800000000000000
+      internalID: -1922142259559914599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_24
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 191
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 235524df530cf1b00800000000000000
+      internalID: 801570596810020146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 127
+        width: 65
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f621340ff30ed4a30800000000000000
+      internalID: 4201260592625029743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_26
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 63
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67cb985e2e44d29a0800000000000000
+      internalID: -6256268566043444106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Tank_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 65
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aadd8cdf90539200800000000000000
+      internalID: 185580657182628513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Aber_Tank_0: 4316284230677476265
+      Aber_Tank_1: -1341530646189144240
+      Aber_Tank_10: -6948163769411910099
+      Aber_Tank_11: -2092473963683771943
+      Aber_Tank_12: -3347132002597135994
+      Aber_Tank_13: -2940999195095422564
+      Aber_Tank_14: 7976793302500194075
+      Aber_Tank_15: 607399319204260912
+      Aber_Tank_16: 7363050214179449029
+      Aber_Tank_17: -9061621062742930327
+      Aber_Tank_18: 1626391085786364316
+      Aber_Tank_19: 5837936700348849771
+      Aber_Tank_2: -485978138178230271
+      Aber_Tank_20: 3027479014064106938
+      Aber_Tank_21: -3200539635646889126
+      Aber_Tank_22: 4239374833342873844
+      Aber_Tank_23: -1922142259559914599
+      Aber_Tank_24: 801570596810020146
+      Aber_Tank_25: 4201260592625029743
+      Aber_Tank_26: -6256268566043444106
+      Aber_Tank_27: 185580657182628513
+      Aber_Tank_3: -2912586965202875250
+      Aber_Tank_4: 1980998757926418257
+      Aber_Tank_5: 3216574458387147359
+      Aber_Tank_6: -5573019419181958621
+      Aber_Tank_7: -4282895842321481358
+      Aber_Tank_8: 8997867459335826341
+      Aber_Tank_9: -2616341351014660817
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
