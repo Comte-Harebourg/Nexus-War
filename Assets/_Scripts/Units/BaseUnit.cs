@@ -16,19 +16,19 @@ public class BaseUnit : MonoBehaviour
     public SpriteRenderer Sprite;
 
     [Header("Stats")]
-    public float Health;
-    public float MaxHealth;
-    public float Armor;
-    public float MaxArmor;
-    public float Morale;
-    public float MaxMorale;
-    public float damage;
+    public int Health;
+    public int MaxHealth;
+    public int Armor;
+    public int MaxArmor;
+    public int Morale;
+    public int MaxMorale;
+    public int damage;
     public float precision;
     public float penetration;
-    public float Member;
-    public float MaxMember;
+    public int MemberCount;
+    public int MaxMemberCount;
 
-    public Dictionary<Type, float> TileCosts = new Dictionary<Type, float>();
+    public Dictionary<Type, int> TileCosts = new Dictionary<Type, int>();
 
     protected virtual void Awake()
     {
@@ -36,7 +36,7 @@ public class BaseUnit : MonoBehaviour
         Health = MaxHealth;
         Armor = MaxArmor;
         Morale = MaxMorale;
-        Member = MaxMember;
+        MemberCount = MaxMemberCount;
         Animator = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
     }
@@ -46,14 +46,22 @@ public class BaseUnit : MonoBehaviour
         // Potentiellement mettre des stats par défaut ici, mais les unités spécifiques devraient les override
     }
 
-    public float GetCost(Type tileType)
+    public void NewMember()
+    // Utilisé lorsqu'un membre meurt pour réinitialiser les stats
+    {
+        Health = MaxHealth;
+        Armor = MaxArmor;
+        Morale = MaxMorale;
+    }
+
+    public int GetCost(Type tileType)
     // Retourne le coût de déplacement pour ce type de tile, ou l'infini si aucune valeur n'est définie
     {
-        if (TileCosts.TryGetValue(tileType, out float cost))
+        if (TileCosts.TryGetValue(tileType, out int cost))
         {
             return cost;
         }
-        return float.PositiveInfinity;
+        return int.MaxValue;
     }
 }
 

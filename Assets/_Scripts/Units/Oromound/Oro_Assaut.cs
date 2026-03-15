@@ -7,7 +7,7 @@ public class Oro_Assaut : BaseUnit
         UnitID = "008";
         UnitName = "Assaut d'Oromound";
         Faction = Faction.Oromound;
-        speed = 5;
+        speed = 10;
         minAttackRange = 1;
         maxAttackRange = 1;
         MaxHealth = 800;
@@ -16,13 +16,13 @@ public class Oro_Assaut : BaseUnit
         damage = 140;
         precision = 0.9f;
         penetration = 0.01f;
-        MaxMember = 8;
+        MaxMemberCount = 8;
 
-        TileCosts[typeof(ForestTile)] = 2f;
-        TileCosts[typeof(GrassTile)] = 1f;
-        TileCosts[typeof(HoleTile)] = 1.5f;
-        TileCosts[typeof(MountainTile)] = 3f;
-        TileCosts[typeof(RoadTile)] = 0.5f;
-        TileCosts[typeof(WaterTile)] = float.PositiveInfinity;
+        TileCosts[typeof(ForestTile)] = 4;
+        TileCosts[typeof(GrassTile)] = 2;
+        TileCosts[typeof(HoleTile)] = 3;
+        TileCosts[typeof(MountainTile)] = 6;
+        TileCosts[typeof(RoadTile)] = 1;
+        TileCosts[typeof(WaterTile)] = int.MaxValue;
     }
 }

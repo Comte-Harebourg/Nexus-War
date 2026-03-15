@@ -7,7 +7,7 @@ public class Aber_Tank : BaseUnit
         UnitID = "013";
         UnitName = "Char léger d'Aberrion";
         Faction = Faction.Aberrion;
-        speed = 6;
+        speed = 12;
         minAttackRange = 1;
         maxAttackRange = 2;
         MaxHealth = 500;
@@ -16,13 +16,13 @@ public class Aber_Tank : BaseUnit
         damage = 600;
         precision = 0.5f;
         penetration = 0.25f;
-        MaxMember = 1;
+        MaxMemberCount = 1;
 
-        TileCosts[typeof(ForestTile)] = 2f;
-        TileCosts[typeof(GrassTile)] = 1f;
-        TileCosts[typeof(HoleTile)] = 1.5f;
-        TileCosts[typeof(MountainTile)] = float.PositiveInfinity;
-        TileCosts[typeof(RoadTile)] = 0.5f;
-        TileCosts[typeof(WaterTile)] = float.PositiveInfinity;
+        TileCosts[typeof(ForestTile)] = 4;
+        TileCosts[typeof(GrassTile)] = 2;
+        TileCosts[typeof(HoleTile)] = 3;
+        TileCosts[typeof(MountainTile)] = int.MaxValue;
+        TileCosts[typeof(RoadTile)] = 1;
+        TileCosts[typeof(WaterTile)] = int.MaxValue;
     }
 }

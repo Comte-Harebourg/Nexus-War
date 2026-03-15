@@ -7,7 +7,7 @@ public class Vivien : BaseUnit
         UnitID = "002";
         UnitName = "Vivien";
         Faction = Faction.Oromound;
-        speed = 4;
+        speed = 8;
         minAttackRange = 1;
         maxAttackRange = 2;
         MaxHealth = 100;
@@ -16,13 +16,13 @@ public class Vivien : BaseUnit
         damage = 20;
         precision = 0.8f;
         penetration = 0.01f;
-        MaxMember = 2;
+        MaxMemberCount = 2;
 
-        TileCosts[typeof(ForestTile)] = 2f;
-        TileCosts[typeof(GrassTile)] = 1f;
-        TileCosts[typeof(HoleTile)] = 1.5f;
-        TileCosts[typeof(MountainTile)] = 3f;
-        TileCosts[typeof(RoadTile)] = 0.5f;
-        TileCosts[typeof(WaterTile)] = float.PositiveInfinity;
+        TileCosts[typeof(ForestTile)] = 4;
+        TileCosts[typeof(GrassTile)] = 2;
+        TileCosts[typeof(HoleTile)] = 3;
+        TileCosts[typeof(MountainTile)] = 6;
+        TileCosts[typeof(RoadTile)] = 1;
+        TileCosts[typeof(WaterTile)] = int.MaxValue;
     }
 }

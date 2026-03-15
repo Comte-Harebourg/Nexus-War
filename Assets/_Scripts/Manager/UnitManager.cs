@@ -51,7 +51,48 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     public void Fight(BaseUnit Attacker, BaseUnit Defenser)
     {
         Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
-        Kill(Defenser); //Tue le défenseur
+        
+        for (int i = 0; i < Attacker.MemberCount; i++)//pour chaque membre de l'unité attaquante
+        {
+            float roll = UnityEngine.Random.value; // Renvoie un float entre 0.0 et 1.0
+
+            if (roll <= Attacker.precision)
+            {
+                //l'attaque réussit
+                if (Defenser.Armor > 0)
+                {
+                    Defenser.Armor -= Mathf.RoundToInt(Attacker.damage * Attacker.penetration);
+                }
+                else
+                {
+                    Defenser.Health -= Attacker.damage;
+                }
+            }
+            else
+            {
+                //lorsque l'attaque échoue on fait perdre de la morale à l'adversaire
+                Defenser.Morale -= Attacker.damage;
+            }
+
+            // Checks et bornage des valeurs
+            if (Defenser.Health < 0) Defenser.Health = 0;
+            if (Defenser.Armor < 0) Defenser.Armor = 0;
+            if (Defenser.Morale < 0) Defenser.Morale = 0;
+
+            if (Defenser.Health == 0)
+            {
+                Defenser.MemberCount--;
+                if (Defenser.MemberCount <= 0)
+                {
+                    Kill(Defenser);
+                    return;//il n'y a plus rien à attaquer, on sort de la boucle
+                }
+                else
+                {
+                    Defenser.NewMember();
+                }
+            }
+        }
     }
 
     public void LookTo(BaseUnit Unit, Tile Tile, bool IsMoving) //Anime Unit pour regarder vers Tile et IsMoving s'il doit bougé et non etre figé
