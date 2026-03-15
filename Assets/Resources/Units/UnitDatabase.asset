@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitDatabase
   Units:
   - UnitID: 007
-    Prefab: {fileID: -4272250097905810048, guid: 7576022cf35b494439eb518500d78640, type: 3}
+    Prefab: {fileID: -5310829474404005825, guid: 7576022cf35b494439eb518500d78640, type: 3}
   - UnitID: 004
     Prefab: {fileID: -299492853786139131, guid: 2fd121e1689bc4d49b4791e11cc9d83b, type: 3}
   - UnitID: 010
     Prefab: {fileID: -616067640708005988, guid: 442ff9d3aa146c14a9eca7beae8b4285, type: 3}
+  - UnitID: 013
+    Prefab: {fileID: 8824967048285560029, guid: ecd68860b6f762c469c492ffc6215ffb, type: 3}
   - UnitID: 008
     Prefab: {fileID: 8426151905554245005, guid: 8413affa4d4a6544f97c54ec3eb0992d, type: 3}
   - UnitID: 005

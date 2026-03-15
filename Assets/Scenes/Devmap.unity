@@ -2091,7 +2091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   GameState: 2
-  PlayerFaction: 2
+  PlayerFaction: 0
   UnitMap: {fileID: 559232824}
   AberrionUnits: []
   OromoundUnits: []

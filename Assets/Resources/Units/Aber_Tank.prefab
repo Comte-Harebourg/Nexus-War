@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8192267946662819286
+--- !u!1 &1983567912324871500
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3353946770948493315}
-  - component: {fileID: 176058638983901371}
-  - component: {fileID: 5645630428971285302}
-  - component: {fileID: 1679579847709438481}
+  - component: {fileID: 5521716602946872249}
+  - component: {fileID: 2181593368708256717}
+  - component: {fileID: 7566281286842775904}
+  - component: {fileID: 8824967048285560029}
   m_Layer: 0
-  m_Name: Serge
+  m_Name: Aber_Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3353946770948493315
+--- !u!4 &5521716602946872249
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192267946662819286}
+  m_GameObject: {fileID: 1983567912324871500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.465, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &176058638983901371
+--- !u!212 &2181593368708256717
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192267946662819286}
+  m_GameObject: {fileID: 1983567912324871500}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: -2494524493384981638, guid: ad5bf8ebe09678149b4d251192c961d2, type: 3}
+  m_Sprite: {fileID: 2738925825441113184, guid: dac42132e3da83f449930e93d5adca4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,20 +92,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5645630428971285302
+--- !u!95 &7566281286842775904
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983567912324871500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 5451043726670865529, guid: dac42132e3da83f449930e93d5adca4e, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8824967048285560029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192267946662819286}
+  m_GameObject: {fileID: 1983567912324871500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f44d429bfa0b0a94180cbf644ffb5988, type: 3}
+  m_Script: {fileID: 11500000, guid: ab482fc363f981f4198b95cc61fb60bf, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Serge
-  UnitID: 001
-  UnitName: Serge
+  m_EditorClassIdentifier: Assembly-CSharp::Aber_Tank
+  UnitID: 013
+  UnitName: "Char l\xE9ger d'Aberrion"
   OccupiedTile: {fileID: 0}
   Faction: 0
   speed: 0
@@ -125,25 +147,3 @@ MonoBehaviour:
   penetration: 0
   Member: 0
   MaxMember: 0
---- !u!95 &1679579847709438481
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192267946662819286}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 5878547410644506150, guid: ad5bf8ebe09678149b4d251192c961d2, type: 3}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
