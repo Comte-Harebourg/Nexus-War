@@ -10,9 +10,9 @@ public class Oro_Assaut : BaseUnit
         speed = 10;
         minAttackRange = 1;
         maxAttackRange = 1;
-        MaxHealth = 800;
+        MaxHealth = 100;
         MaxArmor = 0;
-        MaxMorale = 1600;
+        MaxMorale = 200;
         damage = 140;
         precision = 0.9f;
         penetration = 0.01f;

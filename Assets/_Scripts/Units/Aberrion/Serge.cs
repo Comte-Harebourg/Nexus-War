@@ -10,9 +10,9 @@ public class Serge : BaseUnit
         speed = 8;
         minAttackRange = 1;
         maxAttackRange = 2;
-        MaxHealth = 100;
+        MaxHealth = 50;
         MaxArmor = 100;
-        MaxMorale = 100;
+        MaxMorale = 50;
         damage = 20;
         precision = 0.8f;
         penetration = 0.01f;

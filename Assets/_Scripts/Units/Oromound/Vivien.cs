@@ -11,7 +11,7 @@ public class Vivien : BaseUnit
         minAttackRange = 1;
         maxAttackRange = 2;
         MaxHealth = 100;
-        MaxArmor = 100;
+        MaxArmor = 50;
         MaxMorale = 100;
         damage = 20;
         precision = 0.8f;

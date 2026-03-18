@@ -10,7 +10,7 @@ public class Aber_Assaut : BaseUnit
         speed = 10;
         minAttackRange = 1;
         maxAttackRange = 1;
-        MaxHealth = 800;
+        MaxHealth = 100;
         MaxArmor = 0;
         MaxMorale = 1600;
         damage = 140;

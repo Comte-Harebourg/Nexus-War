@@ -10,9 +10,9 @@ public class Oro_Infantry : BaseUnit
         speed = 8;
         minAttackRange = 1;
         maxAttackRange = 2;
-        MaxHealth = 1200;
+        MaxHealth = 100;
         MaxArmor = 0;
-        MaxMorale = 1200;
+        MaxMorale = 100;
         damage = 50;
         precision = 0.8f;
         penetration = 0.01f;

@@ -30,9 +30,17 @@ public class Tibix : BaseUnit
     {
         print(">be me");
         print(">fish");
-        while (true)
+        for (int i = 0; i < 10; i++)//on va éviter les boucles infinies hein ??
         {
             print("><>");
         }
+
+        //le Tibix étant maintenant un poisson ><>, il sait pu marcher, seulement nager
+        //on l'empêche de marcher en rendant tous les coûts de déplacement infinis, sauf pour l'eau
+        foreach (var tileType in new System.Collections.Generic.List<System.Type>(TileCosts.Keys))
+        {
+            TileCosts[tileType] = int.MaxValue;
+        }
+        TileCosts[typeof(WaterTile)] = 1;
     }
 }

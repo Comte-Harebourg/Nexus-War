@@ -10,9 +10,9 @@ public class Aber_Support : BaseUnit
         speed = 6;
         minAttackRange = 1;
         maxAttackRange = 2;
-        MaxHealth = 800;
+        MaxHealth = 100;
         MaxArmor = 0;
-        MaxMorale = 800;
+        MaxMorale = 100;
         damage = 90;
         precision = 0.6f;
         penetration = 0.01f;
