@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1983567912324871500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.465, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -145,5 +145,5 @@ MonoBehaviour:
   damage: 0
   precision: 0
   penetration: 0
-  Member: 0
-  MaxMember: 0
+  MemberCount: 0
+  MaxMemberCount: 0
