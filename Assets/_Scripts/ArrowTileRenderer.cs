@@ -9,6 +9,7 @@ public class ArrowTileRenderer : MonoBehaviour
     public Sprite startDown;
     public Sprite startLeft;
     public Sprite startRight;
+    public Sprite start;
 
     [Header("End Sprites")]
     public Sprite endUp;

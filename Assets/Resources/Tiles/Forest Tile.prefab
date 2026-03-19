@@ -621,19 +621,13 @@ MonoBehaviour:
   _darkRed: {fileID: 6772345406032865598}
   _orange: {fileID: 1925784902863637511}
   _darkOrange: {fileID: 536308691118707408}
-  _green: {fileID: 2790153732413016419}
-  _darkGreen: {fileID: 996520050630052650}
-  Walkable: 1
-  Roadable: 1
-  cover: 2
-  cost: 2
+  cover: 0.4
   OccupiedUnit: {fileID: 0}
   BlueTiles: []
+  RedTiles: []
+  OrangeTiles: []
   Neighbors: []
-  g_cost: 0
-  h_cost: 0
-  f_cost: 0
-  PrecedentTile: {fileID: 0}
+  ParentTile: {fileID: 0}
 --- !u!114 &3923192328788524174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,6 +645,7 @@ MonoBehaviour:
   startDown: {fileID: 21300000, guid: 57b48f78e27e963439886ea72365608a, type: 3}
   startLeft: {fileID: 21300000, guid: 7ac6a9d2941ff83419bf868f209b4dfb, type: 3}
   startRight: {fileID: 21300000, guid: 18125e76d91b60444ab2f35f4556f728, type: 3}
+  start: {fileID: 2952815296797329396, guid: 3a55aa5b96740964fac4a2a93f4e33f9, type: 3}
   endUp: {fileID: 21300000, guid: 25af5f9c8b3352a458a0c4e276a8918c, type: 3}
   endDown: {fileID: 21300000, guid: 62cf2f28fd5d8bf49bef88fa0f032334, type: 3}
   endLeft: {fileID: 21300000, guid: a2032aad1f8523e4ca486a3b8d1015df, type: 3}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ArrowManager : MonoBehaviour
@@ -57,30 +58,37 @@ public class ArrowManager : MonoBehaviour
 
     private void RenderArrowSprites()
     {
-        for (int i = 0; i < PathTiles.Count; i++)
+        if (PathTiles.Count == 1)
         {
-            var renderer = PathTiles[i].GetComponent<ArrowTileRenderer>();
-            if (renderer == null) continue;
-
-            Vector2Int? fromDir = null;
-            Vector2Int? toDir = null;
-
-            if (i > 0)
-                fromDir = PathTiles[i].Position - PathTiles[i - 1].Position;
-            if (i < PathTiles.Count - 1)
-                toDir = PathTiles[i + 1].Position - PathTiles[i].Position;
-
-            if (i == 0) // Début de la flèche
+            PathTiles[0].GetComponent<ArrowTileRenderer>().SetSprite(PathTiles[0].GetComponent<ArrowTileRenderer>().start);
+        }
+        else
+        {
+            for (int i = 0; i < PathTiles.Count; i++)
             {
-                renderer.SetSprite(GetStartSprite(renderer, toDir.Value));
-            }
-            else if (i == PathTiles.Count - 1) // Bout de la flèche
-            {
-                renderer.SetSprite(GetEndSprite(renderer, fromDir.Value));
-            }
-            else // Corps de la flèche
-            {
-                renderer.SetSprite(GetBodySprite(renderer, fromDir.Value, toDir.Value));
+                var renderer = PathTiles[i].GetComponent<ArrowTileRenderer>();
+                if (renderer == null) continue;
+
+                Vector2Int? fromDir = null;
+                Vector2Int? toDir = null;
+
+                if (i > 0)
+                    fromDir = PathTiles[i].Position - PathTiles[i - 1].Position;
+                if (i < PathTiles.Count - 1)
+                    toDir = PathTiles[i + 1].Position - PathTiles[i].Position;
+
+                if (i == 0) // Début de la flèche
+                {
+                    renderer.SetSprite(GetStartSprite(renderer, toDir.Value));
+                }
+                else if (i == PathTiles.Count - 1) // Bout de la flèche
+                {
+                    renderer.SetSprite(GetEndSprite(renderer, fromDir.Value));
+                }
+                else // Corps de la flèche
+                {
+                    renderer.SetSprite(GetBodySprite(renderer, fromDir.Value, toDir.Value));
+                }
             }
         }
     }

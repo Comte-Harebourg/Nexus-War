@@ -892,7 +892,7 @@ MonoBehaviour:
   _darkRed: {fileID: 4033758861160627313}
   _orange: {fileID: 3263437962281775627}
   _darkOrange: {fileID: 1115031753709611251}
-  cover: -1
+  cover: -0.2
   OccupiedUnit: {fileID: 0}
   BlueTiles: []
   RedTiles: []
@@ -916,6 +916,7 @@ MonoBehaviour:
   startDown: {fileID: 21300000, guid: 57b48f78e27e963439886ea72365608a, type: 3}
   startLeft: {fileID: 21300000, guid: 7ac6a9d2941ff83419bf868f209b4dfb, type: 3}
   startRight: {fileID: 21300000, guid: 18125e76d91b60444ab2f35f4556f728, type: 3}
+  start: {fileID: 2952815296797329396, guid: 3a55aa5b96740964fac4a2a93f4e33f9, type: 3}
   endUp: {fileID: 21300000, guid: 25af5f9c8b3352a458a0c4e276a8918c, type: 3}
   endDown: {fileID: 21300000, guid: 62cf2f28fd5d8bf49bef88fa0f032334, type: 3}
   endLeft: {fileID: 21300000, guid: a2032aad1f8523e4ca486a3b8d1015df, type: 3}

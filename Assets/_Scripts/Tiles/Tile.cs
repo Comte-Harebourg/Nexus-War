@@ -21,7 +21,7 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject _darkOrange; // Portee d'attaque des ennemis
 
     [Header("Stats et Statuts")]
-    [SerializeField] private int cover;
+    [SerializeField] private float cover;
     public BaseUnit OccupiedUnit;
 
     [Header("Listes pour le nettoyage")]
@@ -89,8 +89,9 @@ public abstract class Tile : MonoBehaviour
                 {
                     if (OccupiedUnit.isActive)
                     {
-                    UnitManager.Instance.SelectUnit(OccupiedUnit);
-                    UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, this, false);
+                        UnitManager.Instance.SelectUnit(OccupiedUnit);
+                        UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, this, false);
+                        ArrowManager.Instance.ShowPath(this, this);
                     }
                 }
                 else if (UnitManager.Instance.SelectedUnit == OccupiedUnit)
@@ -160,13 +161,13 @@ public abstract class Tile : MonoBehaviour
         {
             var selectedTile = UnitManager.Instance.SelectedUnit.OccupiedTile;
             UnitManager.Instance.LookTo(UnitManager.Instance.SelectedUnit, this, false);
-            if (selectedTile.BlueTiles.Contains(this) && selectedTile != this)
+            if (selectedTile.BlueTiles.Contains(this))
             {
                 ArrowManager.Instance.ShowPath(selectedTile, this);
             }
             else if (selectedTile.RedTiles.Contains(this))
             {
-                ArrowManager.Instance.ShowPath(selectedTile, SearchNearestTile(this, UnitManager.Instance.SelectedUnit.OccupiedTile.BlueTiles, UnitManager.Instance.SelectedUnit.minAttackRange, UnitManager.Instance.SelectedUnit.maxAttackRange));
+                ArrowManager.Instance.ShowPath(selectedTile, SearchNearestTile(this, UnitManager.Instance.SelectedUnit));
             }
             else
             {
@@ -388,20 +389,33 @@ public abstract class Tile : MonoBehaviour
         }
     }
 
-    public Tile SearchNearestTile(Tile Start, List<Tile> Liste, int MinRange, int MaxRange)
+    public Tile SearchNearestTile(Tile Start, BaseUnit Unit)
     //Cherche la case la plus proche de Start dans la liste Liste à une portée maximale de MaxRange et une portée minimale de MinRange sinon renvoit null
     {
+        int MinRange = Unit.minAttackRange;
+        int MaxRange = Unit.maxAttackRange;
         Tile End = null;
-        if (Liste.Count() != 0)
+        if (Unit.OccupiedTile.BlueTiles.Count() != 0)
         {
-            foreach (Tile Tile in Liste)
+            foreach (Tile Tile in Unit.OccupiedTile.BlueTiles)
             {
                 if (Mathf.Abs(Tile.Position.x-Start.Position.x) + Mathf.Abs(Tile.Position.y - Start.Position.y)<=MaxRange && Mathf.Abs(Tile.Position.x - Start.Position.x) + Mathf.Abs(Tile.Position.y - Start.Position.y) >= MinRange)
-                //On vérifie que la distance entre Tile et Start est comprise entre MinRnage et MaxRange
+                //On vérifie que la distance entre Tile et Start est comprise entre MinRange et MaxRange
                 {
-                    End = Tile;
-                    MaxRange = Mathf.Abs(Tile.Position.x - Start.Position.x) + Mathf.Abs(Tile.Position.y - Start.Position.y);
-                    //MaxRange devient la distance entre Start et Tile
+                    if (End == null)
+                    {
+                        //On prend la premiière case valide et il y en aura forcément une
+                        End = Tile;
+                        MinRange = Mathf.Abs(Tile.Position.x - Start.Position.x) + Mathf.Abs(Tile.Position.y - Start.Position.y);
+                        //MinRange devient la distance entre Start et Tile
+                    }
+                    else if (Mathf.Abs(Tile.Position.x - Unit.OccupiedTile.Position.x) + Mathf.Abs(Tile.Position.y - Unit.OccupiedTile.Position.y) < Mathf.Abs(End.Position.x - Unit.OccupiedTile.Position.x) + Mathf.Abs(End.Position.y - Unit.OccupiedTile.Position.y))
+                    {
+                        //Si la case est plus proche de la case d'origine on la prend
+                        End = Tile;
+                        MinRange = Mathf.Abs(Tile.Position.x - Start.Position.x) + Mathf.Abs(Tile.Position.y - Start.Position.y);
+                        //MinRange devient la distance entre Start et Tile
+                    }
                 }
             }
         }
