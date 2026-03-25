@@ -1177,3 +1177,9 @@ MonoBehaviour:
     UnitID: 013
   - Position: {x: 13, y: 3, z: 0}
     UnitID: 015
+  - Position: {x: -4, y: 2, z: 0}
+    UnitID: 016
+  - Position: {x: 4, y: 14, z: 0}
+    UnitID: 017
+  - Position: {x: 14, y: 2, z: 0}
+    UnitID: 018
