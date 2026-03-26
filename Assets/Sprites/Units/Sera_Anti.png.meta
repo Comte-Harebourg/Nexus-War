@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 2f8598e8debaffc4fa5ce57481a4bb66
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4590685249683565184
+    second: Sera_Anti_0
+  - first:
+      213: 1626902113247687488
+    second: Sera_Anti_1
+  - first:
+      213: -5245410989501163305
+    second: Sera_Anti_2
+  - first:
+      213: -2748258696347235644
+    second: Sera_Anti_3
+  - first:
+      213: -5820334638942143887
+    second: Sera_Anti_4
+  - first:
+      213: 9072640643202066826
+    second: Sera_Anti_5
+  - first:
+      213: -2622546302119177884
+    second: Sera_Anti_6
+  - first:
+      213: 2695513398320937635
+    second: Sera_Anti_7
+  - first:
+      213: -143287037198610828
+    second: Sera_Anti_8
+  - first:
+      213: -713845604628746082
+    second: Sera_Anti_9
+  - first:
+      213: 4469314887100401022
+    second: Sera_Anti_10
+  - first:
+      213: 2289036551341380183
+    second: Sera_Anti_11
+  - first:
+      213: -1092489672669384157
+    second: Sera_Anti_12
+  - first:
+      213: 575687631428164392
+    second: Sera_Anti_13
+  - first:
+      213: 4693530566960867464
+    second: Sera_Anti_14
+  - first:
+      213: -8445813891292183113
+    second: Sera_Anti_15
+  - first:
+      213: -4486532313787776154
+    second: Sera_Anti_16
+  - first:
+      213: -6509003671315663635
+    second: Sera_Anti_17
+  - first:
+      213: 8850853148069991352
+    second: Sera_Anti_18
+  - first:
+      213: -7864177203964850037
+    second: Sera_Anti_19
+  - first:
+      213: -7896139476841034492
+    second: Sera_Anti_20
+  - first:
+      213: -6065262530148955500
+    second: Sera_Anti_21
+  - first:
+      213: -1314306838006026924
+    second: Sera_Anti_22
+  - first:
+      213: -1669956201494438853
+    second: Sera_Anti_23
+  - first:
+      213: 5757115416217953165
+    second: Sera_Anti_24
+  - first:
+      213: 7501527778506526788
+    second: Sera_Anti_25
+  - first:
+      213: -3748014674387093851
+    second: Sera_Anti_26
+  - first:
+      213: 775627638061592144
+    second: Sera_Anti_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sera_Anti_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 447
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0855cf0861c9a40c0800000000000000
+      internalID: -4590685249683565184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 447
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043f5703adae39610800000000000000
+      internalID: 1626902113247687488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 447
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d85ad51f7e8437b0800000000000000
+      internalID: -5245410989501163305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 447
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca485dc6493cd9d0800000000000000
+      internalID: -2748258696347235644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 447
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ab3fbbb740a3fa0800000000000000
+      internalID: -5820334638942143887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_5
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 447
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a89a4d8989e78ed70800000000000000
+      internalID: 9072640643202066826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 383
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4611c277808da9bd0800000000000000
+      internalID: -2622546302119177884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_7
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 383
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aab9328723686520800000000000000
+      internalID: 2695513398320937635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_8
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 383
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ecbd6e231f20ef0800000000000000
+      internalID: -143287037198610828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_9
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 383
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9031a76439e716f0800000000000000
+      internalID: -713845604628746082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_10
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 383
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e750cfad532360e30800000000000000
+      internalID: 4469314887100401022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_11
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 383
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75296989d9a44cf10800000000000000
+      internalID: 2289036551341380183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 319
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32232c35e62b6d0f0800000000000000
+      internalID: -1092489672669384157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_13
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 319
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b9cd4c9d04df700800000000000000
+      internalID: 575687631428164392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_14
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 319
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888e32aee25c22140800000000000000
+      internalID: 4693530566960867464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_15
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 319
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5487283017aca80800000000000000
+      internalID: -8445813891292183113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_16
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 319
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6634e5b91a2acb1c0800000000000000
+      internalID: -4486532313787776154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_17
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 319
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de43489a5af5ba5a0800000000000000
+      internalID: -6509003671315663635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b31cd95b0c84da70800000000000000
+      internalID: 8850853148069991352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_19
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 255
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8053facf74dcd290800000000000000
+      internalID: -7864177203964850037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_20
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 255
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d83f93bf64b6290800000000000000
+      internalID: -7896139476841034492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_21
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 255
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a0cfc2ddbd3dba0800000000000000
+      internalID: -6065262530148955500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_22
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 255
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45da8c2f4e4a2cde0800000000000000
+      internalID: -1314306838006026924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_23
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 255
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c967bbeaf13d8e0800000000000000
+      internalID: -1669956201494438853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 191
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83a892f7f165ef40800000000000000
+      internalID: 5757115416217953165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_25
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 127
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4405b9e05c7ca1860800000000000000
+      internalID: 7501527778506526788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_26
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 63
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a6b430f2806cfbc0800000000000000
+      internalID: -3748014674387093851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sera_Anti_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05ee2a43a3593ca00800000000000000
+      internalID: 775627638061592144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sera_Anti_0: -4590685249683565184
+      Sera_Anti_1: 1626902113247687488
+      Sera_Anti_10: 4469314887100401022
+      Sera_Anti_11: 2289036551341380183
+      Sera_Anti_12: -1092489672669384157
+      Sera_Anti_13: 575687631428164392
+      Sera_Anti_14: 4693530566960867464
+      Sera_Anti_15: -8445813891292183113
+      Sera_Anti_16: -4486532313787776154
+      Sera_Anti_17: -6509003671315663635
+      Sera_Anti_18: 8850853148069991352
+      Sera_Anti_19: -7864177203964850037
+      Sera_Anti_2: -5245410989501163305
+      Sera_Anti_20: -7896139476841034492
+      Sera_Anti_21: -6065262530148955500
+      Sera_Anti_22: -1314306838006026924
+      Sera_Anti_23: -1669956201494438853
+      Sera_Anti_24: 5757115416217953165
+      Sera_Anti_25: 7501527778506526788
+      Sera_Anti_26: -3748014674387093851
+      Sera_Anti_27: 775627638061592144
+      Sera_Anti_3: -2748258696347235644
+      Sera_Anti_4: -5820334638942143887
+      Sera_Anti_5: 9072640643202066826
+      Sera_Anti_6: -2622546302119177884
+      Sera_Anti_7: 2695513398320937635
+      Sera_Anti_8: -143287037198610828
+      Sera_Anti_9: -713845604628746082
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

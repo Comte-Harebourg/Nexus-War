@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 80bacda8eec2d1f4a82a6989816fa878
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 308258699292053161
+    second: Oro_Anti_0
+  - first:
+      213: 5319490430022576543
+    second: Oro_Anti_1
+  - first:
+      213: -7105050919783026648
+    second: Oro_Anti_2
+  - first:
+      213: 2827305529645757602
+    second: Oro_Anti_3
+  - first:
+      213: -424218789380463388
+    second: Oro_Anti_4
+  - first:
+      213: -2043821189700697019
+    second: Oro_Anti_5
+  - first:
+      213: 6568238832331899988
+    second: Oro_Anti_6
+  - first:
+      213: -1023866807583721127
+    second: Oro_Anti_7
+  - first:
+      213: -4407962115504732620
+    second: Oro_Anti_8
+  - first:
+      213: 1554819002454611643
+    second: Oro_Anti_9
+  - first:
+      213: 759520230590641210
+    second: Oro_Anti_10
+  - first:
+      213: -4140404301498405468
+    second: Oro_Anti_11
+  - first:
+      213: 7151127410515966272
+    second: Oro_Anti_12
+  - first:
+      213: 8872859849225810534
+    second: Oro_Anti_13
+  - first:
+      213: 4659038632594229993
+    second: Oro_Anti_14
+  - first:
+      213: -687044798815888491
+    second: Oro_Anti_15
+  - first:
+      213: -7506199084175954192
+    second: Oro_Anti_16
+  - first:
+      213: -4724072590312477406
+    second: Oro_Anti_17
+  - first:
+      213: -812441096110779445
+    second: Oro_Anti_18
+  - first:
+      213: 6212741321712294960
+    second: Oro_Anti_19
+  - first:
+      213: -6873119450722250668
+    second: Oro_Anti_20
+  - first:
+      213: -8872671016591832259
+    second: Oro_Anti_21
+  - first:
+      213: -4478054101670388643
+    second: Oro_Anti_22
+  - first:
+      213: 3006865617100040752
+    second: Oro_Anti_23
+  - first:
+      213: 790815779397538911
+    second: Oro_Anti_24
+  - first:
+      213: 1235228777650730740
+    second: Oro_Anti_25
+  - first:
+      213: 8403987290136063690
+    second: Oro_Anti_26
+  - first:
+      213: 5959382229771548744
+    second: Oro_Anti_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Oro_Anti_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 447
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae0a3e57a7274400800000000000000
+      internalID: 308258699292053161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 447
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99e59bbc50a2d940800000000000000
+      internalID: 5319490430022576543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 447
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820354725d9c56d90800000000000000
+      internalID: -7105050919783026648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 447
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a47806466b9c3720800000000000000
+      internalID: 2827305529645757602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 447
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e46ee7324fdc1af0800000000000000
+      internalID: -424218789380463388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_5
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 447
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5444973e473e2a3e0800000000000000
+      internalID: -2043821189700697019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 383
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 454c1110b62172b50800000000000000
+      internalID: 6568238832331899988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_7
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 383
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 959b8ac209e7ac1f0800000000000000
+      internalID: -1023866807583721127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_8
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 383
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43606f17fc5c3d2c0800000000000000
+      internalID: -4407962115504732620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_9
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 383
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6955b15a3d39510800000000000000
+      internalID: 1554819002454611643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_10
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 383
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a34f31820ab5a8a00800000000000000
+      internalID: 759520230590641210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_11
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 383
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ad20be79345a86c0800000000000000
+      internalID: -4140404301498405468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 319
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 049fc57dd78ed3360800000000000000
+      internalID: 7151127410515966272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_13
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 319
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6623eeeb50bb22b70800000000000000
+      internalID: 8872859849225810534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_14
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 319
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eac992a3fa38a040800000000000000
+      internalID: 4659038632594229993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_15
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 319
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59b9cc545602776f0800000000000000
+      internalID: -687044798815888491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_16
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 319
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe6456d3bf94d790800000000000000
+      internalID: -7506199084175954192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_17
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 319
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22de3412209b07eb0800000000000000
+      internalID: -4724072590312477406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc35369a021a9b4f0800000000000000
+      internalID: -812441096110779445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_19
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 255
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c5d0ac057183650800000000000000
+      internalID: 6212741321712294960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_20
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 255
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4505fd06646cd90a0800000000000000
+      internalID: -6873119450722250668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_21
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 255
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3bc32748b0fdd480800000000000000
+      internalID: -8872671016591832259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_22
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 255
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c94f03581cad1c0800000000000000
+      internalID: -4478054101670388643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_23
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 255
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a659209588ab920800000000000000
+      internalID: 3006865617100040752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 191
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5493cde2ca89fa00800000000000000
+      internalID: 790815779397538911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_25
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 127
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f6363c570a642110800000000000000
+      internalID: 1235228777650730740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_26
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 63
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace25750ae5f0a470800000000000000
+      internalID: 8403987290136063690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oro_Anti_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848fe46509af3b250800000000000000
+      internalID: 5959382229771548744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Oro_Anti_0: 308258699292053161
+      Oro_Anti_1: 5319490430022576543
+      Oro_Anti_10: 759520230590641210
+      Oro_Anti_11: -4140404301498405468
+      Oro_Anti_12: 7151127410515966272
+      Oro_Anti_13: 8872859849225810534
+      Oro_Anti_14: 4659038632594229993
+      Oro_Anti_15: -687044798815888491
+      Oro_Anti_16: -7506199084175954192
+      Oro_Anti_17: -4724072590312477406
+      Oro_Anti_18: -812441096110779445
+      Oro_Anti_19: 6212741321712294960
+      Oro_Anti_2: -7105050919783026648
+      Oro_Anti_20: -6873119450722250668
+      Oro_Anti_21: -8872671016591832259
+      Oro_Anti_22: -4478054101670388643
+      Oro_Anti_23: 3006865617100040752
+      Oro_Anti_24: 790815779397538911
+      Oro_Anti_25: 1235228777650730740
+      Oro_Anti_26: 8403987290136063690
+      Oro_Anti_27: 5959382229771548744
+      Oro_Anti_3: 2827305529645757602
+      Oro_Anti_4: -424218789380463388
+      Oro_Anti_5: -2043821189700697019
+      Oro_Anti_6: 6568238832331899988
+      Oro_Anti_7: -1023866807583721127
+      Oro_Anti_8: -4407962115504732620
+      Oro_Anti_9: 1554819002454611643
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

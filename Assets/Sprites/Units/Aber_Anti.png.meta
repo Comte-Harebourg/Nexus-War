@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: eee2fe378a66c204cb6ddd76fd4eee92
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6945150242442801926
+    second: Aber_Anti_0
+  - first:
+      213: -1611094400236150808
+    second: Aber_Anti_1
+  - first:
+      213: 7860162638218087865
+    second: Aber_Anti_2
+  - first:
+      213: 4673437930394421422
+    second: Aber_Anti_3
+  - first:
+      213: -9191918378169427461
+    second: Aber_Anti_4
+  - first:
+      213: 9132193187595558509
+    second: Aber_Anti_5
+  - first:
+      213: -4289572878907543697
+    second: Aber_Anti_6
+  - first:
+      213: 3020618351655037037
+    second: Aber_Anti_7
+  - first:
+      213: 4804606328810265884
+    second: Aber_Anti_8
+  - first:
+      213: -8012712066416858354
+    second: Aber_Anti_9
+  - first:
+      213: -1254875448484041569
+    second: Aber_Anti_10
+  - first:
+      213: 5338704963180165204
+    second: Aber_Anti_11
+  - first:
+      213: 3160710942201497957
+    second: Aber_Anti_12
+  - first:
+      213: -6289793550349784175
+    second: Aber_Anti_13
+  - first:
+      213: 4964783315958807276
+    second: Aber_Anti_14
+  - first:
+      213: -6407415025408166482
+    second: Aber_Anti_15
+  - first:
+      213: -1283479259445789295
+    second: Aber_Anti_16
+  - first:
+      213: 2835158072716327650
+    second: Aber_Anti_17
+  - first:
+      213: -1540954416883996096
+    second: Aber_Anti_18
+  - first:
+      213: 2773013709658775111
+    second: Aber_Anti_19
+  - first:
+      213: -8103104728091658888
+    second: Aber_Anti_20
+  - first:
+      213: 1890169173923748281
+    second: Aber_Anti_21
+  - first:
+      213: -1674167973130977638
+    second: Aber_Anti_22
+  - first:
+      213: 8497849776127026209
+    second: Aber_Anti_23
+  - first:
+      213: 8188410956948734981
+    second: Aber_Anti_24
+  - first:
+      213: -3901683202231778807
+    second: Aber_Anti_25
+  - first:
+      213: -8825410245609151647
+    second: Aber_Anti_26
+  - first:
+      213: -8293096911691564989
+    second: Aber_Anti_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Aber_Anti_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 447
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc8a77c6aedd9f90800000000000000
+      internalID: -6945150242442801926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 383
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef9d4ecd2e34a9e0800000000000000
+      internalID: -1611094400236150808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 447
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd49c74648e41d60800000000000000
+      internalID: 7860162638218087865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 383
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea80ff869036bd040800000000000000
+      internalID: 4673437930394421422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_4
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 447
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf993d89feebf6080800000000000000
+      internalID: -9191918378169427461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 383
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e10e6d1511cbe70800000000000000
+      internalID: 9132193187595558509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 447
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6fe09a91306874c0800000000000000
+      internalID: -4289572878907543697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_7
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 447
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68ac6c03646be920800000000000000
+      internalID: 3020618351655037037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_8
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 447
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1d545a00046da240800000000000000
+      internalID: 4804606328810265884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_9
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 383
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0bacb924d02dc090800000000000000
+      internalID: -8012712066416858354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 319
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cefbf9d69c59ee0800000000000000
+      internalID: -1254875448484041569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_11
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 319
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 458f7fad0e3e61a40800000000000000
+      internalID: 5338704963180165204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_12
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 319
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5694c931bd91ddb20800000000000000
+      internalID: 3160710942201497957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_13
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 383
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19babd8371a26b8a0800000000000000
+      internalID: -6289793550349784175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_14
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 383
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceab28e0f1476e440800000000000000
+      internalID: 4964783315958807276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_15
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 319
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea5bb0a7bf94417a0800000000000000
+      internalID: -6407415025408166482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 59
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19df628e96a203ee0800000000000000
+      internalID: -1283479259445789295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_17
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 255
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea765eee31885720800000000000000
+      internalID: 2835158072716327650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_18
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 255
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a6f864f1e6d9ae0800000000000000
+      internalID: -1540954416883996096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_19
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 319
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74edf71e649bb7620800000000000000
+      internalID: 2773013709658775111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_20
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 319
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875fe409e2dfb8f80800000000000000
+      internalID: -8103104728091658888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_21
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 255
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b95e1169da3b3a10800000000000000
+      internalID: 1890169173923748281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_22
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 191
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e313b391924c8e0800000000000000
+      internalID: -1674167973130977638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_23
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 255
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1242fac095d6ee570800000000000000
+      internalID: 8497849776127026209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_24
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 255
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50488db916413a170800000000000000
+      internalID: 8188410956948734981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_25
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 63
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902cdd0bccf6ad9c0800000000000000
+      internalID: -3901683202231778807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_26
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 127
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163af510428d58580800000000000000
+      internalID: -8825410245609151647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aber_Anti_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3483cba2c4009ec80800000000000000
+      internalID: -8293096911691564989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Aber_Anti_0: -6945150242442801926
+      Aber_Anti_1: -1611094400236150808
+      Aber_Anti_10: -1254875448484041569
+      Aber_Anti_11: 5338704963180165204
+      Aber_Anti_12: 3160710942201497957
+      Aber_Anti_13: -6289793550349784175
+      Aber_Anti_14: 4964783315958807276
+      Aber_Anti_15: -6407415025408166482
+      Aber_Anti_16: -1283479259445789295
+      Aber_Anti_17: 2835158072716327650
+      Aber_Anti_18: -1540954416883996096
+      Aber_Anti_19: 2773013709658775111
+      Aber_Anti_2: 7860162638218087865
+      Aber_Anti_20: -8103104728091658888
+      Aber_Anti_21: 1890169173923748281
+      Aber_Anti_22: -1674167973130977638
+      Aber_Anti_23: 8497849776127026209
+      Aber_Anti_24: 8188410956948734981
+      Aber_Anti_25: -3901683202231778807
+      Aber_Anti_26: -8825410245609151647
+      Aber_Anti_27: -8293096911691564989
+      Aber_Anti_3: 4673437930394421422
+      Aber_Anti_4: -9191918378169427461
+      Aber_Anti_5: 9132193187595558509
+      Aber_Anti_6: -4289572878907543697
+      Aber_Anti_7: 3020618351655037037
+      Aber_Anti_8: 4804606328810265884
+      Aber_Anti_9: -8012712066416858354
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
