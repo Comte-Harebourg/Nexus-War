@@ -5,7 +5,7 @@ public class Sera_Tank : BaseUnit
     protected override void InitializeStats()
     {
         UnitID = "015";
-        UnitName = "Char léger de Seranna";
+        UnitName = "Char leger de Seranna";
         Faction = Faction.Seranna;
         speed = 12;
         minAttackRange = 1;

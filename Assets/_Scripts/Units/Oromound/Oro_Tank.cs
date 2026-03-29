@@ -5,7 +5,7 @@ public class Oro_Tank : BaseUnit
     protected override void InitializeStats()
     {
         UnitID = "014";
-        UnitName = "Char léger d'Oromound";
+        UnitName = "Char leger d'Oromound";
         Faction = Faction.Oromound;
         speed = 12;
         minAttackRange = 1;

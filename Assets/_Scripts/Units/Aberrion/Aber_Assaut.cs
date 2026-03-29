@@ -12,7 +12,7 @@ public class Aber_Assaut : BaseUnit
         maxAttackRange = 1;
         MaxHealth = 100;
         MaxArmor = 0;
-        MaxMorale = 1600;
+        MaxMorale = 200;
         damage = 140;
         precision = 0.9f;
         penetration = 0.01f;

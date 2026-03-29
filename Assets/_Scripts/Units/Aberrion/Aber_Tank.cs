@@ -5,7 +5,7 @@ public class Aber_Tank : BaseUnit
     protected override void InitializeStats()
     {
         UnitID = "013";
-        UnitName = "Char léger d'Aberrion";
+        UnitName = "Char leger d'Aberrion";
         Faction = Faction.Aberrion;
         speed = 12;
         minAttackRange = 1;
