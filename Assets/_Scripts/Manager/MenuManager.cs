@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     public static MenuManager Instance;
     [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu,_endTurnMenu;
     [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
-    [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound;
+    [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _memberNumber;
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
     public GameObject ActionMenue;
     public Tile HighlightedTile;
@@ -70,6 +70,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             _healthNumber.text = (Tile.OccupiedUnit.Health + Tile.OccupiedUnit.MaxHealth * (Tile.OccupiedUnit.MemberCount - 1)).ToString()+"/"+ (Tile.OccupiedUnit.MaxHealth * Tile.OccupiedUnit.MaxMemberCount).ToString();
             _armorNumber.text = (Tile.OccupiedUnit.Armor + Tile.OccupiedUnit.MaxArmor * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxArmor * Tile.OccupiedUnit.MaxMemberCount).ToString();
             _moraleNumber.text = (Tile.OccupiedUnit.Morale + Tile.OccupiedUnit.MaxMorale * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxMorale * Tile.OccupiedUnit.MaxMemberCount).ToString();
+            _memberNumber.text = (Tile.OccupiedUnit.MemberCount).ToString() + "/" + (Tile.OccupiedUnit.MaxMemberCount).ToString();
             _tileUnitObject.SetActive(true);
         }
         else
