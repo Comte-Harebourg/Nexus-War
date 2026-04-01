@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7754ea7c33662c144b43f6d89dd03b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ForestTile
-  TileName: "For\xEAt"
+  TileName: Foret
   TileID: 030
   _renderer: {fileID: 8383993722435628425}
   Highlight: {fileID: 870781744161603077}

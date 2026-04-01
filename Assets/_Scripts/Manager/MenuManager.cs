@@ -10,6 +10,8 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu,_endTurnMenu;
     [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
     [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _memberNumber;
+    [SerializeField] private Image _cover1, _cover2, _cover3, _cover4, _cover5;
+    private List<Image> Covers = new List<Image>();
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
     public GameObject ActionMenue;
     public Tile HighlightedTile;
@@ -22,6 +24,11 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     {
         Instance = this;
         _background.SetActive(true);
+        Covers.Add(_cover1);
+        Covers.Add(_cover2);
+        Covers.Add(_cover3);
+        Covers.Add(_cover4);
+        Covers.Add(_cover5);
     }
 
     private void Update()
@@ -54,28 +61,54 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         {
             _tileObject.SetActive(false);
             _tileUnitObject.SetActive(false);
-            return;
-        }
-        _tileObject.GetComponentInChildren<TMP_Text>().text = Tile.TileName;
-        _tileObject.SetActive(true);
-        if (Tile.OccupiedUnit)
-        {
-            _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Tile.OccupiedUnit.UnitName;
-            if (Tile.OccupiedUnit.MaxHealth != 0) _healthBar.fillAmount = (float)(Tile.OccupiedUnit.Health + Tile.OccupiedUnit.MaxHealth * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxHealth * Tile.OccupiedUnit.MaxMemberCount);
-            else _healthBar.fillAmount = 0;
-            if (Tile.OccupiedUnit.MaxArmor != 0) _armorBar.fillAmount = (float)(Tile.OccupiedUnit.Armor + Tile.OccupiedUnit.MaxArmor * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxArmor * Tile.OccupiedUnit.MaxMemberCount);
-            else _armorBar.fillAmount = 0;
-            if (Tile.OccupiedUnit.MaxMorale != 0) _moraleBar.fillAmount = (float)(Tile.OccupiedUnit.Morale + Tile.OccupiedUnit.MaxMorale * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxMorale * Tile.OccupiedUnit.MaxMemberCount);
-            else _moraleBar.fillAmount = 0;
-            _healthNumber.text = (Tile.OccupiedUnit.Health + Tile.OccupiedUnit.MaxHealth * (Tile.OccupiedUnit.MemberCount - 1)).ToString()+"/"+ (Tile.OccupiedUnit.MaxHealth * Tile.OccupiedUnit.MaxMemberCount).ToString();
-            _armorNumber.text = (Tile.OccupiedUnit.Armor + Tile.OccupiedUnit.MaxArmor * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxArmor * Tile.OccupiedUnit.MaxMemberCount).ToString();
-            _moraleNumber.text = (Tile.OccupiedUnit.Morale + Tile.OccupiedUnit.MaxMorale * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxMorale * Tile.OccupiedUnit.MaxMemberCount).ToString();
-            _memberNumber.text = (Tile.OccupiedUnit.MemberCount).ToString() + "/" + (Tile.OccupiedUnit.MaxMemberCount).ToString();
-            _tileUnitObject.SetActive(true);
         }
         else
         {
-            _tileUnitObject.SetActive(false);
+            _tileObject.GetComponentInChildren<TMP_Text>().text = Tile.TileName;
+            _tileObject.SetActive(true);
+            if (Tile.OccupiedUnit)
+            {
+                ShowCover(Tile);
+                _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Tile.OccupiedUnit.UnitName;
+                if (Tile.OccupiedUnit.MaxHealth != 0) _healthBar.fillAmount = (float)(Tile.OccupiedUnit.Health + Tile.OccupiedUnit.MaxHealth * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxHealth * Tile.OccupiedUnit.MaxMemberCount);
+                else _healthBar.fillAmount = 0;
+                if (Tile.OccupiedUnit.MaxArmor != 0) _armorBar.fillAmount = (float)(Tile.OccupiedUnit.Armor + Tile.OccupiedUnit.MaxArmor * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxArmor * Tile.OccupiedUnit.MaxMemberCount);
+                else _armorBar.fillAmount = 0;
+                if (Tile.OccupiedUnit.MaxMorale != 0) _moraleBar.fillAmount = (float)(Tile.OccupiedUnit.Morale + Tile.OccupiedUnit.MaxMorale * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxMorale * Tile.OccupiedUnit.MaxMemberCount);
+                else _moraleBar.fillAmount = 0;
+                _healthNumber.text = (Tile.OccupiedUnit.Health + Tile.OccupiedUnit.MaxHealth * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxHealth * Tile.OccupiedUnit.MaxMemberCount).ToString();
+                _armorNumber.text = (Tile.OccupiedUnit.Armor + Tile.OccupiedUnit.MaxArmor * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxArmor * Tile.OccupiedUnit.MaxMemberCount).ToString();
+                _moraleNumber.text = (Tile.OccupiedUnit.Morale + Tile.OccupiedUnit.MaxMorale * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxMorale * Tile.OccupiedUnit.MaxMemberCount).ToString();
+                _memberNumber.text = (Tile.OccupiedUnit.MemberCount).ToString() + "/" + (Tile.OccupiedUnit.MaxMemberCount).ToString();
+                _tileUnitObject.SetActive(true);
+            }
+            else
+            {
+                ShowCover(Tile);
+                _tileUnitObject.SetActive(false);
+            }
+        }
+    }
+
+    public void ShowCover(Tile Tile)
+    {
+        int cover = (int) (Tile.cover*5); //Affiche la cover de la case en colorant les boucliers de l'UI
+        for (int i = 0; i < Covers.Count(); i++)
+        {
+            if (cover == 0)
+            {
+                Covers[i].color = new Color32(255, 255, 255, 255);
+            }
+            else if (cover > 0)
+            {
+                Covers[i].color = new Color32(0, 100, 255, 255);
+                cover -= 1;
+            }
+            else
+            {
+                Covers[i].color = new Color32(255, 0, 0, 255);
+                cover += 1;
+            }
         }
     }
 

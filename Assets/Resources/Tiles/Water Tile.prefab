@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3040b100bfb547d448d641611e4ccfc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterTile
-  TileName: "Rivi\xE8re"
+  TileName: Riviere
   TileID: 020
   _renderer: {fileID: 5131866458835072710}
   Highlight: {fileID: 5517169036904766711}
@@ -352,7 +352,7 @@ MonoBehaviour:
   _darkRed: {fileID: 6519373492337557352}
   _orange: {fileID: 169581453925174366}
   _darkOrange: {fileID: 2951836236249445426}
-  cover: 0
+  cover: -0.4
   OccupiedUnit: {fileID: 0}
   BlueTiles: []
   RedTiles: []

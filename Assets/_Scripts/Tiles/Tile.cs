@@ -21,7 +21,7 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject _darkOrange; // Portee d'attaque des ennemis
 
     [Header("Stats et Statuts")]
-    [SerializeField] private float cover;
+    public float cover;
     public BaseUnit OccupiedUnit;
 
     [Header("Listes pour le nettoyage")]
