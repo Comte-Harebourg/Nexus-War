@@ -388,7 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TileMapManager
   _groundMap: {fileID: 554298287}
   _unitMap: {fileID: 559232827}
-  _levelIndex: 5
+  _levelIndex: 4
   _tileDatabase: {fileID: 11400000, guid: 58d5b2f1081bf454ebcf218342848d78, type: 2}
   _unitDatabase: {fileID: 11400000, guid: 0232b86d3e428df4baba697e9bb54ade, type: 2}
 --- !u!1 &140663948
@@ -2234,6 +2234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de897902d8aaf44ca990126e5fe96fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  Bot: 0
+  SkipAnimation: 0
   GameState: 2
   PlayerFaction: 0
   UnitMap: {fileID: 559232824}
@@ -3610,8 +3612,53 @@ Transform:
   - {fileID: 861272489}
   - {fileID: 108144975}
   - {fileID: 1010503636}
+  - {fileID: 953251273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &953251272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953251273}
+  - component: {fileID: 953251274}
+  m_Layer: 0
+  m_Name: BotManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &953251273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953251272}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 945309537}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &953251274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953251272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085d625eef28c1b4483b423e0a3ac9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotManager
 --- !u!1 &1010503635
 GameObject:
   m_ObjectHideFlags: 0

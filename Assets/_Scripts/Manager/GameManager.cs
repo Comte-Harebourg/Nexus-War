@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,6 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public bool Bot; //Si actif, le bot jouera à la place du joueur les factions qu'ils ne possèdent pas
+    public bool SkipAnimation; //Si actif, les animations de déplacements ne seront pas jouées
     public GameState GameState;
     public static event Action<GameState> OnGameStateChanged; //S'active si la phase change
     public int PlayerFaction; //Faction du joueur
@@ -14,12 +15,16 @@ public class GameManager : MonoBehaviour
     public List<BaseUnit> AberrionUnits = new List<BaseUnit>();
     public List<BaseUnit> OromoundUnits = new List<BaseUnit>();
     public List<BaseUnit> SerannaUnits = new List<BaseUnit>();
+    public List<List<BaseUnit>> Factions = new List<List<BaseUnit>>();
     private int Turn = 0;
 
     void Awake()
     {
         Instance = this;
         TileMapManager.Instance.LoadMap(); //Lance la map sélectionné dans le TileMapManager, si on met un int ça chargera toujours cette map
+        Factions.Add(AberrionUnits);
+        Factions.Add(OromoundUnits);
+        Factions.Add(SerannaUnits);
     }
 
     private void Start()
@@ -31,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         GameState = newState;
         SetAllActive();
+        UnitManager.Instance.ResetDanger();
         switch (newState)
         {
             case GameState.AberrionTurn:
@@ -129,8 +135,14 @@ public class GameManager : MonoBehaviour
     public void NextTurn()
     {
         ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length)); //Passe au prochain enum du tour
-        PlayerFaction = (int)GameState; //Change la faction du joueur car par d'IA, à suppprimer plus tard
-        UnitManager.Instance.ResetDanger(); //Comme le joueur change de faction il faut enlever le danger
+        if (Bot && (int)GameState!=PlayerFaction) //Si bot le joueur ne joue que sa faction
+        {
+            BotManager.Instance.Play(Factions[(int)GameState]);
+        }
+        else //Si pas de bot le joueur joue toutes les factions
+        {
+            PlayerFaction = (int)GameState;
+        } 
     }
 
     public void SetAllActive()

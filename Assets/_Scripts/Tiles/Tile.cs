@@ -193,7 +193,7 @@ public abstract class Tile : MonoBehaviour
     public void ShowAttackRange(BaseUnit unit) => PerformGenericSearch(unit, 0, false);
     public void ShowDanger() => PerformGenericSearch(OccupiedUnit, OccupiedUnit.speed, true);
 
-    private void PerformGenericSearch(BaseUnit unit, float speed, bool isDanger)
+    public void PerformGenericSearch(BaseUnit unit, float speed, bool isDanger)
 {
         ParentTile = null; // On supprime le parent de la tuile de départ
         SetOverlayState(isDanger ? _orange : _blue, true);
@@ -343,6 +343,37 @@ public abstract class Tile : MonoBehaviour
         Unit.transform.position = transform.position;
         OccupiedUnit = Unit;
         Unit.OccupiedTile = this;
+    }
+
+    public void MoveUnit(BaseUnit Unit, List<Tile> Path)
+    {
+        for (int i = 1; i < Path.Count; i++)
+        {
+            if (GameManager.Instance.SkipAnimation) return;
+            Vector2 Direction = Path[i - 1].Position - Path[i].Position;
+            float Timing = (Time.time % Unit.Animator.GetCurrentAnimatorStateInfo(0).length) / Unit.Animator.GetCurrentAnimatorStateInfo(0).length; //Permet de synchroniser les animations
+            if (Direction == new Vector2(0.00f, -1.00f))
+            {
+                Unit.Animator.Play("Up", 0, Timing);
+                //Déplacer Unit jusqua sa position+(0,-1) en X secondes
+            }
+            else if (Direction == new Vector2(-1.00f, 0.00f))
+            {
+                Unit.Animator.Play("Right", 0, Timing);
+                //Déplacer Unit jusqua sa position+(-1,0) en X secondes
+            }
+            else if (Direction == new Vector2(0.00f, 1.00f))
+            {
+                Unit.Animator.Play("Down", 0, Timing);
+                //Déplacer Unit jusqua sa position+(0,1) en X secondes
+            }
+            else if (Direction == new Vector2(1.00f, 0.00f))
+            {
+                Unit.Animator.Play("Left", 0, Timing);
+                //Déplacer Unit jusqua sa position+(1,0) en X secondes
+            }
+            else Debug.Log("Animation de déplacement impossible");
+        }
     }
 
     public void HideRange()
