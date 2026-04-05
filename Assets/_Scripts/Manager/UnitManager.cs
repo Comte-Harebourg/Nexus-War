@@ -61,11 +61,11 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 //l'attaque réussit
                 if (Defenser.Armor > 0)
                 {
-                    Defenser.Armor -= Mathf.CeilToInt(Attacker.damage * Attacker.penetration);
+                    Defenser.Armor -= Mathf.CeilToInt(Attacker.damage * Attacker.penetration * (1 - Defenser.OccupiedTile.cover));
                 }
                 else
                 {
-                    Defenser.Health -= Attacker.damage;
+                    Defenser.Health -= Mathf.CeilToInt(Attacker.damage * (1 - Defenser.OccupiedTile.cover));
                 }
             }
             else
