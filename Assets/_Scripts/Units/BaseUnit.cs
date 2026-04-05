@@ -34,7 +34,7 @@ public class BaseUnit : MonoBehaviour
     protected virtual void Awake()
     {
         InitializeStats();
-        DemoralizedCount = 0;
+        demoralizedCount = 0;
         Health = MaxHealth;
         Armor = MaxArmor;
         Morale = MaxMorale;
