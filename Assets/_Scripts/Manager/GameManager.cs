@@ -134,6 +134,10 @@ public class GameManager : MonoBehaviour
 
     public void NextTurn()
     {
+        foreach (BaseUnit unit in Factions[(int)GameState])
+        {
+            unit.endTurnStats();
+        }
         ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length)); //Passe au prochain enum du tour
         if (Bot && (int)GameState!=PlayerFaction) //Si bot le joueur ne joue que sa faction
         {

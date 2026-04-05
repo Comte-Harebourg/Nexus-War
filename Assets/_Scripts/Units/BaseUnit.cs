@@ -20,6 +20,7 @@ public class BaseUnit : MonoBehaviour
     public int MaxHealth;
     public int Armor;
     public int MaxArmor;
+    public int demoralizedCount;
     public int Morale;
     public int MaxMorale;
     public int damage;
@@ -33,6 +34,7 @@ public class BaseUnit : MonoBehaviour
     protected virtual void Awake()
     {
         InitializeStats();
+        DemoralizedCount = 0;
         Health = MaxHealth;
         Armor = MaxArmor;
         Morale = MaxMorale;
@@ -54,6 +56,12 @@ public class BaseUnit : MonoBehaviour
         Morale = MaxMorale;
     }
 
+    public void endTurnStats()
+    //modification des stats à la fin du tour d'une faction
+    {
+        Morale = MaxMorale;
+        demoralizedCount = 0;
+    }
     public int GetCost(Type tileType)
     // Retourne le coût de déplacement pour ce type de tile, ou l'infini si aucune valeur n'est définie
     {

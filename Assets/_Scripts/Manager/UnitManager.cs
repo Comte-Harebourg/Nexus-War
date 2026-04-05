@@ -52,7 +52,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     {
         Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
         
-        for (int i = 0; i < Attacker.MemberCount; i++)//pour chaque membre de l'unité attaquante
+        for (int i = 0; i < (Attacker.MemberCount - Attacker.demoralizedCount); i++)//pour chaque membre de l'unité attaquante, moins le nombre de membres démoralisés
         {
             float roll = UnityEngine.Random.value; // Renvoie un float entre 0.0 et 1.0
 
@@ -61,7 +61,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 //l'attaque réussit
                 if (Defenser.Armor > 0)
                 {
-                    Defenser.Armor -= Mathf.RoundToInt(Attacker.damage * Attacker.penetration);
+                    Defenser.Armor -= Mathf.CeilToInt(Attacker.damage * Attacker.penetration);
                 }
                 else
                 {
@@ -91,6 +91,11 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 {
                     Defenser.NewMember();
                 }
+            }
+
+            if (Defenser.Morale == 0)
+            {
+                Defenser.demoralizedCount++;
             }
         }
     }
