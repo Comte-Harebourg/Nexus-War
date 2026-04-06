@@ -153,8 +153,6 @@ public abstract class Tile : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        if(TileName == "Riviere") GetComponent<WaterTileRenderer>().UpdateSprite(this);
-
         if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay) return;
         Highlight.SetActive(true);
         MenuManager.Instance.ShowTileInfo(this);

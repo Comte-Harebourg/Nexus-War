@@ -629,6 +629,13 @@ MonoBehaviour:
   OrangeTiles: []
   Neighbors: []
   ParentTile: {fileID: 0}
+  SpriteRenderer: {fileID: 1154455397651717031}
+  Forest1: {fileID: 6597346183859233734, guid: 37c41e89c29d8a1418ebdfa128f14efc, type: 3}
+  Forest2: {fileID: -8148257953909585430, guid: 37c41e89c29d8a1418ebdfa128f14efc, type: 3}
+  Forest3: {fileID: 2071333888753466287, guid: 37c41e89c29d8a1418ebdfa128f14efc, type: 3}
+  Forest4: {fileID: -2914333615393827051, guid: 37c41e89c29d8a1418ebdfa128f14efc, type: 3}
+  Forest5: {fileID: 4200453956607076868, guid: 37c41e89c29d8a1418ebdfa128f14efc, type: 3}
+  Forest6: {fileID: -2638768430637637358, guid: 37c41e89c29d8a1418ebdfa128f14efc, type: 3}
 --- !u!114 &3923192328788524174
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -193,7 +193,6 @@ GameObject:
   - component: {fileID: 8344123849635770991}
   - component: {fileID: 493148849498669904}
   - component: {fileID: 4615030705272213571}
-  - component: {fileID: -5652569730680601411}
   m_Layer: 0
   m_Name: Water Tile
   m_TagString: Untagged
@@ -360,6 +359,53 @@ MonoBehaviour:
   OrangeTiles: []
   Neighbors: []
   ParentTile: {fileID: 0}
+  SpriteRenderer: {fileID: 5463171093967547043}
+  Up: {fileID: 2816442847521444552, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  Right: {fileID: -2409487730449378999, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  Down: {fileID: 8186759297971372826, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  Left: {fileID: 2732132344672561216, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxRight: {fileID: -7871117874815602600, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownxRight: {fileID: -6676753045459076705, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownxLeft: {fileID: -2411876088948160038, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxLeft: {fileID: 7870058789255126401, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxDownxRight: {fileID: -5268936189732480451, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownxRightxLeft: {fileID: 550224224175637514, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxDownxLeft: {fileID: -3656825725777676, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxRightxLeft: {fileID: -2898101871516825225, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxDown: {fileID: -5741519442392046495, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  RightxLeft: {fileID: -5192443546537562190, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxDownxRightxLeft: {fileID: 3061964304321245510, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpLeft: {fileID: 4213938474574174693, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpRight: {fileID: -4522087593475723524, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownRight: {fileID: -3559522229438388199, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownLeft: {fileID: -6882398560198624054, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownLeftxDownRight: {fileID: 4212374221142612344, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownRightxUpRight: {fileID: 5335012555974589345, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpRightxUpLeft: {fileID: 162970136378308351, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpLeftxDownLeft: {fileID: 2554188013833395062, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownLeftxDownRightxUpRight: {fileID: -6745279618274763322, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownRightxUpRightxUpLeft: {fileID: -9147418426144982851, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpRightxUpLeftxDownLeft: {fileID: 1732970050310212563, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpLeftxDownLeftxDownRight: {fileID: 3732717242413438781, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpLeftxDownRight: {fileID: -6639121362685592427, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpRightxDownLeft: {fileID: -4771760970525454489, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownLeftxDownRightxUpRightxUpLeft: {fileID: -3874674089912670266, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownxUpLeftxUpRight: {fileID: -83626361619322405, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownxUpLeft: {fileID: 3215260413984016988, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownxUpRight: {fileID: -2261311817245079707, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  RightxDownLeftxUpLeft: {fileID: -6554197533610656576, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  RightxDownLeft: {fileID: -7946306083969783349, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  RightxUpLeft: {fileID: 4386701267186544249, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxDownRightxDownLeft: {fileID: -2057770724698755019, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxDownLeft: {fileID: -6688178130541370865, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxDownRight: {fileID: 8060938963096610960, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  LeftxDownRightxUpRight: {fileID: -7073699170815687287, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  LeftxDownRight: {fileID: 1726746657718192128, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  LeftxUpRight: {fileID: -7245907464331140630, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxRightxDownLeft: {fileID: 2928466357300052316, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownxRightxUpLeft: {fileID: 38169365904319375, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  DownxLeftxUpRight: {fileID: -3881984637030991966, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
+  UpxLeftxDownRight: {fileID: -7750345325019362202, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
 --- !u!114 &4615030705272213571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,66 +434,6 @@ MonoBehaviour:
   turnUpLeft: {fileID: 21300000, guid: 94e87f1c4d1c82b429ae731d5676d33e, type: 3}
   turnDownRight: {fileID: 21300000, guid: 8e94f4cd58853c346be413b04302a5b1, type: 3}
   turnDownLeft: {fileID: 21300000, guid: 27a2eebb3c0c63d41a99c56cb113d1cf, type: 3}
---- !u!114 &-5652569730680601411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2874415627320182628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96b8e8cedf62bb46929e201874f9dff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaterTileRenderer
-  Sprite: {fileID: 5463171093967547043}
-  Up: {fileID: 2816442847521444552, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  Right: {fileID: -2409487730449378999, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  Down: {fileID: 8186759297971372826, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  Left: {fileID: 2732132344672561216, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxRight: {fileID: -7871117874815602600, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxLeft: {fileID: 7870058789255126401, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownxRight: {fileID: -6676753045459076705, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownxLeft: {fileID: -2411876088948160038, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxRightxLeft: {fileID: -2898101871516825225, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxDownxRight: {fileID: -5268936189732480451, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxDownxLeft: {fileID: -3656825725777676, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownxRightxLeft: {fileID: 550224224175637514, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxDownxRightxLeft: {fileID: 3061964304321245510, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxDown: {fileID: -5741519442392046495, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  RightxLeft: {fileID: -5192443546537562190, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpRight: {fileID: -4522087593475723524, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpLeft: {fileID: 4213938474574174693, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownRight: {fileID: -3559522229438388199, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownLeft: {fileID: -6882398560198624054, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownLeftxDownRight: {fileID: 4212374221142612344, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownRightxUpRight: {fileID: 5335012555974589345, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpRightxUpLeft: {fileID: 162970136378308351, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpLeftxDownLeft: {fileID: 2554188013833395062, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpRightxDownLeft: {fileID: -4771760970525454489, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpLeftxDownRight: {fileID: -6639121362685592427, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownLeftxDownRightxUpRight: {fileID: -6745279618274763322, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownRightxUpRightxUpLeft: {fileID: -9147418426144982851, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpRightxUpLeftxDownLeft: {fileID: 1732970050310212563, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpLeftxDownLeftxDownRight: {fileID: 3732717242413438781, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxDownRight: {fileID: 8060938963096610960, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxDownLeft: {fileID: -6688178130541370865, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxDownRightxDownLeft: {fileID: -2057770724698755019, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  RightxDownLeft: {fileID: -7946306083969783349, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  RightxUpLeft: {fileID: 4386701267186544249, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  RightxDownLeftxUpLeft: {fileID: -6554197533610656576, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownxUpLeft: {fileID: 3215260413984016988, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownxUpRight: {fileID: -2261311817245079707, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownxUpLeftxUpRight: {fileID: -83626361619322405, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  LeftxDownRight: {fileID: 1726746657718192128, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  LeftxUpRight: {fileID: -7245907464331140630, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  LeftxDownRightxUpRight: {fileID: -7073699170815687287, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxRightxDownLeft: {fileID: 2928466357300052316, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  UpxLeftxDownRight: {fileID: -7750345325019362202, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownxLeftxUpRight: {fileID: -3881984637030991966, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownxRightxUpLeft: {fileID: 38169365904319375, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  DownLeftxDownRightxUpRightxUpLeft: {fileID: -3874674089912670266, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
-  Neutral: {fileID: -8986920795490529174, guid: d876656b751228c4dbdf4b8f33e6c264, type: 3}
 --- !u!1 &2951836236249445426
 GameObject:
   m_ObjectHideFlags: 0
