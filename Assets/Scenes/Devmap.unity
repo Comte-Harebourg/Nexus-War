@@ -388,7 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TileMapManager
   _groundMap: {fileID: 554298287}
   _unitMap: {fileID: 559232827}
-  _levelIndex: 4
+  _levelIndex: 5
   _tileDatabase: {fileID: 11400000, guid: 58d5b2f1081bf454ebcf218342848d78, type: 2}
   _unitDatabase: {fileID: 11400000, guid: 0232b86d3e428df4baba697e9bb54ade, type: 2}
 --- !u!1 &140663948
@@ -2234,7 +2234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de897902d8aaf44ca990126e5fe96fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  Bot: 0
+  Bot: 1
   SkipAnimation: 0
   GameState: 2
   PlayerFaction: 0
