@@ -49,7 +49,7 @@ public abstract class Tile : MonoBehaviour
         {
             MenuManager.Instance.TryAttack(this);
         }
-        else if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay) return;
+        else if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay || GameManager.Instance.InAnimation) return;
         else if (OccupiedUnit != null)
         {
             // TUILE OCCUPEE PAR UN ENNEMI
@@ -153,7 +153,7 @@ public abstract class Tile : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay) return;
+        if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay || GameManager.Instance.InAnimation) return;
         Highlight.SetActive(true);
         MenuManager.Instance.ShowTileInfo(this);
 
@@ -343,37 +343,6 @@ public abstract class Tile : MonoBehaviour
         Unit.transform.position = transform.position;
         OccupiedUnit = Unit;
         Unit.OccupiedTile = this;
-    }
-
-    public void MoveUnit(BaseUnit Unit, List<Tile> Path)
-    {
-        for (int i = 1; i < Path.Count; i++)
-        {
-            if (GameManager.Instance.SkipAnimation) return;
-            Vector2 Direction = Path[i - 1].Position - Path[i].Position;
-            float Timing = (Time.time % Unit.Animator.GetCurrentAnimatorStateInfo(0).length) / Unit.Animator.GetCurrentAnimatorStateInfo(0).length; //Permet de synchroniser les animations
-            if (Direction == new Vector2(0.00f, -1.00f))
-            {
-                Unit.Animator.Play("Up", 0, Timing);
-                //Déplacer Unit jusqua sa position+(0,-1) en X secondes
-            }
-            else if (Direction == new Vector2(-1.00f, 0.00f))
-            {
-                Unit.Animator.Play("Right", 0, Timing);
-                //Déplacer Unit jusqua sa position+(-1,0) en X secondes
-            }
-            else if (Direction == new Vector2(0.00f, 1.00f))
-            {
-                Unit.Animator.Play("Down", 0, Timing);
-                //Déplacer Unit jusqua sa position+(0,1) en X secondes
-            }
-            else if (Direction == new Vector2(1.00f, 0.00f))
-            {
-                Unit.Animator.Play("Left", 0, Timing);
-                //Déplacer Unit jusqua sa position+(1,0) en X secondes
-            }
-            else Debug.Log("Animation de déplacement impossible");
-        }
     }
 
     public void HideRange()

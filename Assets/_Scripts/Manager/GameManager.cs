@@ -6,11 +6,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public bool Bot; //Si actif, le bot jouera à la place du joueur les factions qu'ils ne possèdent pas
-    public bool SkipAnimation; //Si actif, les animations de déplacements ne seront pas jouées
+    public bool Bot = false; //Si actif, le bot jouera à la place du joueur les factions qu'ils ne possèdent pas
+    public bool SkipAnimation = false; //Si actif, les animations de déplacements ne seront pas jouées
+    public float AnimationSpeed = 1f; //Détermine la vitesse de toutes les animations actives du jeu
     public GameState GameState;
+    public bool InAnimation = false; //true si le script attends la fin d'une animation
     public static event Action<GameState> OnGameStateChanged; //S'active si la phase change
-    public int PlayerFaction; //Faction du joueur
+    public int PlayerFaction = 0; //Faction du joueur
     public GameObject UnitMap;
     public List<BaseUnit> AberrionUnits = new List<BaseUnit>();
     public List<BaseUnit> OromoundUnits = new List<BaseUnit>();

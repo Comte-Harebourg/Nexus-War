@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
@@ -150,5 +151,39 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         else if (Unit.Faction == (Faction)1) GameManager.Instance.OromoundUnits.Remove(Unit);
         else if (Unit.Faction == (Faction)2) GameManager.Instance.SerannaUnits.Remove(Unit);
         Destroy(Unit.gameObject);
+    }
+
+    public IEnumerator MoveUnit(BaseUnit Unit, List<Tile> Path)
+    {
+        if (GameManager.Instance.SkipAnimation) yield break;
+        GameManager.Instance.InAnimation = true;
+        float durationPerTile = GameManager.Instance.AnimationSpeed;
+        for (int i = 1; i < Path.Count; i++)
+        {
+            Vector3 startPos = Path[i-1].transform.position;
+            Vector3 endPos = Path[i].transform.position;
+            Vector2 direction = Path[i].Position - Path[i - 1].Position;
+            float Timing = (Time.time % Unit.Animator.GetCurrentAnimatorStateInfo(0).length) / Unit.Animator.GetCurrentAnimatorStateInfo(0).length; //Permet de synchroniser les animations
+            // Animation selon direction
+            if (direction == new Vector2(0, -1))
+                Unit.Animator.Play("Down", 0, Timing);
+            else if (direction == new Vector2(0, 1))
+                Unit.Animator.Play("Up", 0, Timing);
+            else if (direction == new Vector2(-1, 0))
+                Unit.Animator.Play("Left", 0, Timing);
+            else if (direction == new Vector2(1, 0))
+                Unit.Animator.Play("Right", 0, Timing);
+            else
+                Debug.Log("Animation de déplacement impossible");
+            float elapsed = 0f;
+            while (elapsed < durationPerTile)
+            {
+                Unit.transform.position = Vector3.Lerp(startPos, endPos, elapsed / durationPerTile);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+            Unit.transform.position = endPos; // Assure la position exacte à la fin
+        }
+        GameManager.Instance.InAnimation = false;
     }
 }

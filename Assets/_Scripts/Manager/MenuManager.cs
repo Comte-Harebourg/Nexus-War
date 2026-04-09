@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
+using System.Collections;
 
 public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
@@ -33,7 +34,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1)) //Click logic
+        if (Input.GetMouseButtonDown(1) && !GameManager.Instance.InAnimation) //Click logic
         {
             if (AttackDisplay == true)
             {
@@ -133,21 +134,26 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 
     public void Attack()
     {
+        StartCoroutine(AttackRoutine());
+    }
+
+    private IEnumerator AttackRoutine()
+    {
         if (MoveTile != AttackTile)
         {
-            UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false); //Debug affichage curseur sur case de l'unité
-            MoveTile.MoveUnit(UnitManager.Instance.SelectedUnit, ArrowManager.Instance.PathTiles);
+            UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false);
+            ArrowManager.Instance.ClearArrow();
+            ActionMenue.SetActive(false);
+            AttackTile.HideRange();
+            yield return StartCoroutine(UnitManager.Instance.MoveUnit(UnitManager.Instance.SelectedUnit,ArrowManager.Instance.PathTiles));
             MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
-            UnitManager.Instance.Fight(UnitManager.Instance.SelectedUnit, AttackTile.OccupiedUnit);
-            //Animation attaque
+            UnitManager.Instance.Fight(UnitManager.Instance.SelectedUnit,AttackTile.OccupiedUnit);
+            // Animation attaque
             AttackTile.Highlight.SetActive(false);
             MoveTile.Highlight.SetActive(false);
-            UnitManager.Instance.Exhaustion(UnitManager.Instance.SelectedUnit); //Épuisement unité
+            UnitManager.Instance.Exhaustion(UnitManager.Instance.SelectedUnit);
             Cancel();
-            ArrowManager.Instance.ClearArrow();
             UnitManager.Instance.UnSelectUnit();
-            AttackTile = null;
-            MoveTile = null;
         }
         else if (AttackTile.RedTiles.Count != 0)
         {
@@ -159,31 +165,40 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 
     public void TryAttack(Tile Tile)
     {
+        StartCoroutine(TryAttackRoutine(Tile));
+    }
+
+    private IEnumerator TryAttackRoutine(Tile Tile)
+    {
         AttackDisplay = false;
-        MoveTile.MoveUnit(UnitManager.Instance.SelectedUnit, ArrowManager.Instance.PathTiles);
-        MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
-        UnitManager.Instance.Fight(UnitManager.Instance.SelectedUnit, Tile.OccupiedUnit);
-        AttackTile.Highlight.SetActive(false);
-        //Animation déplacement
-        //Animation attaque
-        UnitManager.Instance.Exhaustion(UnitManager.Instance.SelectedUnit); //Épuisement unité
-        Cancel();
         ArrowManager.Instance.ClearArrow();
+        ActionMenue.SetActive(false);
+        AttackTile.HideRange();
+        yield return StartCoroutine(UnitManager.Instance.MoveUnit(UnitManager.Instance.SelectedUnit,ArrowManager.Instance.PathTiles));
+        MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
+        UnitManager.Instance.Fight(UnitManager.Instance.SelectedUnit,Tile.OccupiedUnit);
+        AttackTile.Highlight.SetActive(false);
+        UnitManager.Instance.Exhaustion(UnitManager.Instance.SelectedUnit);
+        Cancel();
         UnitManager.Instance.UnSelectUnit();
-        AttackTile = null;
-        MoveTile = null;
     }
 
     public void Wait()
     {
-        UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false); //Debug affichage curseur sur case de l'unité
-        MoveTile.MoveUnit(UnitManager.Instance.SelectedUnit, ArrowManager.Instance.PathTiles);
+        StartCoroutine(WaitRoutine());
+    }
+
+    private IEnumerator WaitRoutine()
+    {
+        UnitManager.Instance.SelectedUnit.OccupiedTile.Highlight.SetActive(false);
+        ArrowManager.Instance.ClearArrow();
+        ActionMenue.SetActive(false);
+        AttackTile.HideRange();
+        yield return StartCoroutine(UnitManager.Instance.MoveUnit(UnitManager.Instance.SelectedUnit,ArrowManager.Instance.PathTiles));
         MoveTile.SetUnit(UnitManager.Instance.SelectedUnit);
         if (MoveTile != AttackTile) AttackTile.Highlight.SetActive(false);
-        //Animation déplacement
-        UnitManager.Instance.Exhaustion(UnitManager.Instance.SelectedUnit); //Épuisement unité
+        UnitManager.Instance.Exhaustion(UnitManager.Instance.SelectedUnit);
         Cancel();
-        ArrowManager.Instance.ClearArrow();
         UnitManager.Instance.UnSelectUnit();
     }
 
@@ -214,9 +229,8 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             ArrowManager.Instance.PathTiles.Clear(); //Pour éviter des des bugs de Pathfinding
             GridManager.Instance.GetTileUnderMouse().OnMouseEnter();
         }
-        MoveTile = null;
-        AttackTile = null;
         ShowTileInfo(GridManager.Instance.GetTileUnderMouse());
+        ArrowManager.Instance.ClearArrow();
     }
 
     public void EndTurn()

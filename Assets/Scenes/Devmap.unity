@@ -2236,7 +2236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   Bot: 1
   SkipAnimation: 0
+  AnimationSpeed: 0.15
   GameState: 2
+  InAnimation: 0
   PlayerFaction: 0
   UnitMap: {fileID: 559232824}
   AberrionUnits: []
