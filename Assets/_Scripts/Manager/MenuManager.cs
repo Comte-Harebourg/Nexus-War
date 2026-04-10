@@ -34,25 +34,29 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !GameManager.Instance.InAnimation) //Click logic
+        if (Input.GetMouseButtonDown(1))
         {
-            if (AttackDisplay == true)
+            if (!GameManager.Instance.InAnimation)
             {
-                AttackDisplay = false;
-                MenueDisplay = true;
-                ActionMenue.SetActive(true);
+                if (AttackDisplay == true)
+                {
+                    AttackDisplay = false;
+                    MenueDisplay = true;
+                    ActionMenue.SetActive(true);
+                }
+                else if (MenueDisplay == true) Cancel();
+                else if (UnitManager.Instance.SelectedUnit != null)
+                {
+                    ArrowManager.Instance.ClearArrow();
+                    UnitManager.Instance.SelectedUnit.Animator.Play("Down");
+                    UnitManager.Instance.UnSelectUnit();
+                }
+                else
+                {
+                    //Montre l'inventaire de _tileUnit
+                }
             }
-            else if (MenueDisplay == true) Cancel();
-            else if (UnitManager.Instance.SelectedUnit != null)
-            {
-                ArrowManager.Instance.ClearArrow();
-                UnitManager.Instance.SelectedUnit.Animator.Play("Down");
-                UnitManager.Instance.UnSelectUnit();
-            }
-            else
-            {
-                //Montre l'inventaire de _tileUnit
-            }
+            else GameManager.Instance.InAnimation = false;
         }
     }
 

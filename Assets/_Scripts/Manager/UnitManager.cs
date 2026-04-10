@@ -158,7 +158,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         if (GameManager.Instance.SkipAnimation) yield break;
         GameManager.Instance.InAnimation = true;
         float durationPerTile = GameManager.Instance.AnimationSpeed;
-        for (int i = 1; i < Path.Count; i++)
+        for (int i = 1; i < Path.Count && GameManager.Instance.InAnimation; i++)
         {
             Vector3 startPos = Path[i-1].transform.position;
             Vector3 endPos = Path[i].transform.position;
