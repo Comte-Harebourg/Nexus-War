@@ -1,0 +1,1 @@
+Nexus War is a turn-based grid-based strategy game developed by students at Polytech Tours. Following in the footsteps of classics in the genre such as Fire Emblem and Advance Wars, Nexus War stands out for its more complex approach to combat and unit management.
