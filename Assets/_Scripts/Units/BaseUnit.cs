@@ -28,6 +28,7 @@ public class BaseUnit : MonoBehaviour
     public float penetration;
     public int MemberCount;
     public int MaxMemberCount;
+    public bool TriggerDevastation = false;
 
     public Dictionary<Type, int> TileCosts = new Dictionary<Type, int>();
 

@@ -51,10 +51,17 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
 
     public void Fight(BaseUnit Attacker, BaseUnit Defenser)
     {
+        StartCoroutine(FightRoutine(Attacker, Defenser));
+    }
+
+    public IEnumerator FightRoutine(BaseUnit Attacker, BaseUnit Defenser)
+    {
         Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
         
         for (int i = 0; i < (Attacker.MemberCount - Attacker.demoralizedCount); i++)//pour chaque membre de l'unité attaquante, moins le nombre de membres démoralisés
         {
+            LookTo(Attacker, Defenser.OccupiedTile, true); //Ne fonctionne pas pour des raisons obscures
+            yield return StartCoroutine(BounceUnit(Attacker, Defenser.OccupiedTile));
             float roll = UnityEngine.Random.value; // Renvoie un float entre 0.0 et 1.0
 
             if (roll <= Attacker.precision)
@@ -86,7 +93,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 if (Defenser.MemberCount <= 0)
                 {
                     Kill(Defenser);
-                    return;//il n'y a plus rien à attaquer, on sort de la boucle
+                    yield break;//il n'y a plus rien à attaquer, on sort de la boucle
                 }
                 else
                 {
@@ -94,11 +101,12 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 }
             }
 
-            if (Defenser.Morale == 0)
+            if (Defenser.Morale == 0 && Defenser.MemberCount>Defenser.demoralizedCount)
             {
                 Defenser.demoralizedCount++;
             }
         }
+        if (Attacker.TriggerDevastation) Defenser.OccupiedTile.ChangeTile(Defenser.OccupiedTile.DevastationTile); //Les mortiers font des trous
     }
 
     public void LookTo(BaseUnit Unit, Tile Tile, bool IsMoving) //Anime Unit pour regarder vers Tile et IsMoving s'il doit bougé et non etre figé
@@ -157,7 +165,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     {
         if (GameManager.Instance.SkipAnimation) yield break;
         GameManager.Instance.InAnimation = true;
-        float durationPerTile = GameManager.Instance.AnimationSpeed;
+        float duration = GameManager.Instance.AnimationSpeed;
         for (int i = 1; i < Path.Count && GameManager.Instance.InAnimation; i++)
         {
             Vector3 startPos = Path[i-1].transform.position;
@@ -176,14 +184,47 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             else
                 Debug.Log("Animation de déplacement impossible");
             float elapsed = 0f;
-            while (elapsed < durationPerTile)
+            while (elapsed < duration)
             {
-                Unit.transform.position = Vector3.Lerp(startPos, endPos, elapsed / durationPerTile);
+                Unit.transform.position = Vector3.Lerp(startPos, endPos, elapsed / duration);
                 elapsed += Time.deltaTime;
                 yield return null;
             }
             Unit.transform.position = endPos; // Assure la position exacte à la fin
         }
+        GameManager.Instance.InAnimation = false;
+    }
+
+    public IEnumerator BounceUnit(BaseUnit Unit, Tile Tile)
+    {
+        Vector3 startPos = Unit.transform.position;
+        if (GameManager.Instance.SkipAnimation) yield break;
+        GameManager.Instance.InAnimation = true;
+        yield return null;
+
+        Vector3 targetPos = (startPos + Tile.transform.position) / 2f; // Milieu entre l'unité et la case cible
+        float duration = GameManager.Instance.AnimationSpeed; // Plus rapide que le déplacement normal
+
+        // Aller vers la case cible (jusqu'à mi-chemin)
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            Unit.transform.position = Vector3.Lerp(startPos, targetPos, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        Unit.transform.position = targetPos;
+
+        // Retour à la position de départ
+        elapsed = 0f;
+        while (elapsed < duration)
+        {
+            Unit.transform.position = Vector3.Lerp(targetPos, startPos, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        Unit.transform.position = startPos;
+
         GameManager.Instance.InAnimation = false;
     }
 }

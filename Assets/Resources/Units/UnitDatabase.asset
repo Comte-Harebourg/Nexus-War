@@ -19,6 +19,8 @@ MonoBehaviour:
     Prefab: {fileID: -5310829474404005825, guid: 7576022cf35b494439eb518500d78640, type: 3}
   - UnitID: 004
     Prefab: {fileID: -299492853786139131, guid: 2fd121e1689bc4d49b4791e11cc9d83b, type: 3}
+  - UnitID: 019
+    Prefab: {fileID: 8251538462821999069, guid: 87b833562363f9c48b2f7d53e6bfabc3, type: 3}
   - UnitID: 010
     Prefab: {fileID: -616067640708005988, guid: 442ff9d3aa146c14a9eca7beae8b4285, type: 3}
   - UnitID: 013
@@ -29,6 +31,8 @@ MonoBehaviour:
     Prefab: {fileID: 8426151905554245005, guid: 8413affa4d4a6544f97c54ec3eb0992d, type: 3}
   - UnitID: 005
     Prefab: {fileID: -7520879509265391401, guid: 2c0472d1c1ffe1942933f34d838181e5, type: 3}
+  - UnitID: 020
+    Prefab: {fileID: 2046328581616092507, guid: aacf5900890805b41a1cc7b470b14f65, type: 3}
   - UnitID: 011
     Prefab: {fileID: 7184619295442943029, guid: e72026509df376043a50e3ecca09569a, type: 3}
   - UnitID: 014
@@ -39,6 +43,8 @@ MonoBehaviour:
     Prefab: {fileID: 2552287349594637658, guid: 4ddb6b32aeb0544499ea5979c2c7d090, type: 3}
   - UnitID: 006
     Prefab: {fileID: 4066141106380452710, guid: a6024133b553b484ea4940cdbccdd077, type: 3}
+  - UnitID: 021
+    Prefab: {fileID: 8928907662403007740, guid: 39a33dbd848db1b4faef2172359838a7, type: 3}
   - UnitID: 012
     Prefab: {fileID: 1061401621092752111, guid: effc7e1fe01f6c24c8001aecf9ff1698, type: 3}
   - UnitID: 015

@@ -10,8 +10,8 @@ public class TileMapManager : MonoBehaviour
     [SerializeField] private Tilemap _groundMap;
     [SerializeField] private Tilemap _unitMap;
     [SerializeField] private int _levelIndex = 1;
-    [SerializeField] private TileDatabase _tileDatabase;
-    [SerializeField] private UnitDatabase _unitDatabase;
+    [SerializeField] public TileDatabase _tileDatabase;
+    [SerializeField] public UnitDatabase _unitDatabase;
 
     void Awake()
     {

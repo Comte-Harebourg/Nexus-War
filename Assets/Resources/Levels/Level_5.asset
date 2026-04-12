@@ -1043,8 +1043,6 @@ MonoBehaviour:
     UnitID: 013
   - Position: {x: 1, y: 11, z: 0}
     UnitID: 004
-  - Position: {x: 1, y: 10, z: 0}
-    UnitID: 004
   - Position: {x: 1, y: 9, z: 0}
     UnitID: 004
   - Position: {x: 2, y: 11, z: 0}
@@ -1071,7 +1069,9 @@ MonoBehaviour:
     UnitID: 008
   - Position: {x: 22, y: 10, z: 0}
     UnitID: 005
-  - Position: {x: 22, y: 9, z: 0}
-    UnitID: 005
   - Position: {x: 22, y: 8, z: 0}
     UnitID: 005
+  - Position: {x: 22, y: 9, z: 0}
+    UnitID: 020
+  - Position: {x: 1, y: 10, z: 0}
+    UnitID: 019

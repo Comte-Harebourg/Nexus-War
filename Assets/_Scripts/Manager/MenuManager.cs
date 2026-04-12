@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
 using System.Collections;
+using System;
 
 public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
@@ -73,18 +74,19 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             _tileObject.SetActive(true);
             if (Tile.OccupiedUnit)
             {
+                BaseUnit Unit = Tile.OccupiedUnit;
                 ShowCover(Tile);
-                _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Tile.OccupiedUnit.UnitName;
-                if (Tile.OccupiedUnit.MaxHealth != 0) _healthBar.fillAmount = (float)(Tile.OccupiedUnit.Health + Tile.OccupiedUnit.MaxHealth * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxHealth * Tile.OccupiedUnit.MaxMemberCount);
+                _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Unit.UnitName;
+                if (Unit.MaxHealth != 0) _healthBar.fillAmount = (float)(Unit.Health + Unit.MaxHealth * (Unit.MemberCount - 1)) / (float)(Unit.MaxHealth * Unit.MaxMemberCount);
                 else _healthBar.fillAmount = 0;
-                if (Tile.OccupiedUnit.MaxArmor != 0) _armorBar.fillAmount = (float)(Tile.OccupiedUnit.Armor + Tile.OccupiedUnit.MaxArmor * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxArmor * Tile.OccupiedUnit.MaxMemberCount);
+                if (Unit.MaxArmor != 0) _armorBar.fillAmount = (float)(Unit.Armor + Unit.MaxArmor * (Unit.MemberCount - 1)) / (float)(Unit.MaxArmor * Unit.MaxMemberCount);
                 else _armorBar.fillAmount = 0;
-                if (Tile.OccupiedUnit.MaxMorale != 0) _moraleBar.fillAmount = (float)(Tile.OccupiedUnit.Morale + Tile.OccupiedUnit.MaxMorale * (Tile.OccupiedUnit.MemberCount - 1)) / (float)(Tile.OccupiedUnit.MaxMorale * Tile.OccupiedUnit.MaxMemberCount);
+                if (Unit.MaxMorale != 0) _moraleBar.fillAmount = (float)(MathF.Max(0, Unit.MaxMorale * (Unit.MaxMemberCount - Unit.demoralizedCount - 1) + Unit.Morale)) / (float)(Unit.MaxMorale * Unit.MaxMemberCount);
                 else _moraleBar.fillAmount = 0;
-                _healthNumber.text = (Tile.OccupiedUnit.Health + Tile.OccupiedUnit.MaxHealth * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxHealth * Tile.OccupiedUnit.MaxMemberCount).ToString();
-                _armorNumber.text = (Tile.OccupiedUnit.Armor + Tile.OccupiedUnit.MaxArmor * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxArmor * Tile.OccupiedUnit.MaxMemberCount).ToString();
-                _moraleNumber.text = (Tile.OccupiedUnit.Morale + Tile.OccupiedUnit.MaxMorale * (Tile.OccupiedUnit.MemberCount - 1)).ToString() + "/" + (Tile.OccupiedUnit.MaxMorale * Tile.OccupiedUnit.MaxMemberCount).ToString();
-                _memberNumber.text = (Tile.OccupiedUnit.MemberCount).ToString() + "/" + (Tile.OccupiedUnit.MaxMemberCount).ToString();
+                _healthNumber.text = (Unit.Health + Unit.MaxHealth * (Unit.MemberCount - 1)).ToString() + "/" + (Unit.MaxHealth * Unit.MaxMemberCount).ToString();
+                _armorNumber.text = (Unit.Armor + Unit.MaxArmor * (Unit.MemberCount - 1)).ToString() + "/" + (Unit.MaxArmor * Unit.MaxMemberCount).ToString();
+                _moraleNumber.text = (MathF.Max(0, Unit.MaxMorale * (Unit.MaxMemberCount - Unit.demoralizedCount - 1) + Unit.Morale)).ToString() + "/" + (Unit.MaxMorale * Unit.MaxMemberCount).ToString();
+                _memberNumber.text = (Unit.MemberCount).ToString() + "/" + (Unit.MaxMemberCount).ToString();
                 _tileUnitObject.SetActive(true);
             }
             else

@@ -15,6 +15,7 @@ public class ForestTile : Tile
     public void Start()
     {
         UpdateSprite();
+        //DevastationTile = "010";
     }
 
     public void UpdateSprite()

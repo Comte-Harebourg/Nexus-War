@@ -38,6 +38,7 @@ public abstract class Tile : MonoBehaviour
     public List<Tile> Neighbors = new List<Tile>();
     public Vector2Int Position { get; set; }
     [HideInInspector] public Tile ParentTile = null;
+    public string DevastationTile = null;
 
     public virtual void Init(int x, int y) { }
 
@@ -310,6 +311,7 @@ public abstract class Tile : MonoBehaviour
 
     private void ApplyAttackVisuals(Tile target, BaseUnit unit, bool isDanger)
     {
+        if (unit.MaxMemberCount == unit.demoralizedCount) return;//On n'affiche pas la portée d'attaque si on ne peux pas attaquer
         if (isDanger)
         {
             // Le danger n'est affiché que sur les tuiles qui ne sont PAS marquées pour le mouvement
@@ -420,6 +422,17 @@ public abstract class Tile : MonoBehaviour
             }
         }
         return (End);
+    }
+
+    public void ChangeTile(string TileID)
+    {
+        if (TileID != "")
+        {
+            Tile Tile = Instantiate(TileMapManager.Instance._tileDatabase.GetTile(TileID), transform);
+            Tile.OccupiedUnit = OccupiedUnit;
+            OccupiedUnit = null;
+            Tile.FindNeighbors();
+        }
     }
     #endregion
 }
