@@ -57,10 +57,9 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     public IEnumerator FightRoutine(BaseUnit Attacker, BaseUnit Defenser)
     {
         Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
-        
+
         for (int i = 0; i < (Attacker.MemberCount - Attacker.demoralizedCount); i++)//pour chaque membre de l'unité attaquante, moins le nombre de membres démoralisés
         {
-            LookTo(Attacker, Defenser.OccupiedTile, true); //Ne fonctionne pas pour des raisons obscures
             yield return StartCoroutine(BounceUnit(Attacker, Defenser.OccupiedTile));
             float roll = UnityEngine.Random.value; // Renvoie un float entre 0.0 et 1.0
 
@@ -76,11 +75,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                     Defenser.Health -= Mathf.CeilToInt(Attacker.damage * (1 - Defenser.OccupiedTile.cover));
                 }
             }
-            else
-            {
-                //lorsque l'attaque échoue on fait perdre de la morale à l'adversaire
-                Defenser.Morale -= Attacker.damage;
-            }
+            else Defenser.Morale -= Attacker.damage; //lorsque l'attaque échoue on fait perdre de la morale à l'adversaire
 
             // Checks et bornage des valeurs
             if (Defenser.Health < 0) Defenser.Health = 0;
@@ -93,20 +88,19 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 if (Defenser.MemberCount <= 0)
                 {
                     Kill(Defenser);
+                    LookTo(Attacker, Attacker.OccupiedTile, true);
                     yield break;//il n'y a plus rien à attaquer, on sort de la boucle
                 }
-                else
-                {
-                    Defenser.NewMember();
-                }
+                else Defenser.NewMember();
             }
 
-            if (Defenser.Morale == 0 && Defenser.MemberCount>Defenser.demoralizedCount)
+            if (Defenser.Morale == 0 && Defenser.MemberCount > Defenser.demoralizedCount)
             {
                 Defenser.demoralizedCount++;
             }
         }
         if (Attacker.TriggerDevastation) Defenser.OccupiedTile.ChangeTile(Defenser.OccupiedTile.DevastationTile); //Les mortiers font des trous
+        LookTo(Attacker, Attacker.OccupiedTile, true);
     }
 
     public void LookTo(BaseUnit Unit, Tile Tile, bool IsMoving) //Anime Unit pour regarder vers Tile et IsMoving s'il doit bougé et non etre figé
@@ -168,7 +162,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         float duration = GameManager.Instance.AnimationSpeed;
         for (int i = 1; i < Path.Count && GameManager.Instance.InAnimation; i++)
         {
-            Vector3 startPos = Path[i-1].transform.position;
+            Vector3 startPos = Path[i - 1].transform.position;
             Vector3 endPos = Path[i].transform.position;
             Vector2 direction = Path[i].Position - Path[i - 1].Position;
             float Timing = (Time.time % Unit.Animator.GetCurrentAnimatorStateInfo(0).length) / Unit.Animator.GetCurrentAnimatorStateInfo(0).length; //Permet de synchroniser les animations
@@ -195,17 +189,38 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         GameManager.Instance.InAnimation = false;
     }
 
-    public IEnumerator BounceUnit(BaseUnit Unit, Tile Tile)
+    public IEnumerator BounceUnit(BaseUnit Unit, Tile Tile)//buggé au premier bounce jsp quoi y faire
     {
         Vector3 startPos = Unit.transform.position;
         if (GameManager.Instance.SkipAnimation) yield break;
         GameManager.Instance.InAnimation = true;
-        yield return null;
-
-        Vector3 targetPos = (startPos + Tile.transform.position) / 2f; // Milieu entre l'unité et la case cible
-        float duration = GameManager.Instance.AnimationSpeed; // Plus rapide que le déplacement normal
-
-        // Aller vers la case cible (jusqu'à mi-chemin)
+        Vector3 targetPos = (startPos + Tile.transform.position) / 2f; //Valeur par défaut en cas de bug
+        float x0 = startPos.x;
+        float y0 = startPos.y;
+        float x = Tile.transform.position.x;
+        float y = Tile.transform.position.y;
+        float Timing = (Time.time % Unit.Animator.GetCurrentAnimatorStateInfo(0).length) / Unit.Animator.GetCurrentAnimatorStateInfo(0).length; //Permet de synchroniser les animations
+        if (y <= y0 && math.abs(x - x0) <= math.abs(y - y0))
+        {
+            Unit.Animator.Play("Down", 0, Timing);
+            targetPos = (startPos + Vector3Int.down);
+        }
+        else if (y > y0 && math.abs(x - x0) < math.abs(y - y0))
+        {
+            Unit.Animator.Play("Up", 0, Timing);
+            targetPos = (startPos + Vector3Int.up);
+        }
+        else if (x < x0)
+        {
+            Unit.Animator.Play("Left", 0, Timing);
+            targetPos = (startPos + Vector3Int.left);
+        }
+        else
+        {
+            Unit.Animator.Play("Right", 0, Timing);
+            targetPos = (startPos + Vector3Int.right);
+        }
+        float duration = GameManager.Instance.AnimationSpeed;
         float elapsed = 0f;
         while (elapsed < duration)
         {
@@ -223,8 +238,8 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             elapsed += Time.deltaTime;
             yield return null;
         }
-        Unit.transform.position = startPos;
 
+        Unit.transform.position = startPos;
         GameManager.Instance.InAnimation = false;
     }
 }
