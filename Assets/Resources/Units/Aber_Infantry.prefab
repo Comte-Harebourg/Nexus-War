@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 40d2202096a86044e9363f6c6828fa83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   MaxHealth: 0
   Armor: 0
   MaxArmor: 0
+  demoralizedCount: 0
   Morale: 0
   MaxMorale: 0
   damage: 0
@@ -147,3 +148,4 @@ MonoBehaviour:
   penetration: 0
   MemberCount: 0
   MaxMemberCount: 0
+  TriggerDevastation: 0
