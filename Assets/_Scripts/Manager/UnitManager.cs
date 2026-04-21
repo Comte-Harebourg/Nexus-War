@@ -68,14 +68,22 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 //l'attaque réussit
                 if (Defenser.Armor > 0)
                 {
-                    Defenser.Armor -= Mathf.CeilToInt(Attacker.damage * Attacker.penetration * (1 - Defenser.OccupiedTile.cover));
+                    int output = Mathf.CeilToInt(Attacker.damage * Attacker.penetration * (1 - Defenser.OccupiedTile.cover));
+                    Defenser.Armor -= output;
+                    DamagePopUp.Create(new Vector3(0.75f + Defenser.OccupiedTile.Position.x, 1f + Defenser.OccupiedTile.Position.y, 0), output, new Color32(83, 183, 255, 255), 1);
                 }
                 else
                 {
-                    Defenser.Health -= Mathf.CeilToInt(Attacker.damage * (1 - Defenser.OccupiedTile.cover));
+                    int output = Mathf.CeilToInt(Attacker.damage * (1 - Defenser.OccupiedTile.cover));
+                    Defenser.Health -= output;
+                    DamagePopUp.Create(new Vector3(0.75f + Defenser.OccupiedTile.Position.x, 1f + Defenser.OccupiedTile.Position.y, 0), output, new Color32(253, 99, 99, 255), 1);
                 }
             }
-            else Defenser.Morale -= Attacker.damage; //lorsque l'attaque échoue on fait perdre de la morale à l'adversaire
+            else
+            {
+                Defenser.Morale -= Attacker.damage; //lorsque l'attaque échoue on fait perdre de la morale à l'adversaire
+                DamagePopUp.Create(new Vector3(0.75f + Defenser.OccupiedTile.Position.x, 1f + Defenser.OccupiedTile.Position.y, 0), Attacker.damage, new Color32(221, 255, 121, 255), 1);
+            }
 
             // Checks et bornage des valeurs
             if (Defenser.Health < 0) Defenser.Health = 0;

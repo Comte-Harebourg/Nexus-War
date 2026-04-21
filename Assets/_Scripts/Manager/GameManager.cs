@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool Bot = false; //Si actif, le bot jouera à la place du joueur les factions qu'ils ne possèdent pas
     public bool SkipAnimation = false; //Si actif, les animations de déplacements ne seront pas jouées
     public float AnimationSpeed = 1f; //Détermine la vitesse de toutes les animations actives du jeu
+    public int PopUpSize = 10; //Détermine la taille de la police des pop-ups
     public GameState GameState;
     public bool InAnimation = false; //true si le script attends la fin d'une animation
     public static event Action<GameState> OnGameStateChanged; //S'active si la phase change

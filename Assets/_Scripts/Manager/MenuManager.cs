@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu,_endTurnMenu;
     [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
     [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _memberNumber;
+    public Transform DamagePopUp;
     [SerializeField] private Image _cover1, _cover2, _cover3, _cover4, _cover5;
     private List<Image> Covers = new List<Image>();
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
