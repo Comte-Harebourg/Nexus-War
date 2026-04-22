@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     public static MenuManager Instance;
     [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu,_endTurnMenu;
     [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
-    [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _memberNumber;
+    [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _memberNumber, _damageNumber, _precisionNumber;
     public Transform DamagePopUp;
     [SerializeField] private Image _cover1, _cover2, _cover3, _cover4, _cover5;
     private List<Image> Covers = new List<Image>();
@@ -88,6 +88,8 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
                 _armorNumber.text = (Unit.Armor + Unit.MaxArmor * (Unit.MemberCount - 1)).ToString() + "/" + (Unit.MaxArmor * Unit.MaxMemberCount).ToString();
                 _moraleNumber.text = (MathF.Max(0, Unit.MaxMorale * (Unit.MaxMemberCount - Unit.demoralizedCount - 1) + Unit.Morale)).ToString() + "/" + (Unit.MaxMorale * Unit.MaxMemberCount).ToString();
                 _memberNumber.text = (Unit.MemberCount).ToString() + "/" + (Unit.MaxMemberCount).ToString();
+                _damageNumber.text = (Unit.damage).ToString();
+                _precisionNumber.text = (Unit.precision).ToString();
                 _tileUnitObject.SetActive(true);
             }
             else
