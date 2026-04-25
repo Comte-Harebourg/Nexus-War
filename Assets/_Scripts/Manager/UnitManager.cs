@@ -93,6 +93,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             if (Defenser.Health == 0)
             {
                 Defenser.MemberCount--;
+                Defenser.BadgeUpdate();
                 if (Defenser.MemberCount <= 0)
                 {
                     Kill(Defenser);

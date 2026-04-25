@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BaseUnit : MonoBehaviour
@@ -14,6 +15,7 @@ public class BaseUnit : MonoBehaviour
     public bool isActive = true;
     public Animator Animator;
     public SpriteRenderer Sprite;
+    public TextMeshProUGUI Badge;
 
     [Header("Stats")]
     public int Health;
@@ -42,6 +44,8 @@ public class BaseUnit : MonoBehaviour
         MemberCount = MaxMemberCount;
         Animator = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
+        Badge = GetComponentInChildren<TextMeshProUGUI>();
+        Badge.text = (MemberCount).ToString();
     }
 
     protected virtual void InitializeStats()
@@ -71,6 +75,10 @@ public class BaseUnit : MonoBehaviour
             return cost;
         }
         return int.MaxValue;
+    }
+    public void BadgeUpdate()
+    {
+        Badge.text = (MemberCount).ToString();
     }
 }
 
