@@ -16,7 +16,7 @@ public class ArrowManager : MonoBehaviour
 
     void Awake() => Instance = this;
 
-    public void ShowPath(Tile start, Tile end)
+    public void ShowPath(Tile start, Tile end, bool visibleArrow)
     {
         ClearArrow();
         //float cost = UnitManager.Instance.SelectedUnit.speed + start.cost - end.cost;
@@ -43,7 +43,7 @@ public class ArrowManager : MonoBehaviour
         if (PathTiles.Contains(start)) // On n'affiche que si on a bien atteint le départ
         {
             ClearArrow();
-            RenderArrowSprites();
+             if (visibleArrow) RenderArrowSprites();
         }
     }
 

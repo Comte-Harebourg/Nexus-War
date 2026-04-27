@@ -49,15 +49,10 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         DangerUnits.Clear();
     }
 
-    public void Fight(BaseUnit Attacker, BaseUnit Defenser)
-    {
-        StartCoroutine(FightRoutine(Attacker, Defenser));
-    }
-
     public IEnumerator FightRoutine(BaseUnit Attacker, BaseUnit Defenser)
     {
+        yield return null; //Évite les bugs de première itération
         Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
-
         for (int i = 0; i < (Attacker.MemberCount - Attacker.demoralizedCount); i++)//pour chaque membre de l'unité attaquante, moins le nombre de membres démoralisés
         {
             yield return StartCoroutine(BounceUnit(Attacker, Defenser.OccupiedTile));
@@ -166,6 +161,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
 
     public IEnumerator MoveUnit(BaseUnit Unit, List<Tile> Path)
     {
+        yield return null; //Évite les bugs de première itération
         if (GameManager.Instance.SkipAnimation) yield break;
         GameManager.Instance.InAnimation = true;
         float duration = GameManager.Instance.AnimationSpeed;
@@ -191,7 +187,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             {
                 Unit.transform.position = Vector3.Lerp(startPos, endPos, elapsed / duration);
                 elapsed += Time.deltaTime;
-                yield return null;
+                yield return null; //Évite les bugs de première itération
             }
             Unit.transform.position = endPos; // Assure la position exacte à la fin
         }
@@ -200,6 +196,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
 
     public IEnumerator BounceUnit(BaseUnit Unit, Tile Tile)//buggé au premier bounce jsp quoi y faire
     {
+        yield return null; //Évite les bugs de première itération
         Vector3 startPos = Unit.transform.position;
         if (GameManager.Instance.SkipAnimation) yield break;
         GameManager.Instance.InAnimation = true;
@@ -235,7 +232,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         {
             Unit.transform.position = Vector3.Lerp(startPos, targetPos, elapsed / duration);
             elapsed += Time.deltaTime;
-            yield return null;
+            yield return null; //Évite les bugs de première itération
         }
         Unit.transform.position = targetPos;
 
@@ -245,7 +242,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         {
             Unit.transform.position = Vector3.Lerp(targetPos, startPos, elapsed / duration);
             elapsed += Time.deltaTime;
-            yield return null;
+            yield return null; //Évite les bugs de première itération
         }
 
         Unit.transform.position = startPos;

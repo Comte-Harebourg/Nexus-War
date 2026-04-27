@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3bbd46f695a2f84488b3feb5ebb89d2d
+guid: ea64ff4f4c759d840bce5fed5fbcb0a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7073256707530704630
-    second: Penetration_0
+      213: 3689057390413440074
+    second: Member_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Penetration_0
+      name: Member_0
       rect:
         serializedVersion: 2
         x: 8
         y: 0
         width: 17
-        height: 32
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a09bb7e008eb6dd90800000000000000
-      internalID: -7073256707530704630
+      spriteID: a446f9fa62a223330800000000000000
+      internalID: 3689057390413440074
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Penetration_0: -7073256707530704630
+      Member_0: 3689057390413440074
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

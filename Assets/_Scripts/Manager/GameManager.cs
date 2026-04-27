@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
         ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length)); //Passe au prochain enum du tour
         if (Bot && (int)GameState!=PlayerFaction) //Si bot le joueur ne joue que sa faction
         {
-            BotManager.Instance.Play(Factions[(int)GameState]);
+            StartCoroutine(BotManager.Instance.Play(Factions[(int)GameState]));
         }
         else //Si pas de bot le joueur joue toutes les factions
         {

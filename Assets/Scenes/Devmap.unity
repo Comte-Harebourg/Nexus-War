@@ -329,9 +329,9 @@ MonoBehaviour:
   _turnNumberAberrion: {fileID: 735293368}
   _turnNumberSeranna: {fileID: 1344913483}
   _turnNumberOromound: {fileID: 1328574984}
-  _memberNumber: {fileID: 551926694}
   _damageNumber: {fileID: 1049183718}
   _precisionNumber: {fileID: 253733616}
+  _penetrationNumber: {fileID: 551926694}
   DamagePopUp: {fileID: 1770414197322344516, guid: d8d9df1a4d78f8b45a99e3c7146bee89, type: 3}
   _cover1: {fileID: 1843392250}
   _cover2: {fileID: 2073148159}
@@ -1323,10 +1323,10 @@ RectTransform:
   - {fileID: 1898852790}
   - {fileID: 321450526}
   - {fileID: 1341906819}
-  - {fileID: 2112241957}
-  - {fileID: 551926693}
   - {fileID: 1192784016}
   - {fileID: 1049183717}
+  - {fileID: 2112241957}
+  - {fileID: 551926693}
   - {fileID: 1873909478}
   - {fileID: 253733615}
   m_Father: {fileID: 252085033}
@@ -1775,7 +1775,7 @@ GameObject:
   - component: {fileID: 551926695}
   - component: {fileID: 551926694}
   m_Layer: 5
-  m_Name: MemberNumber
+  m_Name: PenetrationNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1797,7 +1797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36.5, y: 11.91}
+  m_AnchoredPosition: {x: 36.5, y: -14.20999}
   m_SizeDelta: {x: 80.77, y: 25.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &551926694
@@ -1820,7 +1820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0/0
+  m_text: 0.00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0d792a038a7afbd429d57af820b5d629, type: 2}
   m_sharedMaterial: {fileID: 2335211158702504524, guid: 0d792a038a7afbd429d57af820b5d629, type: 2}
@@ -2391,7 +2391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de897902d8aaf44ca990126e5fe96fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  Bot: 0
+  Bot: 1
   SkipAnimation: 0
   AnimationSpeed: 0.15
   PopUpSize: 10
@@ -3898,7 +3898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36.5, y: -14.20999}
+  m_AnchoredPosition: {x: 36.5, y: 11.91}
   m_SizeDelta: {x: 80.77, y: 25.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1049183718
@@ -4398,7 +4398,7 @@ GameObject:
   - component: {fileID: 1192784018}
   - component: {fileID: 1192784017}
   m_Layer: 20
-  m_Name: Damage
+  m_Name: DamageIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4420,7 +4420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.9, y: -14}
+  m_AnchoredPosition: {x: 63.9, y: 12.15}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1192784017
@@ -6324,7 +6324,7 @@ GameObject:
   - component: {fileID: 1873909480}
   - component: {fileID: 1873909479}
   m_Layer: 20
-  m_Name: Precision
+  m_Name: PrecisionIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6346,7 +6346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.9, y: -40.3}
+  m_AnchoredPosition: {x: 63.9, y: -40.29001}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1873909479
@@ -6973,7 +6973,7 @@ GameObject:
   - component: {fileID: 2112241959}
   - component: {fileID: 2112241958}
   m_Layer: 20
-  m_Name: Member
+  m_Name: PenetrationIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6988,14 +6988,14 @@ RectTransform:
   m_GameObject: {fileID: 2112241956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30.169756, y: 30.169756, z: 30.169756}
+  m_LocalScale: {x: 30.169752, y: 30.169752, z: 30.169752}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 420313381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.9, y: 13.4}
+  m_AnchoredPosition: {x: 63.899986, y: -14.20999}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112241958
