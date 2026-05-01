@@ -52,7 +52,6 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     public IEnumerator FightRoutine(BaseUnit Attacker, BaseUnit Defenser)
     {
         yield return null; //Évite les bugs de première itération
-        Debug.Log(Attacker.UnitName + " a attaqué " + Defenser.UnitName);
         for (int i = 0; i < (Attacker.MemberCount - Attacker.demoralizedCount); i++)//pour chaque membre de l'unité attaquante, moins le nombre de membres démoralisés
         {
             yield return StartCoroutine(BounceUnit(Attacker, Defenser.OccupiedTile));
@@ -93,6 +92,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 {
                     Kill(Defenser);
                     LookTo(Attacker, Attacker.OccupiedTile, true);
+                    Debug.Log(string.Format("{0} en {1} a tué {2} en {3}", Attacker.UnitName, Attacker.OccupiedTile.Position, Defenser.UnitName, Defenser.OccupiedTile.Position));
                     yield break;//il n'y a plus rien à attaquer, on sort de la boucle
                 }
                 else Defenser.NewMember();
@@ -101,8 +101,10 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             if (Defenser.Morale == 0 && Defenser.MemberCount > Defenser.demoralizedCount)
             {
                 Defenser.demoralizedCount++;
+                Defenser.Morale = Defenser.MaxMorale;
             }
         }
+        Debug.Log(string.Format("{0} en {1} a attaqué {2} en {3}", Attacker.UnitName, Attacker.OccupiedTile.Position, Defenser.UnitName, Defenser.OccupiedTile.Position));
         if (Attacker.TriggerDevastation) Defenser.OccupiedTile.ChangeTile(Defenser.OccupiedTile.DevastationTile); //Les mortiers font des trous
         LookTo(Attacker, Attacker.OccupiedTile, true);
     }
@@ -157,6 +159,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         else if (Unit.Faction == (Faction)1) GameManager.Instance.OromoundUnits.Remove(Unit);
         else if (Unit.Faction == (Faction)2) GameManager.Instance.SerannaUnits.Remove(Unit);
         Destroy(Unit.gameObject);
+        GameManager.Instance.CheckVictoryCondition();
     }
 
     public IEnumerator MoveUnit(BaseUnit Unit, List<Tile> Path)

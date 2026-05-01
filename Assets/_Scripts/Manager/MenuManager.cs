@@ -9,11 +9,12 @@ using System;
 public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
     public static MenuManager Instance;
-    [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu,_endTurnMenu;
+    [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu, _endTurnMenu, _endMenu;
     [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
-    [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _damageNumber, _precisionNumber, _penetrationNumber;
+    [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _damageNumber, _precisionNumber, _penetrationNumber, _endText;
     public Transform DamagePopUp;
     [SerializeField] private Image _cover1, _cover2, _cover3, _cover4, _cover5;
+    [SerializeField] private GameObject  _aberrionIcon, _oromoundIcon, _serannaIcon;
     private List<Image> Covers = new List<Image>();
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
     public GameObject ActionMenue;
@@ -82,11 +83,11 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
                 else _healthBar.fillAmount = 0;
                 if (Unit.MaxArmor != 0) _armorBar.fillAmount = (float)(Unit.Armor + Unit.MaxArmor * (Unit.MemberCount - 1)) / (float)(Unit.MaxArmor * Unit.MaxMemberCount);
                 else _armorBar.fillAmount = 0;
-                if (Unit.MaxMorale != 0) _moraleBar.fillAmount = (float)(MathF.Max(0, Unit.MaxMorale * (Unit.MaxMemberCount - Unit.demoralizedCount - 1) + Unit.Morale)) / (float)(Unit.MaxMorale * Unit.MaxMemberCount);
+                if (Unit.MaxMorale != 0) _moraleBar.fillAmount = (float)(MathF.Max(0, Unit.MaxMorale * (Unit.MemberCount - Unit.demoralizedCount - 1) + Unit.Morale)) / (float)(Unit.MaxMorale * Unit.MaxMemberCount);
                 else _moraleBar.fillAmount = 0;
                 _healthNumber.text = (Unit.Health + Unit.MaxHealth * (Unit.MemberCount - 1)).ToString() + "/" + (Unit.MaxHealth * Unit.MaxMemberCount).ToString();
                 _armorNumber.text = (Unit.Armor + Unit.MaxArmor * (Unit.MemberCount - 1)).ToString() + "/" + (Unit.MaxArmor * Unit.MaxMemberCount).ToString();
-                _moraleNumber.text = (MathF.Max(0, Unit.MaxMorale * (Unit.MaxMemberCount - Unit.demoralizedCount - 1) + Unit.Morale)).ToString() + "/" + (Unit.MaxMorale * Unit.MaxMemberCount).ToString();
+                _moraleNumber.text = (MathF.Max(0, Unit.MaxMorale * (Unit.MemberCount - Unit.demoralizedCount - 1) + Unit.Morale)).ToString() + "/" + (Unit.MaxMorale * Unit.MaxMemberCount).ToString();
                 _damageNumber.text = (Unit.damage).ToString();
                 _precisionNumber.text = (Unit.precision).ToString();
                 _penetrationNumber.text = (Unit.penetration).ToString();
@@ -255,5 +256,23 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         _turnNumberAberrion.text = "Tour: " + Turn.ToString();
         _turnNumberSeranna.text = "Tour: " + Turn.ToString();
         _turnNumberOromound.text = "Tour: " + Turn.ToString();
+    }
+
+    public void ShowEndMenu(List<BaseUnit> Winner)//Affiche le menu de fin, supprime l'UI, le plateau et désactive les bots
+    {
+        string faction = Winner.First().Faction.ToString();
+        Debug.Log(string.Format("{0} a gagné", faction));
+        TileMapManager.Instance.ClearMap();
+        _tileObject.SetActive(false);
+        _tileUnitObject.SetActive(false);
+        OromoundInfo.SetActive(false);
+        SerannaInfo.SetActive(false);
+        AberrionInfo.SetActive(false);
+        _endMenu.SetActive(true);
+        GameManager.Instance.Bot = false;
+        if (faction=="Aberrion") _aberrionIcon.SetActive(true);
+        else if (faction == "Oromound") _oromoundIcon.SetActive(true);
+        else if (faction == "Seranna") _serannaIcon.SetActive(true);
+        _endText.text = string.Format("{0} a gagne avec {1} unites restantes en {2} tours.", faction, Winner.Count, GameManager.Instance.Turn);
     }
 }

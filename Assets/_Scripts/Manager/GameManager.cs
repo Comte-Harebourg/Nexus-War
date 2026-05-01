@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public List<BaseUnit> OromoundUnits = new List<BaseUnit>();
     public List<BaseUnit> SerannaUnits = new List<BaseUnit>();
     public List<List<BaseUnit>> Factions = new List<List<BaseUnit>>();
-    private int Turn = 0;
+    public int Turn = 0;
 
     void Awake()
     {
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
                 if (AberrionUnits.Count() != 0)
                 {
                     Turn += 1;
+                    Debug.Log(string.Format("Tour {0} d'Aberrion", Turn));
                     MenuManager.Instance.UpdateTurn(Turn);
                     MenuManager.Instance.OromoundInfo.SetActive(false);
                     MenuManager.Instance.SerannaInfo.SetActive(false);
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
                 if (OromoundUnits.Count() != 0)
                 {
                     Turn += 1;
+                    Debug.Log(string.Format("Tour {0} d'Oromound", Turn));
                     MenuManager.Instance.UpdateTurn(Turn);
                     MenuManager.Instance.AberrionInfo.SetActive(false);
                     MenuManager.Instance.SerannaInfo.SetActive(false);
@@ -82,6 +84,7 @@ public class GameManager : MonoBehaviour
                 if (SerannaUnits.Count() != 0)
                 {
                     Turn += 1;
+                    Debug.Log(string.Format("Tour {0} de Seranna", Turn));
                     MenuManager.Instance.UpdateTurn(Turn);
                     MenuManager.Instance.AberrionInfo.SetActive(false);
                     MenuManager.Instance.OromoundInfo.SetActive(false);
@@ -137,12 +140,13 @@ public class GameManager : MonoBehaviour
 
     public void NextTurn()
     {
+        CheckVictoryCondition();
         foreach (BaseUnit unit in Factions[(int)GameState])
         {
             unit.endTurnStats();
         }
         ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length)); //Passe au prochain enum du tour
-        if (Bot && (int)GameState!=PlayerFaction) //Si bot le joueur ne joue que sa faction
+        if (Bot && (int)GameState != PlayerFaction) //Si bot le joueur ne joue que sa faction
         {
             StartCoroutine(BotManager.Instance.Play(Factions[(int)GameState]));
         }
@@ -154,7 +158,7 @@ public class GameManager : MonoBehaviour
 
     public void SetAllActive()
     {
-        foreach(BaseUnit Unit in AberrionUnits)
+        foreach (BaseUnit Unit in AberrionUnits)
         {
             UnitManager.Instance.SetActive(Unit);
         }
@@ -166,6 +170,21 @@ public class GameManager : MonoBehaviour
         {
             UnitManager.Instance.SetActive(Unit);
         }
+    }
+
+    public void CheckVictoryCondition()//Vérifie le nombre de factions restantes et appelle MenuManager pour afficher l'écran de fin s'il reste une seule faction
+    {
+        List<BaseUnit> winner = null;
+        int remainingFactions = 0;
+        foreach (List<BaseUnit> Fac in Factions)
+        {
+            if (Fac.Count > 0)
+            {
+                remainingFactions++;
+                winner = Fac;
+            }
+        }
+        if (remainingFactions == 1) MenuManager.Instance.ShowEndMenu(winner);
     }
 }
 

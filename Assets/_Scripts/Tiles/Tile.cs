@@ -341,7 +341,12 @@ public abstract class Tile : MonoBehaviour
 
     public void SetUnit(BaseUnit Unit)
     {
-        if (Unit.OccupiedTile != null) Unit.OccupiedTile.OccupiedUnit = null;
+        if (Unit.OccupiedTile != null)
+        {
+            Debug.Log(string.Format("{0} a été déplacé de {1} en {2} à {3} en {4}", Unit.UnitName, Unit.OccupiedTile.TileName, Unit.OccupiedTile.Position, TileName, Position));
+            Unit.OccupiedTile.OccupiedUnit = null;
+        }
+        else Debug.Log(string.Format("{0} a été déployé sur {1} en {2}", Unit.UnitName, TileName, Position));
         Unit.transform.position = transform.position;
         OccupiedUnit = Unit;
         Unit.OccupiedTile = this;
