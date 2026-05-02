@@ -15,6 +15,9 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     public Transform DamagePopUp;
     [SerializeField] private Image _cover1, _cover2, _cover3, _cover4, _cover5;
     [SerializeField] private GameObject  _aberrionIcon, _oromoundIcon, _serannaIcon;
+    [SerializeField] private GameObject _turnAnimation;
+    [SerializeField] private TMP_Text _turnAmount;
+    [SerializeField] private Image _banniere1, _banniere2;
     private List<Image> Covers = new List<Image>();
     public GameObject AberrionInfo,SerannaInfo,OromoundInfo;
     public GameObject ActionMenue;
@@ -274,5 +277,78 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         else if (faction == "Oromound") _oromoundIcon.SetActive(true);
         else if (faction == "Seranna") _serannaIcon.SetActive(true);
         _endText.text = string.Format("{0} a gagne avec {1} unites restantes en {2} tours.", faction, Winner.Count, GameManager.Instance.Turn);
+    }
+
+    public IEnumerator TurnAnimation(GameState Faction)//Gere l'animation du bandeau de nouveau tour
+    {
+        yield return null; //Évite les bugs de première itération
+        if (GameManager.Instance.SkipAnimation) yield break;
+        float duration = GameManager.Instance.AnimationSpeed*10;
+        GameManager.Instance.InAnimation = true;
+        _turnAmount.text = "Tour " + GameManager.Instance.Turn.ToString();
+        if (Faction == (GameState)0)
+        {
+            _turnAnimation.GetComponent<Image>().color = new Color32(35, 79, 137, 255);
+            _banniere1.color = new Color32(98, 122, 147, 255);
+            _banniere2.color = new Color32(98, 122, 147, 255);
+            _turnAmount.color = new Color32(98, 122, 147, 255);
+        }
+        else if (Faction == (GameState)1)
+        {
+            _turnAnimation.GetComponent<Image>().color = new Color32(54, 75, 40, 255);
+            _banniere1.color = new Color32(215, 239, 184, 255);
+            _banniere2.color = new Color32(215, 239, 184, 255);
+            _turnAmount.color = new Color32(215, 239, 184, 255);
+        }
+        else if (Faction == (GameState)2)
+        {
+            _turnAnimation.GetComponent<Image>().color = new Color32(163, 144, 88, 255);
+            _banniere1.color = new Color32(64, 61, 50, 255);
+            _banniere2.color = new Color32(64, 61, 50, 255);
+            _turnAmount.color = new Color32(64, 61, 50, 255);
+        }
+        _turnAnimation.SetActive(true);
+
+        RectTransform rt = _turnAnimation.GetComponent<RectTransform>();
+        float width = rt.rect.width;
+
+        float slideInDuration = duration * 0.25f;
+        float holdDuration = duration * 0.50f;
+        float slideOutDuration = duration * 0.25f;
+
+        Vector2 hiddenLeft = new Vector2(-width, rt.anchoredPosition.y);
+        Vector2 centerPos = new Vector2(0f, rt.anchoredPosition.y);
+        Vector2 hiddenRight = new Vector2(width, rt.anchoredPosition.y);
+
+        float t = 0f;
+        rt.anchoredPosition = hiddenLeft;
+        while (t < slideInDuration && GameManager.Instance.InAnimation)
+        {
+            t += Time.deltaTime;
+            float normalized = Mathf.Clamp01(t / slideInDuration);
+            float eased = 1f - Mathf.Pow(1f - normalized, 3f);
+            rt.anchoredPosition = Vector2.LerpUnclamped(hiddenLeft, centerPos, eased);
+            yield return null;
+        }
+        rt.anchoredPosition = centerPos;
+
+        t = 0f;
+        while (t < holdDuration && GameManager.Instance.InAnimation)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        t = 0f;
+        while (t < slideOutDuration && GameManager.Instance.InAnimation)
+        {
+            t += Time.deltaTime;
+            float normalized = Mathf.Clamp01(t / slideOutDuration);
+            float eased = Mathf.Pow(normalized, 3f);
+            rt.anchoredPosition = Vector2.LerpUnclamped(centerPos, hiddenRight, eased);
+            yield return null;
+        }
+        _turnAnimation.SetActive(false);
+        GameManager.Instance.InAnimation = false;
     }
 }

@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ChangeState((GameState)PlayerFaction); //Ne pas mettre dans Awake sous peine de bug
+        StartCoroutine(MenuManager.Instance.TurnAnimation(GameState));
     }
 
     public void ChangeState(GameState newState)
@@ -146,6 +147,7 @@ public class GameManager : MonoBehaviour
             unit.endTurnStats();
         }
         ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length)); //Passe au prochain enum du tour
+        StartCoroutine(MenuManager.Instance.TurnAnimation(GameState));
         if (Bot && (int)GameState != PlayerFaction) //Si bot le joueur ne joue que sa faction
         {
             StartCoroutine(BotManager.Instance.Play(Factions[(int)GameState]));
