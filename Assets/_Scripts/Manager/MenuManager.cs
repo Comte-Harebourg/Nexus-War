@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
     [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _damageNumber, _precisionNumber, _penetrationNumber, _endText;
     public Transform DamagePopUp;
-    [SerializeField] private Image _cover1, _cover2, _cover3, _cover4, _cover5;
+    [SerializeField] private Image _cover1, _cover2, _cover3, _cover4;
     [SerializeField] private GameObject  _aberrionIcon, _oromoundIcon, _serannaIcon;
     [SerializeField] private GameObject _turnAnimation;
     [SerializeField] private TMP_Text _turnAmount;
@@ -35,7 +35,6 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         Covers.Add(_cover2);
         Covers.Add(_cover3);
         Covers.Add(_cover4);
-        Covers.Add(_cover5);
     }
 
     private void Update()
@@ -79,6 +78,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             _tileObject.SetActive(true);
             if (Tile.OccupiedUnit)
             {
+                _tileObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(221.2f, 39.51001f);
                 BaseUnit Unit = Tile.OccupiedUnit;
                 ShowCover(Tile);
                 _tileUnitObject.GetComponentInChildren<TMP_Text>().text = Unit.UnitName;
@@ -98,6 +98,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
             }
             else
             {
+                _tileObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(58.9f, 39.51001f);
                 ShowCover(Tile);
                 _tileUnitObject.SetActive(false);
             }

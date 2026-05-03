@@ -191,7 +191,7 @@ public class WaterTile : Tile
         else SpriteRenderer.sprite = DownRight;
     }
 
-    public void FindWaterNeighbors(Tile Tile)
+    private void FindWaterNeighbors(Tile Tile)
     {
         Vector2Int[] directions = {
         Vector2Int.up,

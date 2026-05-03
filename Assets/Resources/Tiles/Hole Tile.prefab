@@ -1171,12 +1171,52 @@ MonoBehaviour:
   ParentTile: {fileID: 0}
   DevastationTile: 
   SpriteRenderer: {fileID: 3576527845202141802}
-  Hole1: {fileID: -5847606412129897361, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
-  Hole2: {fileID: 5946315603138408109, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
-  Hole3: {fileID: -7094112557212987591, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
-  Hole4: {fileID: -9053400888170227928, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
-  Hole5: {fileID: -5657554798712547658, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
-  Hole6: {fileID: 2745848560545953714, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  Up: {fileID: 5946315603138408109, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  Right: {fileID: -7094112557212987591, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  Down: {fileID: -9053400888170227928, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  Left: {fileID: -5657554798712547658, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxRight: {fileID: 2745848560545953714, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownxRight: {fileID: -1476147943799960017, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownxLeft: {fileID: 712321987610583964, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxLeft: {fileID: -6137431753673188919, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxDownxRight: {fileID: 441046039867030381, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownxRightxLeft: {fileID: -1452314941477736776, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxDownxLeft: {fileID: -1455893538686843430, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxRightxLeft: {fileID: -1885556091161055371, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxDown: {fileID: 323812361673785068, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  RightxLeft: {fileID: -6301703921039466354, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxDownxRightxLeft: {fileID: 7239219728722024707, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpLeft: {fileID: 6700019734559221433, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpRight: {fileID: -9188425073681192564, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownRight: {fileID: -4664637140594393295, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownLeft: {fileID: -2601045085383921150, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownLeftxDownRight: {fileID: -530245259244810986, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownRightxUpRight: {fileID: -2045180490216899376, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpRightxUpLeft: {fileID: 4520256603883329614, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpLeftxDownLeft: {fileID: -1082827651340127316, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownLeftxDownRightxUpRight: {fileID: 5807230662336835744, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownRightxUpRightxUpLeft: {fileID: -3424215332002377341, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpRightxUpLeftxDownLeft: {fileID: -1796220822992277290, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpLeftxDownLeftxDownRight: {fileID: 7758230629005128319, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpLeftxDownRight: {fileID: 8175651551192206487, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpRightxDownLeft: {fileID: 3400191015638434842, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownLeftxDownRightxUpRightxUpLeft: {fileID: -4991029509103665953, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownxUpLeftxUpRight: {fileID: -8190075775758076342, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownxUpLeft: {fileID: 3078525836317280433, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownxUpRight: {fileID: -6447689698349738068, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  RightxDownLeftxUpLeft: {fileID: -1678684917367483880, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  RightxDownLeft: {fileID: -50706111576217594, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  RightxUpLeft: {fileID: 5555292291906440065, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxDownRightxDownLeft: {fileID: 5314791212354518509, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxDownLeft: {fileID: -1578493021946614431, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxDownRight: {fileID: -3035405658475221155, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  LeftxDownRightxUpRight: {fileID: -8160847197373326814, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  LeftxDownRight: {fileID: -3068247297248906487, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  LeftxUpRight: {fileID: -1194772260146135106, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxRightxDownLeft: {fileID: 5727174418258921460, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownxRightxUpLeft: {fileID: 859633174852213061, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  DownxLeftxUpRight: {fileID: -36692950976207810, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
+  UpxLeftxDownRight: {fileID: -7229600094690946136, guid: f320fa7e9724c5d46a8497f62f0d5501, type: 3}
 --- !u!114 &5510573527116871799
 MonoBehaviour:
   m_ObjectHideFlags: 0
