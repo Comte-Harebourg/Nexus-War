@@ -17,7 +17,7 @@ public class DamagePopUp : MonoBehaviour
         Text.SetText("-" + damage.ToString());
         Text.color = color;
         TextColor = color;
-        Text.fontSize = GameManager.Instance.PopUpSize * size;
+        Text.fontSize = GameManager.PopUpSize * size;
         GetComponent<Canvas>().sortingOrder = 20;
     }
 

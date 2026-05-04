@@ -88,10 +88,10 @@ public class TileMapManager : MonoBehaviour
     public void LoadMap(int? index = null)
     {
         int levelIndex = index ?? _levelIndex;
-        var level = Resources.Load<ScriptableLevel>($"Levels/Level_{_levelIndex}");
+        var level = Resources.Load<ScriptableLevel>($"Levels/Level_{levelIndex}");
         if (level == null)
         {
-            Debug.LogError($"Level {_levelIndex} introuvable.");
+            Debug.LogError($"Level {levelIndex} introuvable.");
             return;
         }
         ClearMap();// On supprime les anciennes tuiles et unités

@@ -165,9 +165,9 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     public IEnumerator MoveUnit(BaseUnit Unit, List<Tile> Path)
     {
         yield return null; //Évite les bugs de première itération
-        if (GameManager.Instance.SkipAnimation) yield break;
+        if (GameManager.SkipAnimation) yield break;
         GameManager.Instance.InAnimation = true;
-        float duration = GameManager.Instance.AnimationSpeed;
+        float duration = GameManager.AnimationSpeed;
         for (int i = 1; i < Path.Count && GameManager.Instance.InAnimation; i++)
         {
             Vector3 startPos = Path[i - 1].transform.position;
@@ -201,7 +201,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     {
         yield return null; //Évite les bugs de première itération
         Vector3 startPos = Unit.transform.position;
-        if (GameManager.Instance.SkipAnimation) yield break;
+        if (GameManager.SkipAnimation) yield break;
         GameManager.Instance.InAnimation = true;
         Vector3 targetPos = (startPos + Tile.transform.position) / 2f; //Valeur par défaut en cas de bug
         float x0 = startPos.x;
@@ -229,7 +229,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             Unit.Animator.Play("Right", 0, Timing);
             targetPos = (startPos + Vector3Int.right);
         }
-        float duration = GameManager.Instance.AnimationSpeed;
+        float duration = GameManager.AnimationSpeed;
         float elapsed = 0f;
         while (elapsed < duration)
         {

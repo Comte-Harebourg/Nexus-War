@@ -6,14 +6,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public bool Bot = false; //Si actif, le bot jouera à la place du joueur les factions qu'ils ne possèdent pas
-    public bool SkipAnimation = false; //Si actif, les animations de déplacements ne seront pas jouées
-    public float AnimationSpeed = 1f; //Détermine la vitesse de toutes les animations actives du jeu
-    public int PopUpSize = 10; //Détermine la taille de la police des pop-ups
+    public GameSettings settings;
+    public static bool Bot; //Si actif, le bot jouera à la place du joueur les factions qu'ils ne possèdent pas
+    public static bool SkipAnimation; //Si actif, les animations de déplacements ne seront pas jouées
+    public static float AnimationSpeed; //Détermine la vitesse de toutes les animations actives du jeu
+    public static int PopUpSize; //Détermine la taille de la police des pop-ups
     public GameState GameState;
     public bool InAnimation = false; //true si le script attends la fin d'une animation
     public static event Action<GameState> OnGameStateChanged; //S'active si la phase change
-    public int PlayerFaction = 0; //Faction du joueur
+    public int PlayerFaction; //Faction du joueur
     public GameObject UnitMap;
     public List<BaseUnit> AberrionUnits = new List<BaseUnit>();
     public List<BaseUnit> OromoundUnits = new List<BaseUnit>();
@@ -24,7 +25,12 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        TileMapManager.Instance.LoadMap(); //Lance la map sélectionné dans le TileMapManager, si on met un int ça chargera toujours cette map
+        Bot = settings.Bot;
+        SkipAnimation = settings.SkipAnimation;
+        AnimationSpeed = settings.AnimationSpeed;
+        PopUpSize = settings.PopUpSize;
+        PlayerFaction = settings.Faction;
+        TileMapManager.Instance.LoadMap(settings.Level);
         Factions.Add(AberrionUnits);
         Factions.Add(OromoundUnits);
         Factions.Add(SerannaUnits);
@@ -148,14 +154,14 @@ public class GameManager : MonoBehaviour
         }
         ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length)); //Passe au prochain enum du tour
         StartCoroutine(MenuManager.Instance.TurnAnimation(GameState));
-        if (Bot && (int)GameState != PlayerFaction) //Si bot le joueur ne joue que sa faction
+        if (Bot)
         {
-            StartCoroutine(BotManager.Instance.Play(Factions[(int)GameState]));
+            if ((int)GameState != PlayerFaction) StartCoroutine(BotManager.Instance.Play(Factions[(int)GameState]));
         }
-        else //Si pas de bot le joueur joue toutes les factions
+        else
         {
             PlayerFaction = (int)GameState;
-        } 
+        }
     }
 
     public void SetAllActive()

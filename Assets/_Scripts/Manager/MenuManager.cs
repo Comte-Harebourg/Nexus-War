@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Linq;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
@@ -273,7 +274,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         SerannaInfo.SetActive(false);
         AberrionInfo.SetActive(false);
         _endMenu.SetActive(true);
-        GameManager.Instance.Bot = false;
+        GameManager.Bot = false;
         if (faction=="Aberrion") _aberrionIcon.SetActive(true);
         else if (faction == "Oromound") _oromoundIcon.SetActive(true);
         else if (faction == "Seranna") _serannaIcon.SetActive(true);
@@ -283,8 +284,8 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     public IEnumerator TurnAnimation(GameState Faction)//Gere l'animation du bandeau de nouveau tour
     {
         yield return null; //Évite les bugs de première itération
-        if (GameManager.Instance.SkipAnimation) yield break;
-        float duration = GameManager.Instance.AnimationSpeed*10;
+        if (GameManager.SkipAnimation) yield break;
+        float duration = GameManager.AnimationSpeed*10;
         GameManager.Instance.InAnimation = true;
         _turnAmount.text = "Tour " + GameManager.Instance.Turn.ToString();
         if (Faction == (GameState)0)
@@ -351,5 +352,10 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         }
         _turnAnimation.SetActive(false);
         GameManager.Instance.InAnimation = false;
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 }
