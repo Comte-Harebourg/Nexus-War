@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a2e5342f840794982672a40eb9514a, type: 3}
   m_Name: GameConfigAsset
   m_EditorClassIdentifier: Assembly-CSharp::GameSettings
-  SkipAnimation: 0
+  SkipAnimation: 1
   Bot: 1
+  AutoEndTurn: 1
   AnimationSpeed: 0.14999999
   PopUpSize: 10
   Level: 5

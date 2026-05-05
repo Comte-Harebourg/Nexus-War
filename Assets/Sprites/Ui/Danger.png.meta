@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 20f6ac5fe2488844985b6786113e69c0
+guid: 5ea63755cd78842479003d825403ee42
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7422516391661584762
-    second: TileDarkRed_0
+      213: -5102004344226633193
+    second: Danger_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 68
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileDarkRed_0
+      name: Danger_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 50
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68e3f7ffaacedf890800000000000000
-      internalID: -7422516391661584762
+      spriteID: 71a2fdb941a0239b0800000000000000
+      internalID: -5102004344226633193
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TileDarkRed_0: -7422516391661584762
+      Danger_0: -5102004344226633193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

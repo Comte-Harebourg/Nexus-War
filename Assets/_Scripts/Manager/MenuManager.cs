@@ -253,6 +253,8 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         }
         ShowTileInfo(GridManager.Instance.GetTileUnderMouse());
         ArrowManager.Instance.ClearArrow();
+        //Si c'est le tour du joueur, qu'il n'a plus d'unites jouables et qu'il a rentre l'option du skip automatique de son tour, on skip son tour
+        if (GameManager.AutoEndTurn && GameManager.PlayerFaction == (int)GameManager.Instance.GameState && GameManager.Instance.Factions[GameManager.PlayerFaction].Count(go => go.isActive) == 0) EndTurn();
     }
 
     public void EndTurn()

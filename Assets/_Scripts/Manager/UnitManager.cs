@@ -19,14 +19,14 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     public void SelectUnit(BaseUnit Unit)
     {
         SelectedUnit = Unit;
-        Debug.Log($"Unité {Unit.name} sélectionnée");
+        Debug.Log($"L'unité {Unit.UnitName} en {Unit.OccupiedTile.Position} sélectionnée");
         SelectedUnit.OccupiedTile.ShowRange(SelectedUnit);
     }
 
     public void UnSelectUnit()
     {
         SelectedUnit.OccupiedTile.HideRange();
-        Debug.Log($"Unité {SelectedUnit.name} désélectionnée");
+        Debug.Log($"L'unité {SelectedUnit.UnitName} en {SelectedUnit.OccupiedTile.Position} désélectionnée");
         LookTo(SelectedUnit, SelectedUnit.OccupiedTile, true);
         SelectedUnit = null;
     }
@@ -64,18 +64,21 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 {
                     int output = Mathf.CeilToInt(Attacker.damage * Attacker.penetration * (1 - Defenser.OccupiedTile.cover));
                     Defenser.Armor -= output;
+                    Debug.Log(string.Format("{0} en {1} à fait perdre {2} Armure à {3} en {4}", Attacker.UnitName, Attacker.OccupiedTile.Position, output, Defenser.UnitName, Defenser.OccupiedTile.Position));
                     DamagePopUp.Create(new Vector3(0.75f + Defenser.OccupiedTile.Position.x, 1f + Defenser.OccupiedTile.Position.y, 0), output, new Color32(83, 183, 255, 255), 1);
                 }
                 else
                 {
                     int output = Mathf.CeilToInt(Attacker.damage * (1 - Defenser.OccupiedTile.cover));
                     Defenser.Health -= output;
+                    Debug.Log(string.Format("{0} en {1} à fait perdre {2} Santé à {3} en {4}", Attacker.UnitName, Attacker.OccupiedTile.Position, output, Defenser.UnitName, Defenser.OccupiedTile.Position));
                     DamagePopUp.Create(new Vector3(0.75f + Defenser.OccupiedTile.Position.x, 1f + Defenser.OccupiedTile.Position.y, 0), output, new Color32(253, 99, 99, 255), 1);
                 }
             }
             else
             {
                 Defenser.Morale -= Attacker.damage; //lorsque l'attaque échoue on fait perdre de la morale à l'adversaire
+                Debug.Log(string.Format("{0} en {1} à fait perdre {2} Morale à {3} en {4}", Attacker.UnitName, Attacker.OccupiedTile.Position, Attacker.damage, Defenser.UnitName, Defenser.OccupiedTile.Position));
                 DamagePopUp.Create(new Vector3(0.75f + Defenser.OccupiedTile.Position.x, 1f + Defenser.OccupiedTile.Position.y, 0), Attacker.damage, new Color32(221, 255, 121, 255), 1);
             }
 
@@ -87,6 +90,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             if (Defenser.Health == 0)
             {
                 Defenser.MemberCount--;
+                Debug.Log(string.Format("{0} en {1} a perdu 1 Membre", Defenser.UnitName, Defenser.OccupiedTile.Position));
                 Defenser.BadgeUpdate();
                 if (Defenser.MemberCount <= 0)
                 {
@@ -159,6 +163,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         else if (Unit.Faction == (Faction)1) GameManager.Instance.OromoundUnits.Remove(Unit);
         else if (Unit.Faction == (Faction)2) GameManager.Instance.SerannaUnits.Remove(Unit);
         Destroy(Unit.gameObject);
+        UpdateDanger();
         GameManager.Instance.CheckVictoryCondition();
     }
 

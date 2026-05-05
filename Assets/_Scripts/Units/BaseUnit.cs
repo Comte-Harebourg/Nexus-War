@@ -15,6 +15,7 @@ public class BaseUnit : MonoBehaviour
     public bool isActive = true;
     public Animator Animator;
     public SpriteRenderer Sprite;
+    public SpriteRenderer Danger;
     public TextMeshProUGUI Badge;
 
     [Header("Stats")]
@@ -45,6 +46,8 @@ public class BaseUnit : MonoBehaviour
         Animator = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
         Badge = GetComponentInChildren<TextMeshProUGUI>();
+        Danger = transform.Find("Danger").GetComponent<SpriteRenderer>();
+        Danger.enabled = false;
         Badge.text = (MemberCount).ToString();
     }
 

@@ -54,7 +54,7 @@ public abstract class Tile : MonoBehaviour
         else if (OccupiedUnit != null)
         {
             // TUILE OCCUPEE PAR UN ENNEMI
-            if (OccupiedUnit.Faction != (Faction)GameManager.Instance.PlayerFaction)
+            if (OccupiedUnit.Faction != (Faction)GameManager.PlayerFaction)
             {
                 if (UnitManager.Instance.SelectedUnit == null)
                 {
@@ -192,7 +192,12 @@ public abstract class Tile : MonoBehaviour
 
     public void ShowRange(BaseUnit unit) => PerformGenericSearch(unit, unit.speed, false);
     public void ShowAttackRange(BaseUnit unit) => PerformGenericSearch(unit, 0, false);
-    public void ShowDanger() => PerformGenericSearch(OccupiedUnit, OccupiedUnit.speed, true);
+
+    public void ShowDanger()
+    {
+        PerformGenericSearch(OccupiedUnit, OccupiedUnit.speed, true);
+        OccupiedUnit.Danger.enabled = true;
+    }
 
     public void PerformGenericSearch(BaseUnit unit, float speed, bool isDanger)
 {
@@ -344,12 +349,18 @@ public abstract class Tile : MonoBehaviour
         if (Unit.OccupiedTile != null)
         {
             Debug.Log(string.Format("{0} a été déplacé de {1} en {2} à {3} en {4}", Unit.UnitName, Unit.OccupiedTile.TileName, Unit.OccupiedTile.Position, TileName, Position));
+            if (Unit.Danger.enabled)
+            {
+                Unit.OccupiedTile.ClearList(Unit.OccupiedTile.OrangeTiles, "_orange");
+                Unit.OccupiedTile.ClearList(Unit.OccupiedTile.DarkOrangeTiles, "_darkOrange");
+            }
             Unit.OccupiedTile.OccupiedUnit = null;
         }
         else Debug.Log(string.Format("{0} a été déployé sur {1} en {2}", Unit.UnitName, TileName, Position));
         Unit.transform.position = transform.position;
         OccupiedUnit = Unit;
         Unit.OccupiedTile = this;
+        if (GameManager.Instance.Turn != 0) UnitManager.Instance.UpdateDanger();
     }
 
     public void HideRange()
@@ -364,6 +375,7 @@ public abstract class Tile : MonoBehaviour
     {
         ClearList(OrangeTiles, "_orange");
         ClearList(DarkOrangeTiles, "_darkOrange");
+        OccupiedUnit.Danger.enabled = false;
     }
 
     private void ClearList(List<Tile> list, string fieldName)

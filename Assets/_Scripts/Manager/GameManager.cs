@@ -9,12 +9,13 @@ public class GameManager : MonoBehaviour
     public GameSettings settings;
     public static bool Bot; //Si actif, le bot jouera à la place du joueur les factions qu'ils ne possèdent pas
     public static bool SkipAnimation; //Si actif, les animations de déplacements ne seront pas jouées
+    public static bool AutoEndTurn; //Si actif le toueur du joueur sera terminé automatiquement lorsqu'il n'aura plus d'unités jouables
     public static float AnimationSpeed; //Détermine la vitesse de toutes les animations actives du jeu
     public static int PopUpSize; //Détermine la taille de la police des pop-ups
     public GameState GameState;
     public bool InAnimation = false; //true si le script attends la fin d'une animation
     public static event Action<GameState> OnGameStateChanged; //S'active si la phase change
-    public int PlayerFaction; //Faction du joueur
+    public static int PlayerFaction; //Faction du joueur
     public GameObject UnitMap;
     public List<BaseUnit> AberrionUnits = new List<BaseUnit>();
     public List<BaseUnit> OromoundUnits = new List<BaseUnit>();
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         Bot = settings.Bot;
         SkipAnimation = settings.SkipAnimation;
+        AutoEndTurn = settings.AutoEndTurn;
         AnimationSpeed = settings.AnimationSpeed;
         PopUpSize = settings.PopUpSize;
         PlayerFaction = settings.Faction;
@@ -46,7 +48,6 @@ public class GameManager : MonoBehaviour
     {
         GameState = newState;
         SetAllActive();
-        UnitManager.Instance.ResetDanger();
         switch (newState)
         {
             case GameState.AberrionTurn:
@@ -160,6 +161,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            UnitManager.Instance.ResetDanger();
             PlayerFaction = (int)GameState;
         }
     }

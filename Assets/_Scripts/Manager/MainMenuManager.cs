@@ -10,8 +10,8 @@ public class MainMenuManager : MonoBehaviour
     public GameObject MainMenu, PlayMenu, OptionMenu;
     public TextMeshProUGUI ValueAnimationSpeed, ValuePopUpSize, ValueLevel;
     public Slider SliderAnimationSpeed, SliderPopUpSize, SliderLevel;
-    public Toggle ToggleSkipAnimation, ToggleBot, ToggleAberrion, ToggleOromound, ToggleSeranna;
-    public bool SkipAnimation, Bot;
+    public Toggle ToggleSkipAnimation, ToggleBot, ToggleAberrion, ToggleOromound, ToggleSeranna, ToggleAutoEndTurn;
+    public bool SkipAnimation, Bot, AutoEndTurn;
     public float AnimationSpeed;
     public int PopUpSize, Level, Faction;
 
@@ -20,6 +20,7 @@ public class MainMenuManager : MonoBehaviour
         Instance = this;
         ToggleSkipAnimation.isOn = settings.SkipAnimation;
         ToggleBot.isOn = settings.Bot;
+        ToggleAutoEndTurn.isOn = settings.AutoEndTurn;
         SliderAnimationSpeed.value = settings.AnimationSpeed;
         SliderPopUpSize.value = settings.PopUpSize;
         UpdateSkipAnimation();
@@ -71,6 +72,11 @@ public class MainMenuManager : MonoBehaviour
         Bot = ToggleBot.isOn;
     }
 
+    public void UpdateAutoEndTurn()
+    {
+        AutoEndTurn = ToggleAutoEndTurn.isOn;
+    }
+
     public void UpdateAnimationSpeed()
     {
         AnimationSpeed = Mathf.Round(SliderAnimationSpeed.value * 100.0f) * 0.01f;
@@ -87,9 +93,9 @@ public class MainMenuManager : MonoBehaviour
     {
         ToggleSkipAnimation.isOn = false;
         ToggleBot.isOn = true;
+        ToggleAutoEndTurn.isOn = false;
         SliderAnimationSpeed.value = 0.15f;
         SliderPopUpSize.value = 10;
-        UpdateSkipAnimation();
         UpdateAnimationSpeed();
         UpdatePopUpSize();
     }
