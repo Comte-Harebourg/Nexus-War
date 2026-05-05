@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
     public static MenuManager Instance;
-    [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu, _endTurnMenu, _endMenu;
+    [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu, _endTurnMenu, _mainMenu, _endMenu;
     [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
     [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _damageNumber, _precisionNumber, _penetrationNumber, _endText;
     public Transform DamagePopUp;
@@ -143,7 +143,11 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
                 _attackMenu.SetActive(true);
             }
         }
-        else _endTurnMenu.SetActive(true);
+        else
+        {
+            _endTurnMenu.SetActive(true);
+            _mainMenu.SetActive(true);
+        }
         ActionMenue.SetActive(true);
     }
 
@@ -227,6 +231,7 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         _attackMenu.SetActive(false);
         _waitMenu.SetActive(false);
         _endTurnMenu.SetActive(false);
+        _mainMenu.SetActive(false);
         if (HighlightedTile != null)
         {
             HighlightedTile.HideRange();
