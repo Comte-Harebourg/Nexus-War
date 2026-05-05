@@ -25,13 +25,8 @@ public class MainMenuManager : MonoBehaviour
         UpdateSkipAnimation();
         UpdateAnimationSpeed();
         UpdatePopUpSize();
-    }
-
-    private void Start()
-    {
         SliderLevel.maxValue = Resources.LoadAll<ScriptableLevel>("Levels").Length - 1;
         ToggleAberrion.isOn = true;
-        ToggleAberrion.Select();
     }
 
     public void LoadLevel()
@@ -113,27 +108,39 @@ public class MainMenuManager : MonoBehaviour
     public void UpdateLevel()
     {
         Level = (int)SliderLevel.value;
-        ValueLevel.text = Level.ToString();
+        ValueLevel.text = (Level+1).ToString();
     }
 
     public void UpdateAberrion()
     {
-        Faction = 0;
-        ToggleOromound.isOn = false;
-        ToggleSeranna.isOn = false;
+        if (Faction == 0) ToggleAberrion.isOn = true;
+        else
+        {
+            Faction = 0;
+            ToggleOromound.isOn = false;
+            ToggleSeranna.isOn = false;
+        }
     }
 
     public void UpdateOromound()
     {
-        Faction = 1;
-        ToggleAberrion.isOn = false;
-        ToggleSeranna.isOn = false;
+        if (Faction == 1) ToggleOromound.isOn = true;
+        else
+        {
+            Faction = 1;
+            ToggleAberrion.isOn = false;
+            ToggleSeranna.isOn = false;
+        }
     }
 
     public void UpdateSeranna()
     {
-        Faction = 2;
-        ToggleAberrion.isOn = false;
-        ToggleOromound.isOn = false;
+        if (Faction == 2) ToggleSeranna.isOn = true;
+        else
+        {
+            Faction = 2;
+            ToggleAberrion.isOn = false;
+            ToggleOromound.isOn = false;
+        }
     }
 }
