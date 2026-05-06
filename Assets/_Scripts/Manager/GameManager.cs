@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     public static float AnimationSpeed; //Détermine la vitesse de toutes les animations actives du jeu
     public static int PopUpSize; //Détermine la taille de la police des pop-ups
     public GameState GameState;
+    public bool GameOver = false; //Informe si la partie est terminée
     public bool InAnimation = false; //true si le script attends la fin d'une animation
     public static event Action<GameState> OnGameStateChanged; //S'active si la phase change
     public static int PlayerFaction; //Faction du joueur
@@ -126,21 +128,21 @@ public class GameManager : MonoBehaviour
                 if (unit.Faction == (Faction)0)
                 {
                     AberrionUnits.Add(unit);
-                    Debug.Log(unit.name + " ajouté à la liste d'Aberrion.");
+                    Debug.Log(unit.UnitName + " a été ajouté à la liste d'Aberrion");
                 }
                 else if (unit.Faction == (Faction)1)
                 {
                     OromoundUnits.Add(unit);
-                    Debug.Log(unit.name + " ajouté à la liste d'Oromound.");
+                    Debug.Log(unit.UnitName + " a été ajouté à la liste d'Oromound");
                 }
                 else if (unit.Faction == (Faction)2)
                 {
                     SerannaUnits.Add(unit);
-                    Debug.Log(unit.name + " ajouté à la liste de Seranna.");
+                    Debug.Log(unit.UnitName + " a été ajouté à la liste de Seranna");
                 }
                 else
                 {
-                    Debug.Log(unit.name + " n'a pas de faction.");
+                    Debug.Log(unit.UnitName + " n'a pas de faction");
                 }
             }
         }
@@ -148,18 +150,17 @@ public class GameManager : MonoBehaviour
 
     public void NextTurn()
     {
+        StartCoroutine(NextTurnRoutine());
+    }
+
+    private IEnumerator NextTurnRoutine()
+    {
         CheckVictoryCondition();
-        foreach (BaseUnit unit in Factions[(int)GameState])
-        {
-            unit.endTurnStats();
-        }
-        ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length)); //Passe au prochain enum du tour
-        StartCoroutine(MenuManager.Instance.TurnAnimation(GameState));
-        if (Bot)
-        {
-            if ((int)GameState != PlayerFaction) StartCoroutine(BotManager.Instance.Play(Factions[(int)GameState]));
-        }
-        else
+        foreach (BaseUnit unit in Factions[(int)GameState]) unit.endTurnStats();
+        ChangeState((GameState)(((int)GameState + 1) % Enum.GetValues(typeof(GameState)).Length));
+        yield return StartCoroutine(MenuManager.Instance.TurnAnimation(GameState));
+        if (Bot && (int)GameState != PlayerFaction) yield return StartCoroutine(BotManager.Instance.Play(Factions[(int)GameState]));
+        else if (!Bot)
         {
             UnitManager.Instance.ResetDanger();
             PlayerFaction = (int)GameState;
@@ -182,19 +183,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CheckVictoryCondition()//Vérifie le nombre de factions restantes et appelle MenuManager pour afficher l'écran de fin s'il reste une seule faction
+    public void CheckVictoryCondition()
     {
         List<BaseUnit> winner = null;
         int remainingFactions = 0;
         foreach (List<BaseUnit> Fac in Factions)
         {
-            if (Fac.Count > 0)
-            {
-                remainingFactions++;
-                winner = Fac;
-            }
+            if (Fac.Count > 0) { remainingFactions++; winner = Fac; }
         }
-        if (remainingFactions == 1) MenuManager.Instance.ShowEndMenu(winner);
+        if (remainingFactions == 1)
+        {
+            GameOver = true;
+            MenuManager.Instance.ShowEndMenu(winner);
+        }
     }
 }
 

@@ -50,7 +50,7 @@ public abstract class Tile : MonoBehaviour
         {
             MenuManager.Instance.TryAttack(this);
         }
-        else if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay || GameManager.Instance.InAnimation) return;
+        else if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay || GameManager.Instance.InAnimation || MenuManager.Instance.MouseOnOptionButton || MenuManager.Instance.OptionDisplay) return;
         else if (OccupiedUnit != null)
         {
             // TUILE OCCUPEE PAR UN ENNEMI
@@ -154,7 +154,7 @@ public abstract class Tile : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay || GameManager.Instance.InAnimation) return;
+        if (MenuManager.Instance.MenueDisplay || MenuManager.Instance.AttackDisplay || GameManager.Instance.InAnimation || MenuManager.Instance.MouseOnOptionButton || MenuManager.Instance.OptionDisplay) return;
         Highlight.SetActive(true);
         MenuManager.Instance.ShowTileInfo(this);
 

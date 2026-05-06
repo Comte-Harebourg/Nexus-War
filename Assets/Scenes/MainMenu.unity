@@ -5813,7 +5813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '| Taille des Pop-ups'
+  m_text: '| Taille Pop-ups'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0d792a038a7afbd429d57af820b5d629, type: 2}
   m_sharedMaterial: {fileID: 2335211158702504524, guid: 0d792a038a7afbd429d57af820b5d629, type: 2}

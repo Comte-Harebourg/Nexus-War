@@ -6,15 +6,17 @@ using System.Collections;
 public class BotManager : MonoBehaviour
 {
     public static BotManager Instance;
+    private bool _isPlaying = false; //Empêche qu'un autre bot ne joue simultanement
 
     void Awake()
     {
         Instance = this;
     }
 
-
     public IEnumerator Play(List<BaseUnit> Units)
     {
+        if (_isPlaying) yield break; // Sécurité anti-double exécution
+        _isPlaying = true;
         yield return null; //Évite les bugs de première itération
         while (Units.Any(go => go.isActive))
         {
@@ -25,22 +27,24 @@ public class BotManager : MonoBehaviour
             {
                 Tile Tile = Unit.OccupiedTile.RedTiles[Random.Range(0, Unit.OccupiedTile.RedTiles.Count)]; //choix aléatoire
                 ArrowManager.Instance.ShowPath(Unit.OccupiedTile, Tile.SearchNearestTile(Tile, Unit), false); //Calcul du chemin
-                Unit.OccupiedTile.HideRange();
-                yield return StartCoroutine(UnitManager.Instance.MoveUnit(Unit, ArrowManager.Instance.PathTiles));
-                if (ArrowManager.Instance.PathTiles.Count() != 0) ArrowManager.Instance.PathTiles.Last().SetUnit(Unit);
-                yield return StartCoroutine(UnitManager.Instance.FightRoutine(Unit, Tile.OccupiedUnit));
+                Unit.OccupiedTile.HideRange(); //On cache sa portee
+                yield return StartCoroutine(UnitManager.Instance.MoveUnit(Unit, ArrowManager.Instance.PathTiles)); //Animation de deplacement
+                if (ArrowManager.Instance.PathTiles.Count() != 0) ArrowManager.Instance.PathTiles.Last().SetUnit(Unit); //Si on a pas deplacement pas besoin de changer de case
+                yield return StartCoroutine(UnitManager.Instance.FightRoutine(Unit, Tile.OccupiedUnit)); //Animation de combat
             }
             else //Sinon on se déplace
             {
                 Tile Tile = Unit.OccupiedTile.BlueTiles[Random.Range(0, Unit.OccupiedTile.BlueTiles.Count)]; //choix aléatoire
-                Unit.OccupiedTile.HideRange();
-                ArrowManager.Instance.ShowPath(Unit.OccupiedTile, Tile, false);
-                yield return StartCoroutine(UnitManager.Instance.MoveUnit(Unit, ArrowManager.Instance.PathTiles));
-                Tile.SetUnit(Unit);
+                Unit.OccupiedTile.HideRange(); //On cache sa portee
+                ArrowManager.Instance.ShowPath(Unit.OccupiedTile, Tile, false); //Calcul du chemin
+                yield return StartCoroutine(UnitManager.Instance.MoveUnit(Unit, ArrowManager.Instance.PathTiles)); //Animation de deplacement
+                Tile.SetUnit(Unit); //On change sa case
             }
-            UnitManager.Instance.Exhaustion(Unit);
-            UnitManager.Instance.LookTo(Unit, Unit.OccupiedTile, true);
+            if (GameManager.Instance.GameOver) yield break; // On arrête tout si la partie est finie
+            UnitManager.Instance.Exhaustion(Unit); //On epuise l'unite
+            UnitManager.Instance.LookTo(Unit, Unit.OccupiedTile, true); //Reinitialise l'animation de l'unité
         }
-        GameManager.Instance.NextTurn();
+        _isPlaying = false;
+        GameManager.Instance.NextTurn(); //On commence le prochan tour quand on a termine
     }
 }

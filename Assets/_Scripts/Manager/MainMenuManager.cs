@@ -30,11 +30,6 @@ public class MainMenuManager : MonoBehaviour
         ToggleAberrion.isOn = true;
     }
 
-    public void LoadLevel()
-    {
-        SceneManager.LoadSceneAsync("CombatMap");
-    }
-
     public void ShowPlay()
     {
         MainMenu.SetActive(false);
@@ -106,6 +101,7 @@ public class MainMenuManager : MonoBehaviour
         settings.Bot = Bot;
         settings.AnimationSpeed = AnimationSpeed;
         settings.PopUpSize = PopUpSize;
+        settings.AutoEndTurn = AutoEndTurn;
         settings.Level = Level;
         settings.Faction = Faction;
         SceneManager.LoadSceneAsync("CombatMap");

@@ -95,9 +95,9 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
                 if (Defenser.MemberCount <= 0)
                 {
                     Kill(Defenser);
-                    LookTo(Attacker, Attacker.OccupiedTile, true);
                     Debug.Log(string.Format("{0} en {1} a tué {2} en {3}", Attacker.UnitName, Attacker.OccupiedTile.Position, Defenser.UnitName, Defenser.OccupiedTile.Position));
-                    yield break;//il n'y a plus rien à attaquer, on sort de la boucle
+                    if (!GameManager.Instance.GameOver) LookTo(Attacker, Attacker.OccupiedTile, true);
+                    yield break;
                 }
                 else Defenser.NewMember();
             }
@@ -155,10 +155,11 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         Unit.Sprite.color = new Color32(128, 128, 128, 255);
     }
 
-    public void Kill(BaseUnit Unit) //Tue l'unité sélectionnée
+    public void Kill(BaseUnit Unit)
     {
-        Unit.OccupiedTile.HideDanger();
-        //Joue animation mort
+        if (Unit.Danger != null) Unit.OccupiedTile.HideDanger();
+        if (Unit.OccupiedTile != null) Unit.OccupiedTile.OccupiedUnit = null;
+        DangerUnits.Remove(Unit);
         if (Unit.Faction == (Faction)0) GameManager.Instance.AberrionUnits.Remove(Unit);
         else if (Unit.Faction == (Faction)1) GameManager.Instance.OromoundUnits.Remove(Unit);
         else if (Unit.Faction == (Faction)2) GameManager.Instance.SerannaUnits.Remove(Unit);

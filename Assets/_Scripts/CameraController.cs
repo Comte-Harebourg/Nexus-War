@@ -111,6 +111,12 @@ public class CameraController : MonoBehaviour
 
     void HandleZoom()
     {
+        // Ignorer le scroll si la souris est en dehors de l'écran
+        Vector3 mousePos = Input.mousePosition;
+        if (mousePos.x < 0 || mousePos.x > Screen.width ||
+            mousePos.y < 0 || mousePos.y > Screen.height)
+            return;
+
         // On accepte le scroll sur les axes X ou Y (important pour Shift+Scroll sur Mac/Linux qui renvoie un scroll horizontal)
         Vector2 scrollDelta = Input.mouseScrollDelta;
         float scroll = scrollDelta.y != 0 ? scrollDelta.y : scrollDelta.x;

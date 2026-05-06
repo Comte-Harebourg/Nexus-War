@@ -10,7 +10,8 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
 {
     public static MenuManager Instance;
-    [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu, _endTurnMenu, _mainMenu, _endMenu;
+    public GameSettings settings;
+    [SerializeField] private GameObject _tileObject,_tileUnitObject,_background,_attackMenu,_waitMenu,_cancelMenu, _endTurnMenu, _endMenu, _optionButton, _optionMenu;
     [SerializeField] private Image _healthBar, _armorBar, _moraleBar;
     [SerializeField] private TMP_Text _healthNumber, _armorNumber, _moraleNumber, _turnNumberAberrion, _turnNumberSeranna, _turnNumberOromound, _damageNumber, _precisionNumber, _penetrationNumber, _endText;
     public Transform DamagePopUp;
@@ -27,6 +28,11 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     private Tile AttackTile; //Case de la cible de l'attaque
     public bool MenueDisplay = false;
     public bool AttackDisplay = false;
+    public bool MouseOnOptionButton = false;
+    public bool OptionDisplay = false;
+    public TextMeshProUGUI ValueAnimationSpeed, ValuePopUpSize;
+    public Slider SliderAnimationSpeed, SliderPopUpSize;
+    public Toggle ToggleSkipAnimation, ToggleBot, ToggleAutoEndTurn;
 
     private void Awake()
     {
@@ -36,6 +42,15 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         Covers.Add(_cover2);
         Covers.Add(_cover3);
         Covers.Add(_cover4);
+        _optionButton.SetActive(true);
+        ToggleSkipAnimation.isOn = settings.SkipAnimation;
+        ToggleBot.isOn = settings.Bot;
+        ToggleAutoEndTurn.isOn = settings.AutoEndTurn;
+        SliderAnimationSpeed.value = settings.AnimationSpeed;
+        SliderPopUpSize.value = settings.PopUpSize;
+        UpdateSkipAnimation();
+        UpdateAnimationSpeed();
+        UpdatePopUpSize();
     }
 
     private void Update()
@@ -146,7 +161,6 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         else
         {
             _endTurnMenu.SetActive(true);
-            _mainMenu.SetActive(true);
         }
         ActionMenue.SetActive(true);
     }
@@ -231,7 +245,6 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
         _attackMenu.SetActive(false);
         _waitMenu.SetActive(false);
         _endTurnMenu.SetActive(false);
-        _mainMenu.SetActive(false);
         if (HighlightedTile != null)
         {
             HighlightedTile.HideRange();
@@ -364,5 +377,73 @@ public class MenuManager : MonoBehaviour //Gère l'affichage de l'UI
     public void LoadMenu()
     {
         SceneManager.LoadSceneAsync(0);
+    }
+
+    public void ShowOptions()
+    {
+        if (_optionMenu.activeSelf)
+        {
+            _optionMenu.SetActive(false);
+            OptionDisplay = false;
+            settings.SkipAnimation = GameManager.SkipAnimation;
+            settings.Bot = GameManager.Bot;
+            settings.AutoEndTurn = GameManager.AutoEndTurn;
+            settings.AnimationSpeed = GameManager.AnimationSpeed;
+            settings.PopUpSize = GameManager.PopUpSize;
+        }
+        else
+        {
+            _optionMenu.SetActive(true);
+            Cancel();
+            if (UnitManager.Instance.SelectedUnit)
+            {
+                ArrowManager.Instance.ClearArrow();
+                UnitManager.Instance.SelectedUnit.Animator.Play("Down");
+                UnitManager.Instance.UnSelectUnit();
+            }
+            OptionDisplay = true;
+            _tileObject.SetActive(false);
+            _tileUnitObject.SetActive(false);
+            if (GridManager.Instance.GetTileUnderMouse()) GridManager.Instance.GetTileUnderMouse().Highlight.SetActive(false);
+        }
+    }
+
+    public void Reset()
+    {
+        ToggleSkipAnimation.isOn = false;
+        ToggleBot.isOn = true;
+        ToggleAutoEndTurn.isOn = false;
+        SliderAnimationSpeed.value = 0.15f;
+        SliderPopUpSize.value = 10;
+        UpdateAnimationSpeed();
+        UpdatePopUpSize();
+    }
+
+    public void UpdateSkipAnimation()
+    {
+        GameManager.SkipAnimation = ToggleSkipAnimation.isOn;
+        SliderAnimationSpeed.interactable = !GameManager.SkipAnimation;
+    }
+
+    public void UpdateBot()
+    {
+        GameManager.Bot = ToggleBot.isOn;
+    }
+
+    public void UpdateAutoEndTurn()
+    {
+        GameManager.AutoEndTurn = ToggleAutoEndTurn.isOn;
+    }
+
+    public void UpdateAnimationSpeed()
+    {
+        GameManager.AnimationSpeed = Mathf.Round(SliderAnimationSpeed.value * 100.0f) * 0.01f;
+        ValueAnimationSpeed.text = Mathf.Round(SliderAnimationSpeed.value * 100.0f).ToString();
+    }
+
+    public void UpdatePopUpSize()
+    {
+        GameManager.PopUpSize = (int)SliderPopUpSize.value;
+        ValuePopUpSize.text = (SliderPopUpSize.value).ToString();
     }
 }
