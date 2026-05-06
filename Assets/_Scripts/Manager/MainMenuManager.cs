@@ -27,6 +27,7 @@ public class MainMenuManager : MonoBehaviour
         UpdateAnimationSpeed();
         UpdatePopUpSize();
         SliderLevel.maxValue = Resources.LoadAll<ScriptableLevel>("Levels").Length - 1;
+        SliderLevel.minValue = 1;
         ToggleAberrion.isOn = true;
     }
 
@@ -110,7 +111,7 @@ public class MainMenuManager : MonoBehaviour
     public void UpdateLevel()
     {
         Level = (int)SliderLevel.value;
-        ValueLevel.text = (Level+1).ToString();
+        ValueLevel.text = (Level).ToString();
     }
 
     public void UpdateAberrion()

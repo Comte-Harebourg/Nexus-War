@@ -375,7 +375,19 @@ MonoBehaviour:
   - Position: {x: 1, y: 1, z: 0}
     TileID: 060
   UnitTiles:
+  - Position: {x: -7, y: 0, z: 0}
+    UnitID: 004
+  - Position: {x: -7, y: -2, z: 0}
+    UnitID: 004
+  - Position: {x: -6, y: -1, z: 0}
+    UnitID: 007
   - Position: {x: -7, y: -1, z: 0}
-    UnitID: 001
-  - Position: {x: 5, y: 0, z: 0}
-    UnitID: 003
+    UnitID: 010
+  - Position: {x: 4, y: 1, z: 0}
+    UnitID: 005
+  - Position: {x: 4, y: -1, z: 0}
+    UnitID: 005
+  - Position: {x: 3, y: 0, z: 0}
+    UnitID: 008
+  - Position: {x: 4, y: 0, z: 0}
+    UnitID: 011

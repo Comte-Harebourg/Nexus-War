@@ -45,7 +45,7 @@ public class BaseUnit : MonoBehaviour
         MemberCount = MaxMemberCount;
         Animator = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
-        Badge = GetComponentInChildren<TextMeshProUGUI>();
+        Badge = transform.Find("Badge").GetComponent<TextMeshProUGUI>();
         Danger = transform.Find("Danger").GetComponent<SpriteRenderer>();
         Danger.enabled = false;
         Badge.text = (MemberCount).ToString();
@@ -69,6 +69,7 @@ public class BaseUnit : MonoBehaviour
     {
         Morale = MaxMorale;
         demoralizedCount = 0;
+        BadgeUpdate();
     }
     public int GetCost(Type tileType)
     // Retourne le coût de déplacement pour ce type de tile, ou l'infini si aucune valeur n'est définie
@@ -81,7 +82,8 @@ public class BaseUnit : MonoBehaviour
     }
     public void BadgeUpdate()
     {
-        Badge.text = (MemberCount).ToString();
+        if (demoralizedCount == 0) Badge.text = (MemberCount).ToString();
+        else Badge.text = ($"{MemberCount - demoralizedCount}/{MemberCount}");
     }
 }
 

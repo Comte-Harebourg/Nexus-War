@@ -106,6 +106,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             {
                 Defenser.demoralizedCount++;
                 Defenser.Morale = Defenser.MaxMorale;
+                Defenser.BadgeUpdate();
             }
         }
         Debug.Log(string.Format("{0} en {1} a attaqué {2} en {3}", Attacker.UnitName, Attacker.OccupiedTile.Position, Defenser.UnitName, Defenser.OccupiedTile.Position));
