@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f08a6f40d2ec4de981f811bfc829f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGEZ.PerfectPixelCamera
-  TexturePixelsPerWorldUnit: 16
+  TexturePixelsPerWorldUnit: 64
 --- !u!1 &543249334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3373,6 +3373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   settings: {fileID: 11400000, guid: 6ba519335c8cd094d82b0cc23956d355, type: 2}
   GameState: 2
+  GameOver: 0
   InAnimation: 0
   UnitMap: {fileID: 559232824}
   AberrionUnits: []
