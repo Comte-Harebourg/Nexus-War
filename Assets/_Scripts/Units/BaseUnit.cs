@@ -33,6 +33,10 @@ public class BaseUnit : MonoBehaviour
     public int MaxMemberCount;
     public bool TriggerDevastation = false;
 
+    public AudioSource Walking;
+    public AudioSource Shooting;
+    public AudioSource Dying;
+
     public Dictionary<Type, int> TileCosts = new Dictionary<Type, int>();
 
     protected virtual void Awake()
@@ -49,6 +53,9 @@ public class BaseUnit : MonoBehaviour
         Danger = transform.Find("Danger").GetComponent<SpriteRenderer>();
         Danger.enabled = false;
         Badge.text = (MemberCount).ToString();
+        Walking = transform.Find("Walking").GetComponent<AudioSource>();
+        Shooting = transform.Find("Shooting").GetComponent<AudioSource>();
+        Dying = transform.Find("Dying").GetComponent<AudioSource>();
     }
 
     protected virtual void InitializeStats()
