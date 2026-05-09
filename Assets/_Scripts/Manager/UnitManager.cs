@@ -56,7 +56,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         {
             yield return StartCoroutine(BounceUnit(Attacker, Defenser.OccupiedTile));
             float roll = UnityEngine.Random.value; // Renvoie un float entre 0.0 et 1.0
-            if (Attacker.Shooting) Attacker.Shooting.PlayOneShot(Attacker.Shooting.clip);
+            //if (Attacker.Shooting) Attacker.Shooting.PlayOneShot(Attacker.Shooting.clip);
             if (roll <= Attacker.precision)
             {
                 //l'attaque réussit
@@ -91,7 +91,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
             {
                 Defenser.MemberCount--;
                 Debug.Log(string.Format("{0} en {1} a perdu 1 Membre", Defenser.UnitName, Defenser.OccupiedTile.Position));
-                if (Defenser.Dying) Defenser.Dying.Play();
+                //if (Defenser.Dying) Defenser.Dying.Play();
                 Defenser.BadgeUpdate();
                 if (Defenser.MemberCount <= 0)
                 {
@@ -176,7 +176,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
         if (GameManager.SkipAnimation) yield break;
         GameManager.Instance.InAnimation = true;
         float duration = GameManager.AnimationSpeed;
-        if (Unit.Walking) Unit.Walking.Play();
+        //if (Unit.Walking) Unit.Walking.Play();
         for (int i = 1; i < Path.Count && GameManager.Instance.InAnimation; i++)
         {
             Vector3 startPos = Path[i - 1].transform.position;
