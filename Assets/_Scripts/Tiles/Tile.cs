@@ -451,5 +451,72 @@ public abstract class Tile : MonoBehaviour
             Tile.FindNeighbors();
         }
     }
+
+    public List<Tile> FindNearestEnemy(BaseUnit unit)
+    {
+        Dictionary<Tile, float> dist = new Dictionary<Tile, float>();
+        List<Tile> S = new List<Tile>();
+
+        dist[this] = 0;
+        S.Add(this);
+        this.ParentTile = null;
+
+        while (S.Count > 0)
+        {
+            Tile u = S[0];
+            for (int i = 1; i < S.Count; i++)
+            {
+                if (dist[S[i]] < dist[u])
+                {
+                    u = S[i];
+                }
+            }
+            S.Remove(u);
+
+            if (u.OccupiedUnit != null && u.OccupiedUnit.Faction != unit.Faction)
+            {
+                // On a trouvé un ennemi, on reconstruit et on retourne le chemin
+                List<Tile> path = new List<Tile>();
+                Tile current = u;
+                while (current != null)
+                {
+                    path.Add(current);
+                    current = current.ParentTile;
+                }
+                path.Reverse();
+                return path;
+            }
+
+            foreach (Tile v in u.Neighbors)
+            {
+                float movementCost = unit.GetCost(v.GetType());
+                if (float.IsInfinity(movementCost)) continue;
+
+                // On autorise le passage à travers les alliés
+                bool hasEnemy = v.OccupiedUnit != null && v.OccupiedUnit.Faction != unit.Faction;
+                if (hasEnemy && v.OccupiedUnit != null) // mais pas sur eux
+                {
+                    // On peut trouver un chemin vers un ennemi, mais pas à travers un autre.
+                    // La vérification au début de la boucle gérera la recherche d'un ennemi.
+                }
+
+
+                float alt = dist[u] + movementCost;
+
+                if (!dist.ContainsKey(v) || alt < dist[v])
+                {
+                    dist[v] = alt;
+                    v.ParentTile = u;
+
+                    if (!S.Contains(v))
+                    {
+                        S.Add(v);
+                    }
+                }
+            }
+        }
+
+        return null; // Pas d'ennemi trouvé
+    }
     #endregion
 }
