@@ -11,12 +11,12 @@ public class Aber_Tank : BaseUnit
         minAttackRange = 1;
         maxAttackRange = 2;
         MaxHealth = 500;
-        MaxArmor = 150;
+        MaxArmor = 50;
         MaxMorale = 500;
-        damage = 600;
+        damage = 200;
         precision = 0.5f;
         penetration = 0.25f;
-        MaxMemberCount = 1;
+        MaxMemberCount = 3;
 
         TileCosts[typeof(ForestTile)] = 4;
         TileCosts[typeof(GrassTile)] = 2;
