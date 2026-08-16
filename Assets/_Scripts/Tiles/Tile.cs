@@ -361,6 +361,7 @@ public abstract class Tile : MonoBehaviour
         OccupiedUnit = Unit;
         Unit.OccupiedTile = this;
         if (GameManager.Instance.Turn != 0) UnitManager.Instance.UpdateDanger();
+        //Unit.Sprite.sortingOrder=Mathf.RoundToInt(-transform.position.y);//Pour que les unités se superposent de bas en haut
     }
 
     public void HideRange()
