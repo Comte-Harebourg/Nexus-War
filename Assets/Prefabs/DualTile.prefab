@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18478251202a1f647916ef5bc7514974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DualTile
-  BackgroundSprite: {fileID: -2253911629886400664, guid: 6f9f4466c1d4e8442aeec9719145c63b, type: 3}
-  BorderSprite: {fileID: -2253911629886400664, guid: a08e1b49682be1d4aac05ac6a8365c23, type: 3}
+  BackgroundSprite: {fileID: 1160356261127867848, guid: 6f9f4466c1d4e8442aeec9719145c63b, type: 3}
+  BackgroundSpriteController: {fileID: -3722800149388514477, guid: 6f9f4466c1d4e8442aeec9719145c63b, type: 3}
+  BorderSprite: {fileID: 1160356261127867848, guid: a08e1b49682be1d4aac05ac6a8365c23, type: 3}
+  BorderSpriteController: {fileID: 2912937361970029372, guid: a08e1b49682be1d4aac05ac6a8365c23, type: 3}
 --- !u!212 &-6041519833995542118
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +97,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

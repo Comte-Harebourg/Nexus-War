@@ -40,6 +40,10 @@ public abstract class Tile : MonoBehaviour
     [HideInInspector] public Tile ParentTile = null;
     public string DevastationTile = null;
 
+    [Header("DualSprite")]
+    public Animator DualSprite;
+    public RuntimeAnimatorController DualSpriteController;
+
     public virtual void Init(int x, int y) { }
 
     #region Logique d'interaction

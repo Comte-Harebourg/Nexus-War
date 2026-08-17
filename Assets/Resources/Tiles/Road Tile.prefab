@@ -947,6 +947,8 @@ MonoBehaviour:
   Neighbors: []
   ParentTile: {fileID: 0}
   DevastationTile: 
+  DualSprite: {fileID: 1160356261127867848, guid: 9aa4767599b17634789e950c14f8fd7a, type: 3}
+  DualSpriteController: {fileID: 1447390826972883158, guid: 9aa4767599b17634789e950c14f8fd7a, type: 3}
 --- !u!114 &6063857385210599461
 MonoBehaviour:
   m_ObjectHideFlags: 0
