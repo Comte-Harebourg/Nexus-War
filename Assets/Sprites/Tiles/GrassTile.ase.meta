@@ -148,6 +148,69 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 80
+      width: 68
+      height: 68
+    spriteID: 4506b9274d661404cbcbc9ae1cc49f94
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 80}
+  - name: Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 156
+      width: 68
+      height: 68
+    spriteID: 09a4bf7539eadb74cb92741a2c6a73d6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 156}
+  - name: Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 4
+      width: 68
+      height: 68
+    spriteID: 82b61c06a53e1344f84562acf77d608c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 80, y: 4}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -163,7 +226,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: GrassTile
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -172,6 +235,33 @@ ScriptedImporter:
         width: 68
         height: 68
       spriteId: 7e92119c93c922b4d89d2caaa9280471
+    - name: Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 68
+        height: 68
+      spriteId: 4506b9274d661404cbcbc9ae1cc49f94
+    - name: Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 68
+        height: 68
+      spriteId: 09a4bf7539eadb74cb92741a2c6a73d6
+    - name: Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 68
+        height: 68
+      spriteId: 82b61c06a53e1344f84562acf77d608c
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -218,4 +308,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 68, y: 68}
-  previousTextureSize: {x: 128, y: 128}
+  previousTextureSize: {x: 256, y: 256}

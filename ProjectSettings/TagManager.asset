@@ -41,5 +41,35 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PlaceHolder
+    uniqueID: 2075029111
+    locked: 0
+  - name: Background
+    uniqueID: 3712978339
+    locked: 0
+  - name: DualTiles
+    uniqueID: 1181420027
+    locked: 0
+  - name: Tiles
+    uniqueID: 1955452245
+    locked: 0
+  - name: Highlight
+    uniqueID: 2003835205
+    locked: 0
+  - name: Arrow
+    uniqueID: 618116183
+    locked: 0
+  - name: Units
+    uniqueID: 1603529887
+    locked: 0
+  - name: Icon
+    uniqueID: 272636737
+    locked: 0
+  - name: Cursor
+    uniqueID: 931260287
+    locked: 0
+  - name: UI
+    uniqueID: 2979865045
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -11,6 +11,7 @@ public class GridManager : MonoBehaviour //Gère la grille
     [SerializeField] private Tile _grassTile,_waterTile,_roadTile,_mountainTile,_holeTile,_forestTile;
     [SerializeField] private Transform _cam;
     private Dictionary<Vector2Int, Tile> _tiles = new Dictionary<Vector2Int, Tile>();
+    private Dictionary<Vector2Int, DualTile> _dualTiles = new Dictionary<Vector2Int, DualTile>();
     public Vector2Int Dimension;
 
     void Awake()
@@ -25,6 +26,11 @@ public class GridManager : MonoBehaviour //Gère la grille
         _tiles[tile.Position] = tile;
     }
 
+    public void RegisterDualTile(DualTile tile)
+    {
+        if (!_dualTiles.ContainsKey(tile.Position)) _dualTiles[tile.Position] = tile;
+    }
+
     public Tile GetTileAtPosition(Vector2Int Pos)
     {
         /// <summary>
@@ -34,11 +40,25 @@ public class GridManager : MonoBehaviour //Gère la grille
         return tile;
     }
 
+    public DualTile GetDualTileAtPosition(Vector2Int Pos)
+    {
+        _dualTiles.TryGetValue(Pos, out var tile);
+        return tile;
+    }
+
     public Tile GetTileUnderMouse()
     {
         int gx = Mathf.RoundToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - 0.5f);
         int gy = Mathf.RoundToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).y - 0.5f);
         Vector2Int gridPos = new Vector2Int(gx, gy);
         return GetTileAtPosition(gridPos);
+    }
+
+    internal void UpdateDualTileMap()
+    {
+        foreach (KeyValuePair<Vector2Int, DualTile> tile in _dualTiles)
+        {
+            tile.Value.UpdateSprite();
+        }
     }
 }

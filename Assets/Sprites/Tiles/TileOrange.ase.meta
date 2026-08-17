@@ -137,8 +137,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 50
-      height: 50
+      width: 64
+      height: 64
     spriteID: b437654e9a114024eaf34b25034b399a
     spriteBone: []
     spriteOutline: []
@@ -157,9 +157,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 62
-      width: 50
-      height: 50
+      y: 76
+      width: 64
+      height: 64
     spriteID: 0d51ccbd181e51f469c91af9b2e31807
     spriteBone: []
     spriteOutline: []
@@ -168,7 +168,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 62}
+    uvTransform: {x: 4, y: 76}
   - name: Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -177,10 +177,10 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 62
-      y: 4
-      width: 50
-      height: 50
+      x: 4
+      y: 148
+      width: 64
+      height: 64
     spriteID: c146e390b00206e4a9308489b6b2ed3b
     spriteBone: []
     spriteOutline: []
@@ -189,7 +189,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 62, y: 4}
+    uvTransform: {x: 4, y: 148}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -211,8 +211,8 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 50
-        height: 50
+        width: 64
+        height: 64
       spriteId: b437654e9a114024eaf34b25034b399a
     - name: Frame_1
       frameIndex: 1
@@ -220,8 +220,8 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 50
-        height: 50
+        width: 64
+        height: 64
       spriteId: 0d51ccbd181e51f469c91af9b2e31807
     - name: Frame_2
       frameIndex: 2
@@ -229,8 +229,8 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 50
-        height: 50
+        width: 64
+        height: 64
       spriteId: c146e390b00206e4a9308489b6b2ed3b
     linkedCells: []
     tileCells: []
@@ -277,5 +277,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 50, y: 50}
-  previousTextureSize: {x: 128, y: 128}
+  canvasSize: {x: 64, y: 64}
+  previousTextureSize: {x: 128, y: 256}

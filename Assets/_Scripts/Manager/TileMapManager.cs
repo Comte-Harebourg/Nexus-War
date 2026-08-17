@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -9,9 +10,11 @@ public class TileMapManager : MonoBehaviour
     public static TileMapManager Instance;
     [SerializeField] private Tilemap _groundMap;
     [SerializeField] private Tilemap _unitMap;
+    [SerializeField] private Tilemap _dualMap;
     [SerializeField] private int _levelIndex = 1;
     [SerializeField] public TileDatabase _tileDatabase;
     [SerializeField] public UnitDatabase _unitDatabase;
+    [SerializeField] private DualTile _dualTile;
 
     void Awake()
     {
@@ -81,8 +84,13 @@ public class TileMapManager : MonoBehaviour
         {
             DestroyImmediate(tile.gameObject);
         }
+        foreach (var dualtile in _dualMap.GetComponentsInChildren<DualTile>().ToList())
+        {
+            DestroyImmediate(dualtile.gameObject);
+        }
         _groundMap.ClearAllTiles();
         _unitMap.ClearAllTiles();
+        _dualMap.ClearAllTiles();
     }
 
     public void LoadMap(int? index = null)
@@ -108,12 +116,27 @@ public class TileMapManager : MonoBehaviour
             Vector2Int Pos = new Vector2Int(savedTile.Position.x, savedTile.Position.y);// Affectation de la position de grille unique
             tileInstance.Position = Pos;
             GridManager.Instance.RegisterTile(tileInstance);// Enregistrement dans GridManager
-            tileInstance.transform.position = _groundMap.GetCellCenterWorld(new Vector3Int(Pos.x, Pos.y, 0));// Position dans le monde pour Unity
+            tileInstance.transform.position = _groundMap.GetCellCenterWorld(new Vector3Int(Pos.x, Pos.y, -1));// Position dans le monde pour Unity
             tileLookup[Pos] = tileInstance;// Ajout au dictionnaire local
         } 
-        foreach (var tileInstance in tileLookup.Values)//Calcul des voisins pour toutes les tuiles
+        foreach (var tileInstance in tileLookup.Values)//Calcul des voisins pour toutes les tuiles et génération des DualTiles
         {
             tileInstance.FindNeighbors();
+            List<Vector2Int> dir = new List<Vector2Int>();
+            dir.Add(new Vector2Int(tileInstance.Position.x, tileInstance.Position.y));
+            dir.Add(new Vector2Int(tileInstance.Position.x+1, tileInstance.Position.y));
+            dir.Add(new Vector2Int(tileInstance.Position.x, tileInstance.Position.y+1));
+            dir.Add(new Vector2Int(tileInstance.Position.x+1, tileInstance.Position.y+1));
+            foreach (Vector2Int Pos in dir)
+            {
+                if (!GridManager.Instance.GetDualTileAtPosition(Pos))
+                {
+                    var dualTileInstance = Instantiate(_dualTile, _dualMap.transform);// Instanciation
+                    dualTileInstance.Position = Pos;
+                    GridManager.Instance.RegisterDualTile(dualTileInstance);
+                    dualTileInstance.transform.position = _dualMap.GetCellCenterWorld(new Vector3Int(Pos.x, Pos.y, 0));// Position dans le monde pour Unity
+                }
+            }
         }
         foreach (var savedUnit in level.UnitTiles)//Instanciation des unités
         {
@@ -130,6 +153,7 @@ public class TileMapManager : MonoBehaviour
             unitInstance.transform.position = _unitMap.GetCellCenterWorld(new Vector3Int(unitGridPos.x, unitGridPos.y, 0));// Position dans le monde
         }
         GridManager.Instance.Dimension = GetLevelDimensions(level);// Mettre à jour les dimensions de la grille et la caméra
+        GridManager.Instance.UpdateDualTileMap();
         CameraController.Instance.SetCameraBounds(level);
         GameManager.Instance.UpdateUnits();
         Debug.Log($"Level {level.LevelIndex} a été chargé correctement. Les dimensions sont : ({GridManager.Instance.Dimension.x}, {GridManager.Instance.Dimension.y})");
