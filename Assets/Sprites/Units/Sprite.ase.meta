@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: efad0ed2b5ac29a47aa4bb74977ddd79
+guid: 005de582c17f5684790ccc0e6d1a86cd
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -126,52 +126,22 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  animatedSpriteImportData:
-  - name: Frame_1
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 64
-      height: 64
-    spriteID: 1c68324ea3cac5549ac729121f30c7a5
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+  animatedSpriteImportData: []
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2634944136
+      value0: 1988690285
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: WaterSheet
+    name: Sprite
     layerFlags: 0
     layerType: 0
     blendMode: 0
-    cells:
-    - name: WaterSheet
-      frameIndex: 15
-      additiveSortOrder: 0
-      cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 1c68324ea3cac5549ac729121f30c7a5
+    cells: []
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +151,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 128, y: 128}
+  canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 0, y: 0}

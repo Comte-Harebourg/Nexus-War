@@ -7,15 +7,17 @@ public class DualTile : MonoBehaviour
     public Vector2Int Position { get; set; }
     [SerializeField] private Animator BackgroundSprite;
     [SerializeField] private RuntimeAnimatorController BackgroundSpriteController;
+    [SerializeField] private bool isBackgroundSpriteAnimated=false;
     [SerializeField] private Animator BorderSprite;
     [SerializeField] private RuntimeAnimatorController BorderSpriteController;
+    [SerializeField] private bool isBorderSpriteAnimated=false;
     private List<Animator> PropSprites;
     private List<Tile> Neighbors;
     private Dictionary<Type, Tile> NeighborsType;
 
     public void UpdateSprite()
     {
-        foreach (Transform child in transform) Destroy(child.gameObject);
+        if (transform.childCount>0) foreach (Transform child in transform) Destroy(child.gameObject);
 
         Neighbors = new List<Tile>
         {
@@ -32,14 +34,14 @@ public class DualTile : MonoBehaviour
             if (Tile) NeighborsType[Tile.GetType()] = Tile;
         }
 
-        ChildBirth(BackgroundSprite, BackgroundSpriteController, "", 1);
+        ChildBirth(BackgroundSprite, BackgroundSpriteController, "", 1, isBackgroundSpriteAnimated);
 
         if (Neighbors.Contains(null))
         {
             string bitmap = "";
             for (int i = 0; i < 4; i++)
                 bitmap += (Neighbors[i] == null) ? "1" : "0";
-            ChildBirth(BorderSprite, BorderSpriteController, bitmap, 2);
+            ChildBirth(BorderSprite, BorderSpriteController, bitmap, 3, isBorderSpriteAnimated);
         }
 
         foreach (KeyValuePair<Type, Tile> entry in NeighborsType)
@@ -48,13 +50,16 @@ public class DualTile : MonoBehaviour
             {
                 string bitmap = "";
                 for (int i = 0; i < 4; i++)
-                    bitmap += (Neighbors[i].GetType() == entry.Key) ? "1" : "0";
-                ChildBirth(entry.Value.DualSprite, entry.Value.DualSpriteController, bitmap, 3);
+                {
+                    if (Neighbors[i]) bitmap += (Neighbors[i].GetType() == entry.Key) ? "1" : "0";
+                    else bitmap += 0;
+                }
+                ChildBirth(entry.Value.DualSprite, entry.Value.DualSpriteController, bitmap, entry.Value.LayerOrder, entry.Value.isAnimated);
             }
         }
     }
 
-    private GameObject ChildBirth(Animator Animator, RuntimeAnimatorController Controller, string bitmap, int layer)
+    private GameObject ChildBirth(Animator Animator, RuntimeAnimatorController Controller, string bitmap, int layer, bool isAnimated)
     {
         GameObject child = new GameObject("DualGridAnimator");
         child.transform.SetParent(this.transform);
@@ -66,8 +71,19 @@ public class DualTile : MonoBehaviour
         Rend.sortingOrder = layer;
         Animator = child.AddComponent<Animator>();
         Animator.runtimeAnimatorController = Controller;
-        if (bitmap.Length == 4) Animator.Play(bitmap);
-        else Animator.Play(RandomBitmap());
+        if (isAnimated)
+        {
+            float Timing = (Time.time % Animator.GetCurrentAnimatorStateInfo(0).length) / Animator.GetCurrentAnimatorStateInfo(0).length;
+            if (bitmap.Length == 4) Animator.Play(bitmap, 0, Timing);
+            else Animator.Play(RandomBitmap(), 0, Timing);
+        }
+        else //Si la tuile n'est pas animée on choisit une frame aléatoire fixe pour ajouter de la diversité
+        {
+            float Timing = UnityEngine.Random.Range(0.0f, 1.0f);
+            if (bitmap.Length == 4) Animator.Play(bitmap, 0, Timing);
+            else Animator.Play(RandomBitmap(), 0, Timing);
+            Animator.speed = 0f;
+        }
         return child;
     }
 
