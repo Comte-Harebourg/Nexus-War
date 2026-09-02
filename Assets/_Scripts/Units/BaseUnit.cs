@@ -13,6 +13,8 @@ public class BaseUnit : MonoBehaviour
     public int minAttackRange;
     public int maxAttackRange;
     public bool isActive = true;
+    public int Vision;
+    public int Camo;
     public Animator Animator;
     public SpriteRenderer Sprite;
     public SpriteRenderer Danger;

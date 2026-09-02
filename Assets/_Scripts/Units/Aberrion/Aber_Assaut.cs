@@ -17,6 +17,8 @@ public class Aber_Assaut : BaseUnit
         precision = 0.9f;
         penetration = 0.01f;
         MaxMemberCount = 8;
+        Vision = 10;
+        Camo = 0;
 
         TileCosts[typeof(ForestTile)] = 4;
         TileCosts[typeof(GrassTile)] = 2;

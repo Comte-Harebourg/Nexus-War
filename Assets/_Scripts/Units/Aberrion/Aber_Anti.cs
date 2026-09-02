@@ -17,6 +17,8 @@ public class Aber_Anti : BaseUnit
         precision = 0.3f;
         penetration = 0.5f;
         MaxMemberCount = 4;
+        Vision = 10;
+        Camo = 0;
 
         TileCosts[typeof(ForestTile)] = 4;
         TileCosts[typeof(GrassTile)] = 2;

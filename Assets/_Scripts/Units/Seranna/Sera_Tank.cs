@@ -17,6 +17,8 @@ public class Sera_Tank : BaseUnit
         precision = 0.5f;
         penetration = 0.25f;
         MaxMemberCount = 3;
+        Vision = 6;
+        Camo = 0;
 
         TileCosts[typeof(ForestTile)] = 4;
         TileCosts[typeof(GrassTile)] = 2;

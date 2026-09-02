@@ -17,6 +17,8 @@ public class Vivien : BaseUnit
         precision = 0.8f;
         penetration = 0.01f;
         MaxMemberCount = 2;
+        Vision = 10;
+        Camo = 0;
 
         TileCosts[typeof(ForestTile)] = 4;
         TileCosts[typeof(GrassTile)] = 2;

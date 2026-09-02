@@ -15,6 +15,7 @@ MonoBehaviour:
   SkipAnimation: 0
   Bot: 1
   AutoEndTurn: 0
+  FogOfWar: 1
   AnimationSpeed: 0.14999999
   PopUpSize: 10
   Level: 2

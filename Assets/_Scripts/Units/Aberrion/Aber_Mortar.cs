@@ -17,6 +17,8 @@ public class Aber_Mortar : BaseUnit
         precision = 0.3f;
         penetration = 0.10f;
         MaxMemberCount = 3;
+        Vision = 10;
+        Camo = 0;
         TriggerDevastation = true;
 
         TileCosts[typeof(ForestTile)] = 4;

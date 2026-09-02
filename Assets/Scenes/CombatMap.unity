@@ -1858,6 +1858,7 @@ MonoBehaviour:
   _holeTile: {fileID: 0}
   _forestTile: {fileID: 0}
   _cam: {fileID: 0}
+  visibleTiles: []
   Dimension: {x: 0, y: 0}
 --- !u!4 &400165310
 Transform:
@@ -3408,6 +3409,7 @@ MonoBehaviour:
   GameState: 2
   GameOver: 0
   InAnimation: 0
+  FogOfWar: 1
   UnitMap: {fileID: 559232824}
   AberrionUnits: []
   OromoundUnits: []
@@ -4389,6 +4391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitManager
   SelectedUnit: {fileID: 0}
   DangerUnits: []
+  PlayerVisibility: []
 --- !u!4 &861272489
 Transform:
   m_ObjectHideFlags: 0

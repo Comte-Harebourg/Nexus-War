@@ -47,8 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DualTile
   BackgroundSprite: {fileID: 1160356261127867848, guid: 6f9f4466c1d4e8442aeec9719145c63b, type: 3}
   BackgroundSpriteController: {fileID: -3722800149388514477, guid: 6f9f4466c1d4e8442aeec9719145c63b, type: 3}
+  isBackgroundSpriteAnimated: 0
   BorderSprite: {fileID: 1160356261127867848, guid: a08e1b49682be1d4aac05ac6a8365c23, type: 3}
   BorderSpriteController: {fileID: 2912937361970029372, guid: a08e1b49682be1d4aac05ac6a8365c23, type: 3}
+  isBorderSpriteAnimated: 0
+  FogSprite: {fileID: 1160356261127867848, guid: 8f335443b72e22e4184361ad90d5951e, type: 3}
+  FogSpriteController: {fileID: -2190366809022475228, guid: 8f335443b72e22e4184361ad90d5951e, type: 3}
+  isFogSpriteAnimated: 0
 --- !u!212 &-6041519833995542118
 SpriteRenderer:
   m_ObjectHideFlags: 0

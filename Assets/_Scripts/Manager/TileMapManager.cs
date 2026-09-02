@@ -137,6 +137,7 @@ public class TileMapManager : MonoBehaviour
                     dualTileInstance.transform.position = _dualMap.GetCellCenterWorld(new Vector3Int(Pos.x, Pos.y, 0));// Position dans le monde pour Unity
                 }
             }
+            tileInstance.FindDualNeigbors();
         }
         foreach (var savedUnit in level.UnitTiles)//Instanciation des unités
         {

@@ -12,6 +12,7 @@ public class GridManager : MonoBehaviour //Gère la grille
     [SerializeField] private Transform _cam;
     private Dictionary<Vector2Int, Tile> _tiles = new Dictionary<Vector2Int, Tile>();
     private Dictionary<Vector2Int, DualTile> _dualTiles = new Dictionary<Vector2Int, DualTile>();
+    public List<Tile> visibleTiles = new List<Tile>();
     public Vector2Int Dimension;
 
     void Awake()
@@ -59,6 +60,26 @@ public class GridManager : MonoBehaviour //Gère la grille
         foreach (KeyValuePair<Vector2Int, DualTile> tile in _dualTiles)
         {
             tile.Value.UpdateSprite();
+        }
+    }
+
+    internal void UpdateFog()
+    {
+        foreach (BaseUnit Unit in GameManager.Instance.Factions[GameManager.PlayerFaction])
+        {
+
+        }
+        foreach (KeyValuePair<Vector2Int, DualTile> tile in _dualTiles)
+        {
+            tile.Value.UpdateFogSprite();
+        }
+        foreach (List<BaseUnit> Faction in GameManager.Instance.Factions)
+        {
+            foreach (BaseUnit Unit in Faction)
+            {
+                if (visibleTiles.Contains(Unit.OccupiedTile)) Unit.gameObject.SetActive(true);
+                else Unit.gameObject.SetActive(false);
+            }
         }
     }
 }

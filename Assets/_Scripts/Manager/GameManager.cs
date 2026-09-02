@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool InAnimation = false; //true si le script attends la fin d'une animation
     public static event Action<GameState> OnGameStateChanged; //S'active si la phase change
     public static int PlayerFaction; //Faction du joueur
+    public bool FogOfWar; //Détermine si le brouillard de guerre est actif
     public GameObject UnitMap;
     public List<BaseUnit> AberrionUnits = new List<BaseUnit>();
     public List<BaseUnit> OromoundUnits = new List<BaseUnit>();
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         AnimationSpeed = settings.AnimationSpeed;
         PopUpSize = settings.PopUpSize;
         PlayerFaction = settings.Faction;
+        FogOfWar = settings.FogOfWar;
         TileMapManager.Instance.LoadMap(settings.Level);
         Factions.Add(AberrionUnits);
         Factions.Add(OromoundUnits);
@@ -42,8 +44,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        ChangeState((GameState)PlayerFaction); //Ne pas mettre dans Awake sous peine de bug
+        ChangeState((GameState)PlayerFaction);
         StartCoroutine(MenuManager.Instance.TurnAnimation(GameState));
+        if (FogOfWar) GridManager.Instance.UpdateFog();
     }
 
     public void ChangeState(GameState newState)
@@ -64,7 +67,6 @@ public class GameManager : MonoBehaviour
                     //Consomme les rations des unités
                     //Modifie les ressources de la faction
                     //Check la production d'unité
-                    //Joue animation début tour Aberrion, se termine si clic gauche
                 }
                 else //Skip le tour si pas d'unité
                 {
@@ -83,7 +85,6 @@ public class GameManager : MonoBehaviour
                     //Consomme les rations des unités
                     //Modifie les ressources de la faction
                     //Check la production d'unité
-                    //Joue animation début tour Oromound, se termine si clic gauche
                 }
                 else //Skip le tour si pas d'unité
                 {
@@ -102,7 +103,6 @@ public class GameManager : MonoBehaviour
                     //Consomme les rations des unités
                     //Modifie les ressources de la faction
                     //Check la production d'unité
-                    //Joue animation début tour Seranna, se termine si clic gauche
                 }
                 else //Skip le tour si pas d'unité
                 {

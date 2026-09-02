@@ -10,6 +10,7 @@ public class UnitManager : MonoBehaviour //Permet de gérer les unités sélectionn
     private List<BaseUnit> _units;
     public BaseUnit SelectedUnit;
     public List<BaseUnit> DangerUnits = new List<BaseUnit>();
+    public List<Tile> PlayerVisibility = new List<Tile>();
 
     private void Awake()
     {

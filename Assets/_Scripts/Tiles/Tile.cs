@@ -36,6 +36,7 @@ public abstract class Tile : MonoBehaviour
 
     [Header("Pathfinding et Grille")]
     public List<Tile> Neighbors = new List<Tile>();
+    public List<DualTile> DualNeighbors = new List<DualTile>();
     public Vector2Int Position { get; set; }
     [HideInInspector] public Tile ParentTile = null;
     public string DevastationTile = null;
@@ -367,6 +368,7 @@ public abstract class Tile : MonoBehaviour
         OccupiedUnit = Unit;
         Unit.OccupiedTile = this;
         if (GameManager.Instance.Turn != 0) UnitManager.Instance.UpdateDanger();
+        if (GameManager.Instance.Turn != 0 && GameManager.Instance.FogOfWar) GridManager.Instance.UpdateFog();
         //Unit.Sprite.sortingOrder=Mathf.RoundToInt(-transform.position.y*100f);//Pour que les unités se superposent de bas en haut
     }
 
@@ -413,6 +415,15 @@ public abstract class Tile : MonoBehaviour
             Tile neighbor = GridManager.Instance.GetTileAtPosition(Position + dir);
             if (neighbor != null) Neighbors.Add(neighbor);
         }
+    }
+
+    public void FindDualNeigbors()
+    {
+        DualNeighbors.Clear();
+        if (GridManager.Instance.GetDualTileAtPosition(Position + Vector2Int.up)) DualNeighbors.Add(GridManager.Instance.GetDualTileAtPosition(Position + Vector2Int.up));
+        if (GridManager.Instance.GetDualTileAtPosition(Position + Vector2Int.right + Vector2Int.up)) DualNeighbors.Add(GridManager.Instance.GetDualTileAtPosition(Position + Vector2Int.right + Vector2Int.up));
+        if (GridManager.Instance.GetDualTileAtPosition(Position)) DualNeighbors.Add(GridManager.Instance.GetDualTileAtPosition(Position));
+        if (GridManager.Instance.GetDualTileAtPosition(Position + Vector2Int.right)) DualNeighbors.Add(GridManager.Instance.GetDualTileAtPosition(Position + Vector2Int.right));
     }
 
     public Tile SearchNearestTile(Tile Start, BaseUnit Unit)

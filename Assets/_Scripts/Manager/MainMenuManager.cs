@@ -10,8 +10,8 @@ public class MainMenuManager : MonoBehaviour
     public GameObject MainMenu, PlayMenu, OptionMenu;
     public TextMeshProUGUI ValueAnimationSpeed, ValuePopUpSize, ValueLevel;
     public Slider SliderAnimationSpeed, SliderPopUpSize, SliderLevel;
-    public Toggle ToggleSkipAnimation, ToggleBot, ToggleAberrion, ToggleOromound, ToggleSeranna, ToggleAutoEndTurn;
-    public bool SkipAnimation, Bot, AutoEndTurn;
+    public Toggle ToggleSkipAnimation, ToggleBot, ToggleAberrion, ToggleOromound, ToggleSeranna, ToggleAutoEndTurn, ToggleFogOfWar;
+    public bool SkipAnimation, Bot, AutoEndTurn, FogOfWar;
     public float AnimationSpeed;
     public int PopUpSize, Level, Faction;
 
@@ -29,6 +29,7 @@ public class MainMenuManager : MonoBehaviour
         SliderLevel.maxValue = Resources.LoadAll<ScriptableLevel>("Levels").Length - 1;
         SliderLevel.minValue = 1;
         ToggleAberrion.isOn = true;
+        ToggleFogOfWar.isOn = settings.FogOfWar;
     }
 
     public void ShowPlay()
@@ -105,6 +106,7 @@ public class MainMenuManager : MonoBehaviour
         settings.AutoEndTurn = AutoEndTurn;
         settings.Level = Level;
         settings.Faction = Faction;
+        settings.FogOfWar = FogOfWar;
         SceneManager.LoadSceneAsync("CombatMap");
     }
 
@@ -145,5 +147,10 @@ public class MainMenuManager : MonoBehaviour
             ToggleAberrion.isOn = false;
             ToggleOromound.isOn = false;
         }
+    }
+
+    public void UpdateFogOfWar()
+    {
+        FogOfWar = ToggleFogOfWar.isOn;
     }
 }

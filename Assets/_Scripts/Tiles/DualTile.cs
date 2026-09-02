@@ -11,7 +11,10 @@ public class DualTile : MonoBehaviour
     [SerializeField] private Animator BorderSprite;
     [SerializeField] private RuntimeAnimatorController BorderSpriteController;
     [SerializeField] private bool isBorderSpriteAnimated=false;
-    private List<Animator> PropSprites;
+    [SerializeField] private Animator FogSprite;
+    [SerializeField] private RuntimeAnimatorController FogSpriteController;
+    [SerializeField] private bool isFogSpriteAnimated = false;
+    private GameObject FogAnimator;
     private List<Tile> Neighbors;
     private Dictionary<Type, Tile> NeighborsType;
 
@@ -57,6 +60,19 @@ public class DualTile : MonoBehaviour
                 ChildBirth(entry.Value.DualSprite, entry.Value.DualSpriteController, bitmap, entry.Value.LayerOrder, entry.Value.isAnimated);
             }
         }
+    }
+
+    internal void UpdateFogSprite()
+    {
+        if (FogAnimator) Destroy(FogAnimator);
+        string bitmap = "";
+        foreach(Tile Tile in Neighbors)
+        {
+            if (Tile) if (GridManager.Instance.visibleTiles.Contains(Tile)) bitmap += "1";
+                else bitmap += "0";
+            else bitmap += "0";
+        }
+        FogAnimator = ChildBirth(FogSprite, FogSpriteController, bitmap, 10, isFogSpriteAnimated);
     }
 
     private GameObject ChildBirth(Animator Animator, RuntimeAnimatorController Controller, string bitmap, int layer, bool isAnimated)

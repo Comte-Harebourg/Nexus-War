@@ -17,6 +17,8 @@ public class Oro_Infantry : BaseUnit
         precision = 0.8f;
         penetration = 0.01f;
         MaxMemberCount = 12;
+        Vision = 10;
+        Camo = 0;
 
         TileCosts[typeof(ForestTile)] = 4;
         TileCosts[typeof(GrassTile)] = 2;
