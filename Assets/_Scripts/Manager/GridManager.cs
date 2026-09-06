@@ -13,6 +13,7 @@ public class GridManager : MonoBehaviour //Gère la grille
     private Dictionary<Vector2Int, Tile> _tiles = new Dictionary<Vector2Int, Tile>();
     private Dictionary<Vector2Int, DualTile> _dualTiles = new Dictionary<Vector2Int, DualTile>();
     public List<Tile> visibleTiles = new List<Tile>();
+    public List<BaseUnit> visibleUnits = new List<BaseUnit>();
     public Vector2Int Dimension;
 
     void Awake()
@@ -65,9 +66,11 @@ public class GridManager : MonoBehaviour //Gère la grille
 
     internal void UpdateFog()
     {
+        visibleTiles.Clear();
+        visibleUnits.Clear();
         foreach (BaseUnit Unit in GameManager.Instance.Factions[GameManager.PlayerFaction])
         {
-
+            Unit.OccupiedTile.CalculateVision(visibleTiles, visibleUnits);
         }
         foreach (KeyValuePair<Vector2Int, DualTile> tile in _dualTiles)
         {
@@ -77,7 +80,7 @@ public class GridManager : MonoBehaviour //Gère la grille
         {
             foreach (BaseUnit Unit in Faction)
             {
-                if (visibleTiles.Contains(Unit.OccupiedTile)) Unit.gameObject.SetActive(true);
+                if (visibleUnits.Contains(Unit)) Unit.gameObject.SetActive(true);
                 else Unit.gameObject.SetActive(false);
             }
         }

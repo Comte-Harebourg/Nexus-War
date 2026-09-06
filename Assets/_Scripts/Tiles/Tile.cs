@@ -278,6 +278,62 @@ public abstract class Tile : MonoBehaviour
         }
     }
 
+    internal void CalculateVision(List<Tile> VisibleTiles, List<BaseUnit> VisibleUnits)
+    {
+        Dictionary<Tile, float>  dist = new Dictionary<Tile, float>();
+
+        List<Tile> S = new List<Tile>();
+
+        dist[this] = 0;
+        if (!VisibleUnits.Contains(OccupiedUnit)) VisibleUnits.Add(OccupiedUnit);
+        S.Add(this);
+
+        while (S.Count > 0)
+        {
+            // Trouver et retirer de S l'élément u dont la valeur dist[u] est minimale
+            Tile u = S[0];
+            for (int i = 1; i < S.Count; i++)
+            {
+                if (dist[S[i]] < dist[u])
+                {
+                    u = S[i];
+                }
+            }
+            if (!VisibleTiles.Contains(u)) VisibleTiles.Add(u);
+            S.Remove(u);
+
+            foreach (Tile v in u.Neighbors)
+            {
+                // Contraintes de mouvement des Unités
+                float movementCost = OccupiedUnit.GetCost(v.GetType());
+                if (float.IsInfinity(movementCost)) continue;
+
+                // Répérer les ennemis visibles
+                bool hasEnemy = v.OccupiedUnit != null && v.OccupiedUnit.Faction != OccupiedUnit.Faction && dist[u] + movementCost + v.OccupiedUnit.Camo <= OccupiedUnit.Vision;
+                if (hasEnemy) if (!VisibleUnits.Contains(v.OccupiedUnit)) VisibleUnits.Add(v.OccupiedUnit);
+
+                float alt = dist[u] + movementCost;
+
+                // La portée de mouvement ne doit pas être dépassée
+                if (alt <= OccupiedUnit.Vision)
+                {
+                    if (!dist.ContainsKey(v) || alt < dist[v])
+                    {
+                        dist[v] = alt;
+                        v.ParentTile = u;
+
+                        bool isAlly = v.OccupiedUnit != null && v.OccupiedUnit.Faction == OccupiedUnit.Faction;
+
+                        if (!S.Contains(v)) // Si v n'est pas dans S
+                        {
+                            S.Add(v);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private void ApplyMovementVisuals(Tile target, bool isAlly, bool isDanger)
     {
         if (isDanger)

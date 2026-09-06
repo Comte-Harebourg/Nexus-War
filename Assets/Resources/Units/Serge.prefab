@@ -335,7 +335,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 272636737
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 19
   m_Sprite: {fileID: -5102004344226633193, guid: 5ea63755cd78842479003d825403ee42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -432,9 +432,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1603529887
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 15
-  m_Sprite: {fileID: -2494524493384981638, guid: ad5bf8ebe09678149b4d251192c961d2, type: 3}
+  m_Sprite: {fileID: 3171424422285305557, guid: 9b9b86240dcdae842829cc7f45d285dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -465,6 +465,8 @@ MonoBehaviour:
   minAttackRange: 0
   maxAttackRange: 0
   isActive: 1
+  Vision: 0
+  Camo: 0
   Animator: {fileID: 0}
   Sprite: {fileID: 0}
   Danger: {fileID: 0}
@@ -495,7 +497,7 @@ Animator:
   m_GameObject: {fileID: 8192267946662819286}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 5878547410644506150, guid: ad5bf8ebe09678149b4d251192c961d2, type: 3}
+  m_Controller: {fileID: 972720636171815412, guid: 9b9b86240dcdae842829cc7f45d285dc, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

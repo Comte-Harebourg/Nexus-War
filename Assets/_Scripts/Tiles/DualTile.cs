@@ -68,9 +68,9 @@ public class DualTile : MonoBehaviour
         string bitmap = "";
         foreach(Tile Tile in Neighbors)
         {
-            if (Tile) if (GridManager.Instance.visibleTiles.Contains(Tile)) bitmap += "1";
-                else bitmap += "0";
-            else bitmap += "0";
+            if (Tile) if (GridManager.Instance.visibleTiles.Contains(Tile)) bitmap += "0";
+                else bitmap += "1";
+            else bitmap += "1";
         }
         FogAnimator = ChildBirth(FogSprite, FogSpriteController, bitmap, 10, isFogSpriteAnimated);
     }

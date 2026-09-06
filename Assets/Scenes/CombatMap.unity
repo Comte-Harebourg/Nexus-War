@@ -1859,6 +1859,7 @@ MonoBehaviour:
   _forestTile: {fileID: 0}
   _cam: {fileID: 0}
   visibleTiles: []
+  visibleUnits: []
   Dimension: {x: 0, y: 0}
 --- !u!4 &400165310
 Transform:
