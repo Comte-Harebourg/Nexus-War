@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c2qysm8atkdwv"]
+
+[ext_resource type="Script" uid="uid://c35e7vv3f2q43" path="res://Assets/Scenes/Main/Main.gd" id="1_hq6bq"]
+
+[node name="Main" type="Control" unique_id=816414620]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hq6bq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1794871208]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=425821049]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.5
+offset_top = -20.0
+offset_right = 129.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadSkirmish" type="Button" parent="CanvasLayer/BoxContainer" unique_id=1788894254]
+layout_mode = 2
+text = "Go to Skirmish"
+
+[node name="Quit" type="Button" parent="CanvasLayer/BoxContainer" unique_id=130003051]
+layout_mode = 2
+text = "Go fuck yourself"
+
+[connection signal="pressed" from="CanvasLayer/BoxContainer/LoadSkirmish" to="." method="_on_load_skirmish_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Quit" to="." method="_on_quit_pressed"]

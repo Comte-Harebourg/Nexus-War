@@ -1,0 +1,103 @@
+[gd_scene format=4 uid="uid://v5fe8guy31lo"]
+
+[ext_resource type="Script" uid="uid://q5gih8c5qdxw" path="res://Assets/Scenes/Skirmish/Tile.gd" id="1_ul3pp"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_0vbth"]
+_data = PackedByteArray("AAADAAUAAAABAAAAwAAAAIAAAABGAgAAUklGRj4CAABXRUJQVlA4TDICAAAvv8AfECcgJCBTumwGIQGZknUrCAnIlC67QUBQ5P9oAagAq/2DciTJkSQpoigIBxhIeCYDSBJSnH+m8gpg+nrtRvR/AoJnt8Tg2e2f76OqNZIsGY0kywSUpCxJYqxjdrfg2d8Fzz7Bckjacg5J28f6mGoUyZrTSU5BScqRJF65pcbNRu7IwEoekwBZwF2x1HZHsmZ0kldu6XFVgBygPXBLjJks/Q7IAb4Ot+S4YB3R+SW4DQxy4Y48rJwAGAMsLDawnVjzOmnjAxgBuJFu6THFhMAI4Cv4/5eA5wUwQQAjADdyBGmAjwhgYRnR+DGyelZ00sgx5MIdeVhPYh51qp4XnVyOreS1Y5tBHEH9EADPCGAeIAe4I3PIG8BzArgiS04jH1R/F/0BmUXe7cjAeieJGZR0Vz0j+o2krWS0Q9IckphDSVN0nlPOdYJYSTKHJHe3GOPWeU46V2tjio2PUW5/4I0ky7tGkuVLiHXE7mYWPPub4NmnWA5JW8YhafuYWR9RvwZKUoYkcZKN3PEOK3l8IcUS2xOS9V0nOU8BMoD2yO11zGXJT4AM4CtxS40fA3dkYeUXUSy9XbFmdc4RQB7gF27JMcmEQB7wNfz3c8CzApgigDzAzYzMI6dYWPIaPxfVc6JPsyML65WYRU1ybCWrHduvAfB3AcwEZABPyAxyIrJkNPJR9TfRJ9vxDusTSXxHSdNI2sq7dkj6JjrPCec6RawkmUGSu5tZjPAprI0o9gcO")
+size_override = Vector2(192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0omu"]
+atlas = SubResource("PortableCompressedTexture2D_0vbth")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12bbf"]
+atlas = SubResource("PortableCompressedTexture2D_0vbth")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqako"]
+atlas = SubResource("PortableCompressedTexture2D_0vbth")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvruc"]
+atlas = SubResource("PortableCompressedTexture2D_0vbth")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6up0h"]
+atlas = SubResource("PortableCompressedTexture2D_0vbth")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnbtm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0omu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12bbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqako")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvruc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6up0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvruc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqako")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12bbf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.64, 0.64, 0.001)
+
+[node name="Tile" type="Node3D" unique_id=1654967232]
+script = ExtResource("1_ul3pp")
+
+[node name="Highlight" type="AnimatedSprite3D" parent="." unique_id=152131972]
+transform = Transform3D(9.6, 0, 0, 0, -4.1962934e-07, -9.6, 0, 9.6, -4.1962934e-07, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rnbtm")
+frame_progress = 0.8708955
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": false,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://Assets/Sprites/Cursor/Highlight.ase",
+"source_uid": 3087100863802711226
+}
+metadata/_aseprite_wizard_source_file_hash_ = "a0a698ae1fc2c622d6acd6838ce1eac6"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1845192632]
+transform = Transform3D(9.6, 0, 0, 0, -4.1962934e-07, -9.6, 0, 9.6, -4.1962934e-07, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=677367336]
+transform = Transform3D(1, 0, 0, 0, 1, 4.7251103e-13, 0, -4.7251103e-13, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

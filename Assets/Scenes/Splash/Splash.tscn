@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dhspd2oqchv5w"]
+
+[ext_resource type="Script" uid="uid://bxthc2lt7m2jg" path="res://Assets/Scenes/Splash/Splash.gd" id="1_e4m5h"]
+
+[node name="SPlash" type="Node2D" unique_id=1820686517]
+script = ExtResource("1_e4m5h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=603282330]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1948335273]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -37.5
+offset_right = 192.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ceci est un splashscreen
+
+La transition de scene est géré par SceneManager"
