@@ -2,11 +2,10 @@
 extends Node3D
 
 const LEVEL_PATH: String = "res://Assets/Levels/" #Chemin du fichier des levels
-@onready var tile_map: GridMap = $"../TileMap"
-@onready var grid: Node3D = $"../Grid"
+@onready var tile_map: GridMap = %TileMap
+@onready var grid: Node3D = %Grid
 @export var level_index: int = 0
 var level: SavedLevel
-var tile = preload("res://Assets/Scenes/Skirmish/Tile.tscn")
 
 @export_tool_button("Sauvegarder le niveau", "Save") var save_button: Callable = save_level
 @export_tool_button("Charger le niveau", "Load") var load_button: Callable = load_current_level
@@ -66,14 +65,14 @@ func load_tilemap() -> void:
 			cell_data["id"],
 			cell_data["rotation"]
 		)
-		var instance = tile.instantiate()
-		instance.pos = Vector2i(cell_data["position"].x, cell_data["position"].z)
-		instance.position = cell_data["position"]*6.25 + Vector3(3.125,6.5,3.125)
-		grid.add_child(instance)
-	grid.update_grid()
+		#var instance = tile.instantiate()
+		#instance.pos = Vector2i(cell_data["position"].x, cell_data["position"].z)
+		#instance.position = cell_data["position"]*6.25 + Vector3(3.125,6.5,3.125)
+		#grid.add_child(instance)
+	#grid.update_grid()
 
 func clear_level() -> void:
-	#Retire la Grdimap
+	#Retire la Gridmap
 	tile_map.clear()
-	for tile_child in $"../Grid".get_children():
+	for tile_child in grid.get_children():
 		tile_child.free()

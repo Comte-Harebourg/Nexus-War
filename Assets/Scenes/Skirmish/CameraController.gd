@@ -1,8 +1,8 @@
 extends Node3D
 
-@onready var camera_rotation = $CameraRotation
-@onready var camera_pivot = $CameraRotation/CameraPivot
-@onready var camera: Camera3D = $CameraRotation/CameraPivot/Camera3D
+@onready var camera_rotation = %CameraRotation
+@onready var camera_pivot = %CameraPivot
+@onready var camera: Camera3D = %Camera
 
 #Variables à revoir
 var move_speed: float = 0.5

@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://3l6jucqbeu6v"]
+
+[ext_resource type="Shader" uid="uid://br7vyuh1s3ilp" path="res://Assets/Scenes/Skirmish/GridShader.gdshader" id="1_gl656"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gl656")
+shader_parameter/grid_color = Color(1, 1, 1, 1)
+shader_parameter/border_color = Color(0, 0, 0, 1)
+shader_parameter/grid_alpha = 0.5
+shader_parameter/grid_size = 6.25
+shader_parameter/border_width = 1.5
