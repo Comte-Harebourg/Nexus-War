@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode blend_mix;
+render_mode depth_test_disabled;
 
 uniform vec3 grid_color: source_color = vec3(1.0);
 uniform vec3 border_color: source_color = vec3(0.0);

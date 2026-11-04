@@ -1,10 +1,12 @@
 [gd_scene format=4 uid="uid://cspjfn7hdbvgs"]
 
 [ext_resource type="Script" uid="uid://b8aqnuphq4bm5" path="res://Assets/Scenes/Skirmish/LevelGenerator.gd" id="1_0vbth"]
+[ext_resource type="Script" uid="uid://b2ha2dpk7hyio" path="res://Assets/Scenes/Skirmish/Tile_database.gd" id="1_12bbf"]
 [ext_resource type="MeshLibrary" uid="uid://bq45l3rhheeji" path="res://Assets/Models/Tile/TileDatabase.tres" id="1_xsyoc"]
 [ext_resource type="Script" uid="uid://c66scf2wbfse4" path="res://Assets/Scenes/Skirmish/GridManager.gd" id="2_j6jm6"]
 [ext_resource type="Script" uid="uid://clgcm6t516gx" path="res://Assets/Scenes/Skirmish/CameraController.gd" id="2_xsyoc"]
 [ext_resource type="Material" uid="uid://3l6jucqbeu6v" path="res://Assets/Scenes/Skirmish/GridShaderMaterial.tres" id="5_u0omu"]
+[ext_resource type="Script" uid="uid://b3ugdlr1xctme" path="res://Assets/Scenes/Skirmish/Tile.gd" id="7_aqako"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_0vbth"]
 _data = PackedByteArray("AAADAAUAAAABAAAAwAAAAIAAAABGAgAAUklGRj4CAABXRUJQVlA4TDICAAAvv8AfECcgJCBTumwGIQGZknUrCAnIlC67QUBQ5P9oAagAq/2DciTJkSQpoigIBxhIeCYDSBJSnH+m8gpg+nrtRvR/AoJnt8Tg2e2f76OqNZIsGY0kywSUpCxJYqxjdrfg2d8Fzz7Bckjacg5J28f6mGoUyZrTSU5BScqRJF65pcbNRu7IwEoekwBZwF2x1HZHsmZ0kldu6XFVgBygPXBLjJks/Q7IAb4Ot+S4YB3R+SW4DQxy4Y48rJwAGAMsLDawnVjzOmnjAxgBuJFu6THFhMAI4Cv4/5eA5wUwQQAjADdyBGmAjwhgYRnR+DGyelZ00sgx5MIdeVhPYh51qp4XnVyOreS1Y5tBHEH9EADPCGAeIAe4I3PIG8BzArgiS04jH1R/F/0BmUXe7cjAeieJGZR0Vz0j+o2krWS0Q9IckphDSVN0nlPOdYJYSTKHJHe3GOPWeU46V2tjio2PUW5/4I0ky7tGkuVLiHXE7mYWPPub4NmnWA5JW8YhafuYWR9RvwZKUoYkcZKN3PEOK3l8IcUS2xOS9V0nOU8BMoD2yO11zGXJT4AM4CtxS40fA3dkYeUXUSy9XbFmdc4RQB7gF27JMcmEQB7wNfz3c8CzApgigDzAzYzMI6dYWPIaPxfVc6JPsyML65WYRU1ybCWrHduvAfB3AcwEZABPyAxyIrJkNPJR9TfRJ9vxDusTSXxHSdNI2sq7dkj6JjrPCec6RawkmUGSu5tZjPAprI0o9gcO")
@@ -67,6 +69,41 @@ size = Vector2(6.25, 6.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(100000, 0.1, 100000)
+
+[sub_resource type="Resource" id="Resource_12bbf"]
+script = ExtResource("7_aqako")
+move_type = "Grass"
+metadata/_custom_type_script = "uid://b3ugdlr1xctme"
+
+[sub_resource type="Resource" id="Resource_aqako"]
+script = ExtResource("7_aqako")
+cover = -2
+move_type = "Water"
+metadata/_custom_type_script = "uid://b3ugdlr1xctme"
+
+[sub_resource type="Resource" id="Resource_gvruc"]
+script = ExtResource("7_aqako")
+cover = 2
+move_type = "Forest"
+metadata/_custom_type_script = "uid://b3ugdlr1xctme"
+
+[sub_resource type="Resource" id="Resource_rnbtm"]
+script = ExtResource("7_aqako")
+cover = -1
+move_type = "Road"
+metadata/_custom_type_script = "uid://b3ugdlr1xctme"
+
+[sub_resource type="Resource" id="Resource_r0tiv"]
+script = ExtResource("7_aqako")
+cover = 1
+move_type = "Hole"
+metadata/_custom_type_script = "uid://b3ugdlr1xctme"
+
+[sub_resource type="Resource" id="Resource_6up0h"]
+script = ExtResource("7_aqako")
+cover = 3
+move_type = "Mountain"
+metadata/_custom_type_script = "uid://b3ugdlr1xctme"
 
 [node name="Skirmish" type="Node3D" unique_id=1701354971]
 
@@ -156,3 +193,15 @@ custom_minimum_size = Vector2(200, 0)
 offset_right = 40.0
 offset_bottom = 40.0
 expand_mode = 4
+
+[node name="TileData" type="Node" parent="." unique_id=2050932527]
+unique_name_in_owner = true
+script = ExtResource("1_12bbf")
+tile_data = Dictionary[String, ExtResource("7_aqako")]({
+"Forest": SubResource("Resource_gvruc"),
+"Grass": SubResource("Resource_12bbf"),
+"Hole": SubResource("Resource_r0tiv"),
+"Mountain": SubResource("Resource_6up0h"),
+"Road": SubResource("Resource_rnbtm"),
+"Water": SubResource("Resource_aqako")
+})
