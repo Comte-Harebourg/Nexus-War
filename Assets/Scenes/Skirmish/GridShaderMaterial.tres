@@ -5,9 +5,9 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_gl656")
-shader_parameter/grid_color = Color(1, 1, 1, 1)
 shader_parameter/border_color = Color(0, 0, 0, 1)
 shader_parameter/grid_alpha = 0.5
 shader_parameter/grid_size = 6.25
 shader_parameter/border_width = 1.5
+shader_parameter/show_borders = true
 shader_parameter/map_size = Vector2(0, 0)

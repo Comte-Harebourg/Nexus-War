@@ -25,15 +25,18 @@ var _channels: Array[Array]
 var _dirty_cell: Dictionary[int, bool] #Contient les index des tuiles à mettre à jour
 
 func _ready() -> void:
+	#Initialisation du GridManager
 	var rect: Rect2i = get_gridmap_rect(tile_map)
 	grid_origin = rect.position
 	grid_size = rect.size
 	grid_shader.scale = Vector3(grid_size.x, 1, grid_size.y)
 	_setup()
 	minimap.texture = _data_texture
+	cursor.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+	cursor.render_priority = 1
 
 func _input(event: InputEvent) -> void:
-	#Retourne à l'étape de sélection précédente
+	#Logique de clic de la souris sur la girlle, sert aux tests pour l'instant
 	if event.is_action("right_mouse_click") and event.is_pressed():
 		set_higlight(1, [get_tile_adress_under_mouse()])
 		update_highlights()
@@ -41,13 +44,14 @@ func _input(event: InputEvent) -> void:
 	if event.is_action("left_mouse_click") and event.is_pressed():
 		var address = get_tile_adress_under_mouse()
 		if is_legal_tile(address):
-			cursor.position = adress_to_position(address) + Vector3(0,4.875,0)
+			cursor.position = adress_to_position(address) + Vector3(0,3.2,0)
 			#Décalage nécessaire à cause de l'offset du cursor
 			set_higlight(2, [address])
 			update_highlights()
 			print(tile_database.get_tile(tile_map.mesh_library.get_item_name(tile_map.get_cell_item(Vector3(address.x,0,address.y)))).move_type)
 
 func _setup() -> void:
+	#Mets en place le fonctionnement du shader, il vaudrait mieux ne pas y toucher
 	_data_image = Image.create_empty(grid_size.x, grid_size.y, false, Image.FORMAT_RGBA8)
 	_data_texture = ImageTexture.create_from_image(_data_image)
 	_channels = []
@@ -62,13 +66,14 @@ func _setup() -> void:
 	update_highlights()
 
 func clear_channel(channel_index: int) -> void:
+	#Réinitialise un channel en fonction de son index, ne change pas la couleur
 	for index: int in range(grid_size.x * grid_size.y):
 		if _channels[channel_index][index]:
 			_dirty_cell.set(index, true)
 	_channels[channel_index].fill(false)
 
 func set_higlight(channel_index: int, tiles: Array[Vector2i], on: bool = true) -> void:
-	#Modifie la valeur d'un index d'un channel, ne mets pas à jour la grille
+	#Modifie la valeur d'un index d'un channel, ne change pas la couleur
 	for address: Vector2i in tiles:
 		if is_legal_tile(address):
 			var index: int = address_to_index(address)
@@ -76,7 +81,7 @@ func set_higlight(channel_index: int, tiles: Array[Vector2i], on: bool = true) -
 			_dirty_cell.set(index, true)
 
 func set_tile_color(address: Vector2i, color: Color) -> void:
-	#Pour changer la couleur d'une tuile directement
+	#Pour changer la couleur d'une tuile directement, il faut quand même appeler _data_texture.update(_data_image)
 	var local: Vector2i = address - grid_origin
 	if local.x >= 0 and local.y >= 0 and local.x < grid_size.x and local.y < grid_size.y:
 		_data_image.set_pixel(local.x, local.y, color)
@@ -118,7 +123,7 @@ func position_to_adress(world_pos: Vector3) -> Vector2i:
 
 func adress_to_position(adress: Vector2i) -> Vector3:
 	#Transforme une adresse de grille en une position dans l'espace
-		return tile_map.to_global(tile_map.map_to_local(Vector3i(adress.x, 0, adress.y)))
+	return tile_map.to_global(tile_map.map_to_local(Vector3i(adress.x, 0, adress.y)))
 
 func address_to_index(address: Vector2i) -> int:
 	#Tranforme une adresse en index pour les channels de tuiles
@@ -145,7 +150,12 @@ func get_gridmap_rect(grid_map: GridMap) -> Rect2i:
 	return Rect2i(min_c, max_c - min_c + Vector2i.ONE)
 
 func is_legal_tile(address: Vector2i) -> bool:
+	#Renvoie true si l'addresse correspond à une tuile de la tile_map sinon false
 	var local: Vector2i = address - grid_origin
 	if local.x >= 0 and local.y >= 0 and local.x < grid_size.x and local.y < grid_size.y:
 		return tile_map.get_cell_item(Vector3(address.x,0,address.y)) != GridMap.INVALID_CELL_ITEM
 	return false
+
+func set_borders_visible(visible: bool) -> void:
+	#Active/désactive les bordures du shader de la grille, pas encore tester
+	_shader_material.set_shader_parameter("show_borders", visible)

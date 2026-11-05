@@ -19,7 +19,6 @@ var camera_sensitivity: float = 0.2
 var edge_size: float = 15.
 var scroll_speed: float = 0.6
 var is_shaking: bool = false
-#Penser à rajouter des limites de map pour éviter de perde la caméra dans l'infini
 
 func _ready() -> void:
 	#Attribution des valeurs de départ, si on veut mettre des valeurs par défaut c'est ici
