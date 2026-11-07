@@ -27,7 +27,7 @@ func _ready() -> void:
 	rotate_target = rotation_degrees.y
 	zoom_target = camera.position.z
 
-func _process(delta: float) -> void:
+func _process(float) -> void:
 	#Gère le déplacement au bord de l'écran
 	var mouse_posisiton = get_viewport().get_mouse_position()
 	var screen_size = get_viewport().get_visible_rect().size

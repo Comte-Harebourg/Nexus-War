@@ -7,6 +7,7 @@ const LEVEL_PATH: String = "res://Assets/Levels/" #Chemin du fichier des levels
 @export var level_index: int = 0
 var level: SavedLevel
 
+#Affiche des boutons dans l'éditeur pour lancer les fonctions
 @export_tool_button("Sauvegarder le niveau", "Save") var save_button: Callable = save_level
 @export_tool_button("Charger le niveau", "Load") var load_button: Callable = load_current_level
 @export_tool_button("Retirer le niveau", "Clear") var clear_button: Callable = clear_level
@@ -65,11 +66,6 @@ func load_tilemap() -> void:
 			cell_data["id"],
 			cell_data["rotation"]
 		)
-		#var instance = tile.instantiate()
-		#instance.pos = Vector2i(cell_data["position"].x, cell_data["position"].z)
-		#instance.position = cell_data["position"]*6.25 + Vector3(3.125,6.5,3.125)
-		#grid.add_child(instance)
-	#grid.update_grid()
 
 func clear_level() -> void:
 	#Retire la Gridmap
