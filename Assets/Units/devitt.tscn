@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dwbjqkid0fg6s" path="res://Assets/Units/Devitt.gd" id="1_ilqyy"]
 [ext_resource type="Texture2D" uid="uid://cmeiy7v3wp2nf" path="res://Assets/Models/Unit/Devitt_0.png" id="1_yjetc"]
+[ext_resource type="PackedScene" uid="uid://clbac1hor8n2w" path="res://Assets/Models/PartyHat.gltf" id="3_xgkox"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48anf"]
 resource_name = "material_0"
@@ -82,3 +83,6 @@ skeleton = NodePath("..")
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=1932957104]
 libraries/ = SubResource("AnimationLibrary_p1rwe")
+
+[node name="blockbench_export" parent="." unique_id=1217927997 instance=ExtResource("3_xgkox")]
+transform = Transform3D(1.4814837, 0.23496026, 0, -0.23496026, 1.4814837, 0, 0, 0, 1.5, 0.48357135, 2.4725115, -0.802647)
