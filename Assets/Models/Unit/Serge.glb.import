@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://mopolw4ff6m8"
-path="res://.godot/imported/Devitt.gltf-bc7b50179c7d31320e4a4c36aa784d27.scn"
+uid="uid://8xw2foi2qvp0"
+path="res://.godot/imported/Serge.glb-594a567e411a6c0c90f384b682f7b710.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Unit/Devitt.gltf"
-dest_files=["res://.godot/imported/Devitt.gltf-bc7b50179c7d31320e4a4c36aa784d27.scn"]
+source_file="res://Assets/Models/Unit/Serge.glb"
+dest_files=["res://.godot/imported/Serge.glb-594a567e411a6c0c90f384b682f7b710.scn"]
 
 [params]
 

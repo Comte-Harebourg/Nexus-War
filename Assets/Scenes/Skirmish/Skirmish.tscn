@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://c66scf2wbfse4" path="res://Assets/Scenes/Skirmish/GridManager.gd" id="2_j6jm6"]
 [ext_resource type="Script" uid="uid://clgcm6t516gx" path="res://Assets/Scenes/Skirmish/CameraController.gd" id="2_xsyoc"]
 [ext_resource type="Script" uid="uid://dgawjrfnp7osn" path="res://Assets/Scenes/Skirmish/UnitManager.gd" id="4_gvruc"]
-[ext_resource type="PackedScene" uid="uid://b2bi5xhanurwa" path="res://Assets/Units/devitt.tscn" id="5_rnbtm"]
 [ext_resource type="Material" uid="uid://3l6jucqbeu6v" path="res://Assets/Scenes/Skirmish/GridShaderMaterial.tres" id="5_u0omu"]
 [ext_resource type="Script" uid="uid://b3ugdlr1xctme" path="res://Assets/Scenes/Skirmish/Tile.gd" id="7_aqako"]
 [ext_resource type="Script" uid="uid://cf2mlc6c5ancl" path="res://Assets/Scenes/Skirmish/UnitDatabase.gd" id="9_6up0h"]
@@ -126,7 +125,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 unique_name_in_owner = true
 script = ExtResource("2_j6jm6")
 
-[node name="Cursor" type="AnimatedSprite3D" parent="Grid" unique_id=389006978]
+[node name="Cursor" type="AnimatedSprite3D" parent="Grid" unique_id=1334066364]
 unique_name_in_owner = true
 transform = Transform3D(9.6, 0, 0, 0, -4.1962934e-07, -9.6, 0, 9.6, -4.1962934e-07, 0, 0, 0)
 texture_filter = 0
@@ -159,11 +158,8 @@ metadata/_aseprite_wizard_source_file_hash_ = "a0a698ae1fc2c622d6acd6838ce1eac6"
 unique_name_in_owner = true
 script = ExtResource("4_gvruc")
 unit_dict = {
-Vector2i(2, 0): NodePath("Devitt")
+Vector2i(2, 0): null
 }
-
-[node name="Devitt" parent="Units" unique_id=443207742 instance=ExtResource("5_rnbtm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.625, 6.25, 3.125)
 
 [node name="CameraPosition" type="Node3D" parent="." unique_id=916304202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.25, 0)

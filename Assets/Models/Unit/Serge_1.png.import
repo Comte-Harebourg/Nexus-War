@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmeiy7v3wp2nf"
-path.s3tc="res://.godot/imported/Devitt_0.png-5c953162fe3451bba21bdb1c87c650b2.s3tc.ctex"
+uid="uid://mvm8cu2bf0is"
+path.s3tc="res://.godot/imported/Serge_1.png-d7157d92b1c409baf9bf1a0b4b4bd630.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "c3c03fb43b4e239dbe8c9a2cc77475a3"
+"md5": "b79ca0642480bae39db7ed47488aeb2d"
 }
 
 [deps]
 
-source_file="res://Assets/Models/Unit/Devitt_0.png"
-dest_files=["res://.godot/imported/Devitt_0.png-5c953162fe3451bba21bdb1c87c650b2.s3tc.ctex"]
+source_file="res://Assets/Models/Unit/Serge_1.png"
+dest_files=["res://.godot/imported/Serge_1.png-d7157d92b1c409baf9bf1a0b4b4bd630.s3tc.ctex"]
 
 [params]
 

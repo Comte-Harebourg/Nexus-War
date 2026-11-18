@@ -52,6 +52,7 @@ func load_level(index) -> void:
 	if level:
 		print("Level chargé avec succès")
 		load_tilemap()
+		load_units()
 
 func load_current_level():
 	#Fonction servant uniquement au bouton de l'éditeur
@@ -67,8 +68,10 @@ func load_tilemap() -> void:
 			cell_data["rotation"]
 		)
 
+func load_units() -> void:
+	pass
+	
+
 func clear_level() -> void:
 	#Retire la Gridmap
 	tile_map.clear()
-	for tile_child in grid.get_children():
-		tile_child.free()

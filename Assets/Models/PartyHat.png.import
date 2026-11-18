@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1pd3rbyjtox4"
-path.s3tc="res://.godot/imported/PartyHat_0.png-204999de7586fb2dd356e8d79b7932c4.s3tc.ctex"
+path.s3tc="res://.godot/imported/PartyHat.png-3a2c95be8b8a33df049a4e5e655ae09d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/PartyHat_0.png"
-dest_files=["res://.godot/imported/PartyHat_0.png-204999de7586fb2dd356e8d79b7932c4.s3tc.ctex"]
+source_file="res://Assets/Models/PartyHat.png"
+dest_files=["res://.godot/imported/PartyHat.png-3a2c95be8b8a33df049a4e5e655ae09d.s3tc.ctex"]
 
 [params]
 

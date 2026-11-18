@@ -21,4 +21,4 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Ceci est un splashscreen
 
-La transition de scene est géré par SceneManager"
+La transition de scene est gérée par SceneManager"
