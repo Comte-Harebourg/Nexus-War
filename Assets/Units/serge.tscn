@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://dedxmss4bnfj2"]
 
-[ext_resource type="Script" uid="uid://dwbjqkid0fg6s" path="res://Assets/Units/Serge.gd" id="1_ejgad"]
+[ext_resource type="Script" uid="uid://bkuwqlauim8fa" path="res://Assets/Scenes/Skirmish/Unit.gd" id="1_ejgad"]
 [ext_resource type="Texture2D" uid="uid://d3jr28i8ukwug" path="res://Assets/Models/Unit/Serge_0.png" id="1_i24w1"]
 [ext_resource type="Texture2D" uid="uid://mvm8cu2bf0is" path="res://Assets/Models/Unit/Serge_1.png" id="2_ejgad"]
+[ext_resource type="Script" uid="uid://b0xkhkjhlcqwl" path="res://capacity.gd" id="4_tu4la"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unfuf"]
 resource_name = "material_0"
@@ -745,13 +746,34 @@ _data = {
 &"target": SubResource("Animation_0pslw")
 }
 
-[node name="Serge" type="Node3D" unique_id=47402134]
+[node name="Serge" type="Node3D" unique_id=47402134 node_paths=PackedStringArray("animators")]
 script = ExtResource("1_ejgad")
+unitName = "Serge"
+unitFaction = "Aberrion"
+speed = 4
+vision = 5
+camo = 1
+maxMember = 3
+member = 3
+maxHealth = 500
+mealth = 500
+maxArmor = 1
+armor = 1
+maxMorale = 5
+morale = 5
+move_dict = Dictionary[String, float]({
+"Forest": 2.0,
+"Grass": 1.0,
+"Hole": 1.5,
+"Mountain": 3.0,
+"Road": 0.5
+})
+animators = [NodePath("Member/Member1/AnimationPlayer"), NodePath("Member/Member2/AnimationPlayer"), NodePath("Member/Member3/AnimationPlayer")]
 
 [node name="Member" type="Node3D" parent="." unique_id=7066234]
 
 [node name="Member1" type="Node3D" parent="Member" unique_id=2019547524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.718846)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, -1.7535899)
 
 [node name="armature" type="Node3D" parent="Member/Member1" unique_id=2134123991]
 
@@ -920,7 +942,7 @@ skeleton = NodePath("..")
 libraries/ = SubResource("AnimationLibrary_dlcpj")
 
 [node name="Member2" type="Node3D" parent="Member" unique_id=2068339352]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.519559, 0, 3.517416)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.4901962, 0, 0.67279196)
 
 [node name="armature" type="Node3D" parent="Member/Member2" unique_id=66619591]
 
@@ -1089,7 +1111,7 @@ skeleton = NodePath("..")
 libraries/ = SubResource("AnimationLibrary_dlcpj")
 
 [node name="Member3" type="Node3D" parent="Member" unique_id=1713268825]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6104774, 9.536743e-07, 3.0931385)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.0856478, 9.536743e-07, 0.5653441)
 
 [node name="armature" type="Node3D" parent="Member/Member3" unique_id=45856000]
 
@@ -1260,3 +1282,8 @@ libraries/ = SubResource("AnimationLibrary_dlcpj")
 [node name="Capacity" type="Node3D" parent="." unique_id=1643640029]
 
 [node name="Attack" type="Node3D" parent="Capacity" unique_id=1431686329]
+script = ExtResource("4_tu4la")
+isAttack = true
+minRange = 1
+maxRange = 2
+damage = 50

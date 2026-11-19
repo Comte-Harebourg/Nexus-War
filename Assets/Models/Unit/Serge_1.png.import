@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mvm8cu2bf0is"
-path.s3tc="res://.godot/imported/Serge_1.png-d7157d92b1c409baf9bf1a0b4b4bd630.s3tc.ctex"
+path="res://.godot/imported/Serge_1.png-d7157d92b1c409baf9bf1a0b4b4bd630.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "b79ca0642480bae39db7ed47488aeb2d"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Unit/Serge_1.png"
-dest_files=["res://.godot/imported/Serge_1.png-d7157d92b1c409baf9bf1a0b4b4bd630.s3tc.ctex"]
+dest_files=["res://.godot/imported/Serge_1.png-d7157d92b1c409baf9bf1a0b4b4bd630.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

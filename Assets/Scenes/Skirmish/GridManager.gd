@@ -8,12 +8,12 @@ class_name GridManager extends Node3D
 @onready var tile_database: TileDatabase = %TileData
 @onready var unit_manager: UnitManager = %Units
 @onready var tile_colors: Array[Color] = [
-Color.DARK_BLUE, #0: occupied_move
-Color.BLUE, #1: move
-Color.RED, #2: occupied_attack
-Color.DARK_RED, #3: attack
-Color.GREEN, #4: interact
-Color.DARK_GREEN, #5: occupied_interact
+Color.GREEN, #0: interact
+Color.DARK_GREEN, #1: occupied_interact
+Color.BLUE, #2: move
+Color.DARK_BLUE, #3: occupied_move
+Color.RED, #4: occupied_attack
+Color.DARK_RED, #5: attack
 Color.ORANGE, #6: move_danger
 Color.DARK_ORANGE #7: attack_danger
 ]
@@ -40,11 +40,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	#Logique de clic de la souris sur la girlle, sert aux tests pour l'instant
 	if event.is_action("right_mouse_click") and event.is_pressed():
-		#set_higlight(1, [get_tile_adress_under_mouse()])
+		#set_higlight(3, [get_tile_adress_under_mouse()])
 		#update_highlights()
 		_selected_unit = null
 		cursor.position = Vector3(0,0,0)
-		clear_channel(1)
+		clear_channel(2)
+		clear_channel(3)
 		update_highlights()
 
 	if event.is_action("left_mouse_click") and event.is_pressed():
@@ -53,21 +54,23 @@ func _input(event: InputEvent) -> void:
 			cursor.position = adress_to_position(address) + Vector3(0,3.2,0)
 			if unit_manager.unit_dict.has(address):
 				_selected_unit = unit_manager.unit_dict[address]
-				var blue_tiles: Array[Vector2i] = pathfinding(address, _selected_unit.speed, _selected_unit.move_dict)
-				set_higlight(1, blue_tiles)
+				var research: Dictionary[String, FactionTiles] = separate_by_faction(pathfinding(address, _selected_unit.speed, _selected_unit.move_dict))
+				var blue_tiles: Array[Vector2i] = research[""].tiles
+				blue_tiles.append(address)
+				if research.has(_selected_unit.unitFaction):
+					var dar_blue_tiles: Array[Vector2i] = research[_selected_unit.unitFaction].tiles
+					set_higlight(3, dar_blue_tiles)
+				set_higlight(2, blue_tiles)
 				update_highlights()
-			elif _selected_unit and _channels[1][address_to_index(address)]:
+			elif _selected_unit and _channels[2][address_to_index(address)]:
 				unit_manager.unit_dict.erase(position_to_adress(_selected_unit.position))
 				_selected_unit.position = adress_to_position(address) + Vector3(0,3.125,0)
 				unit_manager.unit_dict[address] = _selected_unit
 				_selected_unit = null
 				cursor.position = Vector3(0,0,0)
-				clear_channel(1)
+				clear_channel(2)
+				clear_channel(3)
 				update_highlights()
-			#Décalage nécessaire à cause de l'offset du cursor
-			#set_higlight(2, [address])
-			#update_highlights()
-			#print(tile_database.get_tile(tile_map.mesh_library.get_item_name(tile_map.get_cell_item(Vector3(address.x,0,address.y)))).move_type)
 
 func _setup() -> void:
 	#Mets en place le fonctionnement du shader, il vaudrait mieux ne pas y toucher
@@ -188,6 +191,7 @@ func set_borders_visible(visibility: bool) -> void:
 	_shader_material.set_shader_parameter("show_borders", visibility)
 
 func get_neigbhors(origin: Vector2i) -> Array[Vector2i]:
+	#Renvoie une liste des voisins des tuiles d'une adresse origin
 	var neigbhors: Array[Vector2i] = []
 	var directions: Array[Vector2i] = [origin + Vector2i.UP, origin + Vector2i.DOWN, origin + Vector2i.LEFT, origin + Vector2i.RIGHT]
 	for address in directions:
@@ -227,3 +231,20 @@ func pathfinding(origin: Vector2i, speed: float, move_dict: Dictionary[String, f
 				costs[neighbor] = new_cost
 				frontier.append(neighbor)
 	return reachable
+
+class FactionTiles:
+	#Nested Type pour separate_by_faction
+	var tiles: Array[Vector2i] = []
+
+func separate_by_faction(tiles: Array[Vector2i]) -> Dictionary[String, FactionTiles]:
+	#Prends une liste de tuiles et les trient des des dictionnaires en fonction des factions des unités qui s'y trouvent
+	#Les tuiles sans unités vont sous la clée ""
+	var result: Dictionary[String, FactionTiles] = {}
+	for tile in tiles:
+		var faction := ""
+		if unit_manager.unit_dict.has(tile):
+			faction = unit_manager.unit_dict[tile].unitFaction
+		if not result.has(faction):
+			result[faction] = FactionTiles.new()
+		result[faction].tiles.append(tile)
+	return result

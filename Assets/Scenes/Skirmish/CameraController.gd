@@ -13,7 +13,7 @@ var min_rotation: float = 0
 var max_rotation: float = 90
 var zoomp_speed: float = 3.
 var zoom_target: float
-var min_zoom: float = -20.
+var min_zoom: float = -40.
 var max_zoom: float = 20.
 var camera_sensitivity: float = 0.2
 var edge_size: float = 15.
