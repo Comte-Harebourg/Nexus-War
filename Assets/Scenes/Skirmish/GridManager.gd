@@ -4,7 +4,6 @@ class_name GridManager extends Node3D
 @onready var tile_map: GridMap = %TileMap
 @onready var cursor: AnimatedSprite3D = %Cursor
 @onready var grid_shader: MeshInstance3D = %GridShader
-@onready var minimap: TextureRect = %Minimap
 @onready var tile_database: TileDatabase = %TileData
 @onready var unit_manager: UnitManager = %Units
 @onready var tile_colors: Array[Color] = [
@@ -33,19 +32,17 @@ func _ready() -> void:
 	grid_size = rect.size
 	grid_shader.scale = Vector3(grid_size.x, 1, grid_size.y)
 	_setup()
-	minimap.texture = _data_texture
 	cursor.alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
 	cursor.render_priority = 1
 
 func _input(event: InputEvent) -> void:
-	#Logique de clic de la souris sur la girlle, sert aux tests pour l'instant
+	#Logique de clic de la souris sur la girlle, ça va être le bordel
 	if event.is_action("right_mouse_click") and event.is_pressed():
 		#set_higlight(3, [get_tile_adress_under_mouse()])
 		#update_highlights()
 		_selected_unit = null
 		cursor.position = Vector3(0,0,0)
-		clear_channel(2)
-		clear_channel(3)
+		clear_all_channel()
 		update_highlights()
 
 	if event.is_action("left_mouse_click") and event.is_pressed():
@@ -61,6 +58,17 @@ func _input(event: InputEvent) -> void:
 					var dar_blue_tiles: Array[Vector2i] = research[_selected_unit.unitFaction].tiles
 					set_higlight(3, dar_blue_tiles)
 				set_higlight(2, blue_tiles)
+				var attack_tiles: Array[Vector2i] = []
+				for tile in blue_tiles:
+					for attack in get_tiles_in_range(tile, 2, 3):
+						attack_tiles.append(attack)
+				var research_attack: Dictionary[String, FactionTiles] = separate_by_faction(attack_tiles)
+				set_higlight(5, research_attack[""].tiles)
+				research_attack.erase("")
+				if (research_attack.has(_selected_unit.unitFaction)):
+					research_attack.erase(_selected_unit.unitFaction)
+				for faction in research_attack.values():
+					set_higlight(4, faction.tiles)
 				update_highlights()
 			elif _selected_unit and _channels[2][address_to_index(address)]:
 				unit_manager.unit_dict.erase(position_to_adress(_selected_unit.position))
@@ -68,8 +76,7 @@ func _input(event: InputEvent) -> void:
 				unit_manager.unit_dict[address] = _selected_unit
 				_selected_unit = null
 				cursor.position = Vector3(0,0,0)
-				clear_channel(2)
-				clear_channel(3)
+				clear_all_channel()
 				update_highlights()
 
 func _setup() -> void:
@@ -247,4 +254,30 @@ func separate_by_faction(tiles: Array[Vector2i]) -> Dictionary[String, FactionTi
 		if not result.has(faction):
 			result[faction] = FactionTiles.new()
 		result[faction].tiles.append(tile)
+	return result
+
+func get_tiles_in_range(origin: Vector2i, maxRange: int, minRange: int = 0) -> Array[Vector2i]:
+	#Renvoie une liste des addresses légales situées entre minRange et maxRange d'une addresse d'origine
+	#À optimiser
+	if minRange>maxRange: #Évite les typos
+		var temp: int = maxRange
+		maxRange = minRange
+		minRange = temp
+	var indices: Array[Vector2i] = []
+	var result: Array[Vector2i] = []
+	for i in range(maxRange+1):
+		if (maxRange-i>=minRange):
+			indices.append(Vector2i(maxRange-i,0))
+			if (i!=maxRange):
+				indices.append(Vector2i(-(maxRange-i),0))
+		for j in range(1,i+1):
+			if (maxRange-i+j>=minRange):
+				indices.append(Vector2i(maxRange-i,j))
+				indices.append(Vector2i(maxRange-i,-j))
+				if (i!=maxRange):
+					indices.append(Vector2i(-(maxRange-i),j))
+					indices.append(Vector2i(-(maxRange-i),-j))
+	for i in indices:
+		if is_legal_tile(origin+i):
+			result.append(origin+i)
 	return result
