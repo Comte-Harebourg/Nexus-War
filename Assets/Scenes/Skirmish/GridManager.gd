@@ -8,11 +8,11 @@ class_name GridManager extends Node3D
 @onready var unit_manager: UnitManager = %Units
 @onready var tile_colors: Array[Color] = [
 Color.GREEN, #0: interact
-Color.DARK_GREEN, #1: occupied_interact
-Color.BLUE, #2: move
-Color.DARK_BLUE, #3: occupied_move
-Color.RED, #4: occupied_attack
-Color.DARK_RED, #5: attack
+Color.BLUE, #1: move
+Color.DARK_BLUE, #2: occupied_move
+Color.RED, #3: occupied_attack
+Color.DARK_RED, #4: attack
+Color.DARK_GREEN, #5: occupied_interact
 Color.ORANGE, #6: move_danger
 Color.DARK_ORANGE #7: attack_danger
 ]
@@ -38,8 +38,6 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	#Logique de clic de la souris sur la girlle, ça va être le bordel
 	if event.is_action("right_mouse_click") and event.is_pressed():
-		#set_higlight(3, [get_tile_adress_under_mouse()])
-		#update_highlights()
 		_selected_unit = null
 		cursor.position = Vector3(0,0,0)
 		clear_all_channel()
@@ -56,21 +54,23 @@ func _input(event: InputEvent) -> void:
 				blue_tiles.append(address)
 				if research.has(_selected_unit.unitFaction):
 					var dar_blue_tiles: Array[Vector2i] = research[_selected_unit.unitFaction].tiles
-					set_higlight(3, dar_blue_tiles)
-				set_higlight(2, blue_tiles)
+					set_higlight(2, dar_blue_tiles)
+				set_higlight(1, blue_tiles)
 				var attack_tiles: Array[Vector2i] = []
 				for tile in blue_tiles:
-					for attack in get_tiles_in_range(tile, 2, 3):
-						attack_tiles.append(attack)
+					for rng in unit_manager.get_attack_range(_selected_unit):
+						for attack in get_tiles_in_range(tile, rng.x, rng.y):
+							attack_tiles.append(attack)
 				var research_attack: Dictionary[String, FactionTiles] = separate_by_faction(attack_tiles)
-				set_higlight(5, research_attack[""].tiles)
-				research_attack.erase("")
-				if (research_attack.has(_selected_unit.unitFaction)):
-					research_attack.erase(_selected_unit.unitFaction)
-				for faction in research_attack.values():
-					set_higlight(4, faction.tiles)
+				if research_attack.has(""):
+					set_higlight(4, research_attack[""].tiles)
+					research_attack.erase("")
+					if (research_attack.has(_selected_unit.unitFaction)):
+						research_attack.erase(_selected_unit.unitFaction)
+					for faction in research_attack.values():
+						set_higlight(3, faction.tiles)
 				update_highlights()
-			elif _selected_unit and _channels[2][address_to_index(address)]:
+			elif _selected_unit and _channels[1][address_to_index(address)]:
 				unit_manager.unit_dict.erase(position_to_adress(_selected_unit.position))
 				_selected_unit.position = adress_to_position(address) + Vector3(0,3.125,0)
 				unit_manager.unit_dict[address] = _selected_unit

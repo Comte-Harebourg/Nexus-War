@@ -15,3 +15,4 @@ class_name Unit extends Node3D
 @export var morale: int
 @export var move_dict: Dictionary[String, float]
 @export var animators: Array[AnimationPlayer]
+@export var capacitie: Array[Capacity]

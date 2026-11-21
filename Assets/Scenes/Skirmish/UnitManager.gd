@@ -23,3 +23,10 @@ func update_units() -> void:
 	unit_dict.clear()
 	for unit in get_children():
 		unit_dict[grid_manager.position_to_adress(unit.position)] = unit
+
+func get_attack_range(unit: Unit) -> Array[Vector2i]:
+	var result: Array[Vector2i] = []
+	for capacity in unit.capacitie:
+		if capacity.isAttack:
+			result.append(Vector2i(capacity.minRange, capacity.maxRange))
+	return result

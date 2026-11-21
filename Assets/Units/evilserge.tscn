@@ -746,7 +746,7 @@ _data = {
 &"target": SubResource("Animation_0pslw")
 }
 
-[node name="Serge" type="Node3D" unique_id=47402134 node_paths=PackedStringArray("animators")]
+[node name="Serge" type="Node3D" unique_id=47402134 node_paths=PackedStringArray("animators", "capacitie")]
 script = ExtResource("1_l5s4t")
 unitName = "EvilSerge"
 unitFaction = "Oromound"
@@ -769,6 +769,7 @@ move_dict = Dictionary[String, float]({
 "Road": 0.5
 })
 animators = [NodePath("Member/Member1/AnimationPlayer"), NodePath("Member/Member2/AnimationPlayer"), NodePath("Member/Member3/AnimationPlayer")]
+capacitie = [NodePath("Capacity/Attack")]
 
 [node name="Member" type="Node3D" parent="." unique_id=7066234]
 
@@ -1283,7 +1284,6 @@ libraries/ = SubResource("AnimationLibrary_dlcpj")
 
 [node name="Attack" type="Node3D" parent="Capacity" unique_id=1431686329]
 script = ExtResource("4_n6kwq")
-isAttack = true
 minRange = 2
 maxRange = 3
 damage = 25

@@ -746,11 +746,11 @@ _data = {
 &"target": SubResource("Animation_0pslw")
 }
 
-[node name="Serge" type="Node3D" unique_id=47402134 node_paths=PackedStringArray("animators")]
+[node name="Serge" type="Node3D" unique_id=47402134 node_paths=PackedStringArray("animators", "capacitie")]
 script = ExtResource("1_ejgad")
 unitName = "Serge"
 unitFaction = "Aberrion"
-speed = 4
+speed = 1
 vision = 5
 camo = 1
 maxMember = 3
@@ -769,6 +769,7 @@ move_dict = Dictionary[String, float]({
 "Road": 0.5
 })
 animators = [NodePath("Member/Member1/AnimationPlayer"), NodePath("Member/Member2/AnimationPlayer"), NodePath("Member/Member3/AnimationPlayer")]
+capacitie = [NodePath("Capacity/Attack"), NodePath("Capacity/Grenada!")]
 
 [node name="Member" type="Node3D" parent="." unique_id=7066234]
 
@@ -1286,4 +1287,11 @@ script = ExtResource("4_tu4la")
 isAttack = true
 minRange = 1
 maxRange = 2
+damage = 50
+
+[node name="Grenada!" type="Node3D" parent="Capacity" unique_id=2125921535]
+script = ExtResource("4_tu4la")
+isAttack = true
+minRange = 9
+maxRange = 9
 damage = 50
