@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://cjr3foxra8cah"
+path="res://.godot/imported/NexusFont.png-1be8e01633ec124a41ac1546ebb3918f.fontdata"
+
+[deps]
+
+source_file="res://Assets/Sprites/NexusFont.png"
+dest_files=["res://.godot/imported/NexusFont.png-1be8e01633ec124a41ac1546ebb3918f.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("\' \' -2", "\'0\'-\'9\' -2", "\'A\'-\'Z\' -2")
+kerning_pairs=PackedStringArray()
+columns=37
+rows=1
+image_margin=Rect2i(-1, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=1

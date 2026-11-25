@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bkuwqlauim8fa" path="res://Assets/Scenes/Skirmish/Unit.gd" id="1_ejgad"]
 [ext_resource type="Texture2D" uid="uid://d3jr28i8ukwug" path="res://Assets/Models/Unit/Serge_0.png" id="1_i24w1"]
 [ext_resource type="Texture2D" uid="uid://mvm8cu2bf0is" path="res://Assets/Models/Unit/Serge_1.png" id="2_ejgad"]
-[ext_resource type="Script" uid="uid://b0xkhkjhlcqwl" path="res://capacity.gd" id="4_tu4la"]
+[ext_resource type="Texture2D" uid="uid://bpexrv8bci67c" path="res://Assets/Sprites/icons/IconsFusilier.png" id="2_fcs76"]
+[ext_resource type="Script" uid="uid://b0xkhkjhlcqwl" path="res://Assets/Scenes/Skirmish/capacity.gd" id="4_tu4la"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unfuf"]
 resource_name = "material_0"
@@ -759,8 +760,8 @@ maxHealth = 500
 mealth = 500
 maxArmor = 1
 armor = 1
-maxMorale = 5
-morale = 5
+maxMoral = 5
+moral = 5
 move_dict = Dictionary[String, float]({
 "Forest": 2.0,
 "Grass": 1.0,
@@ -770,6 +771,7 @@ move_dict = Dictionary[String, float]({
 })
 animators = [NodePath("Member/Member1/AnimationPlayer"), NodePath("Member/Member2/AnimationPlayer"), NodePath("Member/Member3/AnimationPlayer")]
 capacitie = [NodePath("Capacity/Attack"), NodePath("Capacity/Grenada!")]
+icon = ExtResource("2_fcs76")
 
 [node name="Member" type="Node3D" parent="." unique_id=7066234]
 
@@ -1288,6 +1290,7 @@ isAttack = true
 minRange = 1
 maxRange = 2
 damage = 50
+rayon = 1
 
 [node name="Grenada!" type="Node3D" parent="Capacity" unique_id=2125921535]
 script = ExtResource("4_tu4la")
@@ -1295,3 +1298,4 @@ isAttack = true
 minRange = 9
 maxRange = 9
 damage = 50
+rayon = 1

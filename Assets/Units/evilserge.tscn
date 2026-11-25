@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://vtly5hm1clcv"]
 
 [ext_resource type="Script" uid="uid://bkuwqlauim8fa" path="res://Assets/Scenes/Skirmish/Unit.gd" id="1_l5s4t"]
+[ext_resource type="Texture2D" uid="uid://dj0hccm4076k7" path="res://Assets/Sprites/icons/IconsCharMoyen.png" id="2_56xc0"]
 [ext_resource type="Texture2D" uid="uid://d3jr28i8ukwug" path="res://Assets/Models/Unit/Serge_0.png" id="2_n6kwq"]
 [ext_resource type="Texture2D" uid="uid://mvm8cu2bf0is" path="res://Assets/Models/Unit/Serge_1.png" id="3_56xc0"]
-[ext_resource type="Script" uid="uid://b0xkhkjhlcqwl" path="res://capacity.gd" id="4_n6kwq"]
+[ext_resource type="Script" uid="uid://b0xkhkjhlcqwl" path="res://Assets/Scenes/Skirmish/capacity.gd" id="4_n6kwq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unfuf"]
 resource_name = "material_0"
@@ -753,14 +754,12 @@ unitFaction = "Oromound"
 speed = 4
 vision = 5
 camo = 1
-maxMember = 3
-member = 3
+maxMember = 4
+member = 4
 maxHealth = 500
 mealth = 500
-maxArmor = 1
-armor = 1
-maxMorale = 5
-morale = 5
+maxMoral = 8
+moral = 8
 move_dict = Dictionary[String, float]({
 "Forest": 2.0,
 "Grass": 1.0,
@@ -770,6 +769,7 @@ move_dict = Dictionary[String, float]({
 })
 animators = [NodePath("Member/Member1/AnimationPlayer"), NodePath("Member/Member2/AnimationPlayer"), NodePath("Member/Member3/AnimationPlayer")]
 capacitie = [NodePath("Capacity/Attack")]
+icon = ExtResource("2_56xc0")
 
 [node name="Member" type="Node3D" parent="." unique_id=7066234]
 
@@ -1288,3 +1288,4 @@ minRange = 2
 maxRange = 3
 damage = 25
 penetration = 2
+rayon = 1

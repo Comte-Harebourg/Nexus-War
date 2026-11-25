@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhspd2oqchv5w"]
 
 [ext_resource type="Script" uid="uid://bxthc2lt7m2jg" path="res://Assets/Scenes/Splash/Splash.gd" id="1_e4m5h"]
+[ext_resource type="FontFile" uid="uid://cjr3foxra8cah" path="res://Assets/Sprites/NexusFont.png" id="2_cwl4o"]
 
 [node name="SPlash" type="Node2D" unique_id=1820686517]
 script = ExtResource("1_e4m5h")
@@ -19,6 +20,8 @@ offset_right = 192.0
 offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Ceci est un splashscreen
+theme_override_fonts/font = ExtResource("2_cwl4o")
+text = "CECI EST UN SPLASHSCREEN
 
-La transition de scene est gérée par SceneManager"
+LA TRANSITION DE SCENE EST GEREE PAR SCENEMANAGER"
+horizontal_alignment = 1

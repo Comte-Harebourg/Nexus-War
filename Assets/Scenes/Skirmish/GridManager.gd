@@ -25,6 +25,13 @@ var _channels: Array[Array]
 var _dirty_cell: Dictionary[int, bool] #Contient les index des tuiles à mettre à jour
 var _selected_unit #Vector2i ou null
 
+#Test UI, a supprimer
+@onready var label_moral: Label = %Moral
+@onready var label_membre: Label = %Membre
+@onready var label_armure: Label = %Armure
+@onready var icon_info: Sprite2D = %Icon
+
+
 func _ready() -> void:
 	#Initialisation du GridManager
 	var rect: Rect2i = get_gridmap_rect(tile_map)
@@ -49,6 +56,7 @@ func _input(event: InputEvent) -> void:
 			cursor.position = adress_to_position(address) + Vector3(0,3.2,0)
 			if unit_manager.unit_dict.has(address):
 				_selected_unit = unit_manager.unit_dict[address]
+				test_ui_unit(_selected_unit)
 				var research: Dictionary[String, FactionTiles] = separate_by_faction(pathfinding(address, _selected_unit.speed, _selected_unit.move_dict))
 				var blue_tiles: Array[Vector2i] = research[""].tiles
 				blue_tiles.append(address)
@@ -281,3 +289,9 @@ func get_tiles_in_range(origin: Vector2i, maxRange: int, minRange: int = 0) -> A
 		if is_legal_tile(origin+i):
 			result.append(origin+i)
 	return result
+
+func test_ui_unit(unit: Unit) -> void:
+	label_membre.text=str(unit.member)
+	label_armure.text=str(unit.armor)
+	label_moral.text=str(unit.moral*unit.member)
+	icon_info.texture=unit.icon

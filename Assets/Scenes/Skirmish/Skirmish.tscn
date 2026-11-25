@@ -10,6 +10,11 @@
 [ext_resource type="Material" uid="uid://3l6jucqbeu6v" path="res://Assets/Scenes/Skirmish/GridShaderMaterial.tres" id="5_u0omu"]
 [ext_resource type="PackedScene" uid="uid://vtly5hm1clcv" path="res://Assets/Units/evilserge.tscn" id="6_rnbtm"]
 [ext_resource type="Script" uid="uid://b3ugdlr1xctme" path="res://Assets/Scenes/Skirmish/Tile.gd" id="7_aqako"]
+[ext_resource type="Shader" uid="uid://rhyxpw4k3kqy" path="res://Assets/Scenes/Skirmish/InfocardShader.gdshader" id="9_m3ocu"]
+[ext_resource type="Texture2D" uid="uid://df02uub7x2wvl" path="res://Assets/Sprites/infocard.png" id="9_q6qwg"]
+[ext_resource type="FontFile" uid="uid://cjr3foxra8cah" path="res://Assets/Sprites/NexusFont.png" id="10_s2r0o"]
+[ext_resource type="Script" uid="uid://7cy8hmhhbft7" path="res://FactionDatabase.gd" id="11_t8i2m"]
+[ext_resource type="Script" uid="uid://baed7i5uyhlyg" path="res://Assets/Scenes/Skirmish/Faction.gd" id="12_q6qwg"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_0vbth"]
 _data = PackedByteArray("AAADAAUAAAABAAAAwAAAAIAAAABGAgAAUklGRj4CAABXRUJQVlA4TDICAAAvv8AfECcgJCBTumwGIQGZknUrCAnIlC67QUBQ5P9oAagAq/2DciTJkSQpoigIBxhIeCYDSBJSnH+m8gpg+nrtRvR/AoJnt8Tg2e2f76OqNZIsGY0kywSUpCxJYqxjdrfg2d8Fzz7Bckjacg5J28f6mGoUyZrTSU5BScqRJF65pcbNRu7IwEoekwBZwF2x1HZHsmZ0kldu6XFVgBygPXBLjJks/Q7IAb4Ot+S4YB3R+SW4DQxy4Y48rJwAGAMsLDawnVjzOmnjAxgBuJFu6THFhMAI4Cv4/5eA5wUwQQAjADdyBGmAjwhgYRnR+DGyelZ00sgx5MIdeVhPYh51qp4XnVyOreS1Y5tBHEH9EADPCGAeIAe4I3PIG8BzArgiS04jH1R/F/0BmUXe7cjAeieJGZR0Vz0j+o2krWS0Q9IckphDSVN0nlPOdYJYSTKHJHe3GOPWeU46V2tjio2PUW5/4I0ky7tGkuVLiHXE7mYWPPub4NmnWA5JW8YhafuYWR9RvwZKUoYkcZKN3PEOK3l8IcUS2xOS9V0nOU8BMoD2yO11zGXJT4AM4CtxS40fA3dkYeUXUSy9XbFmdc4RQB7gF27JMcmEQB7wNfz3c8CzApgigDzAzYzMI6dYWPIaPxfVc6JPsyML65WYRU1ybCWrHduvAfB3AcwEZABPyAxyIrJkNPJR9TfRJ9vxDusTSXxHSdNI2sq7dkj6JjrPCec6RawkmUGSu5tZjPAprI0o9gcO")
@@ -73,6 +78,9 @@ size = Vector2(6.25, 6.25)
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(100000, 0.1, 100000)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s2r0o"]
+shader = ExtResource("9_m3ocu")
+
 [sub_resource type="Resource" id="Resource_gvruc"]
 script = ExtResource("7_aqako")
 cover = 2
@@ -107,6 +115,27 @@ script = ExtResource("7_aqako")
 cover = -2
 move_type = "Water"
 metadata/_custom_type_script = "uid://b3ugdlr1xctme"
+
+[sub_resource type="Resource" id="Resource_s2r0o"]
+script = ExtResource("12_q6qwg")
+FactionName = "Aberrion"
+PrimaryColor = Color(0.14117648, 0.31764707, 0.54901963, 1)
+SecondaryColor = Color(0.38431373, 0.49019608, 0.5921569, 1)
+metadata/_custom_type_script = "uid://baed7i5uyhlyg"
+
+[sub_resource type="Resource" id="Resource_t8i2m"]
+script = ExtResource("12_q6qwg")
+FactionName = "Seranna"
+PrimaryColor = Color(0.654902, 0.5764706, 0.3529412, 1)
+SecondaryColor = Color(0.25490198, 0.24313726, 0.2, 1)
+metadata/_custom_type_script = "uid://baed7i5uyhlyg"
+
+[sub_resource type="Resource" id="Resource_q6qwg"]
+script = ExtResource("12_q6qwg")
+FactionName = "Oromound"
+PrimaryColor = Color(0.21568628, 0.3019608, 0.16470589, 1)
+SecondaryColor = Color(0.84313726, 0.9490196, 0.72156864, 1)
+metadata/_custom_type_script = "uid://baed7i5uyhlyg"
 
 [node name="Skirmish" type="Node3D" unique_id=1701354971]
 
@@ -196,6 +225,68 @@ shape = SubResource("BoxShape3D_g4v7s")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1930525816]
 unique_name_in_owner = true
 
+[node name="Sprite2D" type="Sprite2D" parent="UI" unique_id=1842046180]
+material = SubResource("ShaderMaterial_s2r0o")
+position = Vector2(96.5, 522.5)
+scale = Vector2(3, 3)
+texture = ExtResource("9_q6qwg")
+
+[node name="Icon" type="Sprite2D" parent="UI" unique_id=652228203]
+unique_name_in_owner = true
+position = Vector2(96.5, 518)
+scale = Vector2(3, 3)
+
+[node name="Armure" type="Label" parent="UI" unique_id=466909971]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.08400001
+anchor_top = 0.9110001
+anchor_right = 0.08400001
+anchor_bottom = 0.9110001
+offset_left = 13.231995
+offset_top = -16.328064
+offset_right = 68.23201
+offset_bottom = 13.671936
+theme_override_fonts/font = ExtResource("10_s2r0o")
+theme_override_font_sizes/font_size = 18
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Moral" type="Label" parent="UI" unique_id=795181783]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.08400001
+anchor_top = 0.9110001
+anchor_right = 0.08400001
+anchor_bottom = 0.9110001
+offset_left = -76.768005
+offset_top = -16.328064
+offset_right = -21.767998
+offset_bottom = 13.671936
+theme_override_fonts/font = ExtResource("10_s2r0o")
+theme_override_font_sizes/font_size = 18
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Membre" type="Label" parent="UI" unique_id=683192337]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.08400001
+anchor_top = 0.9110001
+anchor_right = 0.08400001
+anchor_bottom = 0.9110001
+offset_left = -31.768005
+offset_top = -16.328064
+offset_right = 23.232002
+offset_bottom = 13.671936
+theme_override_fonts/font = ExtResource("10_s2r0o")
+theme_override_font_sizes/font_size = 18
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TileData" type="Node" parent="." unique_id=2050932527]
 unique_name_in_owner = true
 script = ExtResource("1_12bbf")
@@ -206,4 +297,13 @@ tile_data = Dictionary[String, ExtResource("7_aqako")]({
 "Mountain": SubResource("Resource_6up0h"),
 "Road": SubResource("Resource_rnbtm"),
 "Water": SubResource("Resource_aqako")
+})
+
+[node name="FactionData" type="Node" parent="." unique_id=1644234818]
+unique_name_in_owner = true
+script = ExtResource("11_t8i2m")
+Faction_data = Dictionary[String, ExtResource("12_q6qwg")]({
+"Aberrion": SubResource("Resource_s2r0o"),
+"Oromound": SubResource("Resource_q6qwg"),
+"Seranna": SubResource("Resource_t8i2m")
 })

@@ -8,3 +8,5 @@ class_name Capacity extends Node3D
 @export var maxRange: int
 @export var damage: int
 @export var penetration: int
+@export var rayon: int
+@export var fear: int
