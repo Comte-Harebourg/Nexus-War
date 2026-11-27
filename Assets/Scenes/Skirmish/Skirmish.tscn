@@ -13,7 +13,7 @@
 [ext_resource type="Shader" uid="uid://rhyxpw4k3kqy" path="res://Assets/Scenes/Skirmish/InfocardShader.gdshader" id="9_m3ocu"]
 [ext_resource type="Texture2D" uid="uid://df02uub7x2wvl" path="res://Assets/Sprites/infocard.png" id="9_q6qwg"]
 [ext_resource type="FontFile" uid="uid://cjr3foxra8cah" path="res://Assets/Sprites/NexusFont.png" id="10_s2r0o"]
-[ext_resource type="Script" uid="uid://7cy8hmhhbft7" path="res://FactionDatabase.gd" id="11_t8i2m"]
+[ext_resource type="Script" uid="uid://7cy8hmhhbft7" path="res://Assets/Scenes/Skirmish/FactionDatabase.gd" id="11_t8i2m"]
 [ext_resource type="Script" uid="uid://baed7i5uyhlyg" path="res://Assets/Scenes/Skirmish/Faction.gd" id="12_q6qwg"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_0vbth"]
@@ -123,18 +123,18 @@ PrimaryColor = Color(0.14117648, 0.31764707, 0.54901963, 1)
 SecondaryColor = Color(0.38431373, 0.49019608, 0.5921569, 1)
 metadata/_custom_type_script = "uid://baed7i5uyhlyg"
 
-[sub_resource type="Resource" id="Resource_t8i2m"]
-script = ExtResource("12_q6qwg")
-FactionName = "Seranna"
-PrimaryColor = Color(0.654902, 0.5764706, 0.3529412, 1)
-SecondaryColor = Color(0.25490198, 0.24313726, 0.2, 1)
-metadata/_custom_type_script = "uid://baed7i5uyhlyg"
-
 [sub_resource type="Resource" id="Resource_q6qwg"]
 script = ExtResource("12_q6qwg")
 FactionName = "Oromound"
 PrimaryColor = Color(0.21568628, 0.3019608, 0.16470589, 1)
 SecondaryColor = Color(0.84313726, 0.9490196, 0.72156864, 1)
+metadata/_custom_type_script = "uid://baed7i5uyhlyg"
+
+[sub_resource type="Resource" id="Resource_t8i2m"]
+script = ExtResource("12_q6qwg")
+FactionName = "Seranna"
+PrimaryColor = Color(0.654902, 0.5764706, 0.3529412, 1)
+SecondaryColor = Color(0.25490198, 0.24313726, 0.2, 1)
 metadata/_custom_type_script = "uid://baed7i5uyhlyg"
 
 [node name="Skirmish" type="Node3D" unique_id=1701354971]
